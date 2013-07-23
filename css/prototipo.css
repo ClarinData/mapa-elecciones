@@ -46,3 +46,20 @@
 	background: url("../img/footer.png") no-repeat;
 	border-top: 1px solid #CECECE;
 }
+
+
+		.nombreP {
+		  font: 11px Arial, Helvetica, sans-serif;
+		  font-weight:bold;
+		  fill: #636568;
+		}
+
+		.votos {
+		  font: 10px "Arial Narrow", Helvetica, sans-serif;
+		  fill: #636568;
+		}
+
+		.porcentaje {
+		  font: 14px Arial, Helvetica, sans-serif;
+		  font-weight:bold;
+		  fill: black;
