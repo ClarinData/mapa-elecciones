@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<title>Primarias Legislativas 2013</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="description" content="Mapa interactivo de las elecciones Primarias Legislativas 2013" />
+		<meta name="author" content="Clarin.com" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		
+		<!-- D3 -->
+		<script type="text/javascript" src="js/d3.v3.min.js"></script>
+		<script type="text/javascript" src="js/d3.geo.projection.v0.min.js"></script>
+		<script type="text/javascript" src="js/topojson.v1.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/prototipo.css">
+		<link rel="stylesheet" type="text/css" href="css/clnmap.css">
+		<script type="text/javascript" src="js/clnmap.js"></script>
+				
+		
+	</head>
+
+	<body>
+		<table id="app">
+			<tr>
+				<td colspan="3" id="titulo"> </td>
+			</tr>
+
+			<tr>
+				<td id="panelL"> 
+					<div id="btn_voto" onclick="argentina.vista.provincias();"><img src="css/bgl1.png" border="0"></div>
+					<div id="btn_prov" onclick="argentina.vista.partidos();"><img src="css/bgl2.png" border="0"></div>
+					<div id="btn_part" onclick="argentina.vista.votos();"><img src="css/bgl2.png" border="0"></div>
+				</td>
+				
+				<td id="panelM">
+					<div id="map_arg"> </div>
+				</td>
+				<td id="panelR">
+					<div id="bar_map_arg"> </div>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="3" id="pie"> </td>
+			</tr>
+
+		</table>
+		<script type="text/javascript" src="js/elecciones.js"></script>		
+	</body>
+	
+</html>

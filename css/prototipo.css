@@ -1,0 +1,58 @@
+#app{
+	width: 948px;
+	height: 782px;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	border: 0px;	    
+	border-spacing: 0; /* !ie*/ 	
+	border-collapse:collapse; /* ie*/
+}
+
+#app #titulo{
+	width: 948px;
+	height: 125px;
+	background: url("header.png") no-repeat;
+	border-bottom: 1px solid #CECECE;
+}
+
+#app #panelL{
+	width: 130px;
+	height: 600px;
+	background-color: rgb(255, 255, 255);
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;	
+}
+#app #panelL #btn_voto, #app #panelL #btn_prov, #app #panelL #btn_part{
+	width: 130px;
+	height: 200px;
+	cursor: pointer;
+}
+#app #panelL #btn_voto{
+	background: null;	
+}
+
+
+
+#app #panelL #btn_prov{
+}
+
+#app #panelL #btn_part{
+}
+
+#app #panelM{
+	width: 528px;
+	height: 600px;
+}
+
+#app #panelR{
+	width: 290px;
+	height: 600px;
+	border-left: 1px solid #CECECE;
+}
+
+#app #pie{
+	width: 948px;
+	height: 57px;
+	background: url("footer.png") no-repeat;
+	border-top: 1px solid #CECECE;
+}
