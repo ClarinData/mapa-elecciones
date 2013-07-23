@@ -12,7 +12,7 @@
 #app #titulo{
 	width: 948px;
 	height: 125px;
-	background: url("header.png") no-repeat;
+	background: url("../img/header.png") no-repeat;
 	border-bottom: 1px solid #CECECE;
 }
 
@@ -53,6 +53,6 @@
 #app #pie{
 	width: 948px;
 	height: 57px;
-	background: url("footer.png") no-repeat;
+	background: url("../img/footer.png") no-repeat;
 	border-top: 1px solid #CECECE;
 }
