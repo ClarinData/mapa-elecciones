@@ -1,4 +1,2 @@
 MapaElecciones
 ==============
-
-Test desde Aptana
