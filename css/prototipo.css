@@ -48,18 +48,19 @@
 }
 
 
-		.nombreP {
-		  font: 11px Arial, Helvetica, sans-serif;
-		  font-weight:bold;
-		  fill: #636568;
-		}
+.nombreP {
+  font: 11px Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  fill: #636568;
+}
 
-		.votos {
-		  font: 10px "Arial Narrow", Helvetica, sans-serif;
-		  fill: #636568;
-		}
+.votos {
+  font: 10px "Arial Narrow", Helvetica, sans-serif;
+  fill: #636568;
+}
 
-		.porcentaje {
-		  font: 12px Arial, Helvetica, sans-serif;
-		  font-weight:bold;
-		  fill: black;
+.porcentaje {
+  font: 12px Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  fill: black;
+}

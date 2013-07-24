@@ -91,30 +91,6 @@ function muestroTotales(datos){
 	    .attr("x",  function(d) { return x(d.v) + 10; }) 
 		.style("opacity", 1);	    
 
-/*	group
-		.append("rect") //barra
-	    .attr("width", "0px")
-	 	.style("opacity", 0.4)
-	    .attr("fill", function(d,i) { return col[i]; })
-	   	.attr("height", 25) 
-		.transition().duration(aIn)
-	    .attr("width", function(d) {return x(d.v)} );
-
-*/
-/*  
-	// modify each element  
-	element.select("rect")
-		.transition()
-		.duration(aIn)
-		.attr("width", function(d){ return x(d.v)});
-  
-	element.select("text")
-		.transition()
-		.duration(aIn)
-		.attr("opacity", 1)
-   		.text("Texto Aca");
-*/
-
 	group
 		.exit()
 		
@@ -123,26 +99,7 @@ function muestroTotales(datos){
 	 	.style("opacity", 0)
 		.remove();
     
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+	// DELETE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	//update datos to see exit function doing the job.
 	datosTotales = [];
 	datosTotales = [
@@ -156,8 +113,6 @@ function muestroTotales(datos){
 
 
 
-
-//armo objeto y le asigno eventos 
 var barras = new Object({id : "bar_map_arg" });
 
 barras.mostrar= {
