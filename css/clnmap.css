@@ -1,0 +1,139 @@
+#map_arg {
+  position absolute;
+}
+
+#map_caba {
+  position absolute;
+}
+
+/*body {
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;
+}*/
+
+#backbutton .box {
+  fill: #FFF;
+  stroke: #000;
+  stroke-width: 0.5pt;
+}
+
+#backbutton text {
+  font: 11pt arial, sans-serif; 
+}
+
+.states {
+  /*background: #FFF;*/
+  fill: #FAFAFA;
+  /*fill: url(#states_pattern) repeat;*/
+  /*fill-size: 100%;*/
+  stroke: #000;
+  stroke-width: 0.1pt;
+  fill-opacity: 1;
+}
+
+.transparent {
+  fill-opacity: 0;
+}
+
+.disabled {
+  display: none;
+}
+
+ 
+.states .active {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 1s, opacity 2s ease-out;
+}
+
+div.tooltip {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  padding: 5px 5px 5px 5px;
+  font: 7pt sans-serif;
+  background: #fff;
+  border: solid 1px #aaa;
+  display: none;
+/*  -moz-box-shadow:    5px 5px 3px 3px #D8D8D8;
+  -webkit-box-shadow: 5px 5px 3px 3px #D8D8D8;
+  box-shadow:         5px 5px 3px 3px #D8D8D8;*/
+}
+
+div.tooltip div {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  width: 195px;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;
+}
+
+circle {
+  fill:rgb(50,50,200);
+  fill-opacity: 1;
+  stroke-width: 0;
+}
+
+div.tooltip td {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  width: 195px;
+}
+
+div.tooltip hr {
+  width: 195px;
+}
+
+path.admlevel3 {
+  stroke: #D8D8D8;
+  stroke-width: 0.75pt;
+}
+
+.pp1100 {
+  fill: #76a4c1;
+}
+
+.pp2100 {
+  fill: #cd8581;
+}
+
+.pp3100 {
+  fill: #d3c56b;
+}
+
+.pp4100 {
+  fill: #bbc5a0;
+}
+
+.pp5100 {
+  fill: #9988b3;
+}
+
+.pp6100 {
+  fill: #76a4c1;
+}
+
+.pp1050 {
+  fill: #9CD9FF;
+}
+
+.pp2050 {
+  fill: #FFA5A0;
+}
+
+.pp3050 {
+  fill: #FFEE81;
+}
+
+.pp4050 {
+  fill: #F2FFCF;
+}
+
+.pp5050 {
+  fill: #DAC2FF;
+}
+
+.pp6050 {
+  fill: #9CD9FF;
+}
+
