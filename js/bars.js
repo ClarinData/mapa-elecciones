@@ -1,7 +1,7 @@
 //variables de testeo.
 
 var width = 290,
-    height = 400;
+    height = 455;
 
 var svgBar = d3.select("#bar_map_arg") //Add SVG to stage for the bars 
 		.append("svg")
@@ -11,7 +11,7 @@ var svgBar = d3.select("#bar_map_arg") //Add SVG to stage for the bars
 
 
 function muestroTotales(datos){
-	var translate = 0; // v_translate of bars
+	var translate = -10; // v_translate of bars
 	var space = 90; // label h_space
 	var aIn = 200; //time of animation
 	

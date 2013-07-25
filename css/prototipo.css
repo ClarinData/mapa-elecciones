@@ -40,6 +40,31 @@
 	border-left: 1px solid #CECECE;
 }
 
+
+#app #panelR #bar_map_tit{
+	width: 290px;
+	height: 115px;
+	border-bottom: 1px solid #CECECE;
+
+}
+
+#app #panelR #bar_map_arg{
+	width: 290px;
+	height: 455px;
+}
+
+#app #panelR #bar_map_tot{
+	border-top: 1px solid #CECECE;
+	width: 290px;
+	height: 30px;
+	
+}
+
+
+#app #panelR #bar_map_tit, #app #panelR #bar_map_tot{
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;	
+}
+
 #app #pie{
 	width: 948px;
 	height: 57px;
