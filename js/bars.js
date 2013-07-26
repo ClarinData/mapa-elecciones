@@ -4,6 +4,7 @@ var width = 290,
     height = 455;
 
 var svgBar = d3.select("#bar_map_arg") //Add SVG to stage for the bars 
+		.style("overflow", "hidden")
 		.append("svg")
 	    .attr("width", width)
 	    .attr("height", height);
@@ -98,17 +99,56 @@ function muestroTotales(datos){
 		.duration(aIn)
 	 	.style("opacity", 0)
 		.remove();
-    
-	// DELETE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	//update datos to see exit function doing the job.
-	datosTotales = [];
-	datosTotales = [
-				{"n": "Frente para Vicoria", 	"v": "20" , 	"p": "30%"},
-				{"n": "Otros", 					"v": "10" , 		"p": "2%"}
-			];
-	
-	
 }
+
+
+
+//Arma datos por provincia
+
+function muestroParciales(datos){
+		
+	var s_w = 270;
+	var s_h = 10;
+
+	var partidos = d3.select("#bar_map_arg")
+			.style("overflow", "auto")
+			.append("div");
+			
+	var contenido = partidos.selectAll("div")
+	    .data(datos);
+		
+	contenido.enter() //agrego div contenedor del partido
+		.append("div")
+		.classed("panelcollapsed",true)
+
+	contenido.selectAll('h1') // H1 nombre del partido
+	    .data(function(d) { return [d]; })
+	    .enter().append('h1')
+	    .text(function(d) { return d.n; });
+	
+	contenido.selectAll('svg') // DIV datos electorales
+	    .data(function(d) { return [d.v]; })
+	    .enter().append('svg')
+		.attr("width", s_w)
+		.attr("height", s_h);
+
+	contenido.selectAll('h2') // H2 para el desplegable
+	    .data(function(d) { return [d]; })
+	    .enter()
+	    .append('h2')
+		.text("Interna");
+
+	contenido.selectAll('div') //contenido de la interna
+	    .data(function(d) { return [d]; })
+	    .enter()
+	    .append('div')
+		.classed("panelcontent", true)
+		.text("nombre apellido");
+
+	contenido.exit().remove();
+}
+
+
 
 
 
@@ -123,6 +163,7 @@ barras.mostrar= {
 
 	parcial: (function () {
 		//llamo al armado parcial
-		//muestroTotales(otrosDatos);
+		muestroParciales(otrosDatos);
+
 	})
 };
