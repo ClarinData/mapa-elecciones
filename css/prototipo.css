@@ -40,6 +40,31 @@
 	border-left: 1px solid #CECECE;
 }
 
+
+#app #panelR #bar_map_tit{
+	width: 290px;
+	height: 115px;
+	border-bottom: 1px solid #CECECE;
+
+}
+
+#app #panelR #bar_map_arg{
+	width: 290px;
+	height: 455px;
+}
+
+#app #panelR #bar_map_tot{
+	border-top: 1px solid #CECECE;
+	width: 290px;
+	height: 30px;
+	
+}
+
+
+#app #panelR #bar_map_tit, #app #panelR #bar_map_tot{
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;	
+}
+
 #app #pie{
 	width: 948px;
 	height: 57px;
@@ -48,18 +73,71 @@
 }
 
 
-		.nombreP {
-		  font: 11px Arial, Helvetica, sans-serif;
-		  font-weight:bold;
-		  fill: #636568;
-		}
+.nombreP {
+  font: 11px Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  fill: #636568;
+}
 
-		.votos {
-		  font: 10px "Arial Narrow", Helvetica, sans-serif;
-		  fill: #636568;
-		}
+.votos {
+  font: 9px "Arial", Helvetica, sans-serif;
+  fill: #636568;
+}
 
-		.porcentaje {
-		  font: 14px Arial, Helvetica, sans-serif;
-		  font-weight:bold;
-		  fill: black;
+.porcentaje {
+  font: 16px Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  fill: black;
+}
+
+
+/*  Estilos de paneles colapsables */
+/* panel general*/
+.panel, .panelcollapsed {
+	background: #FFFFFF;
+	border-top: 1px solid #ccc;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/* nombre del partido */
+.panel h1, .panelcollapsed h1{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+ 
+
+.panel h2, .panelcollapsed h2{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #999999;
+	margin-top: 5px;
+	padding: 4px;
+	background: #FFFFFF url("../img/arrow-up.gif") no-repeat 45px;
+}
+
+.panel p, .panelcollapsed p{
+	margin-top: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	
+}
+
+/* el heading en mouseover */
+.panel h2:hover, .panelcollapsed h2:hover { background-color: #f4f4f4; cursor: pointer;}
+
+/* heading del panel */
+.panelcollapsed h2 {
+	background: #FFFFFF url("../img/arrow-dn.gif") no-repeat 45px;
+}
+
+/* contenido del panel */
+.panelcontent { 
+	overflow: hidden;
+}
+
+/* contenido colapsado */
+.panelcollapsed .panelcontent { display: none; }		
