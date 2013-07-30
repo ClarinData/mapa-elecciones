@@ -16,9 +16,10 @@ var argentina = new mapObject ({
     console.log(error, json);
   });
 
-  argentina.event.on("ready", function () {
+  argentina.event.on("ready", function (json) {
 
     console.log("map: ", argentina);
+    console.log("json: ", json);
 
     argentina.svg.g.admlevel2.select("#map_arg_54_1").classed("pp1100", true);
     // argentina.svg.g.admlevel3.select("#map_arg_54_1_17").classed("RedClass", true);

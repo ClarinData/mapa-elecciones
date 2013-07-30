@@ -207,7 +207,7 @@ var mapObject = function (map) {
 
                                       map.tooltip.header.text(function () {
                                         return d.properties.administrative_area[1].name +
-                                               ((d.properties.administrative_area[2]) ? ", " + d.properties.administrative_area[2].name : "");
+                                               ((d.properties.administrative_area[2]) ? ", " + d.properties.administrative_area[2].name + ((d.properties.administrative_area[2]).description ? "\n(" + d.properties.administrative_area[2].description  + ")": "") : "");
 
                                       });
                                       return map.tooltip.style("left", (d3.event.pageX + 5) + "px")
