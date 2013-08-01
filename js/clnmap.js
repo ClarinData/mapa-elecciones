@@ -8,7 +8,7 @@ var mapObject = function (map) {
 
         map.id = map.id || "map";
 
-        map.width = map.width || 600;
+        map.width = map.width || 528;
 
         map.height = map.height || 600;
 
@@ -37,7 +37,7 @@ var mapObject = function (map) {
         map.projection = d3.geo.transverseMercator()
                                .rotate([62, 0])
                                .scale(1020)
-                               .translate([(map.width / 2) + 35, (map.height / 2) - 685]);
+                               .translate([(map.width / 2) + 15, (map.height / 2) - 685]);
 
         map.svg = (function(svg) {
 
@@ -96,7 +96,7 @@ var mapObject = function (map) {
         map.tooltip = (function(tooltip) {
 
               tooltip.header = tooltip.append("div")
-                                      .attr("class", "header");
+                                      .attr("class", "header slashback");
 
               tooltip.table = (function(table) {
 

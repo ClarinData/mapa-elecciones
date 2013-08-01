@@ -20,18 +20,21 @@
 	width: 130px;
 	height: 600px;
 	background-color: rgb(255, 255, 255);
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;	
 }
+
 #app #panelL #btn_voto, #app #panelL #btn_prov, #app #panelL #btn_part{
 	width: 130px;
 	height: 200px;
 	cursor: pointer;
 }
 
-
 #app #panelM{
 	width: 528px;
 	height: 600px;
+	padding-left: 5px;
+  	padding-right: 5px;
+  	padding-top: 0;
+  	padding-bottom: 0;
 }
 
 #app #panelR{
@@ -60,8 +63,7 @@
 	
 }
 
-
-#app #panelR #bar_map_tit, #app #panelR #bar_map_tot{
+.slashback {
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;	
 }
 
