@@ -1,3 +1,4 @@
+
 #map_arg {
   position absolute;
 }
@@ -6,18 +7,14 @@
   position absolute;
 }
 
-/*body {
-  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;
-}*/
-
-#backbutton .box {
-  fill: #FFF;
-  stroke: #000;
-  stroke-width: 0.5pt;
+#panelM {
+  padding-top: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#backbutton text {
-  font: 11pt arial, sans-serif; 
+#backbutton {
+  cursor: pointer;
 }
 
 .states {
@@ -26,7 +23,7 @@
   /*fill: url(#states_pattern) repeat;*/
   /*fill-size: 100%;*/
   stroke: #000;
-  stroke-width: 0.1pt;
+  stroke-width: 0.25pt;
   fill-opacity: 1;
 }
 
@@ -38,7 +35,6 @@
   display: none;
 }
 
- 
 .states .active {
   visibility: hidden;
   opacity: 0;
@@ -50,27 +46,19 @@ div.tooltip {
   width: 200px;
   height: auto;
   padding: 5px 5px 5px 5px;
-  font: 7pt sans-serif;
+  font: 8pt sans-serif;
   background: #fff;
   border: solid 1px #aaa;
   display: none;
-/*  -moz-box-shadow:    5px 5px 3px 3px #D8D8D8;
-  -webkit-box-shadow: 5px 5px 3px 3px #D8D8D8;
-  box-shadow:         5px 5px 3px 3px #D8D8D8;*/
 }
 
-div.tooltip div {
+div.tooltip div.header {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
   width: 195px;
+  font-weight:bold;
   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;
-}
-
-circle {
-  fill:rgb(50,50,200);
-  fill-opacity: 1;
-  stroke-width: 0;
 }
 
 div.tooltip td {
@@ -85,55 +73,77 @@ div.tooltip hr {
 }
 
 path.admlevel3 {
-  stroke: #D8D8D8;
-  stroke-width: 0.75pt;
+  stroke: #ffffff;
+  /*stroke: #e8e7e7;*/
+  stroke-width: 0.6pt;
 }
 
+path.admlevel3:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+path.admlevel2:hover {
+  fill:rgb(50,50,200);
+  stroke-width: 1pt;
+  cursor: pointer;
+}
+
+circle {
+  /*fill:rgb(50,50,200);*/
+  fill-opacity: 1;
+  stroke-width: 0;
+}
+
+/*  FILL DE LOS COLORES DE LOS PARTIDOS */
+
 .pp1100 {
-  fill: #76a4c1;
+  fill: #B3CDE3;
 }
 
 .pp2100 {
-  fill: #cd8581;
+  fill: #B3CDE3;
 }
 
 .pp3100 {
-  fill: #d3c56b;
+  fill: #B3CDE3;
 }
 
 .pp4100 {
-  fill: #bbc5a0;
+  fill: #B3CDE3;
 }
 
 .pp5100 {
-  fill: #9988b3;
+  fill: #B3CDE3;
 }
 
 .pp6100 {
-  fill: #76a4c1;
+  fill: #B3CDE3;
 }
 
 .pp1050 {
-  fill: #9CD9FF;
+  fill: #B3CDE3;
 }
 
 .pp2050 {
-  fill: #FFA5A0;
+  fill: #B3CDE3;
+  
 }
 
 .pp3050 {
-  fill: #FFEE81;
+  fill: #E89A9A;
+  opacity: .75;
 }
 
 .pp4050 {
-  fill: #F2FFCF;
+  fill: #B3CDE3;
 }
 
 .pp5050 {
-  fill: #DAC2FF;
+  fill: #DECBE4;
 }
 
 .pp6050 {
-  fill: #9CD9FF;
+  fill: #f4deb3;
 }
 
