@@ -77,7 +77,6 @@ path.admlevel3:hover {
 }
 
 path.admlevel2:hover {
-  fill:rgb(50,50,200);
   stroke-width: 1pt;
   cursor: pointer;
 }
