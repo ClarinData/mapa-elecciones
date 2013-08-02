@@ -10,7 +10,7 @@ var mapObject = function (map) {
 
         map.width = map.width || 528;
 
-        map.height = map.height || 600;
+        map.height = map.height || 590;
 
         map.backbutton =  (function (backbutton) {
 
@@ -36,7 +36,7 @@ var mapObject = function (map) {
 
         map.projection = d3.geo.transverseMercator()
                                .rotate([62, 0])
-                               .scale(1020)
+                               .scale(1018)
                                .translate([(map.width / 2) + 15, (map.height / 2) - 685]);
 
         map.svg = (function(svg) {
