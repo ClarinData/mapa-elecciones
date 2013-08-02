@@ -6,11 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta name="description" content="Mapa interactivo de las elecciones Primarias Legislativas 2013" />
 		<meta name="author" content="Clarin.com" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-				
-		<link rel="stylesheet" type="text/css" href="css/prototipo.css">
-		<link rel="stylesheet" type="text/css" href="css/clnmap.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />		
 
 		<!-- D3 -->
 		<script type="text/javascript" src="http://d3js.org/d3.v3.js"></script>
@@ -21,29 +17,27 @@
 		<script type="text/javascript" src="js/clnmap.js"></script>
 
 		<!-- Utils -->
-		<script type="text/javascript" src="js/utiles.js"></script>	
+		<script type="text/javascript" src="js/utiles.js"></script>
 		
-		<!-- Test Nlound to delete -->
-		<script type="text/javascript" src="js/onlyForTest.js"></script>
-
+		<link rel="stylesheet" type="text/css" href="css/prototipo.css">
+		<link rel="stylesheet" type="text/css" href="css/clnmap.css">	
 
 
 	</head>
 
 	<body>
+		<div id="preloader"> </div>
+		
 		<table id="app">
-			<tr>							 <!-- borrar este boton -->
-				<td colspan="3" id="titulo">
-					<button onclick="barras.mostrar.total()"> Total Pais </button>
-					<button onclick="barras.mostrar.parcial()"> Provincia </button>
-			 	</td>
+			<tr>
+				<td colspan="3" id="titulo"> </td>
 			</tr>
 
 			<tr>
 				<td id="panelL" class="slashback"> 
-					<div id="btn_voto" onclick="argentina.vista.votos();"><img src="img/bgl1.png" border="0"></div>
-					<div id="btn_prov" onclick="argentina.vista.provincias();"><img src="img/bgl2.png" border="0"></div>
-					<div id="btn_part" onclick="argentina.vista.partidos();"><img src="img/bgl3.png" border="0"></div>
+					<div id="btn_voto" onclick="argentina.vista.votos(); updateButton(this.id);"><img src="img/bgl1.png" border="0"></div>
+					<div id="btn_prov" onclick="argentina.vista.provincias(); updateButton(this.id);"><img src="img/bgl2.png" border="0"></div>
+					<div id="btn_part" onclick="argentina.vista.partidos(); updateButton(this.id);"><img src="img/bgl3.png" border="0"></div>
 				</td>
 				
 				<td id="panelM">
@@ -62,8 +56,25 @@
 			</tr>
 
 		</table>
+		
+
 		<script type="text/javascript" src="js/elecciones.js"></script>
-		<script type="text/javascript" src="js/barritas.js"></script>
+		<script type="text/javascript" src="js/barras.js"></script>
+		
+		
+		
+		
+		
+		
+		<script> // to be deleted. Include this on complete preloader
+			updateButton("btn_voto");
+			var pre = document.getElementById("preloader");
+			pre.parentNode.removeChild(pre);
+		</script>
+
+
+
+
 	</body>
 	
 </html>

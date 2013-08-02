@@ -9,6 +9,21 @@
 	border-collapse:collapse; /* ie*/
 }
 
+
+#preloader{
+	width: 948px;
+	height: 782px;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	border: 0px;	    
+	border-spacing: 0; /* !ie*/ 	
+	border-collapse:collapse; /* ie*/
+	background-color: rgba(255, 255, 255, 0.5);
+	cursor: wait;
+	z-index: 999;
+}
+
 #app #titulo{
 	width: 948px;
 	height: 125px;
@@ -16,25 +31,32 @@
 	border-bottom: 1px solid #CECECE;
 }
 
-#app #panelL{
+#app #panelL{	
+	padding-right: 0px;
 	width: 130px;
 	height: 600px;
 	background-color: rgb(255, 255, 255);
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;	
 }
-
 #app #panelL #btn_voto, #app #panelL #btn_prov, #app #panelL #btn_part{
 	width: 130px;
 	height: 200px;
+}
+
+.btnAct{
+	background: none;
 	cursor: pointer;
 }
+
+.btnIna{
+	background: url("../img/selected.png") no-repeat;
+	cursor: disabled;
+}	
 
 #app #panelM{
 	width: 528px;
 	height: 600px;
-	padding-left: 5px;
-  	padding-right: 5px;
-  	padding-top: 0;
-  	padding-bottom: 0;
+	overflow: hidden;
 }
 
 #app #panelR{
@@ -63,7 +85,8 @@
 	
 }
 
-.slashback {
+
+#app #panelR #bar_map_tit, #app #panelR #bar_map_tot{
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;	
 }
 
@@ -96,7 +119,7 @@
 /*  Estilos de paneles colapsables */
 /* panel general*/
 .panel, .panelcollapsed {
-	background: #FFFFFF;
+	background: #c0c0c0;
 	border-top: 1px solid #ccc;
 	margin: 0px;
 	padding: 0px;
@@ -117,7 +140,7 @@
 	color: #999999;
 	margin-top: 5px;
 	padding: 4px;
-	background: #FFFFFF url("../img/arrow-up.gif") no-repeat 45px;
+	background: #FFFFFF url("../img/arrow-up.png") no-repeat 45px;
 }
 
 .panel p, .panelcollapsed p{
@@ -133,7 +156,7 @@
 
 /* heading del panel */
 .panelcollapsed h2 {
-	background: #FFFFFF url("../img/arrow-dn.gif") no-repeat 45px;
+	background: #FFFFFF url("../img/arrow-dn.png") no-repeat 45px;
 }
 
 /* contenido del panel */
