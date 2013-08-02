@@ -1,3 +1,87 @@
+/**********************************************************************************/
+/*  Global Styles                                                                 */
+/**********************************************************************************/
+
+.slashback {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;	
+}
+
+/**********************************************************************************/
+/* App styles                                                                     */
+/**********************************************************************************/
+
+#app{
+	width: 948px;
+	height: 782px;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	border: 0px;	    
+	border-spacing: 0; /* !ie*/ 	
+	border-collapse:collapse; /* ie*/
+}
+
+#app #titulo{
+	width: 948px;
+	height: 125px;
+	background: url("../img/header.png") no-repeat;
+	border-bottom: 1px solid #CECECE;
+}
+
+#app #panelL{
+	width: 130px;
+	height: 600px;
+	background-color: rgb(255, 255, 255);
+}
+
+#app #panelL #btn_voto, #app #panelL #btn_prov, #app #panelL #btn_part{
+	width: 130px;
+	height: 200px;
+	cursor: pointer;
+}
+
+#app #panelM{
+	width: 528px;
+	height: 600px;
+	padding-left: 5px;
+  	padding-right: 5px;
+  	padding-top: 0;
+  	padding-bottom: 0;
+}
+
+#app #panelR{
+	width: 290px;
+	height: 600px;
+	border-left: 1px solid #CECECE;
+}
+
+#app #panelR #bar_map_tit{
+	width: 290px;
+	height: 115px;
+	border-bottom: 1px solid #CECECE;
+}
+
+#app #panelR #bar_map_arg{
+	width: 290px;
+	height: 455px;
+}
+
+#app #panelR #bar_map_tot{
+	border-top: 1px solid #CECECE;
+	width: 290px;
+	height: 30px;
+}
+
+#app #pie{
+	width: 948px;
+	height: 57px;
+	background: url("../img/footer.png") no-repeat;
+	border-top: 1px solid #CECECE;
+}
+
+/**********************************************************************************/
+/* Map Styles                                                                     */
+/**********************************************************************************/
 
 #map_arg {
   position absolute;
