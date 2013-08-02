@@ -6,6 +6,69 @@
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;	
 }
 
+/*  FILL DE LOS COLORES DE LOS PARTIDOS */
+
+.pp1100 {
+  fill: #B3CDE3;
+  background-color: #B3CDE3;
+}
+
+.pp2100 {
+  fill: #B3CDE3;
+  background-color: #B3CDE3;
+}
+
+.pp3100 {
+  fill: #B3CDE3;
+  background-color: #B3CDE3;
+}
+
+.pp4100 {
+  fill: #B3CDE3;
+  background-color: #B3CDE3;
+}
+
+.pp5100 {
+  fill: #B3CDE3;
+  background-color: #B3CDE3;
+}
+
+.pp6100 {
+  fill: #B3CDE3;
+  background-color: #B3CDE3;
+}
+
+.pp1050 {
+  fill: #B3CDE3;
+  background-color: #B3CDE3;
+}
+
+.pp2050 {
+  fill: #B3CDE3;
+  background-color: #B3CDE3;  
+}
+
+.pp3050 {
+  fill: #E89A9A;
+  background-color: #E89A9A;
+  opacity: .75;
+}
+
+.pp4050 {
+  fill: #B3CDE3;
+  background-color: #B3CDE3;  
+}
+
+.pp5050 {
+  fill: #DECBE4;
+  background-color: #B3CDE3;  
+}
+
+.pp6050 {
+  fill: #f4deb3;
+  background-color: #B3CDE3;  
+}
+
 /**********************************************************************************/
 /* App styles                                                                     */
 /**********************************************************************************/
@@ -19,6 +82,10 @@
 	border: 0px;	    
 	border-spacing: 0; /* !ie*/ 	
 	border-collapse:collapse; /* ie*/
+}
+
+#panel {
+    margin-top: -10px;
 }
 
 #app #titulo{
@@ -74,6 +141,100 @@
 	height: 57px;
 	background: url("../img/footer.png") no-repeat;
 	border-top: 1px solid #CECECE;
+}
+
+/**********************************************************************************/
+/* Tooltip Styles                                                                 */
+/**********************************************************************************/
+
+#tooltip {
+  position: absolute;
+  margin: 0 0 1em 0;
+  width: 12em;
+  height: auto;
+  padding: 5px 5px 5px 5px;
+  background: #fff;
+  border: solid 1px #aaa;
+  display: none;
+}
+
+#tooltip  td {
+  padding-top:6px;
+  padding-bottom:5px;
+  vertical-align: bottom;
+  border-bottom: 1px solid;
+  border-bottom-color:  #D8D8D8;
+  
+} 
+
+#tooltip .toolHeader {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  width: 11.3em;
+}
+
+#tooltip .toolTitulo {
+  padding-right:10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: .8em;
+  text-transform: uppercase;
+  line-height: 1.1em;
+}
+
+#tooltip .toolBarrios {
+  margin-top: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .65em;
+  background-color: white;
+  color: #808080;
+  line-height: 1.1em;
+}
+
+
+#tooltip .toolTable {
+  margin-top: 6px;
+  margin-bottom:6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-collapse: collapse;
+}
+
+#tooltip .toolFuerza {
+  width: 2px;
+  /*height: 1.4em;*/
+  border-bottom-color: white;
+  border-bottom-width: 5px;
+}
+
+#tooltip .toolPartido {
+  padding-left:7px;
+  padding-right:12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .75em;
+  font-weight: bolder;
+  line-height: 1.1em;
+}
+
+#tooltip .toolPorcentaje {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 90%;
+  font-weight: bolder;
+} 
+
+#tooltip .toolFooter {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: .7em;
+  color: #808080;
 }
 
 /**********************************************************************************/
@@ -166,57 +327,5 @@ circle {
   /*fill:rgb(50,50,200);*/
   fill-opacity: 1;
   stroke-width: 0;
-}
-
-/*  FILL DE LOS COLORES DE LOS PARTIDOS */
-
-.pp1100 {
-  fill: #B3CDE3;
-}
-
-.pp2100 {
-  fill: #B3CDE3;
-}
-
-.pp3100 {
-  fill: #B3CDE3;
-}
-
-.pp4100 {
-  fill: #B3CDE3;
-}
-
-.pp5100 {
-  fill: #B3CDE3;
-}
-
-.pp6100 {
-  fill: #B3CDE3;
-}
-
-.pp1050 {
-  fill: #B3CDE3;
-}
-
-.pp2050 {
-  fill: #B3CDE3;
-  
-}
-
-.pp3050 {
-  fill: #E89A9A;
-  opacity: .75;
-}
-
-.pp4050 {
-  fill: #B3CDE3;
-}
-
-.pp5050 {
-  fill: #DECBE4;
-}
-
-.pp6050 {
-  fill: #f4deb3;
 }
 

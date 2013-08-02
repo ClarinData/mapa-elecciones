@@ -4,148 +4,106 @@
 
 var mapObject = function (map) {
   
-        "use strict";
+      "use strict";
 
-        map.id = map.id || "map";
+      map.id = map.id || "map";
 
-        map.width = map.width || 528;
+      map.width = map.width || 528;
 
-        map.height = map.height || 590;
+      map.height = map.height || 590;
 
-        map.backbutton =  (function (backbutton) {
+      map.backbutton =  (function (backbutton) {
 
-              backbutton.image = backbutton.imag || 'img/Boton_volver.png';
+            backbutton.image = backbutton.imag || 'img/Boton_volver.png';
 
-              backbutton.width = backbutton.width || 55;
+            backbutton.width = backbutton.width || 55;
 
-              backbutton.height = backbutton.height || 90;
+            backbutton.height = backbutton.height || 90;
 
-              backbutton.x = backbutton.x || 0;
+            backbutton.x = backbutton.x || 0;
 
-              backbutton.y = backbutton.y || 0;
+            backbutton.y = backbutton.y || 0;
 
-              return backbutton;
-
-        })(
-
-              map.backbutton || {}
-
-        );
-
-        map.event = d3.dispatch("click", "zoom", "progress", "ready", "error");
-
-        map.projection = d3.geo.transverseMercator()
-                               .rotate([62, 0])
-                               .scale(1018)
-                               .translate([(map.width / 2) + 15, (map.height / 2) - 685]);
-
-        map.svg = (function(svg) {
-
-              svg.path = d3.geo.path()
-                           .projection(map.projection);
-
-              svg.g = svg.append("g");
-
-              svg.back = (function(back) {
-
-                    back.append("image")
-                        .attr("class", "image")
-                        .attr("width", map.backbutton.width)
-                        .attr("height", map.backbutton.height)
-                        .attr('x', map.backbutton.x)
-                        .attr('y', map.backbutton.y)
-                        .attr("xlink:href", map.backbutton.image);
-
-                    back.append("clippath")
-                        .attr("id", "clip")
-                        .append("rect")
-                        .attr("width", map.backbutton.width)
-                        .attr("height", map.backbutton.height)
-                        .attr('x', map.backbutton.x)
-                        .attr('y', map.backbutton.y);
-
-              })(
-
-                    svg.append("g")
-                       .attr("id",  "backbutton")
-                       .style("display", "none")
-                       .on("click", function (d) {
-                            map.event.click(d);
-                        })
-
-              );
-
-              return svg;
-
-        })(
-
-              d3.select("#" + map.id)
-                .append("svg")
-                .attr("overflow", "hidden")
-                .attr("width", map.width)
-                .attr("height", map.height)
-
-        );
-
-        map.backbutton.visible = function (status) {
-
-              return (status) ? map.svg.select("#backbutton").style("display", "block") : map.svg.select("#backbutton").style("display", "none");
-
-        };
-
-        map.tooltip = (function(tooltip) {
-
-              tooltip.header = tooltip.append("div")
-                                      .attr("class", "header slashback");
-
-              tooltip.table = (function(table) {
-
-                    table.row1 = (function(row) {
-
-                          row.col1 = row.append("td");
-                          row.col2 = row.append("td");
-
-                          return row;
-                    })(
-
-                         table.append("tr")
-
-                    );
-
-                    table.append("hr");
-
-                    table.row2 = (function(row) {
-
-                          row.col1 = row.append("td");
-                          row.col1.text("Resto de los partidos");
-                          row.col2 = row.append("td");
-
-                          return row;
-
-                    })(
-
-                         table.append("tr")
-
-                    );
-
-                    table.append("hr");
-
-                    return table;
-
-              })(
-
-                    tooltip.append("table")
-                           .attr("border","0")
-
-              );
-
-              return tooltip;
+            return backbutton;
 
       })(
 
-            d3.select("body")
-              .append("div")
-              .attr("class", "tooltip")
+            map.backbutton || {}
+
+      );
+
+      map.event = d3.dispatch("click", "zoom", "progress", "ready", "error");
+
+      map.projection = d3.geo.transverseMercator()
+                             .rotate([62, 0])
+                             .scale(1018)
+                             .translate([(map.width / 2) + 15, (map.height / 2) - 685]);
+
+      map.svg = (function(svg) {
+
+            svg.path = d3.geo.path()
+                         .projection(map.projection);
+
+            svg.g = svg.append("g");
+
+            svg.back = (function(back) {
+
+                  back.append("image")
+                      .attr("class", "image")
+                      .attr("width", map.backbutton.width)
+                      .attr("height", map.backbutton.height)
+                      .attr('x', map.backbutton.x)
+                      .attr('y', map.backbutton.y)
+                      .attr("xlink:href", map.backbutton.image);
+
+                  back.append("clippath")
+                      .attr("id", "clip")
+                      .append("rect")
+                      .attr("width", map.backbutton.width)
+                      .attr("height", map.backbutton.height)
+                      .attr('x', map.backbutton.x)
+                      .attr('y', map.backbutton.y);
+
+            })(
+
+                  svg.append("g")
+                     .attr("id",  "backbutton")
+                     .style("display", "none")
+                     .on("click", function (d) {
+                          map.event.click(d);
+                      })
+
+            );
+
+            return svg;
+
+      })(
+
+            d3.select("#" + map.id)
+              .append("svg")
+              .attr("overflow", "hidden")
+              .attr("width", map.width)
+              .attr("height", map.height)
+
+      );
+
+      map.backbutton.visible = function (status) {
+
+            return (status) ? map.svg.select("#backbutton").style("display", "block") : map.svg.select("#backbutton").style("display", "none");
+
+      };
+
+      map.tooltip = (function(tooltip) {
+
+            tooltip.height = function () {
+              return tooltip.clientHeight;
+            }
+
+            return tooltip;
+
+      })(
+
+            d3.select("#tooltip")
 
       );
 
@@ -186,25 +144,31 @@ var mapObject = function (map) {
                                    })
                                    .on("mouseover", function(d){
 
-                                      map.tooltip.header.text(function () {
-                                        return d.properties.administrative_area[1].name +
-                                               ((d.properties.administrative_area[2]) ? ", " + d.properties.administrative_area[2].name + ((d.properties.administrative_area[2]).description ? "\n(" + d.properties.administrative_area[2].description  + ")": "") : "");
+                                      // map.tooltip.header.title(d.properties.administrative_area[d.properties.administrative_area.length-1].name);
+                                      // map.tooltip.header.info(d.properties.administrative_area[d.properties.administrative_area.length-1].description);
+                                      
+                                      var x = d3.event.pageX + 5;
+                                      var y = d3.event.pageY + 5;
 
-                                      });
-                                      return map.tooltip.style("left", (d3.event.pageX + 5) + "px")
-                                                        .style("top", (d3.event.pageY + 5) + "px")
+                                      return map.tooltip.style("left", x + "px")
+                                                        .style("top", y + "px")
                                                         .style("display", "block");
 
                                     })
                                    .on("mousemove", function(){
 
-                                      return map.tooltip.style("top", (d3.event.pageY-10)+"px")
-                                                        .style("left",(d3.event.pageX+10)+"px");
+                                      var x = d3.event.pageX + 10;
+                                      var y = d3.event.pageY - 10;
+                                      
+                                      console.log("map.tooltip: ", x, y, map.tooltip.height() + y);
+
+                                      return map.tooltip.style("top", y + "px")
+                                                        .style("left", x + "px");
 
                                     })
                                    .on("mouseout", function(){
 
-                                      return map.tooltip.style("display", "none");
+                                      // return map.tooltip.style("display", "none");
 
                                     })
                                    .on("click", function (d) {
