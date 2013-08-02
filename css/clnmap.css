@@ -43,10 +43,7 @@
 #app #panelM{
 	width: 528px;
 	height: 600px;
-	padding-left: 5px;
-  	padding-right: 5px;
-  	padding-top: 0;
-  	padding-bottom: 0;
+	padding: 5px 5px 0 5px;
 }
 
 #app #panelR{
