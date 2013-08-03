@@ -96,8 +96,38 @@ var mapObject = function (map) {
       map.tooltip = (function(tooltip) {
 
             tooltip.height = function () {
-              return tooltip.clientHeight;
-            }
+                  return tooltip[0][0].clientHeight;
+            };
+
+            tooltip.width = function () {
+                  return tooltip[0][0].clientWidth;
+            };
+
+            tooltip.left = function () {
+                  return tooltip[0][0].offsetLeft;
+            };
+
+            tooltip.top = function () {
+                  return tooltip[0][0].offsetTop;
+            };
+
+            tooltip.title = d3.select("#tooltip_title");
+
+            tooltip.info = (function (info) {
+
+                  info.text = function (text) {
+
+                      info.classed("active", info[0][0].innerText = text);
+
+                  };
+
+                  return info;
+
+            })(
+
+                  d3.select("#tooltip_info")
+
+            );
 
             return tooltip;
 
@@ -144,31 +174,27 @@ var mapObject = function (map) {
                                    })
                                    .on("mouseover", function(d){
 
-                                      // map.tooltip.header.title(d.properties.administrative_area[d.properties.administrative_area.length-1].name);
-                                      // map.tooltip.header.info(d.properties.administrative_area[d.properties.administrative_area.length-1].description);
-                                      
-                                      var x = d3.event.pageX + 5;
-                                      var y = d3.event.pageY + 5;
+                                      map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length-1].name);
+                                      map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length-1].description);
+                                      // map.tooltip.info.activate();
 
-                                      return map.tooltip.style("left", x + "px")
-                                                        .style("top", y + "px")
+                                      return map.tooltip.style("left", d3.event.pageX + 5 + "px")
+                                                        .style("top", d3.event.pageY + 5 + "px")
                                                         .style("display", "block");
 
                                     })
                                    .on("mousemove", function(){
 
-                                      var x = d3.event.pageX + 10;
-                                      var y = d3.event.pageY - 10;
-                                      
-                                      console.log("map.tooltip: ", x, y, map.tooltip.height() + y);
+                                      var left = d3.event.pageX + 10;
+                                      var top = ((d3.event.pageY - 10 + map.tooltip.height()) > 730) ? d3.event.pageY + 30 - map.tooltip.height() : d3.event.pageY - 10;
 
-                                      return map.tooltip.style("top", y + "px")
-                                                        .style("left", x + "px");
+                                      return map.tooltip.style("top", top + "px")
+                                                        .style("left", left + "px");
 
                                     })
                                    .on("mouseout", function(){
 
-                                      // return map.tooltip.style("display", "none");
+                                      return map.tooltip.style("display", "none");
 
                                     })
                                    .on("click", function (d) {
@@ -191,7 +217,7 @@ var mapObject = function (map) {
                           g.votes = (function (votes) {
 
                                 votes.selectAll("text")
-                                     .attr("class", "disabled") // 
+                                     .attr("class", "disabled")
                                      .data(topojson.feature(json, json.objects.admlevel3).features)
                                      .enter()
                                      .append("circle")

@@ -39,11 +39,11 @@ var argentina = new mapObject ({
   });
 
   argentina.event.on("progress", function (size) {
-                                 console.log("Loaded: ", size);
+                                 // console.log("Loaded: ", size);
   });
 
   argentina.event.on("zoom", function (d, t, s) {
-                             console.log("here", d, t, s);
+                             // console.log("here", d, t, s);
   });
    
   argentina.event.on("click", function (d) {
@@ -52,7 +52,7 @@ var argentina = new mapObject ({
 
                                 var centered = d || null;
 
-                                console.log(d);
+                                // console.log(d);
 
                                 argentina.backbutton.visible(d);
 

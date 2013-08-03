@@ -195,8 +195,12 @@
   background-color: white;
   color: #808080;
   line-height: 1.1em;
+  display: none;
 }
 
+#tooltip .active {
+  display: block;
+}
 
 #tooltip .toolTable {
   margin-top: 6px;
