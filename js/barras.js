@@ -68,7 +68,7 @@ function updateBars(){
 
     contenidoEnter.append("div")
     	.classed("cantidadBar",true)
-        .text(function (d) { return miles(d.votos.cantidad.toString()); });
+        .text(function (d) { return "(" + miles(d.votos.cantidad.toString()) + ")"; });
 
     contenido
     	.exit()

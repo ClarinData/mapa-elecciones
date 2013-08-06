@@ -7,13 +7,29 @@
 }
 
 .btnAct{
-  background: none;
-  cursor: pointer;
+	background: url("../img/bgLeft.png");
+	background-position: 0 -400px;
+  	cursor: pointer;
+}
+
+.btnAct:hover{
+	background: url("../img/bgLeft.png");
+	background-position: 0 -200px;
 }
 
 .btnIna{
-  background: url("../img/selected.png");
-  cursor: default;
+	background: url("../img/bgLeft.png");
+ 	background-position: 0 0px;
+  	cursor: default;
+}
+
+#app #panelL p{
+	position: absolute;
+	left: 40px;
+	padding-top: 9px;
+	font: 11px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #333333;
 }
 
 /*  FILL DE LOS COLORES DE LOS PARTIDOS */
