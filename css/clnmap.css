@@ -128,12 +128,12 @@
 #app #panelR #bar_map_tit{
 	width: 290px;
 	height: 115px;
-	border-bottom: 1px solid #CECECE;
 }
 
 #app #panelR #bar_map_arg{
 	width: 290px;
 	height: 455px;
+	overflow-x: hidden;
 }
 
 #app #panelR #bar_map_tot{
@@ -150,9 +150,37 @@
 }
 
 
+
 /**********************************************************************************/
 /* Bar Styles                                                                     */
 /**********************************************************************************/
+.contenedorBar{
+	width: 290px;
+	height: 50px;
+	border-top: 1px solid #CECECE;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+.nombreBar {
+	font: 11px Arial, Helvetica, sans-serif;
+	font-weight:bold;
+}
+
+.barraBar {
+	background-color: #FFFFFF;
+	height: 15px;
+	width: 1px;
+}
+
+.cantidadBar {
+	font: 10px "Arial Narrow", Helvetica, sans-serif;
+}
+
+.porcentajeBar {
+	font: 14px Arial, Helvetica, sans-serif;
+	font-weight:bold;
+}
 
 
 
