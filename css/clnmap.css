@@ -156,26 +156,49 @@
 	border-top: 1px solid #CECECE;
 	width: 290px;
 	height: 30px;
+
+	
 }
 
-#app #pie{
+#app #pie {
 	width: 948px;
 	height: 57px;
 	background: url("../img/footer.png") no-repeat;
 	border-top: 1px solid #CECECE;
 }
 
+#app #panelR #bar_map_tot #totPie{	
+	width: 100%;
+	height: 100%;
+	background: url("../img/bgRight.png") no-repeat;
+	background-position: 0 -230px;	
+}
+
+
+#app #panelR #bar_map_tit #totTit {	
+	width: 100%;
+	height: 100%;
+	background: url("../img/bgRight.png") no-repeat;
+	background-position: 0 0px;	
+}
+
+#app #panelR #bar_map_tot #totPie{	
+	width: 100%;
+	height: 100%;
+	background: url("../img/bgRight.png") no-repeat;
+	background-position: 0 -230px;	
+}
 
 
 /**********************************************************************************/
-/* Bar Styles                                                                     */
+/* General Bar Styles                                                             */
 /**********************************************************************************/
 .contenedorBar{
-	width: 290px;
-	height: 50px;
+	width: 285px;
+	height: 62px;
 	border-top: 1px solid #CECECE;
 	padding-left: 5px;
-	padding-top: 5px;
+	padding-top: 11px;
 }
 
 .nombreBar {
@@ -185,19 +208,88 @@
 
 .barraBar {
 	background-color: #FFFFFF;
-	height: 15px;
+	height: 24px;
 	width: 1px;
+	position:relative;
+	top: 10px;
 }
 
 .cantidadBar {
 	font: 10px "Arial Narrow", Helvetica, sans-serif;
+	position:relative;
+	top:-18px;
+	color: #808080;
 }
 
 .porcentajeBar {
 	font: 14px Arial, Helvetica, sans-serif;
 	font-weight:bold;
+	position:relative;
+	top:-20px;
 }
 
+
+
+
+
+/**********************************************************************************/
+/* Detailed Bar Styles                                                            */
+/**********************************************************************************/
+
+.contenedorDet {
+	width: 285px;
+	height: 60px;
+	border-top: 1px solid #CECECE;
+	padding-left: 5px;
+	padding-top: 10px;
+	overflow: hidden;
+}
+
+.nombreDet {
+	font: 11px Arial, Helvetica, sans-serif;
+	font-weight:bold;
+}
+
+.barraDet {
+	background-color: #FFFFFF;
+	height: 10px;
+	width: 1px;
+	position:relative;
+	top: 5px;
+}
+
+.porcentajeDet {
+	font: 12px Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	position:relative;
+	top: -7px;
+}
+
+.cantidadDet {
+	font: 10px "Arial Narrow", Helvetica, sans-serif;
+	position:relative;
+	top: -22px;
+	color: #808080;
+}
+
+.tituloInternaDet {
+	font: 9px "Arial", Helvetica, sans-serif;
+	position:relative;
+	top: -15px;
+	color: #000000;
+}
+
+
+.tituloInternaDet:hover {
+	background-color: #eeeeee;
+  	cursor: pointer;
+}
+
+
+.contenidoInternaDet {
+	font: 12px Arial , Helvetica, sans-serif;
+	color: #808080;
+}
 
 
 /**********************************************************************************/

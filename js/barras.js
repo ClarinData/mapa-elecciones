@@ -35,18 +35,19 @@ function updateButton(option){
 }
 
 /************************************************************************/
-/*  updatea las barras + falta ver como vienen los datos                */
+/*  updatea las barras Generales                                        */
 /************************************************************************/
-function updateBars(){
-	console.log("run Updatebars");
-	// falta ver la barra de arriba y abajo dependiendo el objeto a recibir
+function updateGeneralBars(){
+	console.log("run updateGeneralBars");
+	d3.select("#bar_map_arg").selectAll("div").remove();	
+	d3.select("#totTit").style("background-position", "0 0px");
 
 	var index = d3.range(datos.length),
 		valores = index.map(function(d,i){ return datos[i].votos.cantidad;});
 	
 	var x_w = d3.scale.linear()
 	    .domain([0, Math.max.apply(Math, valores)])
-	    .range([0, 260 - 70]); // - espacio para la etiqueta	
+	    .range([0, 260 - 50]); // - espacio para la etiqueta	
 	
     var contenido = d3.select("#bar_map_arg").selectAll("div.contenedorBar")
         .data(datos, function (d) { return d.partido_politico + d.votos.cantidad; });
@@ -57,18 +58,94 @@ function updateBars(){
 
     contenidoEnter.append("div")
 		.classed("nombreBar", true)
-        .text(function (d) { return d.partido_politico; });
+        .text(function (d) { return d.partido_politico.toUpperCase(); });
 
     contenidoEnter.append("div")
         .classed("barraBar", true)
         .style("background-color", function (d,i){ return colores[i]; })
         .transition()
         .duration(1000)
-        .style("width", function (d) { return x_w(d.votos.cantidad) + "px"; });
-
+        .style("width", function (d) { return Math.ceil(x_w(d.votos.cantidad)) + "px"; });
+	
     contenidoEnter.append("div")
     	.classed("cantidadBar",true)
+        .transition()
+        .duration(1000)
+    	.style("left", function (d) { return Math.ceil( x_w(d.votos.cantidad) + 5) + "px"; })
         .text(function (d) { return "(" + miles(d.votos.cantidad.toString()) + ")"; });
+
+    contenidoEnter.append("div")
+    	.classed("porcentajeBar",true)
+        .transition()
+        .duration(1000)
+    	.style("left", function (d) { return Math.ceil( x_w(d.votos.cantidad) + 5) + "px"; })
+        .text(function (d) { return d.votos.porcentaje + "%"; });
+
+    contenido
+    	.exit()
+        .remove();
+
+}
+
+
+
+
+/************************************************************************/
+/*  updatea las barras detalladas                                       */
+/************************************************************************/
+
+function updateDetailedBars(){
+	console.log("run updateDetailedBars");
+    d3.select("#bar_map_arg").selectAll("div").remove();		
+	d3.select("#totTit").style("background-position", "0 -115px");
+	
+	var index = d3.range(datos.length),
+		valores = index.map(function(d,i){ return datos[i].votos.cantidad;});
+
+	var x_w = d3.scale.linear()
+	    .domain([0, Math.max.apply(Math, valores)])
+	    .range([0, 260 - 120]); // - espacio para la etiqueta	
+
+   var contenido = d3.select("#bar_map_arg").selectAll("div.contenedorDet")
+        .data(datos, function (d) { return d.partido_politico + d.votos.cantidad; });
+
+    var contenidoEnter = contenido.enter()
+        .append("div")
+        .classed("contenedorDet", true);
+
+    contenidoEnter.append("div")
+		.classed("nombreDet", true)
+        .text(function (d) { return d.partido_politico.toUpperCase(); });
+
+    contenidoEnter.append("div")
+        .classed("barraDet", true)
+        .style("background-color", function (d,i){ return colores[i]; })
+        .transition()
+        .duration(1000)
+        .style("width", function (d) { return Math.ceil(x_w(d.votos.cantidad)) + "px"; });
+
+    contenidoEnter.append("div")
+    	.classed("porcentajeDet",true)
+        .transition()
+        .duration(1000)
+    	.style("left", function (d) { return Math.ceil( x_w(d.votos.cantidad) + 5) + "px"; })
+        .text(function (d) { return d.votos.porcentaje + "%"; });
+	
+    contenidoEnter.append("div")
+    	.classed("cantidadDet",true)
+        .transition()
+        .duration(1000)
+    	.style("left", function (d) { return Math.ceil( x_w(d.votos.cantidad) + 50) + "px"; })
+        .text(function (d) { return "(" + miles(d.votos.cantidad.toString()) + ")"; });
+
+    contenidoEnter.append("div")
+    	.classed("tituloInternaDet",true)
+        .text(function (d) { return "Resultados Interna"; });
+
+    contenidoEnter.append("div")
+    	.classed("contenidoInternaDet",true)
+        .text(function (d) { return "Los datos que tengamos"; });
+
 
     contenido
     	.exit()
