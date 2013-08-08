@@ -142,7 +142,7 @@ var mapObject = function(map) {
   map.load = function(file) {
     d3.json(file)
       .on("progress", function() {
-        map.event.progress(d3.event.loaded);
+        map.event.progress(d3.event.loaded,file);
       })
       .get(function(error, json) {
 
@@ -305,20 +305,11 @@ var mapObject = function(map) {
   map.dataLoad = function(file, callback) {
     d3.json(file)
       .on("progress", function() {
-        map.event.progress(d3.event.loaded);
+        map.event.progress(d3.event.loaded,file);
       })
       .get(function(error, json) {
 
-        if (error) {
-
-          callback(error, json);
-
-        } else {
-
-          callback(null, json);
-          map.event.ready();
-
-        }
+        callback(error, json);
 
       });
   };

@@ -9,15 +9,14 @@ var argentina = new mapObject({
 var dataFiles = {};
 
 var elecciones = {
-  "diputados" : {},
-  "senadores" : {}
+  "diputados": {},
+  "senadores": {},
+  "event" : d3.dispatch("click", "loaded")
 };
 
 (function() {
 
   "use strict";
-
-  argentina.load("argentina.json");
 
   argentina.event.on("error", function(error, json) {
     console.log(error, json);
@@ -25,34 +24,70 @@ var elecciones = {
 
   argentina.event.on("ready", function(file, data) {
 
-    if (file === "argentina.json") {
+    console.log("map: ", data);
 
-      console.log("map: ", data);
+  });
 
-      argentina.dataLoad("datos/api/datafiles.json", function(error, json) {
+  argentina.dataLoad("data/datafiles.json", function(error, json) {
 
-        console.log("dataFiles", json);
+    console.log("dataFiles", json);
 
-        dataFiles = (error) ? [] : json;
+    dataFiles = (error) ? [] : json;
 
-      });
-    }
+    elecciones.event.loaded();
 
-    if (dataFiles.diputados && dataFiles.diputados.length > 0) {
-      argentina.dataLoad(dataFiles.diputados.pop(), function(error, json) {
+  });
 
-        if (elecciones.diputados) {
+  function createDataObj(files, dataObj) {
 
-          for (var key in json) {
-            var obj = json[key];
-            elecciones.diputados[key] = obj;
+    argentina.dataLoad(files.pop(), function(error, json) {
+
+        if (!error && dataObj) {
+
+          dataObj[json.id] = {
+            "id": json.id,
+            "nivel_administrativo": 1,
+            "nombre": json.nombre,
+            "votacion": json.votacion
+          };
+
+          for (var key in json.localidades) {
+            dataObj[key] = json.localidades[key];
+            dataObj[key].nivel_administrativo = 2;
           }
 
         }
 
-        console.log("elecciones: ", elecciones);  
+      }
 
-      });
+    );
+
+  }
+
+  elecciones.event.on("loaded", (function() {
+
+    if (dataFiles.diputados && dataFiles.diputados.length > 0) {
+
+      for (var i = Math.min(2, dataFiles.diputados.length - 1); i >= 0; i--) {
+
+        createDataObj(dataFiles.diputados, elecciones.diputados);
+
+      }
+
+      elecciones.event.loaded();
+
+    }
+
+    if (dataFiles.senadores && dataFiles.senadores.length > 0) {
+
+      for (var i = Math.min(2, dataFiles.senadores.length - 1); i >= 0; i--) {
+
+        createDataObj(dataFiles.senadores, elecciones.senadores);
+
+      }
+
+      elecciones.event.loaded();
+
     }
 
     // argentina.svg.g.admlevel2.select("#map_arg_54_1").classed("pp1100", true);
@@ -70,11 +105,15 @@ var elecciones = {
     // argentina.svg.g.votes.select("#map_arg_votes_54_1_17").attr("r", "7");
 
 
-  });
+  }));
 
-  argentina.event.on("progress", function(size) {
+  argentina.load("argentina.json");
 
-    console.log("Loaded: ", size);
+  console.log("elecciones: ", elecciones);
+
+  argentina.event.on("progress", function(size,file) {
+
+    console.log("Loaded: ", file, size);
 
   });
 
@@ -84,7 +123,12 @@ var elecciones = {
 
   argentina.event.on("click", function(d) {
 
-    if ((!d) || (d.properties.administrative_area.length < 3)) {
+    (d) ? elecciones.event.click({
+      "diputados": elecciones.diputados[d.properties.administrative_area[0].id],
+      "senadores": elecciones.senadores[d.properties.administrative_area[0].id]
+    }) : null;
+
+    if ((!d) || (d.properties.administrative_area.length < 2)) {
 
       var centered = d || null;
 
@@ -122,6 +166,10 @@ var elecciones = {
 
     }
 
+  });
+
+  elecciones.event.on("click", function(dataE){
+      console.log("dataE: ", dataE);
   });
 
   argentina.vista = {
