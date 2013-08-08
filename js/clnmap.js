@@ -48,6 +48,29 @@ var mapObject = function(map) {
 
     svg.g = svg.append("g");
 
+    svg.legal = (function(legal) {
+
+      legal.text('© ')
+           .append("a")
+           .attr('xlink:href', 'http://www.openstreetmap.org/#map=4/-38.69/-64.03')
+           .attr('target', '_blank')
+           .text('OpenStreetMap');
+
+      return legal;
+
+    })(
+
+      svg.append("g")
+         .append("text")
+         .attr('x', map.width -90)
+         .attr('y', map.height -3 )
+         .attr('class', 'osmControlAttribution osmControlNoSelect')
+         
+    );
+
+            
+
+
     svg.back = (function(back) {
 
       back.append("image")

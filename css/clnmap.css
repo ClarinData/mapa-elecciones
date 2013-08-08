@@ -393,6 +393,17 @@
 /* Map Styles                                                                     */
 /**********************************************************************************/
 
+#map_arg .osmControlAttribution {
+    font-size: .7em; 
+    font-family: sans-serif;
+    position: absolute; 
+    display: block;
+}
+
+#map_arg .osmControlNoSelect {
+  -moz-user-select: none;
+}
+
 #map_arg {
   position absolute;
 }
