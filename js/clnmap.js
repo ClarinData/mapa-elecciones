@@ -38,8 +38,8 @@ var mapObject = function(map) {
 
   map.projection = d3.geo.transverseMercator()
     .rotate([62, 0])
-    .scale(1018)
-    .translate([(map.width / 2) + 15, (map.height / 2) - 685]);
+    .scale(1010)
+    .translate([(map.width / 2) + 15, (map.height / 2) - 680]);
 
   map.svg = (function(svg) {
 
