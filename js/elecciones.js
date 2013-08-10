@@ -30,8 +30,17 @@ var dataFiles = {},
         .each(function(d, i) {
           var dataE = elecciones[type][d.properties.administrative_area.id];
           if (dataE) {
-            d3.select(this).classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
-            console.log(dataE);
+            var thisElement = d3.select(this);
+            thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
+            switch(select){
+                case "circle":
+                    thisElement.attr("r", function() {
+                      var v = dataE.votacion.partidos_politicos[0].votos/1000;
+                      console.log("v: ", v);
+                      return Math.sqrt(v / Math.PI);
+                    });
+                default:
+            }
           }
         });
     }

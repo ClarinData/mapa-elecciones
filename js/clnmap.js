@@ -234,20 +234,7 @@ var mapObject = function(map) {
                 return id;
 
               })
-              .attr("class", function() {
-
-                var v = Math.floor(Math.random() * 6);
-                var force_class = ["pp1100", "pp2100", "pp3100", "pp4100", "pp5100", "pp6100"];
-                return (force_class[v]);
-
-              })
-              .attr("r", function() {
-
-                var v = Math.floor((Math.random() * 50) + 1);
-
-                return Math.sqrt(v / Math.PI);
-
-              })
+              .attr("r", 0)
               .attr("stroke-width", "0")
               .attr("cx", function(d) {
 
