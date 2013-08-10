@@ -47,7 +47,9 @@
 			</div>
 			
 			<div id="footer">
-				Aca van los creditos, links y todas esas cosas que se ponen abajo. Un saludo a la de matemática que nos cedió las horas para el Yo sé.
+				<div id="a" onclick="abrirCreditos()">&#187; Especificaciones y créditos</div>
+				<div id="b">Cómo se agruparon los partidos políticos &#187;</div>
+				<div id="c">Escribinos</div>
 			</div>
 
 			<div id="selectorMapa" class="selectDiputados"> </div>
@@ -86,6 +88,37 @@
 					Click en el mapa para ampliar la informacion de la derecha
 				</div>
 		</div>
+
+		<!-- Modal de Créditos -->		
+		<div id="modal">
+			<div id="creditosModal">
+				<img id="btn_cerrar" src="img/cerrar.png" alt="cerrar" width="20" height="20" onclick="cerrarCreditos()">
+				<h3 id="tituloModal">Primarias <span>Legislativas</span></h3>
+				<h4 class="subtitulo"><span>Fuentes</span></h4>
+				<p class="textoModal">Datos: <span>INDRA para Ministerio del Interior.</span></p>
+				<hr class="separadorModal"/>
+				<p class="textoModal">Mapa Argentina por provincias: <span>IGN (Instituto Geográfico Nacional).<a class="linkModal">Link ></a></span></p>
+				<hr class="separadorModal"/>
+				<p class="textoModal">Mapa Argentina por partidos: <span>OpenStreetMaps.<a class="linkModal">Link ></a></span></p>
+				<hr class="separadorModal"/>
+				<p class="textoModal">Mapa comunas Capital Federal: <span>Buenos Aires Data, GCBA.<a class="linkModal" href="http://data.buenosaires.gob.ar/dataset/comunas" target="_blank">Link ></a></span></p>
+				<h4 class="subtitulo"><span>Especificaciones</span></h4>
+				<p class="textoModal">Proyección del mapa: <span>Gauss-Krüger, faja 3.</span></p>
+				<hr class="separadorModal"/>
+				<p class="textoModal">Topología: <span>Topojson.<a class="linkModal" href="https://github.com/mbostock/topojson" target="_blank">Link ></a></span></p>
+				<hr class="separadorModal"/>
+				<p class="textoModal">Librería de javascript: <span>Data-Driven Document (d3js).<a class="linkModal" href="http://d3js.org" target="_blank">Link ></a></span></p>
+				<h4 class="subtitulo"><span>Créditos</span></h4>
+				<p class="textoModal">Dirección del proyecto: <span>Pablo Loscri y Juan Pablo Kutianski</span></p>
+				<hr class="separadorModal"/>
+				<p class="textoModal">Frontend: <span>Juan Pablo Kutianski, Nicolás Lound, Maximiliano Sosa.</span></p>
+				<hr class="separadorModal"/>
+				<p class="textoModal">Backend: <span>Fernando Melo, Nahuel Mingori.</span></p>
+				<hr class="separadorModal"/>
+				<p class="textoModal">Diseño: <span>Pablo Loscri.</span></p>
+				<p class="copyright">© Clarín 2013</p>
+			</div> 
+		</div> 
 
 		<script type="text/javascript" src="js/elecciones.js"></script>
 		<script type="text/javascript" src="js/barsFunction.js"></script>

@@ -14,6 +14,16 @@ function miles(e){e=e.toString(); var t="";for(var n,r=e.length-1,n=0;r>=0;r--,n
 /* Cambia status de boton Mapa izquierdo y cartel descriptivo de arriba */
 /************************************************************************/
 
+function cerrarCreditos(){
+	console.log("cierroCreditos");
+	d3.select("#creditosModal").style("display", "none");
+}
+
+function abrirCreditos(){
+	console.log("abroCreditos");
+	d3.select("#creditosModal").style("display", "inline");
+}
+
 function updateVistaButton(option){
 	if (option == "diputadosBtn"){
 		d3.select("#diputadosBtn").classed("diputadosBtnSelected",true);		
@@ -21,7 +31,8 @@ function updateVistaButton(option){
 		d3.select("#diputadosBtn").classed("diputadosBtnNotSelected",false);		
 		d3.select("#senadoresBtn").classed("senadoresBtnNotSelected",true);			
 		d3.select("#selectorMapa").classed("selectSenadores",false);			
-		d3.select("#selectorMapa").classed("selectDiputados",true);		
+		d3.select("#selectorMapa").classed("selectDiputados",true);	
+		vista = "diputados";	
 	}else{
 		d3.select("#diputadosBtn").classed("diputadosBtnSelected",false);		
 		d3.select("#senadoresBtn").classed("senadoresBtnSelected",true);		
@@ -29,6 +40,7 @@ function updateVistaButton(option){
 		d3.select("#senadoresBtn").classed("senadoresBtnNotSelected",false);		
 		d3.select("#selectorMapa").classed("selectSenadores",true);			
 		d3.select("#selectorMapa").classed("selectDiputados",false);		
+		vista = "senadores";	
 	}
 }
 
