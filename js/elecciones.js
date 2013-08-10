@@ -141,10 +141,6 @@ var elecciones = {
 
   });
 
-  elecciones.event.on("click", function(dataE) {
-    console.log("dataE: ", dataE);
-  });
-
   argentina.vista = {
 
     votos: (function() {
