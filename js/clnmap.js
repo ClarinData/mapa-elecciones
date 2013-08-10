@@ -162,10 +162,10 @@ var mapObject = function(map) {
               .append("path")
               .attr("id", function(d) {
 
-                var id = map.id;
+                var id = map.id + "_";
                 d.properties.administrative_area.id = "";
                 for (var i = 0; i < d.properties.administrative_area.length; i++) {
-                  id += "_" + d.properties.administrative_area[i].id;
+                  id += d.properties.administrative_area[i].id;
                   d.properties.administrative_area.id += d.properties.administrative_area[i].id;
                 }
                 return id;
