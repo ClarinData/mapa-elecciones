@@ -38,8 +38,6 @@ var elecciones = {
 
   });
 
-
-
   elecciones.event.on("loaded", (function() {
 
     function createDataObj(files, dataObj) {
@@ -99,10 +97,6 @@ var elecciones = {
 
   });
 
-  // argentina.event.on("zoom", function(d, t, s) {
-  //   console.log("here", d, t, s);
-  // });
-
   argentina.event.on("click", function(d) {
 
     if (d) {
@@ -115,8 +109,6 @@ var elecciones = {
     if ((!d) || (d.properties.administrative_area.length < 2)) {
 
       var centered = d || null;
-
-      // console.log(d);
 
       argentina.backbutton.visible(d);
 
@@ -144,9 +136,6 @@ var elecciones = {
           return (d === centered);
 
         });
-
-
-      // (d) ? console.log("click on: ", d.properties.administrative_area[d.properties.administrative_area.length-1]) : null;
 
     }
 
