@@ -1,5 +1,5 @@
-/* jshint undef: true, unused: true, strict: true, devel: true,  maxcomplexity: 3, maxparams: 3, maxdepth: 2, maxstatements: 20 */
-/* global mapObject */
+/* jshint undef: true, unused: true, strict: true, devel: true,  maxcomplexity: 5, maxparams: 3, maxdepth: 2, maxstatements: 20 */
+/* global mapObject, d3 */
 /* exported argentina */
 
 var argentina = new mapObject({
@@ -11,7 +11,7 @@ var dataFiles = {};
 var elecciones = {
   "diputados": {},
   "senadores": {},
-  "event" : d3.dispatch("click", "loaded")
+  "event": d3.dispatch("click", "loaded")
 };
 
 (function() {
@@ -38,72 +38,54 @@ var elecciones = {
 
   });
 
-  function createDataObj(files, dataObj) {
 
-    argentina.dataLoad(files.pop(), function(error, json) {
 
-        if (!error && dataObj) {
+  elecciones.event.on("loaded", (function() {
 
-          dataObj[json.id] = {
-            "id": json.id,
-            "nivel_administrativo": 1,
-            "nombre": json.nombre,
-            "votacion": json.votacion
-          };
+    function createDataObj(files, dataObj) {
 
-          for (var key in json.localidades) {
-            dataObj[key] = json.localidades[key];
-            dataObj[key].nivel_administrativo = 2;
+      argentina.dataLoad(files.pop(), function(error, json) {
+
+          if (!error && dataObj) {
+
+            dataObj[json.id] = {
+              "id": json.id,
+              "nivel_administrativo": 1,
+              "nombre": json.nombre,
+              "votacion": json.votacion
+            };
+
+            for (var key in json.localidades) {
+              dataObj[key] = json.localidades[key];
+              dataObj[key].nivel_administrativo = 2;
+            }
+
           }
 
         }
 
-      }
-
-    );
-
-  }
-
-  elecciones.event.on("loaded", (function() {
-
-    if (dataFiles.diputados && dataFiles.diputados.length > 0) {
-
-      for (var i = Math.min(2, dataFiles.diputados.length - 1); i >= 0; i--) {
-
-        createDataObj(dataFiles.diputados, elecciones.diputados);
-
-      }
-
-      elecciones.event.loaded();
+      );
 
     }
 
-    if (dataFiles.senadores && dataFiles.senadores.length > 0) {
+    function loadData(dataFiles, dataObj) {
 
-      for (var i = Math.min(2, dataFiles.senadores.length - 1); i >= 0; i--) {
+      if (dataFiles && dataFiles.length > 0) {
 
-        createDataObj(dataFiles.senadores, elecciones.senadores);
+        for (var i = Math.min(2, dataFiles.length - 1); i >= 0; i--) {
+
+          createDataObj(dataFiles, dataObj);
+
+        }
+
+        elecciones.event.loaded();
 
       }
-
-      elecciones.event.loaded();
-
     }
 
-    // argentina.svg.g.admlevel2.select("#map_arg_54_1").classed("pp1100", true);
-    // // argentina.svg.g.admlevel3.select("#map_arg_54_1_17").classed("RedClass", true);
-    // argentina.svg.g.admlevel3.selectAll("path").each(function () {
+    loadData(dataFiles.diputados, elecciones.diputados);
 
-    //   var v = Math.floor(Math.random()*12);
-    //   var force_class = ["pp1100", "pp2100", "pp3100", "pp4100", "pp5100", "pp6100", "pp1050", "pp2050", "pp3050", "pp4050", "pp5050", "pp6050"];
-    //   argentina.svg.g.admlevel3.select("#" + this.id).classed(force_class[v], true);
-
-    // });
-    // // argentina.svg.g.admlevel3.select("#map_arg_54_1_26").classed("RedClass", true);
-    // argentina.svg.g.admlevel2.select("#map_arg_54_11").classed("pp3100", true);
-    // argentina.svg.g.admlevel2.select("#map_arg_54_16").classed("pp6100", true);
-    // argentina.svg.g.votes.select("#map_arg_votes_54_1_17").attr("r", "7");
-
+    loadData(dataFiles.senadores, elecciones.senadores);
 
   }));
 
@@ -111,7 +93,7 @@ var elecciones = {
 
   console.log("elecciones: ", elecciones);
 
-  argentina.event.on("progress", function(size,file) {
+  argentina.event.on("progress", function(size, file) {
 
     console.log("Loaded: ", file, size);
 
@@ -123,10 +105,12 @@ var elecciones = {
 
   argentina.event.on("click", function(d) {
 
-    (d) ? elecciones.event.click({
-      "diputados": elecciones.diputados[d.properties.administrative_area[0].id],
-      "senadores": elecciones.senadores[d.properties.administrative_area[0].id]
-    }) : null;
+    if (d) {
+      elecciones.event.click({
+        "diputados": elecciones.diputados[d.properties.administrative_area[0].id],
+        "senadores": elecciones.senadores[d.properties.administrative_area[0].id]
+      });
+    }
 
     if ((!d) || (d.properties.administrative_area.length < 2)) {
 
@@ -168,8 +152,8 @@ var elecciones = {
 
   });
 
-  elecciones.event.on("click", function(dataE){
-      console.log("dataE: ", dataE);
+  elecciones.event.on("click", function(dataE) {
+    console.log("dataE: ", dataE);
   });
 
   argentina.vista = {
