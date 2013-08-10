@@ -71,55 +71,79 @@ function updateLeftButton(option){
 }
 
 
+
 elecciones.event.on("click", function(dataE){
-	
-	var hasOwnProperty = Object.prototype.hasOwnProperty;
-
-
-	console.log("Se clickeo algo!", dataE);
-
-	if (dataE.diputados){
-		switch (vista){
-				case "diputados": 
-					updateBars(dataE.diputados);
-					break;
-				case "senadores":
-					updateBars(dataE.senadores);
-					break;
-		}
+	switch (vista){
+		case "diputados":
+			if (dataE.diputados != undefined){
+				updateBars(dataE.diputados);
+			}
+			break;
+		
+		case "senadores":
+			if (dataE.senadores != undefined){
+				updateBars(dataE.senadores);
+			}
+			break;
 	}
 });
 
-
-function estaVacio(obj) {
-    if (obj == null) return true;
-    if (obj.length && obj.length > 0) return false;
-    if (obj.length === 0)  return true;
-    for (var key in obj) { if (hasOwnProperty.call(obj, key))    return false; }
-    return true;
-}
-
 function updateBars(objeto){
+	var maximo = 0;
+	if (true); maximo = 200; maximo = 150; //condicionar si total o parcial
+		
+	
 	d3.select("#graficoBarras").selectAll("div").remove();
 
-}
+	var dominio = d3.scale.linear()
+                 .domain( [0 , objeto.votacion.partidos_politicos[0].votos ])
+                 .range( [0, maximo ]);
+	
+    var contenido = d3.selectAll("#graficoBarras").selectAll(".contenedorBar")
+        .data(function (d){ return objeto.votacion.partidos_politicos });
+
+    var contenidoEnter = contenido.enter()
+        .append("div")
+        .classed("contenedorBar", true);
+        
+    contenidoEnter.append("div")
+		.classed("nombreBar", true)
+        .text( function (d) { return d.nombre } );
+
+    contenidoEnter.append("div")
+        .classed("barraBar", true)
+        .style("background-color", function (d,i){ return "#EEEEEE"; }) //ver a que fuerza pertenece y pintar acorde
+        .transition()
+        .duration(1000)
+        .style("width", function (d) { return dominio(d.votos) + "px"; });
+	
+	/*
+
+    contenidoEnter.append("div")
+        .classed("barraBar", true)
+        .style("background-color", function (d,i){ return "#EEEEEE"; })
+        .transition()
+        .duration(1000)
+        .style("width", function (d) { return Math.ceil(x_w(d.votacion.partidos_politicos.votos)) + "px"; });
+	
+    contenidoEnter.append("div")
+    	.classed("cantidadBar",true)
+        .transition()
+        .duration(1000)
+    	.style("left", function (d) { return Math.ceil( x_w(d.votacion.partidos_politicos.votos) + 5) + "px"; })
+        .text(function (d) { return "(" + miles(d.votacion.partidos_politicos.votos.toString()) + ")"; });
+
+    contenidoEnter.append("div")
+    	.classed("porcentajeBar",true)
+        .transition()
+        .duration(1000)
+    	.style("left", function (d) { return Math.ceil( x_w(d.votacion.partidos_politicos.porcentaje) + 5) + "px"; })
+        .text(function (d) { return d.votos.porcentaje + "%"; });
+
+	*/
+    contenido
+    	.exit()
+        .remove();
 
 
-/************************************************************************/
-/*  updatea las barras Generales                                        */
-/************************************************************************/
-function updateGeneralBars(objeto){
-
-// ver como vienen los datos
-	d3.select("#graficoBarras").append("p").text("Datos Generales: está la lógica falta ver con datos");
-}
-
-/************************************************************************/
-/*  updatea las barras detalladas                                       */
-/************************************************************************/
-
-function updateDetailedBars(objeto){
-
-// ver como vienen los datos
-	d3.select("#graficoBarras").append("p").text ("Datos Detallados: está la lógica falta ver con datos");
 }
