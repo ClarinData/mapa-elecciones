@@ -24,13 +24,13 @@ var elecciones = {
 
   argentina.event.on("ready", function(file, data) {
 
-    console.log("map: ", data);
+    // console.log("map: ", data);
 
   });
 
   argentina.dataLoad("data/datafiles.json", function(error, json) {
 
-    console.log("dataFiles", json);
+    // console.log("dataFiles", json);
 
     dataFiles = (error) ? [] : json;
 
@@ -93,7 +93,7 @@ var elecciones = {
 
   argentina.event.on("progress", function(size, file) {
 
-    console.log("Loaded: ", file, size);
+    // console.log("Loaded: ", file, size);
 
   });
 
