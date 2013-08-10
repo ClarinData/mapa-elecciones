@@ -314,18 +314,7 @@
 	background-position: 0 -230px;	
 }
 
-#contenedorApp #footer{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 71.5%;
-	text-align: right;
-	color: #949493;
-	width: 950px;
-	height: 67px;
-	position:absolute;
-	top: 760px;
-	left: 0px;
-	border: 0px;	    
-}
+
 
 .descMuestro {
   display: inline;
@@ -628,16 +617,21 @@ circle {
 /**********************************************************************************/
 
 #modal {
-	width: 100%
-	height: 100%
-	background-color: #F4DEB3;
+	top: 0px;
+	left: 0px;
+	opacity:.8;
+	position: absolute;
+	width:100%;
+	height:822px;
+	background: white;
+	display: none;
 }
 
 #modal #creditosModal{
-	position: absolute;
-	z-index: 99;
-	display: none;
-    width: 500px;
+	margin-top:5%;
+    margin-left:auto;
+    margin-right:auto;
+	width: 500px;
     height: 600px;
     border: 1px solid #CECECE;
     padding: 30px;
@@ -645,6 +639,9 @@ circle {
     -moz-user-select: none; 
     user-select: none;
 	background-color: #FFFFFF;
+	
+	
+	
 }
    
 #modal #creditosModal #btn_cerrar{
@@ -717,3 +714,68 @@ circle {
 	line-height:200%;
 	float:right;
 }
+
+/**********************************************************************************/
+/* Footer                                                              */
+/**********************************************************************************/
+
+#contenedorApp #footer{
+	padding-top:1.5%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 71.7%;
+	text-align: left;
+	color: black;
+	width: 950px;
+	height: 40px;
+	position:absolute;
+	top: 760px;
+	left: 0px;
+	border: 0px;	    
+}
+
+#contenedorApp #footer .creditos {
+	display:inline;
+}
+
+#contenedorApp #footer #creditos {
+	padding-right:1%;
+	border-right: 1px solid #808080;
+	font-weight: bold;
+}
+
+
+#contenedorApp #footer #creditos:hover {
+	color: #949493;
+	cursor: pointer;
+}
+
+#contenedorApp #footer #ppagrupados {
+	padding-left:1%;
+	font-weight: bold;
+}
+
+#contenedorApp #footer #ppagrupados:hover {
+	color: #949493;
+	cursor: pointer;
+}
+
+#contenedorApp #footer .creditos span {
+	color:#E06153;
+}
+
+#contenedorApp #footer #feedback a {
+	float:right;
+}
+
+#contenedorApp #footer #feedback a {
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	color: #949493;
+}
+
+#contenedorApp #footer #feedback a:hover {
+	color: black;
+	cursor: pointer;
+}
+
+
