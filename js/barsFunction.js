@@ -52,7 +52,7 @@ function updateLeftButton(option){
 
 
 elecciones.event.on("click", function(dataE){
-	console.log ("Objeto recibido: " + dataE)
+	console.log ("Objeto recibido: ", dataE)
 });
   
   
