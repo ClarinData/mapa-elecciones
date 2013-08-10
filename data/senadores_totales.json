@@ -1,0 +1,47 @@
+{
+	"nombre": "Totales",
+	"id": "TOTALES",
+	"votacion": {
+		"mesas": {
+			"total": 85935,
+			"escrutadas": 85218,
+			"porcentaje": 99.16
+		},
+		"votos": {
+			"total": 21740568,
+			"escrutados": 28629675,
+			"porcentaje": 131.68
+		},
+		"partidos_politicos": [{
+			"nombre": "FP",
+			"fuerza_politica": "FP",
+			"votos": 13415415,
+			"porcentaje": 50.72
+		}, {
+			"nombre": "PJ",
+			"fuerza_politica": "PJ",
+			"votos": 9105312,
+			"porcentaje": 34.42
+		}, {
+			"nombre": "IZ",
+			"fuerza_politica": "IZ",
+			"votos": 5199897,
+			"porcentaje": 19.66
+		}, {
+			"nombre": "OT",
+			"fuerza_politica": "OT",
+			"votos": 4711771,
+			"porcentaje": 17.81
+		}, {
+			"nombre": "K",
+			"fuerza_politica": "K",
+			"votos": 3755524,
+			"porcentaje": 14.20
+		}, {
+			"nombre": "PRO",
+			"fuerza_politica": "PRO",
+			"votos": 2663038,
+			"porcentaje": 10.07
+		}]
+	}
+}
