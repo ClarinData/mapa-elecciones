@@ -163,8 +163,10 @@ var mapObject = function(map) {
               .attr("id", function(d) {
 
                 var id = map.id;
+                d.properties.administrative_area.id = "";
                 for (var i = 0; i < d.properties.administrative_area.length; i++) {
                   id += "_" + d.properties.administrative_area[i].id;
+                  d.properties.administrative_area.id += d.properties.administrative_area[i].id;
                 }
                 return id;
 
