@@ -24,103 +24,42 @@
   	cursor: default;
 }
 
-/*  FILL DE LOS COLORES DE LOS PARTIDOS */
-
-.pp1100 {
-  fill: #B3CDE3;
-  background-color: #B3CDE3;
-}
-
-.pp2100 {
-  fill: #B3CDE3;
-  background-color: #B3CDE3;
-}
-
-.pp3100 {
-  fill: #B3CDE3;
-  background-color: #B3CDE3;
-}
-
-.pp4100 {
-  fill: #B3CDE3;
-  background-color: #B3CDE3;
-}
-
-.pp5100 {
-  fill: #B3CDE3;
-  background-color: #B3CDE3;
-}
-
-.pp6100 {
-  fill: #B3CDE3;
-  background-color: #B3CDE3;
-}
-
-.pp1050 {
-  fill: #B3CDE3;
-  background-color: #B3CDE3;
-}
-
-.pp2050 {
-  fill: #B3CDE3;
-  background-color: #B3CDE3;  
-}
-
-.pp3050 {
-  fill: #E89A9A;
-  background-color: #E89A9A;
-  opacity: .75;
-}
-
-.pp4050 {
-  fill: #B3CDE3;
-  background-color: #B3CDE3;  
-}
-
-.pp5050 {
-  fill: #DECBE4;
-  background-color: #B3CDE3;  
-}
-
-.pp6050 {
-  fill: #f4deb3;
-  background-color: #B3CDE3;  
-}
-
-
 /**********************************************************************************/
-/*  COLORES FINALES                                                               */
+/*  COLORES DE LAS FUERZAS POLITICAS                                              */
 /**********************************************************************************/
-.partido1 {
+.fp_K {
 	fill: #B3CDE3;
 	background-color: #B3CDE3;
 }
 
-.partido2 {
+.fp_PJ {
 	fill: #DECBE4;
 	background-color: #DECBE4;
 }
 
-.partido3 {
+.fp_FP {
 	fill: #efb6b6;
 	background-color: #efb6b6;
 }
 
-.partido4 {
+.fp_PRO {
 	fill: #f4deb3;
 	background-color: #f4deb3;
 }
 
-.partido5 {
+.fp_IZ {
 	fill: #cfd5b8;
 	background-color: #cfd5b8;
 }
 
-.partido6 {
+.fp_OT {
 	fill: #d8d7d6;
 	background-color: #d8d7d6;
 }
 
+/**********************************************************************************/
+/*  CONTENEDOR                                                                    */
+/**********************************************************************************/
 
 #contenedorApp{
 	width: 950px;
