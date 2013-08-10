@@ -57,6 +57,11 @@
 	background-color: #d8d7d6;
 }
 
+.fp_SFP { /*Sin Fuerza Política*/
+	fill: #ff9999;
+	background-color: #ff9999;
+}
+
 /**********************************************************************************/
 /*  CONTENEDOR                                                                    */
 /**********************************************************************************/
@@ -325,20 +330,20 @@
 	height: 10px;
 	width: 1px;
 	position:relative;
-	top: 5px;
+	top: 7px;
 }
 
 .porcentajeDet {
 	font: 12px Arial, Helvetica, sans-serif;
 	font-weight:bold;
 	position:relative;
-	top: -7px;
+	top: -6px;
 }
 
 .cantidadDet {
 	font: 10px "Arial Narrow", Helvetica, sans-serif;
 	position:relative;
-	top: -22px;
+	top: -20px;
 	color: #808080;
 }
 
