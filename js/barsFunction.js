@@ -8,19 +8,23 @@ var vista = "diputados"; //  ["diputados" || "senadores"]
 /*  Utilidad: recibe un numero y lo devuelve con separador de centenas  */
 /************************************************************************/
 
-function miles(e){e=e.toString(); var t="";for(var n,r=e.length-1,n=0;r>=0;r--,n++){t=e.charAt(r)+(n>0&&n%3==0?".":"")+t}return t}
+function miles(n){
+	var r = ""; 
+	for (var p, i = n.length - 1, p = 0; i >= 0; i--, p++){ 
+		r = n.charAt(i) + ((p > 0) && (p % 3 == 0)? ".": "") + r;
+	}
+	return r; 
+} 
 
 /************************************************************************/
 /* Cambia status de boton Mapa izquierdo y cartel descriptivo de arriba */
 /************************************************************************/
 
 function cerrarCreditos(){
-	console.log("cierroCreditos");
 	d3.select("#creditosModal").style("display", "none");
 }
 
 function abrirCreditos(){
-	console.log("abroCreditos");
 	d3.select("#creditosModal").style("display", "inline");
 }
 
@@ -68,7 +72,12 @@ function updateLeftButton(option){
 
 
 elecciones.event.on("click", function(dataE){
-	console.log ("Objeto recibido: ", dataE)
+	console.log(vista); // senadores || diputados
+	console.log(vista); //
+	console.log(vista);
+	
+	updateGeneralBars(dataE);
+	updateDetailedBars(dataE);
 });
   
   
@@ -79,7 +88,7 @@ function updateGeneralBars(objeto){
 
 // ver como vienen los datos
 	d3.select("#graficoBarras").append("p").text("Datos Generales: está la lógica falta ver con datos");
-
+	console.log ("UpdateGeneralBars: ", objeto)
 }
 
 /************************************************************************/
@@ -90,5 +99,5 @@ function updateDetailedBars(objeto){
 
 // ver como vienen los datos
 	d3.select("#graficoBarras").append("p").text ("Datos Detallados: está la lógica falta ver con datos");
-
+	console.log ("UpdateDetailedBars: ", objeto)
 }
