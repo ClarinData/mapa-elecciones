@@ -19,12 +19,16 @@ function updateVistaButton(option){
 		d3.select("#diputadosBtn").classed("diputadosBtnSelected",true);		
 		d3.select("#senadoresBtn").classed("senadoresBtnSelected",false);		
 		d3.select("#diputadosBtn").classed("diputadosBtnNotSelected",false);		
-		d3.select("#senadoresBtn").classed("senadoresBtnNotSelected",true);		
+		d3.select("#senadoresBtn").classed("senadoresBtnNotSelected",true);			
+		d3.select("#selectorMapa").classed("selectSenadores",false);			
+		d3.select("#selectorMapa").classed("selectDiputados",true);		
 	}else{
 		d3.select("#diputadosBtn").classed("diputadosBtnSelected",false);		
 		d3.select("#senadoresBtn").classed("senadoresBtnSelected",true);		
 		d3.select("#diputadosBtn").classed("diputadosBtnNotSelected",true);		
 		d3.select("#senadoresBtn").classed("senadoresBtnNotSelected",false);		
+		d3.select("#selectorMapa").classed("selectSenadores",true);			
+		d3.select("#selectorMapa").classed("selectDiputados",false);		
 	}
 }
 

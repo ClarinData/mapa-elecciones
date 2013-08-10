@@ -189,6 +189,23 @@
   	cursor: pointer;
 }
 
+#contenedorApp #selectorMapa {
+	width: 35px;
+	height: 19px;
+	position: absolute;
+	top: 142px;
+}
+
+.selectDiputados{
+	background: url("../img/selectores.png") no-repeat 0 0px;
+	left: 21px;	
+}
+
+.selectSenadores{
+	background: url("../img/selectores.png") no-repeat 0 -19px;
+	left: 212px;	
+}
+
 #contenedorApp #cabezal #diputadosBtn{
 	position:absolute;
 	top: 109px;
@@ -522,12 +539,12 @@
 /**********************************************************************************/
 
 #map_arg {
-  position absolute;
+  position: absolute;
   padding: 5px 5px 0 5px;
 }
 
 #map_caba {
-  position absolute;
+  position: absolute;
 }
 
 #backbutton {
