@@ -1,1 +1,498 @@
-{"localidades":{"TDF001":{"nombre":"Ushuaia","id":"001","votacion":{"mesas":{"total":134,"escrutadas":134,"porcentaje":100},"votos":{"total":35228,"escrutados":46540,"porcentaje":100},"partidos_politicos":{"0":{"id":"544","nombre":"UNION FEDERAL","fuerza_politica":"a definir por pablo","votos":11224,"porcentaje":"37.68","entra":"si"},"1":{"id":"002","nombre":"PARTIDO JUSTICIALISTA","fuerza_politica":"a definir por pablo","votos":3922,"porcentaje":"13.17","entra":"si","internas":[{"lista":"3111","nombre":"LISTA  UNIDAD PERONISTA  - LETRA  B","votos":1555,"porcentaje":"39.65"},{"lista":"3112","nombre":"LISTA  DESCAMISADOS  - LETRA  C","votos":1369,"porcentaje":"34.90"},{"lista":"3110","nombre":"LISTA  UNIDOS POR EL PROGRESO Y EL DESARROLLO  - LETRA  A","votos":998,"porcentaje":"25.45"}]},"2":{"id":"003","nombre":"UNION CIVICA RADICAL","fuerza_politica":"a definir por pablo","votos":3356,"porcentaje":"11.27","entra":"si","internas":[{"lista":"3115","nombre":"LISTA  VALORES Y FUTURO  - LETRA  C","votos":1232,"porcentaje":"36.71"},{"lista":"3114","nombre":"LISTA  ANA CACHIN PRESENTE  - LETRA  B","votos":1182,"porcentaje":"35.22"},{"lista":"3113","nombre":"LISTA  FUERZA Y COMPROMISO RADICAL  - LETRA  A","votos":942,"porcentaje":"28.07"}]},"3":{"id":"069","nombre":"GEN","fuerza_politica":"a definir por pablo","votos":2547,"porcentaje":"8.55","entra":"si"},"4":{"id":"158","nombre":"MOVIMIENTO POPULAR FUEGUINO","fuerza_politica":"a definir por pablo","votos":1736,"porcentaje":"5.83","entra":"si"},"5":{"id":"174","nombre":"PARTIDO POPULAR","fuerza_politica":"a definir por pablo","votos":1330,"porcentaje":"4.46","entra":"si"},"6":{"id":"199","nombre":"ESPACIO DEMOCRATICO PARA LA VICTORIA","fuerza_politica":"a definir por pablo","votos":1136,"porcentaje":"3.81","entra":"si"},"7":{"id":"201","nombre":"MOVIMIENTO SOLIDARIO POPULAR","fuerza_politica":"a definir por pablo","votos":703,"porcentaje":"2.36","entra":"si"},"8":{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza_politica":"a definir por pablo","votos":29,"porcentaje":"0.10","entra":"no"},"blanco":{"id":"blanco","votos":3808,"porcentaje":"10.81"},"nulos":{"id":"nulos","votos":1697,"porcentaje":"4.82"},"recurridos":{"id":"recurridos","votos":3740,"porcentaje":"10.62"}}}},"TDF002":{"nombre":"R\u00edo Grande","id":"002","votacion":{"mesas":{"total":155,"escrutadas":155,"porcentaje":100},"votos":{"total":40439,"escrutados":53246,"porcentaje":100},"partidos_politicos":{"0":{"id":"544","nombre":"UNION FEDERAL","fuerza_politica":"a definir por pablo","votos":13037,"porcentaje":"38.11","entra":"si"},"1":{"id":"002","nombre":"PARTIDO JUSTICIALISTA","fuerza_politica":"a definir por pablo","votos":4409,"porcentaje":"12.89","entra":"si","internas":[{"lista":"3111","nombre":"LISTA  UNIDAD PERONISTA  - LETRA  B","votos":1753,"porcentaje":"39.76"},{"lista":"3112","nombre":"LISTA  DESCAMISADOS  - LETRA  C","votos":1555,"porcentaje":"35.27"},{"lista":"3110","nombre":"LISTA  UNIDOS POR EL PROGRESO Y EL DESARROLLO  - LETRA  A","votos":1101,"porcentaje":"24.97"}]},"2":{"id":"003","nombre":"UNION CIVICA RADICAL","fuerza_politica":"a definir por pablo","votos":3856,"porcentaje":"11.27","entra":"si","internas":[{"lista":"3115","nombre":"LISTA  VALORES Y FUTURO  - LETRA  C","votos":1414,"porcentaje":"36.67"},{"lista":"3114","nombre":"LISTA  ANA CACHIN PRESENTE  - LETRA  B","votos":1338,"porcentaje":"34.70"},{"lista":"3113","nombre":"LISTA  FUERZA Y COMPROMISO RADICAL  - LETRA  A","votos":1104,"porcentaje":"28.63"}]},"3":{"id":"069","nombre":"GEN","fuerza_politica":"a definir por pablo","votos":2924,"porcentaje":"8.55","entra":"si"},"4":{"id":"158","nombre":"MOVIMIENTO POPULAR FUEGUINO","fuerza_politica":"a definir por pablo","votos":1982,"porcentaje":"5.79","entra":"si"},"5":{"id":"174","nombre":"PARTIDO POPULAR","fuerza_politica":"a definir por pablo","votos":1517,"porcentaje":"4.43","entra":"si"},"6":{"id":"199","nombre":"ESPACIO DEMOCRATICO PARA LA VICTORIA","fuerza_politica":"a definir por pablo","votos":1275,"porcentaje":"3.73","entra":"si"},"7":{"id":"201","nombre":"MOVIMIENTO SOLIDARIO POPULAR","fuerza_politica":"a definir por pablo","votos":808,"porcentaje":"2.36","entra":"si"},"8":{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza_politica":"a definir por pablo","votos":31,"porcentaje":"0.09","entra":"no"},"blanco":{"id":"blanco","votos":4369,"porcentaje":"10.80"},"nulos":{"id":"nulos","votos":1951,"porcentaje":"4.82"},"recurridos":{"id":"recurridos","votos":4280,"porcentaje":"10.58"}}}},"TDF003":{"nombre":"Ant\u00e1rtida Argentina","id":"003","votacion":{"mesas":{"total":6,"escrutadas":6,"porcentaje":100},"votos":{"total":115,"escrutados":156,"porcentaje":100},"partidos_politicos":{"0":{"id":"544","nombre":"UNION FEDERAL","fuerza_politica":"a definir por pablo","votos":63,"porcentaje":"59.43","entra":"si"},"1":{"id":"002","nombre":"PARTIDO JUSTICIALISTA","fuerza_politica":"a definir por pablo","votos":10,"porcentaje":"9.43","entra":"si","internas":[{"lista":"3111","nombre":"LISTA  UNIDAD PERONISTA  - LETRA  B","votos":4,"porcentaje":"40.00"},{"lista":"3112","nombre":"LISTA  DESCAMISADOS  - LETRA  C","votos":4,"porcentaje":"40.00"},{"lista":"3110","nombre":"LISTA  UNIDOS POR EL PROGRESO Y EL DESARROLLO  - LETRA  A","votos":2,"porcentaje":"20.00"}]},"2":{"id":"174","nombre":"PARTIDO POPULAR","fuerza_politica":"a definir por pablo","votos":8,"porcentaje":"7.55","entra":"si"},"3":{"id":"069","nombre":"GEN","fuerza_politica":"a definir por pablo","votos":8,"porcentaje":"7.55","entra":"si"},"4":{"id":"003","nombre":"UNION CIVICA RADICAL","fuerza_politica":"a definir por pablo","votos":5,"porcentaje":"4.72","entra":"si","internas":[{"lista":"3114","nombre":"LISTA  ANA CACHIN PRESENTE  - LETRA  B","votos":2,"porcentaje":"40.00"},{"lista":"3115","nombre":"LISTA  VALORES Y FUTURO  - LETRA  C","votos":2,"porcentaje":"40.00"},{"lista":"3113","nombre":"LISTA  FUERZA Y COMPROMISO RADICAL  - LETRA  A","votos":1,"porcentaje":"20.00"}]},"5":{"id":"158","nombre":"MOVIMIENTO POPULAR FUEGUINO","fuerza_politica":"a definir por pablo","votos":3,"porcentaje":"2.83","entra":"si"},"6":{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza_politica":"a definir por pablo","votos":0,"porcentaje":"0.00","entra":"no"},"7":{"id":"199","nombre":"ESPACIO DEMOCRATICO PARA LA VICTORIA","fuerza_politica":"a definir por pablo","votos":0,"porcentaje":"0.00","entra":"no"},"8":{"id":"201","nombre":"MOVIMIENTO SOLIDARIO POPULAR","fuerza_politica":"a definir por pablo","votos":0,"porcentaje":"0.00","entra":"no"},"blanco":{"id":"blanco","votos":9,"porcentaje":"7.83"},"nulos":{"id":"nulos","votos":2,"porcentaje":"1.74"},"recurridos":{"id":"recurridos","votos":7,"porcentaje":"6.09"}}}}},"nombre":"Tierra del Fuego","id":"TDF","votacion":{"mesas":{"total":295,"escrutadas":295,"porcentaje":100},"votos":{"total":75782,"escrutados":99942,"porcentaje":100},"partidos_politicos":{"0":{"id":"544","nombre":"UNION FEDERAL","fuerza_politica":"a definir por pablo","votos":24324,"porcentaje":"37.94","entra":"si"},"1":{"id":"002","nombre":"PARTIDO JUSTICIALISTA","fuerza_politica":"a definir por pablo","votos":8341,"porcentaje":"13.01","entra":"si","internas":[{"lista":"3111","nombre":"LISTA  UNIDAD PERONISTA  - LETRA  B","votos":3312,"porcentaje":"39.71"},{"lista":"3112","nombre":"LISTA  DESCAMISADOS  - LETRA  C","votos":2928,"porcentaje":"35.10"},{"lista":"3110","nombre":"LISTA  UNIDOS POR EL PROGRESO Y EL DESARROLLO  - LETRA  A","votos":2101,"porcentaje":"25.19"}]},"2":{"id":"003","nombre":"UNION CIVICA RADICAL","fuerza_politica":"a definir por pablo","votos":7217,"porcentaje":"11.26","entra":"si","internas":[{"lista":"3115","nombre":"LISTA  VALORES Y FUTURO  - LETRA  C","votos":2648,"porcentaje":"36.69"},{"lista":"3114","nombre":"LISTA  ANA CACHIN PRESENTE  - LETRA  B","votos":2522,"porcentaje":"34.95"},{"lista":"3113","nombre":"LISTA  FUERZA Y COMPROMISO RADICAL  - LETRA  A","votos":2047,"porcentaje":"28.36"}]},"3":{"id":"069","nombre":"GEN","fuerza_politica":"a definir por pablo","votos":5479,"porcentaje":"8.55","entra":"si"},"4":{"id":"158","nombre":"MOVIMIENTO POPULAR FUEGUINO","fuerza_politica":"a definir por pablo","votos":3721,"porcentaje":"5.80","entra":"si"},"5":{"id":"174","nombre":"PARTIDO POPULAR","fuerza_politica":"a definir por pablo","votos":2855,"porcentaje":"4.45","entra":"si"},"6":{"id":"199","nombre":"ESPACIO DEMOCRATICO PARA LA VICTORIA","fuerza_politica":"a definir por pablo","votos":2411,"porcentaje":"3.76","entra":"si"},"7":{"id":"201","nombre":"MOVIMIENTO SOLIDARIO POPULAR","fuerza_politica":"a definir por pablo","votos":1511,"porcentaje":"2.36","entra":"si"},"8":{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza_politica":"a definir por pablo","votos":60,"porcentaje":"0.09","entra":"no"},"blanco":{"id":"blanco","votos":8186,"porcentaje":"10.80"},"nulos":{"id":"nulos","votos":3650,"porcentaje":"4.82"},"recurridos":{"id":"recurridos","votos":8027,"porcentaje":"10.59"}}}}
+{
+	"localidades": {
+		"TDF001": {
+			"nombre": "Ushuaia",
+			"id": "001",
+			"votacion": {
+				"mesas": {
+					"total": 134,
+					"escrutadas": 134,
+					"porcentaje": 100
+				},
+				"votos": {
+					"total": 35228,
+					"escrutados": 46540,
+					"porcentaje": 100
+				},
+				"partidos_politicos": [{
+					"id": "544",
+					"nombre": "UNION FEDERAL",
+					"fuerza_politica": "K",
+					"votos": 11224,
+					"porcentaje": "37.68",
+					"entra": "si"
+				}, {
+					"id": "002",
+					"nombre": "PARTIDO JUSTICIALISTA",
+					"fuerza_politica": "PJ",
+					"votos": 3922,
+					"porcentaje": "13.17",
+					"entra": "si",
+					"internas": [{
+						"lista": "3111",
+						"nombre": "LISTA  UNIDAD PERONISTA  - LETRA  B",
+						"votos": 1555,
+						"porcentaje": "39.65"
+					}, {
+						"lista": "3112",
+						"nombre": "LISTA  DESCAMISADOS  - LETRA  C",
+						"votos": 1369,
+						"porcentaje": "34.90"
+					}, {
+						"lista": "3110",
+						"nombre": "LISTA  UNIDOS POR EL PROGRESO Y EL DESARROLLO  - LETRA  A",
+						"votos": 998,
+						"porcentaje": "25.45"
+					}]
+				}, {
+					"id": "003",
+					"nombre": "UNION CIVICA RADICAL",
+					"fuerza_politica": "FP",
+					"votos": 3356,
+					"porcentaje": "11.27",
+					"entra": "si",
+					"internas": [{
+						"lista": "3115",
+						"nombre": "LISTA  VALORES Y FUTURO  - LETRA  C",
+						"votos": 1232,
+						"porcentaje": "36.71"
+					}, {
+						"lista": "3114",
+						"nombre": "LISTA  ANA CACHIN PRESENTE  - LETRA  B",
+						"votos": 1182,
+						"porcentaje": "35.22"
+					}, {
+						"lista": "3113",
+						"nombre": "LISTA  FUERZA Y COMPROMISO RADICAL  - LETRA  A",
+						"votos": 942,
+						"porcentaje": "28.07"
+					}]
+				}, {
+					"id": "069",
+					"nombre": "GEN",
+					"fuerza_politica": "FP",
+					"votos": 2547,
+					"porcentaje": "8.55",
+					"entra": "si"
+				}, {
+					"id": "158",
+					"nombre": "MOVIMIENTO POPULAR FUEGUINO",
+					"fuerza_politica": "OT",
+					"votos": 1736,
+					"porcentaje": "5.83",
+					"entra": "si"
+				}, {
+					"id": "174",
+					"nombre": "PARTIDO POPULAR",
+					"fuerza_politica": "K",
+					"votos": 1330,
+					"porcentaje": "4.46",
+					"entra": "si"
+				}, {
+					"id": "199",
+					"nombre": "ESPACIO DEMOCRATICO PARA LA VICTORIA",
+					"fuerza_politica": "K",
+					"votos": 1136,
+					"porcentaje": "3.81",
+					"entra": "si"
+				}, {
+					"id": "201",
+					"nombre": "MOVIMIENTO SOLIDARIO POPULAR",
+					"fuerza_politica": "OT",
+					"votos": 703,
+					"porcentaje": "2.36",
+					"entra": "si"
+				}, {
+					"id": "501",
+					"nombre": "FRENTE PARA LA VICTORIA",
+					"fuerza_politica": "K",
+					"votos": 29,
+					"porcentaje": "0.10",
+					"entra": "no"
+				}, {
+					"id": "blanco",
+					"votos": 3808,
+					"porcentaje": "10.81"
+				}, {
+					"id": "nulos",
+					"votos": 1697,
+					"porcentaje": "4.82"
+				}, {
+					"id": "recurridos",
+					"votos": 3740,
+					"porcentaje": "10.62"
+				}]
+			}
+		},
+		"TDF002": {
+			"nombre": "R\u00edo Grande",
+			"id": "002",
+			"votacion": {
+				"mesas": {
+					"total": 155,
+					"escrutadas": 155,
+					"porcentaje": 100
+				},
+				"votos": {
+					"total": 40439,
+					"escrutados": 53246,
+					"porcentaje": 100
+				},
+				"partidos_politicos": [{
+					"id": "544",
+					"nombre": "UNION FEDERAL",
+					"fuerza_politica": "K",
+					"votos": 13037,
+					"porcentaje": "38.11",
+					"entra": "si"
+				}, {
+					"id": "002",
+					"nombre": "PARTIDO JUSTICIALISTA",
+					"fuerza_politica": "PJ",
+					"votos": 4409,
+					"porcentaje": "12.89",
+					"entra": "si",
+					"internas": [{
+						"lista": "3111",
+						"nombre": "LISTA  UNIDAD PERONISTA  - LETRA  B",
+						"votos": 1753,
+						"porcentaje": "39.76"
+					}, {
+						"lista": "3112",
+						"nombre": "LISTA  DESCAMISADOS  - LETRA  C",
+						"votos": 1555,
+						"porcentaje": "35.27"
+					}, {
+						"lista": "3110",
+						"nombre": "LISTA  UNIDOS POR EL PROGRESO Y EL DESARROLLO  - LETRA  A",
+						"votos": 1101,
+						"porcentaje": "24.97"
+					}]
+				}, {
+					"id": "003",
+					"nombre": "UNION CIVICA RADICAL",
+					"fuerza_politica": "FP",
+					"votos": 3856,
+					"porcentaje": "11.27",
+					"entra": "si",
+					"internas": [{
+						"lista": "3115",
+						"nombre": "LISTA  VALORES Y FUTURO  - LETRA  C",
+						"votos": 1414,
+						"porcentaje": "36.67"
+					}, {
+						"lista": "3114",
+						"nombre": "LISTA  ANA CACHIN PRESENTE  - LETRA  B",
+						"votos": 1338,
+						"porcentaje": "34.70"
+					}, {
+						"lista": "3113",
+						"nombre": "LISTA  FUERZA Y COMPROMISO RADICAL  - LETRA  A",
+						"votos": 1104,
+						"porcentaje": "28.63"
+					}]
+				}, {
+					"id": "069",
+					"nombre": "GEN",
+					"fuerza_politica": "FP",
+					"votos": 2924,
+					"porcentaje": "8.55",
+					"entra": "si"
+				}, {
+					"id": "158",
+					"nombre": "MOVIMIENTO POPULAR FUEGUINO",
+					"fuerza_politica": "OT",
+					"votos": 1982,
+					"porcentaje": "5.79",
+					"entra": "si"
+				}, {
+					"id": "174",
+					"nombre": "PARTIDO POPULAR",
+					"fuerza_politica": "K",
+					"votos": 1517,
+					"porcentaje": "4.43",
+					"entra": "si"
+				}, {
+					"id": "199",
+					"nombre": "ESPACIO DEMOCRATICO PARA LA VICTORIA",
+					"fuerza_politica": "K",
+					"votos": 1275,
+					"porcentaje": "3.73",
+					"entra": "si"
+				}, {
+					"id": "201",
+					"nombre": "MOVIMIENTO SOLIDARIO POPULAR",
+					"fuerza_politica": "OT",
+					"votos": 808,
+					"porcentaje": "2.36",
+					"entra": "si"
+				}, {
+					"id": "501",
+					"nombre": "FRENTE PARA LA VICTORIA",
+					"fuerza_politica": "K",
+					"votos": 31,
+					"porcentaje": "0.09",
+					"entra": "no"
+				}, {
+					"id": "blanco",
+					"votos": 4369,
+					"porcentaje": "10.80"
+				}, {
+					"id": "nulos",
+					"votos": 1951,
+					"porcentaje": "4.82"
+				}, {
+					"id": "recurridos",
+					"votos": 4280,
+					"porcentaje": "10.58"
+				}]
+			}
+		},
+		"TDF003": {
+			"nombre": "Ant\u00e1rtida Argentina",
+			"id": "003",
+			"votacion": {
+				"mesas": {
+					"total": 6,
+					"escrutadas": 6,
+					"porcentaje": 100
+				},
+				"votos": {
+					"total": 115,
+					"escrutados": 156,
+					"porcentaje": 100
+				},
+				"partidos_politicos": [{
+					"id": "544",
+					"nombre": "UNION FEDERAL",
+					"fuerza_politica": "K",
+					"votos": 63,
+					"porcentaje": "59.43",
+					"entra": "si"
+				}, {
+					"id": "002",
+					"nombre": "PARTIDO JUSTICIALISTA",
+					"fuerza_politica": "PJ",
+					"votos": 10,
+					"porcentaje": "9.43",
+					"entra": "si",
+					"internas": [{
+						"lista": "3111",
+						"nombre": "LISTA  UNIDAD PERONISTA  - LETRA  B",
+						"votos": 4,
+						"porcentaje": "40.00"
+					}, {
+						"lista": "3112",
+						"nombre": "LISTA  DESCAMISADOS  - LETRA  C",
+						"votos": 4,
+						"porcentaje": "40.00"
+					}, {
+						"lista": "3110",
+						"nombre": "LISTA  UNIDOS POR EL PROGRESO Y EL DESARROLLO  - LETRA  A",
+						"votos": 2,
+						"porcentaje": "20.00"
+					}]
+				}, {
+					"id": "174",
+					"nombre": "PARTIDO POPULAR",
+					"fuerza_politica": "K",
+					"votos": 8,
+					"porcentaje": "7.55",
+					"entra": "si"
+				}, {
+					"id": "069",
+					"nombre": "GEN",
+					"fuerza_politica": "FP",
+					"votos": 8,
+					"porcentaje": "7.55",
+					"entra": "si"
+				}, {
+					"id": "003",
+					"nombre": "UNION CIVICA RADICAL",
+					"fuerza_politica": "FP",
+					"votos": 5,
+					"porcentaje": "4.72",
+					"entra": "si",
+					"internas": [{
+						"lista": "3114",
+						"nombre": "LISTA  ANA CACHIN PRESENTE  - LETRA  B",
+						"votos": 2,
+						"porcentaje": "40.00"
+					}, {
+						"lista": "3115",
+						"nombre": "LISTA  VALORES Y FUTURO  - LETRA  C",
+						"votos": 2,
+						"porcentaje": "40.00"
+					}, {
+						"lista": "3113",
+						"nombre": "LISTA  FUERZA Y COMPROMISO RADICAL  - LETRA  A",
+						"votos": 1,
+						"porcentaje": "20.00"
+					}]
+				}, {
+					"id": "158",
+					"nombre": "MOVIMIENTO POPULAR FUEGUINO",
+					"fuerza_politica": "OT",
+					"votos": 3,
+					"porcentaje": "2.83",
+					"entra": "si"
+				}, {
+					"id": "501",
+					"nombre": "FRENTE PARA LA VICTORIA",
+					"fuerza_politica": "K",
+					"votos": 0,
+					"porcentaje": "0.00",
+					"entra": "no"
+				}, {
+					"id": "199",
+					"nombre": "ESPACIO DEMOCRATICO PARA LA VICTORIA",
+					"fuerza_politica": "K",
+					"votos": 0,
+					"porcentaje": "0.00",
+					"entra": "no"
+				}, {
+					"id": "201",
+					"nombre": "MOVIMIENTO SOLIDARIO POPULAR",
+					"fuerza_politica": "OT",
+					"votos": 0,
+					"porcentaje": "0.00",
+					"entra": "no"
+				}, {
+					"id": "blanco",
+					"votos": 9,
+					"porcentaje": "7.83"
+				}, {
+					"id": "nulos",
+					"votos": 2,
+					"porcentaje": "1.74"
+				}, {
+					"id": "recurridos",
+					"votos": 7,
+					"porcentaje": "6.09"
+				}]
+			}
+		}
+	},
+	"nombre": "Tierra del Fuego",
+	"id": "TDF",
+	"votacion": {
+		"mesas": {
+			"total": 295,
+			"escrutadas": 295,
+			"porcentaje": 100
+		},
+		"votos": {
+			"total": 75782,
+			"escrutados": 99942,
+			"porcentaje": 100
+		},
+		"partidos_politicos": [{
+			"id": "544",
+			"nombre": "UNION FEDERAL",
+			"fuerza_politica": "K",
+			"votos": 24324,
+			"porcentaje": "37.94",
+			"entra": "si"
+		}, {
+			"id": "002",
+			"nombre": "PARTIDO JUSTICIALISTA",
+			"fuerza_politica": "PJ",
+			"votos": 8341,
+			"porcentaje": "13.01",
+			"entra": "si",
+			"internas": [{
+				"lista": "3111",
+				"nombre": "LISTA  UNIDAD PERONISTA  - LETRA  B",
+				"votos": 3312,
+				"porcentaje": "39.71"
+			}, {
+				"lista": "3112",
+				"nombre": "LISTA  DESCAMISADOS  - LETRA  C",
+				"votos": 2928,
+				"porcentaje": "35.10"
+			}, {
+				"lista": "3110",
+				"nombre": "LISTA  UNIDOS POR EL PROGRESO Y EL DESARROLLO  - LETRA  A",
+				"votos": 2101,
+				"porcentaje": "25.19"
+			}]
+		}, {
+			"id": "003",
+			"nombre": "UNION CIVICA RADICAL",
+			"fuerza_politica": "FP",
+			"votos": 7217,
+			"porcentaje": "11.26",
+			"entra": "si",
+			"internas": [{
+				"lista": "3115",
+				"nombre": "LISTA  VALORES Y FUTURO  - LETRA  C",
+				"votos": 2648,
+				"porcentaje": "36.69"
+			}, {
+				"lista": "3114",
+				"nombre": "LISTA  ANA CACHIN PRESENTE  - LETRA  B",
+				"votos": 2522,
+				"porcentaje": "34.95"
+			}, {
+				"lista": "3113",
+				"nombre": "LISTA  FUERZA Y COMPROMISO RADICAL  - LETRA  A",
+				"votos": 2047,
+				"porcentaje": "28.36"
+			}]
+		}, {
+			"id": "069",
+			"nombre": "GEN",
+			"fuerza_politica": "FP",
+			"votos": 5479,
+			"porcentaje": "8.55",
+			"entra": "si"
+		}, {
+			"id": "158",
+			"nombre": "MOVIMIENTO POPULAR FUEGUINO",
+			"fuerza_politica": "OT",
+			"votos": 3721,
+			"porcentaje": "5.80",
+			"entra": "si"
+		}, {
+			"id": "174",
+			"nombre": "PARTIDO POPULAR",
+			"fuerza_politica": "K",
+			"votos": 2855,
+			"porcentaje": "4.45",
+			"entra": "si"
+		}, {
+			"id": "199",
+			"nombre": "ESPACIO DEMOCRATICO PARA LA VICTORIA",
+			"fuerza_politica": "K",
+			"votos": 2411,
+			"porcentaje": "3.76",
+			"entra": "si"
+		}, {
+			"id": "201",
+			"nombre": "MOVIMIENTO SOLIDARIO POPULAR",
+			"fuerza_politica": "OT",
+			"votos": 1511,
+			"porcentaje": "2.36",
+			"entra": "si"
+		}, {
+			"id": "501",
+			"nombre": "FRENTE PARA LA VICTORIA",
+			"fuerza_politica": "K",
+			"votos": 60,
+			"porcentaje": "0.09",
+			"entra": "no"
+		}, {
+			"id": "blanco",
+			"votos": 8186,
+			"porcentaje": "10.80"
+		}, {
+			"id": "nulos",
+			"votos": 3650,
+			"porcentaje": "4.82"
+		}, {
+			"id": "recurridos",
+			"votos": 8027,
+			"porcentaje": "10.59"
+		}]
+	}
+}
