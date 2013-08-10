@@ -8,7 +8,7 @@ var mapObject = function(map) {
 
   map.id = map.id || "map";
 
-  map.width = map.width || 528;
+  map.width = map.width || 519;
 
   map.height = map.height || 590;
 
