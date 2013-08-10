@@ -314,18 +314,7 @@
 	background-position: 0 -230px;	
 }
 
-#contenedorApp #footer{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 71.5%;
-	text-align: right;
-	color: #949493;
-	width: 950px;
-	height: 67px;
-	position:absolute;
-	top: 760px;
-	left: 0px;
-	border: 0px;	    
-}
+
 
 .descMuestro {
   display: inline;
@@ -628,9 +617,10 @@ circle {
 /**********************************************************************************/
 
 #modal {
-	width: 100%
-	height: 100%
-	background-color: #F4DEB3;
+	width: 950px;
+	height: 100%;
+	background-color: black;
+	
 }
 
 #modal #creditosModal{
@@ -717,3 +707,59 @@ circle {
 	line-height:200%;
 	float:right;
 }
+
+/**********************************************************************************/
+/* Footer                                                              */
+/**********************************************************************************/
+
+#contenedorApp #footer{
+	padding-top:1.5%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 71.7%;
+	text-align: left;
+	color: #949493;
+	width: 950px;
+	height: 40px;
+	position:absolute;
+	top: 760px;
+	left: 0px;
+	border: 0px;	    
+}
+
+#contenedorApp #footer .creditos {
+	display:inline;
+}
+
+#contenedorApp #footer #creditos {
+	padding-right:1%;
+	border-right: 1px solid #808080;
+}
+
+#contenedorApp #footer #creditos:hover {
+	color: black;
+	cursor: pointer;
+}
+
+#contenedorApp #footer #ppagrupados {
+	padding-left:1%;
+}
+
+#contenedorApp #footer #ppagrupados:hover {
+	color: black;
+	cursor: pointer;
+}
+
+#contenedorApp #footer .creditos span {
+	color:#E06153;
+}
+
+#contenedorApp #footer #feedback {
+	float:right;
+}
+
+#contenedorApp #footer #feedback:hover {
+	color: black;
+	cursor: pointer;
+}
+
+
