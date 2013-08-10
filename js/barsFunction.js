@@ -21,11 +21,11 @@ function miles(n){
 /************************************************************************/
 
 function cerrarCreditos(){
-	d3.select("#creditosModal").style("display", "none");
+	d3.select("#modal").style("display", "none");
 }
 
 function abrirCreditos(){
-	d3.select("#creditosModal").style("display", "inline");
+	d3.select("#modal").style("display", "inline");
 }
 
 function updateVistaButton(option){
@@ -72,15 +72,39 @@ function updateLeftButton(option){
 
 
 elecciones.event.on("click", function(dataE){
-	console.log(vista); // senadores || diputados
-	console.log(vista); //
-	console.log(vista);
 	
-	updateGeneralBars(dataE);
-	updateDetailedBars(dataE);
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+
+	console.log("Se clickeo algo!", dataE);
+
+	if (dataE.diputados){
+		switch (vista){
+				case "diputados": 
+					updateBars(dataE.diputados);
+					break;
+				case "senadores":
+					updateBars(dataE.senadores);
+					break;
+		}
+	}
 });
-  
-  
+
+
+function estaVacio(obj) {
+    if (obj == null) return true;
+    if (obj.length && obj.length > 0) return false;
+    if (obj.length === 0)  return true;
+    for (var key in obj) { if (hasOwnProperty.call(obj, key))    return false; }
+    return true;
+}
+
+function updateBars(objeto){
+	d3.select("#graficoBarras").selectAll("div").remove();
+
+}
+
+
 /************************************************************************/
 /*  updatea las barras Generales                                        */
 /************************************************************************/
@@ -88,7 +112,6 @@ function updateGeneralBars(objeto){
 
 // ver como vienen los datos
 	d3.select("#graficoBarras").append("p").text("Datos Generales: está la lógica falta ver con datos");
-	console.log ("UpdateGeneralBars: ", objeto)
 }
 
 /************************************************************************/
@@ -99,5 +122,4 @@ function updateDetailedBars(objeto){
 
 // ver como vienen los datos
 	d3.select("#graficoBarras").append("p").text ("Datos Detallados: está la lógica falta ver con datos");
-	console.log ("UpdateDetailedBars: ", objeto)
 }
