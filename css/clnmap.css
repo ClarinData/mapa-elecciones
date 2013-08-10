@@ -1,3 +1,4 @@
+
 /**********************************************************************************/
 /*  Global Styles                                                                 */
 /**********************************************************************************/
@@ -6,30 +7,21 @@
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;	
 }
 
-.btnAct{
+.btnLeftAct{
 	background: url("../img/bgLeft.png");
 	background-position: 0 -400px;
   	cursor: pointer;
 }
 
-.btnAct:hover{
+.btnLeftAct:hover{
 	background: url("../img/bgLeft.png");
 	background-position: 0 -200px;
 }
 
-.btnIna{
+.btnLeftIna{
 	background: url("../img/bgLeft.png");
  	background-position: 0 0px;
   	cursor: default;
-}
-
-#app #panelL p{
-	position: absolute;
-	left: 40px;
-	padding-top: 9px;
-	font: 11px Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color: #333333;
 }
 
 /*  FILL DE LOS COLORES DE LOS PARTIDOS */
@@ -95,99 +87,238 @@
   background-color: #B3CDE3;  
 }
 
-/**********************************************************************************/
-/* App styles                                                                     */
-/**********************************************************************************/
 
-#app{
-	width: 948px;
-	height: 782px;
+/**********************************************************************************/
+/*  COLORES FINALES                                                               */
+/**********************************************************************************/
+.partido1 {
+	fill: #B3CDE3;
+	background-color: #B3CDE3;
+}
+
+.partido2 {
+	fill: #DECBE4;
+	background-color: #DECBE4;
+}
+
+.partido3 {
+	fill: #efb6b6;
+	background-color: #efb6b6;
+}
+
+.partido4 {
+	fill: #f4deb3;
+	background-color: #f4deb3;
+}
+
+.partido5 {
+	fill: #cfd5b8;
+	background-color: #cfd5b8;
+}
+
+.partido6 {
+	fill: #d8d7d6;
+	background-color: #d8d7d6;
+}
+
+
+#contenedorApp{
+	width: 950px;
+	height: 822px;
 	position:absolute;
 	top: 0px;
 	left: 0px;
 	border: 0px;	    
 	border-spacing: 0; /* !ie*/ 	
 	border-collapse:collapse; /* ie*/
+	overflow: hidden;
+
 }
 
-#app #titulo{
-	width: 948px;
-	height: 125px;
-	background: url("../img/header.png") no-repeat;
+#contenedorApp #cabezal{
+	width: 950px;
+	height: 155px;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	border: 0px;
+}
+
+#contenedorApp #cabezal #titulo {
+	position:absolute;
+	top: 60px;
+	left: 0px;	
+	height: 30px;
+	width: 381px;
+	font-family: Georgia, serif;
+	font-size: 140%;
+	font-weight: lighter;
+}
+
+#contenedorApp #cabezal #diputadosBtn, #contenedorApp #cabezal #senadoresBtn {
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 90%;	
+	height: 25px;
+	width: 175px;
+	border-left: 1px solid #CECECE;
+    cursor: pointer;
+    position: absolute;
+}
+
+#contenedorApp #cabezal #diputadosBtn:hover, #contenedorApp #cabezal #senadoresBtn:hover{
+	font-weight: bold;
+}
+
+.diputadosBtnSelected{
+	background: url("../img/dipusenasprite.png") no-repeat 0 0px;
+  	cursor: default;
+}
+
+.diputadosBtnNotSelected{
+	background: url("../img/dipusenasprite.png") no-repeat 0 -25px;
+  	cursor: pointer;
+}
+
+.senadoresBtnSelected{
+	background: url("../img/dipusenasprite.png") no-repeat 0 -50px;
+  	cursor: default;
+}
+
+.senadoresBtnNotSelected{
+	background: url("../img/dipusenasprite.png") no-repeat 0 -75px;
+  	cursor: pointer;
+}
+
+#contenedorApp #cabezal #diputadosBtn{
+	position:absolute;
+	top: 109px;
+	left: 2px;
+}
+
+#contenedorApp #cabezal #senadoresBtn{
+    position: absolute;
+    left: 192px;
+    top: 109px;
+}
+
+#contenedorApp #cabezal #diputadosBtn span, #contenedorApp #cabezal #senadoresBtn span {
+    bottom: -4px;
+    position: absolute;
+    right: 26px;
+}
+
+#contenedorApp #cabezal #referenciasGenerales, #contenedorApp #cabezal #referenciasVotos{
+	border-left: 1px solid #CECECE;
+	border-right: 1px solid #CECECE;
+	height: 86px;
+    left: 382px;
+    position: absolute;
+    top: 54px;
+    width: 218px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 71.5%;
+	color: #949493;
+	line-height: 130%;
+}
+
+#contenedorApp #cabezal #referenciasGenerales p, #contenedorApp #cabezal #referenciasVotos p{
+	margin-left: 10px;
+	margin-right: 10px;
+}	
+	
+#contenedorApp #cabezal #referenciasColores	{
+	background: url("../img/colores.png") no-repeat;
+    height: 86px;
+    left: 602px;
+    position: absolute;
+    top: 54px;
+    width: 345px;
+}
+	
+#contenedorApp #contenido{
+	width: 950px;
+	height: 600px;
+	position: absolute;
+	top: 156px;
+	left: 0px;
+	border-top: 1px solid #CECECE;
 	border-bottom: 1px solid #CECECE;
 }
 
-#app #panelL{
+#contenedorApp #contenido #botones{
 	width: 130px;
 	height: 600px;
-	background-color: rgb(255, 255, 255);
-	padding-right: 0px
+	top: 0px;
+	left: 0px;
 }
 
-#app #panelL #btn_voto, #app #panelL #btn_prov, #app #panelL #btn_part{
+#contenedorApp #contenido #botones #provBtn, #contenedorApp #contenido #botones #partBtn, #contenedorApp #contenido #botones #votoBtn{
 	width: 130px;
 	height: 200px;
+	left: 0px;
 }
 
-#app #panelM{
-	width: 528px;
+#contenedorApp #contenido #map_arg{
+	width: 529px;
 	height: 600px;
-	padding: 5px 5px 0 5px;
+	top: 0px;
+	left: 130px;	
+	position: absolute;
 }
 
-#app #panelR{
+#contenedorApp #contenido #barras{
 	width: 290px;
 	height: 600px;
 	border-left: 1px solid #CECECE;
+	top: 0px;
+	right: 0px;	
+	position: absolute;
 }
 
-#app #panelR #bar_map_tit{
+#contenedorApp #contenido #barras #referenciaBarras{
 	width: 290px;
 	height: 115px;
-}
+	background: url("../img/bgRight.png") no-repeat;
+	background-position: 0 0px;		
+}	
 
-#app #panelR #bar_map_arg{
+#contenedorApp #contenido #barras #graficoBarras{
 	width: 290px;
 	height: 455px;
+	background-color: #FFFFFF;
 	overflow-x: hidden;
 }
 
-#app #panelR #bar_map_tot{
+#contenedorApp #contenido #barras #totalBarras{
 	border-top: 1px solid #CECECE;
 	width: 290px;
 	height: 30px;
-
-	
-}
-
-#app #pie {
-	width: 948px;
-	height: 57px;
-	background: url("../img/footer.png") no-repeat;
-	border-top: 1px solid #CECECE;
-}
-
-#app #panelR #bar_map_tot #totPie{	
-	width: 100%;
-	height: 100%;
 	background: url("../img/bgRight.png") no-repeat;
 	background-position: 0 -230px;	
 }
 
-
-#app #panelR #bar_map_tit #totTit {	
-	width: 100%;
-	height: 100%;
-	background: url("../img/bgRight.png") no-repeat;
-	background-position: 0 0px;	
+#contenedorApp #footer{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 71.5%;
+	text-align: right;
+	color: #949493;
+	width: 950px;
+	height: 67px;
+	position:absolute;
+	top: 760px;
+	left: 0px;
+	border: 0px;	    
 }
 
-#app #panelR #bar_map_tot #totPie{	
-	width: 100%;
-	height: 100%;
-	background: url("../img/bgRight.png") no-repeat;
-	background-position: 0 -230px;	
+
+.descMuestro {
+  display: inline;
 }
+
+.descOculto {
+  display: none;
+}
+
 
 /**********************************************************************************/
 /* General Bar Styles                                                             */
@@ -226,9 +357,6 @@
 	position:relative;
 	top:-20px;
 }
-
-
-
 
 
 /**********************************************************************************/
@@ -393,17 +521,6 @@
 /* Map Styles                                                                     */
 /**********************************************************************************/
 
-#map_arg .osmControlAttribution {
-    font-size: .7em; 
-    font-family: sans-serif;
-    position: absolute; 
-    display: block;
-}
-
-#map_arg .osmControlNoSelect {
-  -moz-user-select: none;
-}
-
 #map_arg {
   position absolute;
 }
@@ -421,7 +538,7 @@
   fill: #FAFAFA;
   /*fill: url(#states_pattern) repeat;*/
   /*fill-size: 100%;*/
-  stroke: #000;
+  stroke: #000000;
   stroke-width: 0.25pt;
   fill-opacity: 1;
 }
