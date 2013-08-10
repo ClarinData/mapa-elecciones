@@ -46,30 +46,7 @@ var mapObject = function(map) {
     svg.path = d3.geo.path()
       .projection(map.projection);
 
-    svg.g = svg.append("g");
-
-    svg.legal = (function(legal) {
-
-      legal.text('© ')
-           .append("a")
-           .attr('xlink:href', 'http://www.openstreetmap.org/#map=4/-38.69/-64.03')
-           .attr('target', '_blank')
-           .text('OpenStreetMap');
-
-      return legal;
-
-    })(
-
-      svg.append("g")
-         .append("text")
-         .attr('x', map.width -90)
-         .attr('y', map.height -3 )
-         .attr('class', 'osmControlAttribution osmControlNoSelect')
-         
-    );
-
-            
-
+    svg.g = svg.append("g");    
 
     svg.back = (function(back) {
 
