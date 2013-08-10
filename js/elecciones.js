@@ -25,18 +25,19 @@ var dataFiles = {},
 
     var paths = argentina.svg.g.selectAll("path");
 
-    function paintData (select, type) {
+    function paintData (select) {
       argentina.svg.g.selectAll(select)
         .each(function(d, i) {
-          var dataE = elecciones[type][d.properties.administrative_area.id];
+          var dataE = elecciones[vista][d.properties.administrative_area.id];
           if (dataE) {
             var thisElement = d3.select(this);
-            thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
             switch(select){
+                case "path":
+                    thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
                 case "circle":
+                    thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
                     thisElement.attr("r", function() {
                       var v = dataE.votacion.partidos_politicos[0].votos/1000;
-                      console.log("v: ", v);
                       return Math.sqrt(v / Math.PI);
                     });
                 default:
@@ -45,8 +46,8 @@ var dataFiles = {},
         });
     }
 
-    paintData("path","diputados");
-    paintData("circle","diputados");
+    paintData("path");
+    paintData("circle");
 
   });
 
@@ -57,7 +58,6 @@ var dataFiles = {},
     dataFiles = (error) ? {} : json;
     dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length;
 
-    console.log("dataFiles: ", dataFiles);
     elecciones.event.loaded();
 
   });
@@ -117,12 +117,6 @@ var dataFiles = {},
   }));
 
   elecciones.event.on("ready", function() {
-    argentina.svg.g.selectAll("path")
-      .call(function() {
-
-        console.log("load ready", dataFiles.diputados.length + dataFiles.senadores.length);
-
-      });
       argentina.load("argentina.json");
   });
 

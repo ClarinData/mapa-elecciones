@@ -131,6 +131,45 @@ var mapObject = function(map) {
 
     );
 
+    tooltip.table = (function(table) {
+
+      table.row = (function (row) {
+
+        row.color = [
+          d3.select("#toolFuerza_1")[0][0],
+          d3.select("#toolFuerza_2")[0][0],
+          d3.select("#toolFuerza_3")[0][0]
+        ];
+
+        row.name = [
+          d3.select("#toolPartido_1")[0][0],
+          d3.select("#toolPartido_2")[0][0],
+          d3.select("#toolPartido_3")[0][0]
+        ];
+
+        row.percent = [
+          d3.select("#toolPorcentaje_1")[0][0],
+          d3.select("#toolPorcentaje_2")[0][0],
+          d3.select("#toolPorcentaje_3")[0][0]
+        ];
+
+        return row;
+
+      })({});
+
+
+      // table.row.color = function(row,rClass) {
+      //   table.row[row].classed(rClass,true);
+      // };
+
+      return table;
+
+    })(
+
+      d3.select("#toolTable")
+
+    );
+
     return tooltip;
 
   })(
@@ -180,6 +219,15 @@ var mapObject = function(map) {
 
                 map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
                 map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].description);
+                var dataE = elecciones[vista][d.properties.administrative_area.id];
+
+                for(var x = 0; x < 3; x++) {
+                  map.tooltip.table.row.color[x].className = "fp_" + dataE.votacion.partidos_politicos[x].fuerza_politica;
+                  map.tooltip.table.row.name[x].innerText = dataE.votacion.partidos_politicos[x].nombre;
+                  map.tooltip.table.row.percent[x].innerText = dataE.votacion.partidos_politicos[x].porcentaje.replace(".", ",") + "%";
+                }
+                
+                console.log("dataE: ", dataE);
                 // map.tooltip.info.activate();
 
                 return map.tooltip.style("left", d3.event.pageX + 5 + "px")

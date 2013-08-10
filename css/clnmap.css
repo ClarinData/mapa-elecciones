@@ -429,7 +429,7 @@
   border-collapse: collapse;
 }
 
-#tooltip .toolFuerza {
+#tooltip tr>td:nth-child(1) {
   width: 2px;
   /*height: 1.4em;*/
   border-bottom-color: white;
