@@ -8,20 +8,24 @@ var vista = "diputados"; //  ["diputados" || "senadores"]
 /*  Utilidad: recibe un numero y lo devuelve con separador de centenas  */
 /************************************************************************/
 
-function miles(e){e=e.toString(); var t="";for(var n,r=e.length-1,n=0;r>=0;r--,n++){t=e.charAt(r)+(n>0&&n%3==0?".":"")+t}return t}
+function miles(n){
+	var r = ""; 
+	for (var p, i = n.length - 1, p = 0; i >= 0; i--, p++){ 
+		r = n.charAt(i) + ((p > 0) && (p % 3 == 0)? ".": "") + r;
+	}
+	return r; 
+} 
 
 /************************************************************************/
 /* Cambia status de boton Mapa izquierdo y cartel descriptivo de arriba */
 /************************************************************************/
 
 function cerrarCreditos(){
-	console.log("cierroCreditos");
-	d3.select("#creditosModal").style("display", "none");
+	d3.select("#modal").style("display", "none");
 }
 
 function abrirCreditos(){
-	console.log("abroCreditos");
-	d3.select("#creditosModal").style("display", "inline");
+	d3.select("#modal").style("display", "inline");
 }
 
 function updateVistaButton(option){
@@ -68,10 +72,39 @@ function updateLeftButton(option){
 
 
 elecciones.event.on("click", function(dataE){
-	console.log ("Objeto recibido: ", dataE)
+	
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+
+	console.log("Se clickeo algo!", dataE);
+
+	if (dataE.diputados){
+		switch (vista){
+				case "diputados": 
+					updateBars(dataE.diputados);
+					break;
+				case "senadores":
+					updateBars(dataE.senadores);
+					break;
+		}
+	}
 });
-  
-  
+
+
+function estaVacio(obj) {
+    if (obj == null) return true;
+    if (obj.length && obj.length > 0) return false;
+    if (obj.length === 0)  return true;
+    for (var key in obj) { if (hasOwnProperty.call(obj, key))    return false; }
+    return true;
+}
+
+function updateBars(objeto){
+	d3.select("#graficoBarras").selectAll("div").remove();
+
+}
+
+
 /************************************************************************/
 /*  updatea las barras Generales                                        */
 /************************************************************************/
@@ -79,7 +112,6 @@ function updateGeneralBars(objeto){
 
 // ver como vienen los datos
 	d3.select("#graficoBarras").append("p").text("Datos Generales: está la lógica falta ver con datos");
-
 }
 
 /************************************************************************/
@@ -90,5 +122,4 @@ function updateDetailedBars(objeto){
 
 // ver como vienen los datos
 	d3.select("#graficoBarras").append("p").text ("Datos Detallados: está la lógica falta ver con datos");
-
 }

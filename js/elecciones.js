@@ -101,8 +101,9 @@ var elecciones = {
 
     if (d) {
       elecciones.event.click({
-        "diputados": elecciones.diputados[d.properties.administrative_area[0].id],
-        "senadores": elecciones.senadores[d.properties.administrative_area[0].id]
+        "diputados": elecciones.diputados[d.properties.administrative_area.id],
+        "senadores": elecciones.senadores[d.properties.administrative_area.id],
+        "d": d
       });
     }
 
