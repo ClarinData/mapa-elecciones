@@ -227,7 +227,9 @@ var mapObject = function(map) {
                   map.tooltip.footer.innerHTML = "Click en el mapa para ampliar la informacion de la derecha.";
                 } else {
                   map.tooltip.table.classed("disabled", true);
-                  map.tooltip.footer.innerHTML = "Sin datos para visualizar.";
+                  map.tooltip.footer.innerHTML = (d.properties.administrative_area.id === "TDF999") ?
+                              "<div>Territorio en disputa con el Reino Unido.</div><div>Sin datos para visualizar.</div>" :
+                              "Sin datos para visualizar.";
                 }
                 
                 // console.log("dataE: ", dataE);
