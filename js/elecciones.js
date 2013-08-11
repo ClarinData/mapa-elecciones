@@ -104,7 +104,10 @@ var dataFiles = {},
 
       if (dataFiles.diputados.length + dataFiles.senadores.length < 1) {
 
-        elecciones.event.ready();
+        elecciones.event.ready({
+          "diputados": elecciones.diputados["TOTALES"],
+          "senadores": elecciones.senadores["TOTALES"]
+        });
 
       }
 
