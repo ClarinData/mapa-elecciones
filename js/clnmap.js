@@ -271,6 +271,17 @@ var mapObject = function(map) {
 
           }
 
+          g.admlevel3 = (function(admlevel3) {
+
+            return createPaths(admlevel3, "admlevel3");
+
+          })(
+
+            g.append("g").attr("id", map.id + "_admlevel3")
+            .attr("class", "states")
+
+          );
+
           g.votes = (function(votes) {
 
             votes.selectAll("text")
@@ -306,17 +317,6 @@ var mapObject = function(map) {
 
             g.append("g").attr("id", map.id + "_votes")
             .attr("class", "disabled")
-
-          );
-
-          g.admlevel3 = (function(admlevel3) {
-
-            return createPaths(admlevel3, "admlevel3");
-
-          })(
-
-            g.append("g").attr("id", map.id + "_admlevel3")
-            .attr("class", "states")
 
           );
 

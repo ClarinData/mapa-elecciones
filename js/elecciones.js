@@ -54,8 +54,6 @@ var dataFiles = {},
 
         }
       });
-
-      d3.select("#preloader").style("display", "none");
   }
 
   argentina.event.on("ready", function() {
@@ -64,6 +62,8 @@ var dataFiles = {},
 
     paintData("path");
     paintData("circle");
+
+    d3.select("#preloader").style("display", "none");
 
   });
 
@@ -103,10 +103,9 @@ var dataFiles = {},
       );
 
       if (dataFiles.diputados.length + dataFiles.senadores.length < 1) {
-        elecciones.event.ready({
-          "diputados": elecciones.diputados["TOTALES"],
-          "senadores": elecciones.senadores["TOTALES"]
-        });
+
+        elecciones.event.ready();
+
       }
 
     }
@@ -136,7 +135,7 @@ var dataFiles = {},
   elecciones.event.on("ready", function() {
       setTimeout(function(){
         argentina.load("argentina.json");
-      },1000);
+      },100);
   });
 
   elecciones.event.on("viewchange", function() {
@@ -145,7 +144,7 @@ var dataFiles = {},
   });
 
   // console.log("elecciones: ", elecciones);
-
+  
   argentina.event.on("click", function(d) {
 
     if (d) {
