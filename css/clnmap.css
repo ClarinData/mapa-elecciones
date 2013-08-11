@@ -26,14 +26,15 @@
 
 .labelLeft{
 	font-family: Arial,Helvetica,sans-serif;
+	font-weight:bolder;
     font-size: 70%;	
 	height: 25px;
 	width: 175px;
 	color: #000000;
     cursor: pointer;
 	position: relative;
-	top: -190px;
-	left: 40px;
+	top: -189px;
+	left: 36px;
 }
 
 /**********************************************************************************/
@@ -281,12 +282,12 @@
 
 #contenedorApp #contenido #barras #referenciaBarras #referenciaTotal{
 	background-color: #E6E6E6;
-	padding: 4px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;	
+	padding: 2px 4px 2px 4px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;	
 	position: absolute;
-	top: 40px;
+	top: 42px;
 	left: 20px;	
 	font-family: Arial,Helvetica,sans-serif;
     font-size: 80%;	
@@ -297,17 +298,17 @@
 
 #contenedorApp #contenido #barras #referenciaBarras #referenciaNombreLocalidad{
     background-color: #000000;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;	
 	color: #FFFFFF;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 80%;
     font-weight: bold;
     left: 65px;
-    padding: 4px;
+    padding: 2px 4px 2px 4px;
     position: absolute;
-    top: 40px;
+    top: 42px;
 }
 
 #contenedorApp #contenido #barras #graficoBarras{
@@ -394,11 +395,11 @@
 /**********************************************************************************/
 
 .contenedorDet {
-	width: 285px;
+	width: 270px;
 	height: 60px;
 	border-top: 1px solid #CECECE;
 	padding-left: 5px;
-	padding-top: 10px;
+	padding-top: 13px;
 	overflow: hidden;
 }
 
@@ -408,7 +409,7 @@
 }
 
 .barraDet {
-	height: 10px;
+	height: 13px;
 	width: 1px;
 	position:relative;
 	top: 7px;
@@ -559,6 +560,7 @@ div.tooltip hr {
   font-size: .75em;
   font-weight: bolder;
   line-height: 1.1em;
+  text-transform: capitalize;
 }
 
 #tooltip .toolPorcentaje {
@@ -631,18 +633,19 @@ div.tooltip hr {
   transition: visibility 0s linear 1s, opacity 2s ease-out;
 }
 
-path.admlevel3 {
+path.admlevel2 {
   stroke: #ffffff;
   /*stroke: #e8e7e7;*/
   stroke-width: 0.6pt;
 }
 
-path.admlevel3:hover {
+path.admlevel2:hover {
+  /*stroke: black;*/
   opacity: .6;
   cursor: pointer;
 }
 
-path.admlevel2:hover {
+path.admlevel1:hover {
   stroke-width: 1pt;
   cursor: pointer;
 }
