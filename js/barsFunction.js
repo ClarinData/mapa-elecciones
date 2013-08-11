@@ -258,6 +258,7 @@ function updateBars(objeto){
 /************************************************************************/
 // eventos
 elecciones.event.on("click", function(dataE){
+	console.log(dataE);
 	switch (vista){
 		case "diputados":
 			if (dataE.diputados != undefined){
@@ -280,3 +281,13 @@ elecciones.event.on("click", function(dataE){
 			break;
 	}
 });
+
+
+elecciones.event.on("ready",
+	function (dataE){
+		console.log("Ready: ", dataE);
+
+		updateTotales(dataE.diputados);
+
+	}
+);
