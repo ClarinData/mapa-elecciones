@@ -632,7 +632,7 @@ circle {
 	width: 500px;
     height: 600px;
     border: 1px solid #CECECE;
-    padding: 30px;
+    padding: 25px;
     -webkit-user-select: none;
     -moz-user-select: none; 
     user-select: none;
@@ -655,7 +655,17 @@ circle {
 }
 
 #modal #creditosModal .subtitulo {
-	margin-top:6%;
+	margin-top:4.5%;
+}
+
+#modal #creditosModal .subtitulo2 {
+	margin-bottom: 4%;
+	margin-top:4%;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:78%;
+	font-weight: lighter;
+	line-height: 80%;
+	color:#949493;
 }
 
 #modal #creditosModal .subtitulo span {
@@ -671,7 +681,7 @@ circle {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:80%;
 	font-weight: bold;
-	line-height: 75%;
+	line-height: 10%;
 	color:#949493;	
 }
 
@@ -680,8 +690,8 @@ circle {
 }
 
 #modal #creditosModal .textoModal .linkModal {
-	float:right;
-	padding:.6% .8% .6% .8%;
+	margin-left:2%;
+	padding:.4% .8% .4% .8%;
 	background-color:#e8e7e7;	
 	color:#e06153;
 	font-family: Arial, Helvetica, sans-serif;
@@ -734,7 +744,7 @@ circle {
 
 #contenedorApp #footer #creditos {
 	padding-right:1%;
-	border-right: 1px solid #808080;
+	/*border-right: 1px solid #808080;*/
 	font-weight: bold;
 }
 
