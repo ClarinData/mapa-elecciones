@@ -106,9 +106,23 @@
 	height: 30px;
 	width: 381px;
 	font-family: Georgia, serif;
-	font-size: 140%;
+	font-size: 150%;
 	font-weight: lighter;
 }
+
+#contenedorApp #cabezal #titulo #beta {
+	margin-left:1%;
+	padding:.5% 1% .5% 1%;
+	color:white;
+	background-color:#E06153;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:7.65px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	line-height: 2;
+}
+
 
 #contenedorApp #cabezal #diputadosBtn, #contenedorApp #cabezal #senadoresBtn {
 	font-family: Arial,Helvetica,sans-serif;
