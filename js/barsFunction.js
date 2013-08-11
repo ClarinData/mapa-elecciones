@@ -282,12 +282,8 @@ elecciones.event.on("click", function(dataE){
 	}
 });
 
-
-elecciones.event.on("ready",
-	function (dataE){
-		console.log("Ready: ", dataE);
-
-		updateTotales(dataE.diputados);
-
+argentina.event.on("ready",
+	function (){
+		updateTotales(elecciones.diputados["TOTALES"]);
 	}
 );

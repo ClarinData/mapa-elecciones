@@ -22,8 +22,8 @@
 		<div id="contenedorApp">
 			<div id="cabezal">
 				<div id="titulo">Primarias legislativas<span id="beta">BETA</span></div>
-				<div id="diputadosBtn" class="diputadosBtnSelected" onclick="updateVistaButton(this.id);"><span>DIPUTADOS</span></div>
-				<div id="senadoresBtn" class="senadoresBtnNotSelected"  onclick="updateVistaButton(this.id);"><span>SENADORES</span></div>
+				<div id="diputadosBtn" class="diputadosBtnSelected" onclick="updateVistaButton(this.id);updateTotales(elecciones.diputados['TOTALES']);"><span>DIPUTADOS</span></div>
+				<div id="senadoresBtn" class="senadoresBtnNotSelected"  onclick="updateVistaButton(this.id);updateTotales(elecciones.senadores['TOTALES']); "><span>SENADORES</span></div>
 				<div id="referenciasGenerales"> <p>REFERENCIAS<br />Los colores representan la orientación política del voto. A cada partido político se lo agrupó según alguna de las siguientes categorías:</p> </div>
 				<div id="referenciasVotos" class="descOculto"> <img id="circulos" style="float: right" width="59" height="80" alt="circulos" src="img/circulos.png"> <p>REFERENCIAS<br />El tamaño de los círculos representan la cantidad de votos del obtenidos por el candidato ganador.</p> </div>
 				<div id="referenciasColores"> </div>
