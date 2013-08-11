@@ -157,11 +157,6 @@ var mapObject = function(map) {
 
       })({});
 
-
-      // table.row.color = function(row,rClass) {
-      //   table.row[row].classed(rClass,true);
-      // };
-
       return table;
 
     })(
@@ -169,6 +164,8 @@ var mapObject = function(map) {
       d3.select("#toolTable")
 
     );
+
+    tooltip.footer = d3.select("#toolFooter")[0][0];
 
     return tooltip;
 
@@ -226,6 +223,11 @@ var mapObject = function(map) {
                     map.tooltip.table.row.name[x].innerHTML = dataE.votacion.partidos_politicos[x].nombre;
                     map.tooltip.table.row.percent[x].innerHTML = dataE.votacion.partidos_politicos[x].porcentaje.replace(".", ",") + "%";
                   }
+                  map.tooltip.table.classed("disabled", false);
+                  map.tooltip.footer.innerHTML = "Click en el mapa para ampliar la informacion de la derecha.";
+                } else {
+                  map.tooltip.table.classed("disabled", true);
+                  map.tooltip.footer.innerHTML = "Sin datos para visualizar.";
                 }
                 
                 // console.log("dataE: ", dataE);
