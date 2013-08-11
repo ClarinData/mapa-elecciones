@@ -78,7 +78,7 @@ elecciones.event.on("click", function(dataE){
 				if (dataE.diputados.id == "TOTALES"){
 					updateTotales(dataE.diputados)
 				}else{
-					updateBars(dataE.diputados);	
+					updateBars(dataE.diputados)	
 				}
 			}
 			break;
@@ -88,12 +88,11 @@ elecciones.event.on("click", function(dataE){
 				if (dataE.senadores.id == "TOTALES"){
 					updateTotales(dataE.senadores)
 				}else{
-					updateBars(dataE.senadores);	
+					updateBars(dataE.senadores)
 				}
 			}
 			break;
 	}
-
 });
 
 function updateTotales(objeto){
@@ -152,13 +151,16 @@ function updateTotales(objeto){
     	.style("left", function (d) { return Math.ceil( dominio(d.votos) + 5) + "px"; })
         .text(function (d) { return "(" + miles(d.votos.toString()) + ")"; });
 
+	d3.select("#votos").text( objeto.votacion.votos.porcentaje + "%" );
+	d3.select("#mesas").text( objeto.votacion.mesas.porcentaje + "%" );
+		
     contenido
     	.exit()
         .remove();
 }
 
 
-function updateBars(objeto){
+function updateBars(objeto){ //Detalladas
 	var maximo = 150;
 		
 	d3.select("#graficoBarras").selectAll("div").remove();
@@ -173,7 +175,10 @@ function updateBars(objeto){
 	
 	
 	if (objeto.nivel_administrativo == 2) {
-		d3.select("#referenciaNombreLocalidad").html( " " + objeto.nombre + "   &#215;").classed("descOculto",false).classed("descMuestro",true);
+		d3.select("#referenciaNombreLocalidad")
+			.html( " " + objeto.nombre )
+			.classed("descOculto",false)
+			.classed("descMuestro",true);
 	}
 		
 	var dominio = d3.scale.linear()
@@ -244,6 +249,7 @@ function updateBars(objeto){
     	.style("left", function (d) { return Math.ceil( dominio(d.votos) + 50) + "px"; })
         .text(function (d) { return "(" + miles(d.votos.toString()) + ")"; });
 
+/*
 	var internaEnter = contenidoEnter.append("div")
     	.classed("tituloInternaDet", function (d){
     			if (d.internas != undefined); return  true; return  false;
@@ -265,7 +271,11 @@ function updateBars(objeto){
 	 		d3.select(this).html("&#9660; Resultados Internas")
 			}
 		);
+	*/
 	
+	d3.select("#votos").text( objeto.votacion.votos.porcentaje + "%" );
+	d3.select("#mesas").text( objeto.votacion.mesas.porcentaje + "%" );
+
     contenido
     	.exit()
         .remove();

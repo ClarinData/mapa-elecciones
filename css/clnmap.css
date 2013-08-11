@@ -70,8 +70,8 @@
 }
 
 .fp_SFP { /*Sin Fuerza Política*/
-	fill: #ff9999;
-	background-color: #ff9999;
+	fill: #666666;
+	background-color: #666666;
 }
 
 /**********************************************************************************/
@@ -323,6 +323,24 @@
 	height: 30px;
 	background: url("../img/bgRight.png") no-repeat;
 	background-position: 0 -230px;	
+}
+
+#mesas{
+    color: #990000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 59%;
+    left: 232px;
+    position: relative;
+    top: -3px;
+}
+
+#votos{
+    color: #990000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 59%;
+    left: 146px;
+    position: relative;
+    top: 9px;
 }
 
 .descMuestro {
@@ -746,7 +764,7 @@ circle {
 }
 
 /**********************************************************************************/
-/* Footer                                                              */
+/* Footer                                                                         */
 /**********************************************************************************/
 
 #contenedorApp #footer{
