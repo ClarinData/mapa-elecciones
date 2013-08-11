@@ -24,6 +24,18 @@
   	cursor: default;
 }
 
+.labelLeft{
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 70%;	
+	height: 25px;
+	width: 175px;
+	color: #000000;
+    cursor: pointer;
+	position: relative;
+	top: -190px;
+	left: 40px;
+}
+
 /**********************************************************************************/
 /*  COLORES DE LAS FUERZAS POLITICAS                                              */
 /**********************************************************************************/
@@ -76,7 +88,6 @@
 	border-spacing: 0; /* !ie*/ 	
 	border-collapse:collapse; /* ie*/
 	overflow: hidden;
-
 }
 
 #contenedorApp #cabezal{
