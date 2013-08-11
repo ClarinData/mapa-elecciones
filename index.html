@@ -54,8 +54,8 @@
 			</div>
 			
 			<div id="footer">
-				<div class="creditos" id="creditos" onclick="abrirCreditos()"><span>&#187;</span> Especificaciones y créditos</div>
-				<div class="creditos" id="ppagrupados"><span>&#187;</span> Cómo se agruparon los partidos políticos </div>
+				<div class="creditos" id="creditos" onclick="abrirCreditos()"><span>»</span> Especificaciones y créditos</div>
+			<!--<div class="creditos" id="ppagrupados"><span>&#187;</span> Cómo se agruparon los partidos políticos </div>-->
 				<div class="creditos" id="feedback"><a href="mailto:infografia@clarin.com"><img src="img/sobre.png" width="16" height="11" alt="sobre">&nbsp; Escribinos</a></div>
 			</div>
 
@@ -97,36 +97,39 @@
 		</div>
 		
 		<!-- Modal de Créditos -->		
-		<div id="modal">
+		<div id="modal" style="display: none;">
 			<div id="creditosModal">
 				<img id="btn_cerrar" src="img/cerrar.png" alt="cerrar" width="20" height="20" onclick="cerrarCreditos()">
 				<h3 id="tituloModal">Primarias <span>Legislativas</span></h3>
 				<h4 class="subtitulo"><span>Fuentes</span></h4>
-				<p class="textoModal">Datos: <span>INDRA para Ministerio del Interior.</span></p>
-				<hr class="separadorModal"/>
-				<p class="textoModal">Mapa Argentina por provincias: <span>IGN (Instituto Geográfico Nacional).<a class="linkModal">Link ></a></span></p>
-				<hr class="separadorModal"/>
-				<p class="textoModal">Mapa Argentina por partidos: <span>OpenStreetMaps.<a class="linkModal">Link ></a></span></p>
-				<hr class="separadorModal"/>
-				<p class="textoModal">Mapa comunas Capital Federal: <span>Buenos Aires Data, GCBA.<a class="linkModal" href="http://data.buenosaires.gob.ar/dataset/comunas" target="_blank">Link ></a></span></p>
+				<p class="textoModal">Datos electorales: <span>INDRA para Ministerio del Interior.</span></p>
+				<hr class="separadorModal">
+				<p class="subtitulo2">DATOS GEOGRAFICOS</p>
+				<p class="textoModal">Distritos: <span>IGN (Instituto Geográfico Nacional).<a class="linkModal" href="http://www.ign.gob.ar/sig250" target="_blank">Link &gt;</a></span></p>
+				<hr class="separadorModal">
+				<p class="textoModal">Departamentos: <span>Global Administrative Areas.<a class="linkModal" href="http://www.gadm.org/country?q=argentina" target="_blank">Link &gt;</a></span></p>
+				<hr class="separadorModal">
+				<p class="textoModal">Comunas Capital Federal: <span>Buenos Aires Data, GCBA.<a class="linkModal" href="http://data.buenosaires.gob.ar/dataset/comunas" target="_blank">Link &gt;</a></span></p>
 				<h4 class="subtitulo"><span>Especificaciones</span></h4>
-				<p class="textoModal">Proyección del mapa: <span>Gauss-Krüger, faja 3.</span></p>
-				<hr class="separadorModal"/>
-				<p class="textoModal">Topología: <span>Topojson.<a class="linkModal" href="https://github.com/mbostock/topojson" target="_blank">Link ></a></span></p>
-				<hr class="separadorModal"/>
-				<p class="textoModal">Librería de javascript: <span>Data-Driven Document (d3js).<a class="linkModal" href="http://d3js.org" target="_blank">Link ></a></span></p>
+				<p class="textoModal">Proyección del mapa: <span>Gauss-Krüger, faja 3.</span><span class="subtitulo2"> / proyección oficial argentina /</span></p>
+				<hr class="separadorModal">
+				<p class="subtitulo2">LIBRERIAS DE JAVASCRIPT</p>
+				<p class="textoModal"><span>TopoJSON<a class="linkModal" href="https://github.com/mbostock/topojson" target="_blank">Link &gt;</a></span></p>
+				<hr class="separadorModal">
+				<p class="textoModal"><span>Data-Driven Document (d3js).<a class="linkModal" href="http://d3js.org" target="_blank">Link &gt;</a></span></p>
 				<h4 class="subtitulo"><span>Créditos</span></h4>
 				<p class="textoModal">Dirección del proyecto: <span>Pablo Loscri y Juan Pablo Kutianski</span></p>
-				<hr class="separadorModal"/>
+				<hr class="separadorModal">
 				<p class="textoModal">Frontend: <span>Juan Pablo Kutianski, Nicolás Lound, Maximiliano Sosa.</span></p>
-				<hr class="separadorModal"/>
+				<hr class="separadorModal">
 				<p class="textoModal">Backend: <span>Fernando Melo, Nahuel Mingori.</span></p>
-				<hr class="separadorModal"/>
-				<p class="textoModal">Diseño: <span>Pablo Loscri.</span></p>
+				<hr class="separadorModal">
+				<p class="textoModal">Diseño de la aplicación: <span>Pablo Loscri.</span></p>
+				<hr class="separadorModal">
+				<p class="textoModal">Landing: <span> Tea Alberti, Cecilia Tombesi y Julieta Suarez.</span></p>
 				<p class="copyright">© Clarín 2013</p>
 			</div> 
-		</div> 
-
+		</div>
 		<script type="text/javascript" src="js/elecciones.js"></script>
 		<script type="text/javascript" src="js/barsFunction.js"></script>
 	</body>
