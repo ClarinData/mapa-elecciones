@@ -1,14 +1,16 @@
 
 /************************************************************************/
-/*  Variables Globales                                                  */
+/*                                                                      */
+/*  Funciones de las barras de valores del panel derecho  08-2013       */
+/*                                                                      */
 /************************************************************************/
+
 var vista = "diputados"; //  ["diputados" || "senadores"]
 
-/************************************************************************/
-/*  Recibe un numero y lo devuelve con separador de centenas            */
-/************************************************************************/
 
-function miles(n){
+/************************************************************************/
+// recibe un String y devuelve con separador de miles
+function miles(n){ 
 	var r = ""; 
 	for (var p, i = n.length - 1, p = 0; i >= 0; i--, p++){ 
 		r = n.charAt(i) + ((p > 0) && (p % 3 == 0)? ".": "") + r;
@@ -17,48 +19,65 @@ function miles(n){
 } 
 
 /************************************************************************/
-/* Cambia status de boton Mapa izquierdo y cartel descriptivo de arriba */
-/************************************************************************/
-
-function cerrarCreditos(){
-	d3.select("#modal").style("display", "none");
-}
-
+// Abre el modal de creditos
 function abrirCreditos(){
 	d3.select("#modal").style("display", "inline");
 }
 
+/************************************************************************/
+// Cierra el modal de creditos
+function cerrarCreditos(){
+	d3.select("#modal").style("display", "none");
+}
+
+
+/************************************************************************/
+// Cambia status de boton Mapa izquierdo y cartel descriptivo de arriba 
 function updateVistaButton(option){
-	if (option == "diputadosBtn"){
-		d3.select("#diputadosBtn").classed("diputadosBtnSelected",true);		
-		d3.select("#senadoresBtn").classed("senadoresBtnSelected",false);		
-		d3.select("#diputadosBtn").classed("diputadosBtnNotSelected",false);		
-		d3.select("#senadoresBtn").classed("senadoresBtnNotSelected",true);			
-		d3.select("#selectorMapa").classed("selectSenadores",false);			
-		d3.select("#selectorMapa").classed("selectDiputados",true);	
-		vista = "diputados";	
-	}else{
-		d3.select("#diputadosBtn").classed("diputadosBtnSelected",false);		
-		d3.select("#senadoresBtn").classed("senadoresBtnSelected",true);		
-		d3.select("#diputadosBtn").classed("diputadosBtnNotSelected",true);		
-		d3.select("#senadoresBtn").classed("senadoresBtnNotSelected",false);		
-		d3.select("#selectorMapa").classed("selectSenadores",true);			
-		d3.select("#selectorMapa").classed("selectDiputados",false);		
-		vista = "senadores";	
+	var activo = true;
+	
+	switch (option){
+		case "diputadosBtn":
+			vista = "diputados";
+			d3.select("#diputadosBtn").classed("diputadosBtnNotSelected",false);		
+			d3.select("#senadoresBtn").classed("senadoresBtnSelected",false);		
+			d3.select("#selectorMapa").classed("selectSenadores",false);			
+
+			d3.select("#diputadosBtn").classed("diputadosBtnSelected",true);		
+			d3.select("#senadoresBtn").classed("senadoresBtnNotSelected",true);			
+			d3.select("#selectorMapa").classed("selectDiputados",true);	
+			break;
+			
+		case "senadoresBtn":
+			d3.select("#senadoresBtn").classed("senadoresBtnNotSelected",false);		
+			d3.select("#diputadosBtn").classed("diputadosBtnSelected",false);		
+			d3.select("#selectorMapa").classed("selectDiputados",false);		
+
+			d3.select("#senadoresBtn").classed("senadoresBtnSelected",true);		
+			d3.select("#diputadosBtn").classed("diputadosBtnNotSelected",true);		
+			d3.select("#selectorMapa").classed("selectSenadores",true);			
+			vista = "senadores";	
+			break;
 	}
 }
 
+
+/************************************************************************/
+// Recibe el id del boton clickeado, lo desactiva y activa el resto
 function updateLeftButton(option){
 	var cond = [false, true];
 	var arr = ["#provBtn","#partBtn","#votoBtn"];
-	if (option == "votoBtn"){ cond[0] = true; cond[1] = false; }	
+	if (option == "votoBtn"){
+		cond[0] = true;
+		cond[1] = false;
+	}	
 
 	// Muestro Descripcion Relevante (Arriba)
 	d3.select("#referenciasGenerales").classed("descMuestro",cond[1]);		
 	d3.select("#referenciasGenerales").classed("descOculto",cond[0]);		
 	d3.select("#referenciasVotos").classed("descOculto",cond[1]);
 	d3.select("#referenciasVotos").classed("descMuestro",cond[0]);
-	
+
 	// Activo todos los botones de la botonera de la izquieda
 	for (var i = 0; i < arr.length ; i ++ ){
 		d3.select(arr[i]).classed("btnLeftIna", false);
@@ -70,31 +89,8 @@ function updateLeftButton(option){
 	d3.select("#"+option).classed("btnLeftIna", true);
 }
 
-
-elecciones.event.on("click", function(dataE){
-	switch (vista){
-		case "diputados":
-			if (dataE.diputados != undefined){
-				if (dataE.diputados.id == "TOTALES"){
-					updateTotales(dataE.diputados)
-				}else{
-					updateBars(dataE.diputados)	
-				}
-			}
-			break;
-		
-		case "senadores":
-			if (dataE.senadores != undefined){
-				if (dataE.senadores.id == "TOTALES"){
-					updateTotales(dataE.senadores)
-				}else{
-					updateBars(dataE.senadores)
-				}
-			}
-			break;
-	}
-});
-
+/************************************************************************/
+// redibuja las barras totales pais
 function updateTotales(objeto){
 
 	var maximo = 200;
@@ -159,8 +155,9 @@ function updateTotales(objeto){
         .remove();
 }
 
-
-function updateBars(objeto){ //Detalladas
+/************************************************************************/
+// redibuja las barras detalladas
+function updateBars(objeto){
 	var maximo = 150;
 		
 	d3.select("#graficoBarras").selectAll("div").remove();
@@ -172,8 +169,7 @@ function updateBars(objeto){ //Detalladas
 	}
 	
 	d3.select("#referenciaTotal").text( " Total " ).classed("descOculto",false).classed("descMuestro",true);
-	
-	
+
 	if (objeto.nivel_administrativo == 2) {
 		d3.select("#referenciaNombreLocalidad")
 			.html( " " + objeto.nombre )
@@ -249,30 +245,6 @@ function updateBars(objeto){ //Detalladas
     	.style("left", function (d) { return Math.ceil( dominio(d.votos) + 50) + "px"; })
         .text(function (d) { return "(" + miles(d.votos.toString()) + ")"; });
 
-/*
-	var internaEnter = contenidoEnter.append("div")
-    	.classed("tituloInternaDet", function (d){
-    			if (d.internas != undefined); return  true; return  false;
-	 		})
-	 	.html (
-	 		function (d,i)	{
-	 			if (d.internas != undefined){
-	 				return "&#9654; Resultados Internas"; //&#9654; || &#9660;
-	 			}else{
-					return "";
-	 			}
-	 		}
-	 	)
-	 	.on("click", function(d) {
-	 		d3.select(this.parentNode)
-	 			.transition()
-	 			.duration(200)
-	 			.style("height", "200px");
-	 		d3.select(this).html("&#9660; Resultados Internas")
-			}
-		);
-	*/
-	
 	d3.select("#votos").text( objeto.votacion.votos.porcentaje + "%" );
 	d3.select("#mesas").text( objeto.votacion.mesas.porcentaje + "%" );
 
@@ -281,3 +253,28 @@ function updateBars(objeto){ //Detalladas
         .remove();
 }
 
+/************************************************************************/
+// eventos
+elecciones.event.on("click", function(dataE){
+	switch (vista){
+		case "diputados":
+			if (dataE.diputados != undefined){
+				if (dataE.diputados.id == "TOTALES"){
+					updateTotales(dataE.diputados)
+				}else{
+					updateBars(dataE.diputados)	
+				}
+			}
+			break;
+		
+		case "senadores":
+			if (dataE.senadores != undefined){
+				if (dataE.senadores.id == "TOTALES"){
+					updateTotales(dataE.senadores)
+				}else{
+					updateBars(dataE.senadores)
+				}
+			}
+			break;
+	}
+});
