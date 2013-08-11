@@ -21,6 +21,8 @@ var dataFiles = {},
     console.log(error, json);
   });
 
+  d3.select("#preloader").style("display", "block");
+
   argentina.event.on("ready", function() {
 
     var paths = argentina.svg.g.selectAll("path");
@@ -44,6 +46,8 @@ var dataFiles = {},
             }
           }
         });
+
+        d3.select("#preloader").style("display", "none");
     }
 
     paintData("path");
@@ -52,8 +56,6 @@ var dataFiles = {},
   });
 
   argentina.dataLoad("data/datafiles.json", function(error, json) {
-
-    // console.log("dataFiles", json);
 
     dataFiles = (error) ? {} : json;
     dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length;
@@ -117,16 +119,12 @@ var dataFiles = {},
   }));
 
   elecciones.event.on("ready", function() {
-      argentina.load("argentina.json");
+      setTimeout(function(){
+        argentina.load("argentina.json");
+      },500);
   });
 
-  console.log("elecciones: ", elecciones);
-
-  argentina.event.on("progress", function(size, file) {
-
-    // console.log("Loaded: ", file, size);
-
-  });
+  // console.log("elecciones: ", elecciones);
 
   argentina.event.on("click", function(d) {
 
@@ -178,9 +176,7 @@ var dataFiles = {},
     votos: (function() {
 
       argentina.svg.g.admlevel2.classed("transparent", true);
-
       argentina.svg.g.admlevel3.classed("transparent", true);
-
       argentina.svg.g.votes.classed("disabled", false);
 
     }),
@@ -188,9 +184,7 @@ var dataFiles = {},
     partidos: (function() {
 
       argentina.svg.g.admlevel2.classed("transparent", true);
-
       argentina.svg.g.admlevel3.classed("transparent", false);
-
       argentina.svg.g.votes.classed("disabled", true);
 
 
@@ -199,9 +193,7 @@ var dataFiles = {},
     provincias: (function() {
 
       argentina.svg.g.admlevel2.classed("transparent", false);
-
       argentina.svg.g.admlevel3.classed("transparent", false);
-
       argentina.svg.g.votes.classed("disabled", true);
 
     })
