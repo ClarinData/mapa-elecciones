@@ -132,7 +132,12 @@ var dataFiles = {},
       elecciones.event.click({
         "diputados": elecciones.diputados[d.properties.administrative_area.id],
         "senadores": elecciones.senadores[d.properties.administrative_area.id],
-        "d": (elecciones.diputados[d.properties.administrative_area.id] || elecciones.senadores[d.properties.administrative_area.id]) ? d : undefined,
+        "d": (elecciones.diputados[d.properties.administrative_area.id] || elecciones.senadores[d.properties.administrative_area.id]) ? d : undefined
+      });
+    } else {
+      elecciones.event.click({
+        "diputados": elecciones.diputados["TOTALES"],
+        "senadores": elecciones.senadores["TOTALES"]
       });
     }
 
