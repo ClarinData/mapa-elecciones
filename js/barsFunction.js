@@ -147,3 +147,4 @@ function updateBars(objeto){
 
 
 }
+
