@@ -1,5 +1,5 @@
-/* jshint undef: true, unused: true, strict: true, devel: true,  maxcomplexity: 2, maxparams: 3, maxdepth: 2, maxstatements: 20 */
-/* global d3, topojson */
+/* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 3, maxparams: 3, maxdepth: 2, maxstatements: 20 */
+/* global d3, topojson, elecciones, vista */
 /* exported mapObject */
 
 var mapObject = function(map) {

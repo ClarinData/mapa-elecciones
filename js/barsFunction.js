@@ -1,3 +1,7 @@
+/* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 5, maxparams: 3, maxdepth: 2, maxstatements: 20 */
+/* global mapObject, d3 */
+/* exported argentina elecciones */
+
 
 /************************************************************************/
 /*                                                                      */
