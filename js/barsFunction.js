@@ -281,9 +281,3 @@ elecciones.event.on("click", function(dataE){
 			break;
 	}
 });
-
-argentina.event.on("ready",
-	function (){
-		updateTotales(elecciones.diputados["TOTALES"]);
-	}
-);

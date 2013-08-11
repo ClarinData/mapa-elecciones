@@ -54,6 +54,8 @@ var dataFiles = {},
 
         }
       });
+
+      d3.select("#preloader").style("display", "none");
   }
 
   argentina.event.on("ready", function() {
@@ -63,7 +65,7 @@ var dataFiles = {},
     paintData("path");
     paintData("circle");
 
-    d3.select("#preloader").style("display", "none");
+    updateTotales(elecciones.diputados["TOTALES"]);
 
   });
 
