@@ -262,7 +262,6 @@ function updateBars(objeto){
 /************************************************************************/
 // eventos
 elecciones.event.on("click", function(dataE){
-	console.log(dataE);
 	switch (vista){
 		case "diputados":
 			if (dataE.diputados != undefined){
