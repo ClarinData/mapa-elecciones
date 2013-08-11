@@ -697,8 +697,17 @@ circle {
 	font-weight: lighter;
 }
 
-#modal #creditosModal #tituloModal span {
-	color:#e06153;
+#modal #creditosModal #tituloModal #beta2 {
+	margin-left:1%;
+	padding:.5% 1% .5% 1%;
+	color:white;
+	background-color:#E06153;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:7.65px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	line-height: 2;
 }
 
 #modal #creditosModal .subtitulo {
