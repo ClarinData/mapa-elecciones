@@ -72,7 +72,12 @@ var dataFiles = {},
 
   });
 
-  argentina.dataLoad("data/datafiles.json", function(error, json) {
+  var timeStamp = (function () {
+    var ts = new Date();
+    return [ts.getFullYear(), ts.getMonth(), ts.getDate(), ts.getHours(), ts.getMinutes()].join("");
+  });
+
+  argentina.dataLoad("data/datafiles.json?timestamp=" + timeStamp(), function(error, json) {
 
     dataFiles = (error) ? {} : json;
     dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length;
