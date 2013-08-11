@@ -59,6 +59,8 @@ function updateVistaButton(option){
 			vista = "senadores";	
 			break;
 	}
+
+	elecciones.event.viewchange(vista);
 }
 
 
