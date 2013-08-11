@@ -243,6 +243,48 @@
 	background-position: 0 0px;		
 }	
 
+
+#contenedorApp #contenido #barras #referenciaBarras #referenciaTituloProvincia{
+	position: absolute;
+	top: 20px;
+	left: 20px;	
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 90%;	
+	font-weight: bold;
+	color: #000000;
+}
+
+#contenedorApp #contenido #barras #referenciaBarras #referenciaTotal{
+	background-color: #E6E6E6;
+	padding: 4px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+	position: absolute;
+	top: 40px;
+	left: 20px;	
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 80%;	
+	font-weight: bold;
+	color: #595959;
+	
+}
+
+#contenedorApp #contenido #barras #referenciaBarras #referenciaNombreLocalidad{
+    background-color: #000000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+	color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 80%;
+    font-weight: bold;
+    left: 65px;
+    padding: 4px;
+    position: absolute;
+    top: 40px;
+}
+
 #contenedorApp #contenido #barras #graficoBarras{
 	width: 290px;
 	height: 455px;
@@ -257,8 +299,6 @@
 	background: url("../img/bgRight.png") no-repeat;
 	background-position: 0 -230px;	
 }
-
-
 
 .descMuestro {
   display: inline;
@@ -286,7 +326,6 @@
 }
 
 .barraBar {
-	background-color: #FFFFFF;
 	height: 24px;
 	width: 1px;
 	position:relative;
@@ -296,7 +335,7 @@
 .cantidadBar {
 	font: 10px "Arial Narrow", Helvetica, sans-serif;
 	position:relative;
-	top:-18px;
+	top:-20px;
 	color: #808080;
 }
 
@@ -304,7 +343,7 @@
 	font: 14px Arial, Helvetica, sans-serif;
 	font-weight:bold;
 	position:relative;
-	top:-20px;
+	top:-17px;
 }
 
 /**********************************************************************************/
@@ -326,7 +365,6 @@
 }
 
 .barraDet {
-	background-color: #FFFFFF;
 	height: 10px;
 	width: 1px;
 	position:relative;
