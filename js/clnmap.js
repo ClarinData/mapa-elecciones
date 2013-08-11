@@ -20,7 +20,7 @@ var mapObject = function(map) {
 
     backbutton.height = backbutton.height || 90;
 
-    backbutton.x = backbutton.x || 0;
+    backbutton.x = backbutton.x || map.width - backbutton.width;
 
     backbutton.y = backbutton.y || 0;
 
