@@ -332,7 +332,7 @@
     font-size: 59%;
     left: 232px;
     position: relative;
-    top: -3px;
+    top: 0px;
 }
 
 #votos{
@@ -341,7 +341,7 @@
     font-size: 59%;
     left: 146px;
     position: relative;
-    top: 9px;
+    top: 10px;
 }
 
 .descMuestro {
@@ -379,7 +379,7 @@
 .cantidadBar {
 	font: 10px "Arial Narrow", Helvetica, sans-serif;
 	position:relative;
-	top:-20px;
+	top:-17px;
 	color: #808080;
 }
 
