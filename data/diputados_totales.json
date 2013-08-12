@@ -2,46 +2,48 @@
 	"nombre": "Totales",
 	"id": "TOTALES",
 	"votacion": {
+		"partidos_politicos": [
+			{
+				"votos": 1036766,
+				"fuerza_politica": "K",
+				"nombre": "Kirchneristas y aliados",
+				"porcentaje": 76.81
+			}, {
+				"votos": 652602,
+				"fuerza_politica": "FP",
+				"nombre": "UCR, Socialistas y aliados",
+				"porcentaje": 48.35
+			}, {
+				"votos": 377672,
+				"fuerza_politica": "PRO",
+				"nombre": "PRO y aliados",
+				"porcentaje": 27.98
+			}, {
+				"votos": 241302,
+				"fuerza_politica": "OT",
+				"nombre": "Otros",
+				"porcentaje": 17.88
+			}, {
+				"votos": 152036,
+				"fuerza_politica": "IZ",
+				"nombre": "Izquierda",
+				"porcentaje": 11.26
+			}, {
+				"votos": 123638,
+				"fuerza_politica": "PJ",
+				"nombre": "Peronistas opositores",
+				"porcentaje": 9.16
+			}
+		],
 		"mesas": {
-			"total": 85935,
-			"escrutadas": 85218,
-			"porcentaje": 99.16
+			"total": 20556,
+			"escrutadas": 5441,
+			"porcentaje": "26.46"
 		},
 		"votos": {
-			"total": 21740568,
-			"escrutados": 28629675,
-			"porcentaje": 131.68
-		},
-		"partidos_politicos": [{
-			"nombre": "FP",
-			"fuerza_politica": "FP",
-			"votos": 13415415,
-			"porcentaje": 50.72
-		}, {
-			"nombre": "PJ",
-			"fuerza_politica": "PJ",
-			"votos": 9105312,
-			"porcentaje": 34.42
-		}, {
-			"nombre": "IZ",
-			"fuerza_politica": "IZ",
-			"votos": 5199897,
-			"porcentaje": 19.66
-		}, {
-			"nombre": "OT",
-			"fuerza_politica": "OT",
-			"votos": 4711771,
-			"porcentaje": 17.81
-		}, {
-			"nombre": "K",
-			"fuerza_politica": "K",
-			"votos": 3755524,
-			"porcentaje": 14.20
-		}, {
-			"nombre": "PRO",
-			"fuerza_politica": "PRO",
-			"votos": 2663038,
-			"porcentaje": 10.07
-		}]
+			"total": 1349764,
+			"escrutados": 1789076,
+			"porcentaje": "132.54"
+		}
 	}
 }
