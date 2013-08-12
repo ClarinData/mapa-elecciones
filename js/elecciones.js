@@ -29,11 +29,20 @@ var dataFiles = {},
         var dataE = elecciones[vista][d.properties.administrative_area.id],
             thisElement = d3.select(this);
 
-        if (dataE) {
+          thisElement.classed("fp_K fp_PJ fp_FP fp_PRO fp_IZ fp_OT fp_SFP", false);    
+          switch(select){           
+              case "circle":
+                thisElement.attr("r", 0);
+                break;
+              default:
+                break;
+          }
+
+        if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
 
           switch(select){
               case "path":
-                thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
+                  thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
                 break;
               case "circle":
                 thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
@@ -41,17 +50,6 @@ var dataFiles = {},
                   var v = dataE.votacion.partidos_politicos[0].votos/1000;
                   return Math.sqrt(v / Math.PI);
                 });
-                break;
-              default:
-                break;
-          }
-
-        } else {
-
-          thisElement.classed("fp_K fp_PJ fp_FP fp_PRO fp_IZ fp_OT fp_SFP", false);    
-          switch(select){           
-              case "circle":
-                thisElement.attr("r", 0);
                 break;
               default:
                 break;
@@ -84,6 +82,22 @@ var dataFiles = {},
     elecciones.event.loaded();
 
   });
+
+  function loadData(dataFiles, dataObj) {
+
+    if (dataFiles && dataFiles.length > 0) {
+
+      for (var i = Math.min(2, dataFiles.length - 1); i >= 0; i--) {
+
+        createDataObj(dataFiles, dataObj);
+
+      }
+
+      elecciones.event.loaded();
+
+    }
+
+  }
 
   elecciones.event.on("loaded", (function() {
 
@@ -138,9 +152,16 @@ var dataFiles = {},
 
     }
 
-    loadData(dataFiles.diputados, elecciones.diputados);
+    function runLoadData () {
 
-    loadData(dataFiles.senadores, elecciones.senadores);
+      loadData(dataFiles.diputados, elecciones.diputados);
+      loadData(dataFiles.senadores, elecciones.senadores);
+
+    }
+
+    runLoadData();
+
+    setInterval(runLoadData,120000);
 
   }));
 
