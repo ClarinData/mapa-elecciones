@@ -625,6 +625,7 @@ circle {
   fill-opacity: 1;
   stroke-width: .1px;
   stroke: black;
+  pointer-events: none;
 }
 
 /**********************************************************************************/
