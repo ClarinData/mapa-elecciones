@@ -1,5 +1,5 @@
 /* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 5, maxparams: 3, maxdepth: 2, maxstatements: 20 */
-/* global mapObject, d3, vista, updateTotales */
+/* global mapObject, d3, vista, updateTotales, window */
 /* exported argentina */
 
 var argentina = new mapObject({
@@ -10,7 +10,20 @@ var dataFiles = {},
     elecciones = {
       "diputados": {},
       "senadores": {},
-      "event": d3.dispatch("click", "loaded", "ready", "viewchange")
+      "event": d3.dispatch("click", "loaded", "ready", "viewchange"),
+      "file" : "data/datafiles.json",
+      "refresh": 2,
+      "load": function () {
+        "use strict";
+        argentina.dataLoad(elecciones.file + "?" + window.location.href.split('?',1), function(error, json) {
+
+          dataFiles = (error) ? {} : json;
+          dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length;
+
+          elecciones.event.loaded();
+
+        });
+      }
     };
 
 (function() {
@@ -35,7 +48,6 @@ var dataFiles = {},
                 thisElement.attr("r", 0);
                 break;
               default:
-                break;
           }
 
         if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
@@ -61,27 +73,23 @@ var dataFiles = {},
       d3.select("#preloader").style("display", "none");
   }
 
-  argentina.event.on("ready", function() {
+  function refreshView () {
 
     paintData("path");
     paintData("circle");
 
     updateTotales(elecciones.diputados.TOTALES);
 
-  });
+  }
 
-  var timeStamp = (function () {
-    return location.href.split('?')[1];
-  });
+  argentina.event.on("ready", function() {
 
-  argentina.dataLoad("data/datafiles.json?" + timeStamp(), function(error, json) {
-
-    dataFiles = (error) ? {} : json;
-    dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length;
-
-    elecciones.event.loaded();
+    refreshView();
+    elecciones.event.ready();
 
   });
+
+  elecciones.load();
 
   function loadData(dataFiles, dataObj) {
 
@@ -99,74 +107,63 @@ var dataFiles = {},
 
   }
 
-  elecciones.event.on("loaded", (function() {
+  function createDataObj(files, dataObj) {
 
-    function createDataObj(files, dataObj) {
+    argentina.dataLoad(files.pop(), function(error, json) {
 
-      argentina.dataLoad(files.pop(), function(error, json) {
+        if (!error && dataObj) {
 
-          if (!error && dataObj) {
+          dataObj[json.id] = {
+            "id": json.id,
+            "nivel_administrativo": 1,
+            "nombre": json.nombre,
+            "votacion": json.votacion
+          };
 
-            dataObj[json.id] = {
-              "id": json.id,
-              "nivel_administrativo": 1,
-              "nombre": json.nombre,
-              "votacion": json.votacion
-            };
-
-            for (var key in json.localidades) {
-              dataObj[key] = json.localidades[key];
-              dataObj[key].nivel_administrativo = 2;
-            }
-
+          for (var key in json.localidades) {
+            dataObj[key] = json.localidades[key];
+            dataObj[key].nivel_administrativo = 2;
           }
 
         }
 
-      );
-
-      if (dataFiles.diputados.length + dataFiles.senadores.length < 1) {
-
-        elecciones.event.ready({
-          "diputados": elecciones.diputados.TOTALES,
-          "senadores": elecciones.senadores.TOTALES
-        });
-
       }
 
-    }
+    );
 
-    function loadData(dataFiles, dataObj) {
+    if ((dataFiles.diputados.length + dataFiles.senadores.length) < 1) {
 
-      if (dataFiles && dataFiles.length > 0) {
-
-        for (var i = Math.min(2, dataFiles.length - 1); i >= 0; i--) {
-
-          createDataObj(dataFiles, dataObj);
-
-        }
-
-        elecciones.event.loaded();
-
-      }
+      elecciones.event.ready({
+        "diputados": elecciones.diputados.TOTALES,
+        "senadores": elecciones.senadores.TOTALES
+      });
 
     }
 
-    function runLoadData () {
+  }
 
-      loadData(dataFiles.diputados, elecciones.diputados);
-      loadData(dataFiles.senadores, elecciones.senadores);
+  elecciones.event.on("loaded", (function() {
 
-    }
-
-    runLoadData();
-
-    setInterval(runLoadData,120000);
+    loadData(dataFiles.diputados, elecciones.diputados);
+    loadData(dataFiles.senadores, elecciones.senadores);
 
   }));
 
   elecciones.event.on("ready", function() {
+
+    if (argentina.svg) {
+
+      window.setTimeout(function () {
+        elecciones.load();
+        refreshView();
+      }, elecciones.refresh * 60000);
+
+    } else {
+
       argentina.load("argentina.json");
+
+    }
+
   });
 
   elecciones.event.on("viewchange", function() {
