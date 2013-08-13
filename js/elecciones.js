@@ -42,13 +42,13 @@ var dataFiles = {},
         var dataE = elecciones[vista][d.properties.administrative_area.id],
             thisElement = d3.select(this);
 
-          thisElement.classed("fp_K fp_PJ fp_FP fp_PRO fp_IZ fp_OT fp_SFP", false);    
-          switch(select){           
-              case "circle":
-                thisElement.attr("r", 0);
-                break;
-              default:
-          }
+        thisElement.classed("fp_K fp_PJ fp_FP fp_PRO fp_IZ fp_OT fp_SFP", false);    
+        switch(select){           
+            case "circle":
+              thisElement.attr("r", 0);
+              break;
+            default:
+        }
 
         if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
 
