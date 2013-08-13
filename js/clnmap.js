@@ -31,7 +31,7 @@ var mapObject = function(map) {
     map.backbutton || {}
 
   );
-
+  
   map.dataFiles = [];
 
   map.event = d3.dispatch("click", "zoom", "progress", "ready", "error");
@@ -41,53 +41,7 @@ var mapObject = function(map) {
     .scale(1010)
     .translate([(map.width / 2) + 15, (map.height / 2) - 680]);
 
-  map.svg = (function(svg) {
 
-    svg.path = d3.geo.path()
-      .projection(map.projection);
-
-    svg.g = svg.append("g");    
-
-    svg.back = (function(back) {
-
-      back.append("image")
-        .attr("class", "image")
-        .attr("width", map.backbutton.width)
-        .attr("height", map.backbutton.height)
-        .attr('x', map.backbutton.x)
-        .attr('y', map.backbutton.y)
-        .attr("xlink:href", map.backbutton.image);
-
-      back.append("clippath")
-        .attr("id", "clip")
-        .append("rect")
-        .attr("width", map.backbutton.width)
-        .attr("height", map.backbutton.height)
-        .attr('x', map.backbutton.x)
-        .attr('y', map.backbutton.y);
-
-    })(
-
-      svg.append("g")
-      .attr("id", "backbutton")
-      .style("display", "none")
-      .on("click", function(d) {
-        map.event.click(d);
-      })
-
-    );
-
-    return svg;
-
-  })(
-
-    d3.select("#" + map.id)
-    .append("svg")
-    .attr("overflow", "hidden")
-    .attr("width", map.width)
-    .attr("height", map.height)
-
-  );
 
   map.backbutton.visible = function(status) {
 
@@ -176,6 +130,55 @@ var mapObject = function(map) {
   );
 
   map.load = function(file) {
+
+    map.svg = (function(svg) {
+
+      svg.path = d3.geo.path()
+        .projection(map.projection);
+
+      svg.g = svg.append("g");    
+
+      svg.back = (function(back) {
+
+        back.append("image")
+          .attr("class", "image")
+          .attr("width", map.backbutton.width)
+          .attr("height", map.backbutton.height)
+          .attr('x', map.backbutton.x)
+          .attr('y', map.backbutton.y)
+          .attr("xlink:href", map.backbutton.image);
+
+        back.append("clippath")
+          .attr("id", "clip")
+          .append("rect")
+          .attr("width", map.backbutton.width)
+          .attr("height", map.backbutton.height)
+          .attr('x', map.backbutton.x)
+          .attr('y', map.backbutton.y);
+
+      })(
+
+        svg.append("g")
+        .attr("id", "backbutton")
+        .style("display", "none")
+        .on("click", function(d) {
+          map.event.click(d);
+        })
+
+      );
+
+      return svg;
+
+    })(
+
+      d3.select("#" + map.id)
+      .append("svg")
+      .attr("overflow", "hidden")
+      .attr("width", map.width)
+      .attr("height", map.height)
+
+    );
+
     d3.json(file)
       .on("progress", function() {
         map.event.progress(d3.event.loaded,file);
@@ -217,7 +220,7 @@ var mapObject = function(map) {
                 map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
                 map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].description);
                 var dataE = elecciones[vista][d.properties.administrative_area.id];
-                if (dataE) {
+                if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
                   for(var x = 0; x < 3; x++) {
                     map.tooltip.table.row.color[x].className = "fp_" + dataE.votacion.partidos_politicos[x].fuerza_politica;
                     map.tooltip.table.row.name[x].innerHTML = dataE.votacion.partidos_politicos[x].nombre;
