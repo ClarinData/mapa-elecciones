@@ -15,10 +15,12 @@ var dataFiles = {},
       "refresh": 2,
       "load": function () {
         "use strict";
-        argentina.dataLoad(elecciones.file + "?" + window.location.href.split('?',1), function(error, json) {
+        var param = window.location.href.split('?',1) | "rnd=" + Math.random();
+        argentina.dataLoad(elecciones.file + "?" + param, function(error, json) {
 
           dataFiles = (error) ? {} : json;
           dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length;
+          console.log("dataFiles: ", dataFiles);
 
           elecciones.event.loaded();
 
