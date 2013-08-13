@@ -37,11 +37,10 @@ var mapObject = function(map) {
   map.event = d3.dispatch("click", "zoom", "progress", "ready", "error");
 
   map.projection = d3.geo.transverseMercator()
-    .rotate([62, 0])
-    .scale(1010)
-    .translate([(map.width / 2) + 15, (map.height / 2) - 680]);
-
-
+     .center([0, -38.5])
+     .rotate([63.5, 0])
+     .scale((map.height * 56.5) / 33)
+     .translate([(map.width / 2), (map.height / 2)]);
 
   map.backbutton.visible = function(status) {
 
