@@ -221,6 +221,13 @@ var dataFiles = {},
 
         });
 
+        argentina.svg.g.selectAll("circle")
+        .style("stroke-width", function() {
+
+          return (zoom) ? 0.5 / zoom + "pt" : null;
+
+        });
+
     }
 
   });

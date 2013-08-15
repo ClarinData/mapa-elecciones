@@ -621,9 +621,8 @@ path.admlevel1:hover {
 }
 
 circle {
-  /*fill:rgb(50,50,200);*/
   fill-opacity: 1;
-  stroke-width: .1px;
+  stroke-width: 0.25pt;
   stroke: black;
   pointer-events: none;
 }
