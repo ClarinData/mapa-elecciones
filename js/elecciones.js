@@ -3,14 +3,15 @@
 /* exported argentina */
 
 var argentina = new mapObject({
-  id: "map_arg"
+  "id" : "map_arg",
+  "selection" : "TOTALES"
 });
 
 var dataFiles = {},
     elecciones = {
       "diputados": {},
       "senadores": {},
-      "event": d3.dispatch("click", "loaded", "ready", "viewchange"),
+      "event": d3.dispatch("updatedata", "loaded", "ready", "viewchange"),
       "file" : "data/datafiles.json",
       "refresh": 2,
       "load": function () {
@@ -20,7 +21,6 @@ var dataFiles = {},
 
           dataFiles = (error) ? {} : json;
           dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length;
-          console.log("dataFiles: ", dataFiles);
 
           elecciones.event.loaded();
 
@@ -80,7 +80,10 @@ var dataFiles = {},
     paintData("path");
     paintData("circle");
 
-    updateTotales(elecciones.diputados.TOTALES);
+    elecciones.event.updatedata({
+      "diputados": elecciones.diputados[argentina.selection],
+      "senadores": elecciones.senadores[argentina.selection]
+    });
 
   }
 
@@ -88,6 +91,7 @@ var dataFiles = {},
 
     refreshView();
     elecciones.event.ready();
+    updateTotales(elecciones.diputados.TOTALES);
 
   });
 
@@ -136,8 +140,8 @@ var dataFiles = {},
     if ((dataFiles.diputados.length + dataFiles.senadores.length) < 1) {
 
       elecciones.event.ready({
-        "diputados": elecciones.diputados.TOTALES,
-        "senadores": elecciones.senadores.TOTALES
+        "diputados": elecciones.diputados[argentina.selection],
+        "senadores": elecciones.senadores[argentina.selection]
       });
 
     }
@@ -158,7 +162,7 @@ var dataFiles = {},
       window.setTimeout(function () {
         elecciones.load();
         refreshView();
-      }, elecciones.refresh * 60000);
+      }, elecciones.refresh * 10000);
 
     } else {
 
@@ -178,15 +182,17 @@ var dataFiles = {},
   argentina.event.on("click", function(d) {
 
     if (d) {
-      elecciones.event.click({
-        "diputados": elecciones.diputados[d.properties.administrative_area.id],
-        "senadores": elecciones.senadores[d.properties.administrative_area.id],
-        "d": (elecciones.diputados[d.properties.administrative_area.id] || elecciones.senadores[d.properties.administrative_area.id]) ? d : undefined
+      argentina.selection = d.properties.administrative_area.id;
+      elecciones.event.updatedata({
+        "diputados": elecciones.diputados[argentina.selection],
+        "senadores": elecciones.senadores[argentina.selection],
+        "d": (elecciones.diputados[argentina.selection] || elecciones.senadores[argentina.selection]) ? d : undefined
       });
     } else {
-      elecciones.event.click({
-        "diputados": elecciones.diputados.TOTALES,
-        "senadores": elecciones.senadores.TOTALES
+      argentina.selection = "TOTALES";
+      elecciones.event.updatedata({
+        "diputados": elecciones.diputados[argentina.selection],
+        "senadores": elecciones.senadores[argentina.selection]
       });
     }
 
