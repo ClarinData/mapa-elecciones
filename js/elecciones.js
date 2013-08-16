@@ -162,7 +162,7 @@ var dataFiles = {},
       window.setTimeout(function () {
         elecciones.load();
         refreshView();
-      }, elecciones.refresh * 10000);
+      }, elecciones.refresh * 60000);
 
     } else {
 
