@@ -11,5 +11,6 @@ Mapa electoral 2013 de la Argentina realizado en D3.js para Clarin.com
 * [Extraccion de FeaturesCollection en geoJson por propiedades](https://github.com/jkutianski/mapa-elecciones/wiki/Extraccion-de-FeaturesCollection-en-geoJson-por-propiedades)
 * [Proyección Gauss Krugger para Argentina](https://github.com/jkutianski/mapa-elecciones/wiki/Proyecci%C3%B3n-Gauss-Krugger-para-Argentina)
 * [Generacion de poligonos desde data de OSM](http://polygons.openstreetmap.fr/)
-* [Editor de geoJSON](http://geojson.io)
 * [OSM Nominatim](http://nominatim.openstreetmap.org/)
+* [Editor de geoJSON](http://geojson.io)
+* [Simpificacion de poligonos, MapShaper](http://www.mapshaper.org/)
