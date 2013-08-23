@@ -1,4 +1,4 @@
-/* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 3, maxparams: 3, maxdepth: 2, maxstatements: 20 */
+/* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 3, maxparams: 3, maxdepth: 2, maxstatements: 15 */
 /* global d3, topojson, elecciones, vista */
 /* exported mapObject */
 
