@@ -42,39 +42,29 @@ var dataFiles = {},
   function paintData(select) {
     argentina.svg.g.selectAll(select)
       .each(function(d) {
+
         var dataE = elecciones[vista][d.properties.administrative_area.id],
-          thisElement = d3.select(this);
+            thisElement = d3.select(this);
 
         thisElement.classed("fp_K fp_PJ fp_FP fp_PRO fp_IZ fp_OT fp_SFP", false);
-        switch (select) {
-          case "circle":
-            thisElement.attr("r", 0);
-            break;
-          default:
-        }
+
+        (select === "circle") ? thisElement.attr("r", 0) : null;
 
         if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
 
-          switch (select) {
-            case "path":
-              thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
-              break;
-            case "circle":
-              thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
-              thisElement.attr("r", dataRadius(dataE));
-              break;
-            default:
-              break;
-          }
+          thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
+
+          (select === "circle") ? thisElement.attr("r", dataRadius(dataE)) : null;
 
         }
+
       });
 
     d3.select("#preloader").style("display", "none");
   }
 
   function dataRadius(dataE) {
-    var v = dataE.votacion.partidos_politicos[0].votos / (300 * (argentina.zoom || 1));
+    var v = (dataE) ? dataE.votacion.partidos_politicos[0].votos / (300 * (argentina.zoom || 1)) : 0;
     return Math.sqrt(v / Math.PI);
   }
 
@@ -94,7 +84,9 @@ var dataFiles = {},
 
     refreshView();
     elecciones.event.ready();
-    updateTotales(elecciones.diputados.TOTALES);
+    elecciones.event.updatedata({
+      "diputados": elecciones.diputados.TOTALES
+    });
 
   });
 
@@ -184,20 +176,12 @@ var dataFiles = {},
 
   argentina.event.on("click", function(d) {
 
-    if (d) {
-      argentina.selection = d.properties.administrative_area.id;
-      elecciones.event.updatedata({
-        "diputados": elecciones.diputados[argentina.selection],
-        "senadores": elecciones.senadores[argentina.selection],
-        "d": (elecciones.diputados[argentina.selection] || elecciones.senadores[argentina.selection]) ? d : undefined
-      });
-    } else {
-      argentina.selection = "TOTALES";
-      elecciones.event.updatedata({
-        "diputados": elecciones.diputados[argentina.selection],
-        "senadores": elecciones.senadores[argentina.selection]
-      });
-    }
+    argentina.selection = (d) ? d.properties.administrative_area.id : "TOTALES";
+    elecciones.event.updatedata({
+      "diputados": elecciones.diputados[argentina.selection],
+      "senadores": elecciones.senadores[argentina.selection],
+      "d": (elecciones.diputados[argentina.selection] || elecciones.senadores[argentina.selection]) ? d : undefined
+    });
 
     if ((!d) || (d.properties.administrative_area.length < 2)) {
 
@@ -214,7 +198,7 @@ var dataFiles = {},
       (function(g) {
 
           g.transition()
-            .duration(750)
+            .duration(600)
             .attr("transform", "translate(" + argentina.width / 2 + "," + argentina.height / 2 + ")" +
               "scale(" + (argentina.zoom || 1) + ")" +
               "translate(" + translate + ")"
@@ -240,13 +224,7 @@ var dataFiles = {},
             })
             .each(function(d) {
 
-              var dataE = elecciones[vista][d.properties.administrative_area.id];
-
-              if (dataE) {
-                d3.select(this).attr("r", dataRadius(dataE));
-              } else {
-                d3.select(this).attr("r", 0);
-              }
+                d3.select(this).attr("r", dataRadius(elecciones[vista][d.properties.administrative_area.id]));
 
             });
 
