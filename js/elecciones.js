@@ -3,30 +3,31 @@
 /* exported argentina */
 
 var argentina = new mapObject({
-  "id" : "map_arg",
-  "selection" : "TOTALES"
+  "id": "map_arg",
+  "selection": "TOTALES",
+  "zoom": null
 });
 
 var dataFiles = {},
-    elecciones = {
-      "diputados": {},
-      "senadores": {},
-      "event": d3.dispatch("updatedata", "loaded", "ready", "viewchange"),
-      "file" : "data/datafiles.json",
-      "refresh": 2,
-      "load": function () {
-        "use strict";
-        var param = window.location.href.split('?',1) | "rnd=" + Math.random();
-        argentina.dataLoad(elecciones.file + "?" + param, function(error, json) {
+  elecciones = {
+    "diputados": {},
+    "senadores": {},
+    "event": d3.dispatch("updatedata", "loaded", "ready", "viewchange"),
+    "file": "data/datafiles.json",
+    "refresh": 2,
+    "load": function() {
+      "use strict";
+      var param = window.location.href.split('?', 1) | "rnd=" + Math.random();
+      argentina.dataLoad(elecciones.file + "?" + param, function(error, json) {
 
-          dataFiles = (error) ? {} : json;
-          dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length;
+        dataFiles = (error) ? {} : json;
+        dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length;
 
-          elecciones.event.loaded();
+        elecciones.event.loaded();
 
-        });
-      }
-    };
+      });
+    }
+  };
 
 (function() {
 
@@ -38,44 +39,46 @@ var dataFiles = {},
 
   d3.select("#preloader").style("display", "block");
 
-  function paintData (select) {
+  function paintData(select) {
     argentina.svg.g.selectAll(select)
       .each(function(d) {
         var dataE = elecciones[vista][d.properties.administrative_area.id],
-            thisElement = d3.select(this);
+          thisElement = d3.select(this);
 
-        thisElement.classed("fp_K fp_PJ fp_FP fp_PRO fp_IZ fp_OT fp_SFP", false);    
-        switch(select){           
-            case "circle":
-              thisElement.attr("r", 0);
-              break;
-            default:
+        thisElement.classed("fp_K fp_PJ fp_FP fp_PRO fp_IZ fp_OT fp_SFP", false);
+        switch (select) {
+          case "circle":
+            thisElement.attr("r", 0);
+            break;
+          default:
         }
 
         if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
 
-          switch(select){
-              case "path":
-                  thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
-                break;
-              case "circle":
-                thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
-                thisElement.attr("r", function() {
-                  var v = dataE.votacion.partidos_politicos[0].votos/1000;
-                  return Math.sqrt(v / Math.PI);
-                });
-                break;
-              default:
-                break;
+          switch (select) {
+            case "path":
+              thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
+              break;
+            case "circle":
+              thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
+              thisElement.attr("r", dataRadius(dataE));
+              break;
+            default:
+              break;
           }
 
         }
       });
 
-      d3.select("#preloader").style("display", "none");
+    d3.select("#preloader").style("display", "none");
   }
 
-  function refreshView () {
+  function dataRadius(dataE) {
+    var v = dataE.votacion.partidos_politicos[0].votos / (300 * (argentina.zoom || 1));
+    return Math.sqrt(v / Math.PI);
+  }
+
+  function refreshView() {
 
     paintData("path");
     paintData("circle");
@@ -159,7 +162,7 @@ var dataFiles = {},
 
     if (argentina.svg) {
 
-      window.setTimeout(function () {
+      window.setTimeout(function() {
         elecciones.load();
         refreshView();
       }, elecciones.refresh * 60000);
@@ -178,7 +181,7 @@ var dataFiles = {},
   });
 
   // console.log("elecciones: ", elecciones);
-  
+
   argentina.event.on("click", function(d) {
 
     if (d) {
@@ -204,35 +207,54 @@ var dataFiles = {},
 
       var b = argentina.svg.path.bounds(d);
 
-      var zoom = 0.95 / Math.max((b[1][0] - b[0][0]) / argentina.width, (b[1][1] - b[0][1]) / argentina.height);
+      argentina.zoom = 0.95 / Math.max((b[1][0] - b[0][0]) / argentina.width, (b[1][1] - b[0][1]) / argentina.height);
 
-      var translate = (zoom) ? [-(b[1][0] + b[0][0]) / 2, -(b[1][1] + b[0][1]) / 2] : [-argentina.width / 2, -argentina.height / 2];
+      var translate = (argentina.zoom) ? [-(b[1][0] + b[0][0]) / 2, -(b[1][1] + b[0][1]) / 2] : [-argentina.width / 2, -argentina.height / 2];
 
-      argentina.svg.g.transition()
-        .duration(750)
-        .attr("transform", "translate(" + argentina.width / 2 + "," + argentina.height / 2 + ")" +
-          "scale(" + (zoom || 1) + ")" +
-          "translate(" + translate + ")"
-      );
+      (function(g) {
 
-      argentina.svg.g.selectAll("path")
-        .style("stroke-width", function() {
+          g.transition()
+            .duration(750)
+            .attr("transform", "translate(" + argentina.width / 2 + "," + argentina.height / 2 + ")" +
+              "scale(" + (argentina.zoom || 1) + ")" +
+              "translate(" + translate + ")"
+          );
 
-          return (zoom) ? 0.5 / zoom + "pt" : null;
+          g.selectAll("path")
+            .style("stroke-width", function() {
 
-        })
-        .classed("active", centered && function(d) {
+              return (argentina.zoom) ? 0.5 / argentina.zoom + "pt" : null;
 
-          return (d === centered);
+            })
+            .classed("active", centered && function(d) {
 
-        });
+              return (d === centered);
 
-        argentina.svg.g.selectAll("circle")
-        .style("stroke-width", function() {
+            });
 
-          return (zoom) ? 0.5 / zoom + "pt" : null;
+          g.selectAll("circle")
+            .style("stroke-width", function() {
 
-        });
+              return (argentina.zoom) ? 0.5 / argentina.zoom + "pt" : null;
+
+            })
+            .each(function(d) {
+
+              var dataE = elecciones[vista][d.properties.administrative_area.id];
+
+              if (dataE) {
+                d3.select(this).attr("r", dataRadius(dataE));
+              } else {
+                d3.select(this).attr("r", 0);
+              }
+
+            });
+
+        })(
+
+          argentina.svg.g
+
+        );
 
     }
 
