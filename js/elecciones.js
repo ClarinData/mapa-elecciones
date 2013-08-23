@@ -33,10 +33,6 @@ var dataFiles = {},
 
   "use strict";
 
-  // argentina.event.on("error", function(error, json) {
-  //   console.log(error, json);
-  // });
-
   d3.select("#preloader").style("display", "block");
 
   function paintData(select) {
@@ -48,15 +44,9 @@ var dataFiles = {},
 
         thisElement.classed("fp_K fp_PJ fp_FP fp_PRO fp_IZ fp_OT fp_SFP", false);
 
-        (select === "circle") ? thisElement.attr("r", 0) : null;
+        (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) ? thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true) : null;
 
-        if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
-
-          thisElement.classed("fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica, true);
-
-          (select === "circle") ? thisElement.attr("r", dataRadius(dataE)) : null;
-
-        }
+        (select === "circle") ? thisElement.attr("r", dataRadius(dataE)) : null;
 
       });
 
@@ -70,8 +60,7 @@ var dataFiles = {},
 
   function refreshView() {
 
-    paintData("path");
-    paintData("circle");
+    elecciones.event.viewchange();
 
     elecciones.event.updatedata({
       "diputados": elecciones.diputados[argentina.selection],
@@ -79,18 +68,6 @@ var dataFiles = {},
     });
 
   }
-
-  argentina.event.on("ready", function() {
-
-    refreshView();
-    elecciones.event.ready();
-    elecciones.event.updatedata({
-      "diputados": elecciones.diputados.TOTALES
-    });
-
-  });
-
-  elecciones.load();
 
   function loadData(dataFiles, dataObj) {
 
@@ -143,6 +120,13 @@ var dataFiles = {},
 
   }
 
+  argentina.event.on("ready", function() {
+
+    refreshView();
+    elecciones.event.ready();
+
+  });
+
   elecciones.event.on("loaded", (function() {
 
     loadData(dataFiles.diputados, elecciones.diputados);
@@ -171,8 +155,6 @@ var dataFiles = {},
     paintData("path");
     paintData("circle");
   });
-
-  // console.log("elecciones: ", elecciones);
 
   argentina.event.on("click", function(d) {
 
@@ -266,5 +248,7 @@ var dataFiles = {},
     })
 
   };
+
+  elecciones.load();
 
 })();
