@@ -610,8 +610,8 @@ path.admlevel2 {
 }
 
 path.admlevel2:hover {
-  /*stroke: black;*/
-  opacity: .6;
+  stroke: black;
+  /*opacity: .6;*/
   cursor: pointer;
 }
 
