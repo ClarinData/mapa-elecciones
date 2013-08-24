@@ -54,7 +54,7 @@ var argentina = new mapObject({
   }
 
   function dataRadius(dataE) {
-    var v = (dataE) ? dataE.votacion.partidos_politicos[0].votos / (300 * (argentina.zoom || 1)) : 0;
+    var v = (dataE) ? dataE.votacion.partidos_politicos[0].votos / (700 * (argentina.zoom || 1)) : 0;
     return Math.sqrt(v / Math.PI);
   }
 
@@ -159,6 +159,7 @@ var argentina = new mapObject({
   argentina.event.on("click", function(d) {
 
     argentina.selection = (d) ? d.properties.administrative_area.id : "TOTALES";
+
     elecciones.event.updatedata({
       "diputados": elecciones.diputados[argentina.selection],
       "senadores": elecciones.senadores[argentina.selection],
@@ -176,6 +177,8 @@ var argentina = new mapObject({
       argentina.zoom = 0.95 / Math.max((b[1][0] - b[0][0]) / argentina.width, (b[1][1] - b[0][1]) / argentina.height);
 
       var translate = (argentina.zoom) ? [-(b[1][0] + b[0][0]) / 2, -(b[1][1] + b[0][1]) / 2] : [-argentina.width / 2, -argentina.height / 2];
+
+      argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom));
 
       (function(g) {
 
@@ -226,6 +229,7 @@ var argentina = new mapObject({
 
       argentina.svg.g.admlevel2.classed("transparent", true);
       argentina.svg.g.admlevel3.classed("transparent", true);
+      argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom));
       argentina.svg.g.votes.classed("disabled", false);
 
     }),
@@ -233,7 +237,7 @@ var argentina = new mapObject({
     partidos: (function() {
 
       argentina.svg.g.admlevel2.classed("transparent", true);
-      argentina.svg.g.admlevel3.classed("transparent", false);
+      argentina.svg.g.admlevel3.classed("transparent disabled", false);
       argentina.svg.g.votes.classed("disabled", true);
 
 
@@ -242,7 +246,7 @@ var argentina = new mapObject({
     provincias: (function() {
 
       argentina.svg.g.admlevel2.classed("transparent", false);
-      argentina.svg.g.admlevel3.classed("transparent", false);
+      argentina.svg.g.admlevel3.classed("transparent disabled", false);
       argentina.svg.g.votes.classed("disabled", true);
 
     })
