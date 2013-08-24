@@ -216,13 +216,15 @@ var mapObject = function(map) {
               })
               .on("mouseover", function(d) {
 
+                this.parentNode.appendChild(this);
+
                 map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
                 map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].description);
                 var dataE = elecciones[vista][d.properties.administrative_area.id];
                 if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
                   for(var x = 0; x < 3; x++) {
                     map.tooltip.table.row.color[x].className = "fp_" + dataE.votacion.partidos_politicos[x].fuerza_politica;
-                    map.tooltip.table.row.name[x].innerHTML = dataE.votacion.partidos_politicos[x].nombre;
+                    map.tooltip.table.row.name[x].innerHTML = dataE.votacion.partidos_politicos[x].nombre.toLowerCase();
                     map.tooltip.table.row.percent[x].innerHTML = dataE.votacion.partidos_politicos[x].porcentaje.replace(".", ",") + "%";
                   }
                   map.tooltip.table.classed("disabled", false);
@@ -233,9 +235,6 @@ var mapObject = function(map) {
                               "<div>Territorio en disputa con el Reino Unido.</div><div>Sin datos para visualizar.</div>" :
                               "Sin datos para visualizar.";
                 }
-                
-                // console.log("dataE: ", dataE);
-                // map.tooltip.info.activate();
 
                 return map.tooltip.style("left", d3.event.pageX + 5 + "px")
                   .style("top", d3.event.pageY + 5 + "px")
@@ -273,17 +272,6 @@ var mapObject = function(map) {
 
           }
 
-          g.admlevel3 = (function(admlevel3) {
-
-            return createPaths(admlevel3, "admlevel3");
-
-          })(
-
-            g.append("g").attr("id", map.id + "_admlevel3")
-            .attr("class", "states")
-
-          );
-
           g.votes = (function(votes) {
 
             votes.selectAll("text")
@@ -293,9 +281,9 @@ var mapObject = function(map) {
               .append("circle")
               .attr("id", function(d) {
 
-                var id = map.id + "_votes";
+                var id = map.id + "_votes_";
                 for (var i = 0; i < d.properties.administrative_area.length; i++) {
-                  id += "_" + d.properties.administrative_area[i].id;
+                  id += d.properties.administrative_area[i].id;
                 }
                 return id;
 
@@ -319,6 +307,17 @@ var mapObject = function(map) {
 
             g.append("g").attr("id", map.id + "_votes")
             .attr("class", "disabled")
+
+          );
+
+          g.admlevel3 = (function(admlevel3) {
+
+            return createPaths(admlevel3, "admlevel3");
+
+          })(
+
+            g.append("g").attr("id", map.id + "_admlevel3")
+            .attr("class", "states")
 
           );
 
