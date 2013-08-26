@@ -144,7 +144,7 @@ function updateTotales(objeto){
         .transition()
         .duration(450)
     	.style("left", function (d) { return Math.ceil( dominio(d.votos) + 5) + "px"; })
-        .text(function (d) {  return d.porcentaje + "%"; });
+        .text(function (d) {  return d.porcentaje.toLocaleString()  + "%"; });
 	
     contenidoEnter.append("div")
     	.classed("cantidadBar", true)
@@ -164,6 +164,7 @@ function updateTotales(objeto){
 /************************************************************************/
 // redibuja las barras detalladas
 function updateBars(objeto){
+	"use strict";
 	var maximo = 150;
 		
 	d3.select("#graficoBarras").selectAll("div").remove();
@@ -188,7 +189,7 @@ function updateBars(objeto){
                  .range( [0, maximo ]);
 	
     var contenido = d3.selectAll("#graficoBarras").selectAll(".contenedorBar")
-        .data(function (d){ return objeto.votacion.partidos_politicos });
+        .data(function (d){ return objeto.votacion.partidos_politicos; });
 
     var contenidoEnter = contenido.enter()
         .append("div")
@@ -198,12 +199,12 @@ function updateBars(objeto){
 		.classed("nombreDet", true)
         .html(
         	function (d) {
-				if (d.nombre != undefined){
+				if (d.nombre !== undefined){
 					if (d.porcentaje >= 1.5){
 						return d.nombre + " &#10004;";
 					} else{
 						return d.nombre;
-					};
+					}
 				}else{
 					return d.id.toUpperCase();	
 				}
@@ -225,7 +226,7 @@ function updateBars(objeto){
 		.attr("class",
 			function(d) {
 				var tempClass = "";
-				if (d.fuerza_politica != undefined){
+				if (d.fuerza_politica !== undefined){
 					tempClass = "fp_" + d.fuerza_politica;
 				}else{
 					tempClass = "fp_SFP";
@@ -238,47 +239,48 @@ function updateBars(objeto){
         .style("width", function (d) { return Math.ceil(dominio(d.votos)) + "px"; });
 
     contenidoEnter.append("div")
-    	.classed("porcentajeDet" , true)
+		.classed("porcentajeDet" , true)
         .transition()
         .duration(450)
-    	.style("left", function (d) { return Math.ceil( dominio(d.votos) + 5) + "px"; })
-        .text(function (d) { return d.porcentaje + "%"; });
+		.style("left", function (d) { return Math.ceil( dominio(d.votos) + 5) + "px"; })
+        .text(function (d) { return d.porcentaje.toLocaleString()  + "%"; });
 	
     contenidoEnter.append("div")
-    	.classed("cantidadDet", true)
+		.classed("cantidadDet", true)
         .transition()
         .duration(450)
-    	.style("left", function (d) { return Math.ceil( dominio(d.votos) + 50) + "px"; })
+		.style("left", function (d) { return Math.ceil( dominio(d.votos) + 50) + "px"; })
         .text(function (d) { return "(" + miles(d.votos.toString()) + ")"; });
 
 	d3.select("#votos").text( objeto.votacion.votos.porcentaje + "%" );
 	d3.select("#mesas").text( objeto.votacion.mesas.porcentaje + "%" );
 
     contenido
-    	.exit()
+		.exit()
         .remove();
 }
 
 /************************************************************************/
 // eventos
 elecciones.event.on("updatedata", function(dataE){
+	"use strict";
 	switch (vista){
 		case "diputados":
-			if (dataE.diputados != undefined){
+			if (dataE.diputados !== undefined){
 				if (dataE.diputados.id == "TOTALES"){
-					updateTotales(dataE.diputados)
+					updateTotales(dataE.diputados);
 				}else{
-					updateBars(dataE.diputados)	
+					updateBars(dataE.diputados);
 				}
 			}
 			break;
 		
 		case "senadores":
-			if (dataE.senadores != undefined){
+			if (dataE.senadores !== undefined){
 				if (dataE.senadores.id == "TOTALES"){
-					updateTotales(dataE.senadores)
+					updateTotales(dataE.senadores);
 				}else{
-					updateBars(dataE.senadores)
+					updateBars(dataE.senadores);
 				}
 			}
 			break;

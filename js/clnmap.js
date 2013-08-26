@@ -225,7 +225,7 @@ var mapObject = function(map) {
                   for(var x = 0; x < 3; x++) {
                     map.tooltip.table.row.color[x].className = "fp_" + dataE.votacion.partidos_politicos[x].fuerza_politica;
                     map.tooltip.table.row.name[x].innerHTML = dataE.votacion.partidos_politicos[x].nombre.toLowerCase();
-                    map.tooltip.table.row.percent[x].innerHTML = dataE.votacion.partidos_politicos[x].porcentaje.replace(".", ",") + "%";
+                    map.tooltip.table.row.percent[x].innerHTML = parseFloat(dataE.votacion.partidos_politicos[x].porcentaje).toLocaleString() + "%";
                   }
                   map.tooltip.table.classed("disabled", false);
                   map.tooltip.footer.innerHTML = "Click en el mapa para ampliar la informacion de la derecha.";
