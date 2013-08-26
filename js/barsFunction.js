@@ -171,9 +171,11 @@ function updateBars(objeto){
 	d3.select("#referenciaBarras").style("background-position", "0 -115px");
 
 	if (objeto.nivel_administrativo == 1) {
-		d3.select("#referenciaTituloProvincia").html( objeto.nombre.toUpperCase() ).classed("descOculto",false).classed("descMuestro",true);
+		d3.select("#referenciaTituloProvincia").html( objeto.nombre.toUpperCase() );
 		d3.select("#referenciaNombreLocalidad").html( "" ).classed("descOculto",true).classed("descMuestro",false);
 	}
+	
+	d3.select("#referenciaTituloProvincia").classed("descOculto",false).classed("descMuestro",true);
 	
 	d3.select("#referenciaTotal").text( " Total " ).classed("descOculto",false).classed("descMuestro",true);
 
