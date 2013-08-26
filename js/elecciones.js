@@ -178,7 +178,7 @@ var argentina = new mapObject({
 
       var translate = (argentina.zoom) ? [-(b[1][0] + b[0][0]) / 2, -(b[1][1] + b[0][1]) / 2] : [-argentina.width / 2, -argentina.height / 2];
 
-      argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom));
+      argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom) && argentina.vista.state === "votos");
 
       (function(g) {
 
@@ -231,6 +231,7 @@ var argentina = new mapObject({
       argentina.svg.g.admlevel3.classed("transparent", true);
       argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom));
       argentina.svg.g.votes.classed("disabled", false);
+      argentina.vista.state = "votos";
 
     }),
 
@@ -239,6 +240,7 @@ var argentina = new mapObject({
       argentina.svg.g.admlevel2.classed("transparent", true);
       argentina.svg.g.admlevel3.classed("transparent disabled", false);
       argentina.svg.g.votes.classed("disabled", true);
+      argentina.vista.state = "partidos";
 
 
     }),
@@ -248,8 +250,11 @@ var argentina = new mapObject({
       argentina.svg.g.admlevel2.classed("transparent", false);
       argentina.svg.g.admlevel3.classed("transparent disabled", false);
       argentina.svg.g.votes.classed("disabled", true);
+      argentina.vista.state = "provincias";
 
-    })
+    }),
+
+    state: "provincias"
 
   };
 
