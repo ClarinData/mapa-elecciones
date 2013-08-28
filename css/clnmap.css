@@ -41,28 +41,28 @@
 /*  COLORES DE LAS FUERZAS POLITICAS                                              */
 /**********************************************************************************/
 .fp_K {
-	fill: #B3CDE3;
-	background-color: #B3CDE3;
+	fill: #84d0ff;
+	background-color: #84d0ff;
 }
 
 .fp_PJ {
-	fill: #DECBE4;
-	background-color: #DECBE4;
+	fill: #c8a4d8;
+	background-color: #c8a4d8;
 }
 
 .fp_FP {
-	fill: #efb6b6;
-	background-color: #efb6b6;
+	fill: #ff9485;
+	background-color: #ff9485;
 }
 
 .fp_PRO {
-	fill: #f4deb3;
-	background-color: #f4deb3;
+	fill: #f2da00;
+	background-color: #f2da00;
 }
 
 .fp_IZ {
-	fill: #cfd5b8;
-	background-color: #cfd5b8;
+	fill: #b7cf97;
+	background-color: #b7cf97;
 }
 
 .fp_OT {
