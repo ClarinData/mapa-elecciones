@@ -603,6 +603,10 @@
   transition: visibility 0s linear 1s, opacity 2s ease-out;
 }
 
+path {
+  cursor: pointer;
+}
+
 path.admlevel2 {
   /*stroke: #ffffff;*/
   stroke: #e8e7e7;
@@ -612,12 +616,10 @@ path.admlevel2 {
 path.admlevel2:hover {
   stroke: black;
   /*opacity: .6;*/
-  cursor: pointer;
 }
 
 path.admlevel1:hover {
   stroke-width: 1pt;
-  cursor: pointer;
 }
 
 circle {
