@@ -1,3 +1,8 @@
 /*.project
 /datos/
 /*.DS_Store
+*~
+*.ai
+*.psd
+*_CDT/**/*
+.project
