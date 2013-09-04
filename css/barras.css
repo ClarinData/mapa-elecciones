@@ -1,0 +1,93 @@
+/**********************************************************************************/
+/* General Bar Styles                                                             */
+/**********************************************************************************/
+.contenedorBar{
+	width: 285px;
+	height: 62px;
+	border-top: 1px solid #CECECE;
+	padding-left: 5px;
+	padding-top: 11px;
+}
+
+.nombreBar {
+	font: 11px Arial, Helvetica, sans-serif;
+	font-weight:bold;
+}
+
+.barraBar {
+	height: 24px;
+	width: 1px;
+	position:relative;
+	top: 10px;
+}
+
+.cantidadBar {
+	font: 10px "Arial Narrow", Helvetica, sans-serif;
+	position:relative;
+	top:-17px;
+	color: #808080;
+}
+
+.porcentajeBar {
+	font: 14px Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	position:relative;
+	top:-17px;
+}
+
+/**********************************************************************************/
+/* Detailed Bar Styles                                                            */
+/**********************************************************************************/
+
+.contenedorDet {
+	width: 270px;
+	height: 60px;
+	border-top: 1px solid #CECECE;
+	padding-left: 5px;
+	padding-top: 13px;
+	overflow: hidden;
+}
+
+.nombreDet {
+	font: 11px Arial, Helvetica, sans-serif;
+	font-weight:bold;
+}
+
+.barraDet {
+	height: 13px;
+	width: 1px;
+	position:relative;
+	top: 7px;
+}
+
+.porcentajeDet {
+	font: 12px Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	position:relative;
+	top: -6px;
+}
+
+.cantidadDet {
+	font: 10px "Arial Narrow", Helvetica, sans-serif;
+	position:relative;
+	top: -20px;
+	color: #808080;
+}
+
+.tituloInternaDet {
+	font: 9px "Arial", Helvetica, sans-serif;
+	position:relative;
+	top: -15px;
+	color: #000000;
+}
+
+.tituloInternaDet:hover {
+	background-color: #eeeeee;
+  	cursor: pointer;
+}
+
+.contenidoInternaDet {
+	font: 12px Arial , Helvetica, sans-serif;
+	color: #808080;
+}
+

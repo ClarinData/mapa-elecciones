@@ -1,0 +1,39 @@
+
+/**********************************************************************************/
+/*  Global Styles                                                                 */
+/**********************************************************************************/
+
+.slashback {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;	
+}
+
+.btnLeftAct{
+	background: url("../img/bgLeft.png");
+	background-position: 0 -400px;
+  	cursor: pointer;
+}
+
+.btnLeftAct:hover{
+	background: url("../img/bgLeft.png");
+	background-position: 0 -200px;
+}
+
+.btnLeftIna{
+	background: url("../img/bgLeft.png");
+ 	background-position: 0 0px;
+  	cursor: default;
+}
+
+.labelLeft{
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight:bolder;
+    font-size: 70%;	
+	height: 25px;
+	width: 175px;
+	color: #000000;
+    cursor: pointer;
+	position: relative;
+	top: -189px;
+	left: 36px;
+}
+

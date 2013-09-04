@@ -1,0 +1,181 @@
+/**********************************************************************************/
+/* Tooltip Styles                                                                 */
+/**********************************************************************************/
+
+#tooltip {
+  position: absolute;
+  margin: 0 0 1em 0;
+  width: 12em;
+  height: auto;
+  padding: 5px 5px 5px 5px;
+  background: #fff;
+  border: solid 1px #aaa;
+  display: none;
+}
+
+#tooltip  td {
+  padding-top:6px;
+  padding-bottom:5px;
+  vertical-align: bottom;
+  border-bottom: 1px solid;
+  border-bottom-color:  #D8D8D8;
+  
+} 
+
+#tooltip .toolHeader {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  width: 11.3em;
+}
+
+#tooltip .toolTitulo {
+  padding-right:10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: .8em;
+  text-transform: uppercase;
+  line-height: 1.1em;
+}
+
+#tooltip .toolBarrios {
+  margin-top: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .65em;
+  background-color: white;
+  color: #808080;
+  line-height: 1.1em;
+  display: none;
+}
+
+#tooltip .active {
+  display: block;
+}
+
+#tooltip .toolTable {
+  margin-top: 6px;
+  margin-bottom:6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-collapse: collapse;
+}
+
+#tooltip tr>td:nth-child(1) {
+  width: 2px;
+  /*height: 1.4em;*/
+  border-bottom-color: white;
+  border-bottom-width: 5px;
+}
+
+#tooltip .toolPartido {
+  padding-left:7px;
+  padding-right:12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .75em;
+  font-weight: bolder;
+  line-height: 1.1em;
+  text-transform: capitalize;
+}
+
+#tooltip .toolPorcentaje {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 90%;
+  font-weight: bolder;
+} 
+
+#tooltip .toolFooter {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: .7em;
+  color: #808080;
+}
+
+/**********************************************************************************/
+/* Map Styles                                                                     */
+/**********************************************************************************/
+
+#preloader {
+  top: 300px;
+  left: 200px;
+  background: rgba(255, 255, 255, 0.8);
+  filter: alpha(opacity=80); /*ie*/
+  position: absolute;
+  width:100%;
+  height:822px;
+  display: none;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:120%;
+  font-weight: bold;
+  line-height: 75%;
+  color:#949493;  
+}
+
+#map_arg {
+  position: absolute;
+  padding: 5px 5px 5px 5px;
+}
+
+#map_caba {
+  position: absolute;
+}
+
+#backbutton {
+  cursor: pointer;
+}
+
+.states {
+  /*background: #FFF;*/
+  fill: #FAFAFA;
+  /*fill: url(#states_pattern) repeat;*/
+  /*fill-size: 100%;*/
+  stroke: #000000;
+  stroke-width: 0.25pt;
+  fill-opacity: 1;
+}
+
+.transparent {
+  fill-opacity: 0;
+}
+
+.disabled {
+  display: none;
+}
+
+.states .active {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 1s, opacity 2s ease-out;
+}
+
+path {
+  cursor: pointer;
+}
+
+path.admlevel2 {
+  /*stroke: #ffffff;*/
+  stroke: #e8e7e7;
+  stroke-width: 0.6pt;
+}
+
+path.admlevel2:hover {
+  stroke: black;
+  /*opacity: .6;*/
+}
+
+path.admlevel1:hover {
+  stroke-width: 1pt;
+}
+
+circle {
+  fill-opacity: 1;
+  stroke-width: 0.25pt;
+  stroke: black;
+  pointer-events: none;
+}

@@ -1,0 +1,37 @@
+/**********************************************************************************/
+/*  COLORES DE LAS FUERZAS POLITICAS                                              */
+/**********************************************************************************/
+.fp_K {
+	fill: #84d0ff;
+	background-color: #84d0ff;
+}
+
+.fp_PJ {
+	fill: #c8a4d8;
+	background-color: #c8a4d8;
+}
+
+.fp_FP {
+	fill: #ff9485;
+	background-color: #ff9485;
+}
+
+.fp_PRO {
+	fill: #f2da00;
+	background-color: #f2da00;
+}
+
+.fp_IZ {
+	fill: #b7cf97;
+	background-color: #b7cf97;
+}
+
+.fp_OT {
+	fill: #d8d7d6;
+	background-color: #d8d7d6;
+}
+
+.fp_SFP { /*Sin Fuerza Política*/
+	fill: #666666;
+	background-color: #666666;
+}

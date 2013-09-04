@@ -1,0 +1,341 @@
+/**********************************************************************************/
+/*  CONTENEDOR                                                                    */
+/**********************************************************************************/
+
+#contenedorApp{
+	width: 950px;
+	height: 822px;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	border: 0px;	    
+	border-spacing: 0; /* !ie*/ 	
+	border-collapse:collapse; /* ie*/
+	overflow: hidden;
+}
+
+#contenedorApp #cabezal{
+	width: 950px;
+	height: 155px;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	border: 0px;
+}
+
+#contenedorApp #cabezal #titulo {
+	position:absolute;
+	top: 60px;
+	left: 0px;	
+	height: 30px;
+	width: 381px;
+	font-family: Georgia, serif;
+	font-size: 150%;
+	font-weight: lighter;
+}
+
+#contenedorApp #cabezal #titulo #beta {
+	margin-left:1%;
+	padding:.5% 1% .5% 1%;
+	color:white;
+	background-color:#E06153;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:7.65px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	line-height: 2;
+}
+
+
+#contenedorApp #cabezal #diputadosBtn, #contenedorApp #cabezal #senadoresBtn {
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 90%;	
+	height: 25px;
+	width: 175px;
+	border-left: 1px solid #CECECE;
+    cursor: pointer;
+    position: absolute;
+}
+
+#contenedorApp #cabezal #diputadosBtn:hover, #contenedorApp #cabezal #senadoresBtn:hover{
+	font-weight: bold;
+}
+
+.diputadosBtnSelected{
+	background: url("../img/dipusenasprite.png") no-repeat 0 0px;
+  	cursor: default;
+}
+
+.diputadosBtnNotSelected{
+	background: url("../img/dipusenasprite.png") no-repeat 0 -25px;
+  	cursor: pointer;
+}
+
+.senadoresBtnSelected{
+	background: url("../img/dipusenasprite.png") no-repeat 0 -50px;
+  	cursor: default;
+}
+
+.senadoresBtnNotSelected{
+	background: url("../img/dipusenasprite.png") no-repeat 0 -75px;
+  	cursor: pointer;
+}
+
+#contenedorApp #selectorMapa {
+	width: 35px;
+	height: 19px;
+	position: absolute;
+	top: 142px;
+}
+
+.selectDiputados{
+	background: url("../img/selectores.png") no-repeat 0 0px;
+	left: 21px;	
+}
+
+.selectSenadores{
+	background: url("../img/selectores.png") no-repeat 0 -19px;
+	left: 212px;	
+}
+
+#contenedorApp #cabezal #diputadosBtn{
+	position:absolute;
+	top: 109px;
+	left: 2px;
+}
+
+#contenedorApp #cabezal #senadoresBtn{
+    position: absolute;
+    left: 192px;
+    top: 109px;
+}
+
+#contenedorApp #cabezal #diputadosBtn span, #contenedorApp #cabezal #senadoresBtn span {
+    bottom: -4px;
+    position: absolute;
+    right: 26px;
+}
+
+#contenedorApp #cabezal #referenciasGenerales, #contenedorApp #cabezal #referenciasVotos{
+	border-left: 1px solid #CECECE;
+	border-right: 1px solid #CECECE;
+	height: 86px;
+    left: 382px;
+    position: absolute;
+    top: 54px;
+    width: 218px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 71.5%;
+	color: #949493;
+	line-height: 130%;
+}
+
+#contenedorApp #cabezal #referenciasGenerales p, #contenedorApp #cabezal #referenciasVotos p{
+	margin-left: 10px;
+	margin-right: 10px;
+}	
+	
+#contenedorApp #cabezal #referenciasColores	{
+	background: url("../img/colores.png") no-repeat;
+    height: 86px;
+    left: 602px;
+    position: absolute;
+    top: 54px;
+    width: 345px;
+}
+	
+#contenedorApp #contenido{
+	width: 950px;
+	height: 600px;
+	position: absolute;
+	top: 156px;
+	left: 0px;
+	border-top: 1px solid #CECECE;
+	border-bottom: 1px solid #CECECE;
+}
+
+#contenedorApp #contenido #botones{
+	width: 130px;
+	height: 600px;
+	top: 0px;
+	left: 0px;
+}
+
+#contenedorApp #contenido #botones #provBtn, #contenedorApp #contenido #botones #partBtn, #contenedorApp #contenido #botones #votoBtn{
+	width: 130px;
+	height: 200px;
+	left: 0px;
+}
+
+#contenedorApp #contenido #map_arg{
+	width: 529px;
+	height: 600px;
+	top: 0px;
+	left: 130px;	
+	position: absolute;
+}
+
+#contenedorApp #contenido #barras{
+	width: 290px;
+	height: 600px;
+	border-left: 1px solid #CECECE;
+	top: 0px;
+	right: 0px;	
+	position: absolute;
+}
+
+#contenedorApp #contenido #barras #referenciaBarras{
+	width: 290px;
+	height: 115px;
+	background: url("../img/bgRight.png") no-repeat;
+	background-position: 0 0px;		
+}	
+
+
+#contenedorApp #contenido #barras #referenciaBarras #referenciaTituloProvincia{
+	position: absolute;
+	top: 20px;
+	left: 20px;	
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 90%;	
+	font-weight: bold;
+	color: #000000;
+}
+
+#contenedorApp #contenido #barras #referenciaBarras #referenciaTotal{
+	background-color: #E6E6E6;
+	padding: 2px 4px 2px 4px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;	
+	position: absolute;
+	top: 42px;
+	left: 20px;	
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 80%;	
+	font-weight: bold;
+	color: #595959;
+	
+}
+
+#contenedorApp #contenido #barras #referenciaBarras #referenciaNombreLocalidad{
+    background-color: #000000;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;	
+	color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 80%;
+    font-weight: bold;
+    left: 65px;
+    padding: 2px 4px 2px 4px;
+    position: absolute;
+    top: 42px;
+}
+
+#contenedorApp #contenido #barras #graficoBarras{
+	width: 290px;
+	height: 455px;
+	background-color: #FFFFFF;
+	overflow-x: hidden;
+}
+
+#contenedorApp #contenido #barras #totalBarras{
+	border-top: 1px solid #CECECE;
+	width: 290px;
+	height: 30px;
+	background: url("../img/bgRight.png") no-repeat;
+	background-position: 0 -230px;	
+}
+
+#mesas{
+    color: #990000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 59%;
+    left: 232px;
+    position: relative;
+    top: 0px;
+}
+
+#votos{
+    color: #990000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 59%;
+    left: 146px;
+    position: relative;
+    top: 10px;
+}
+
+.descMuestro {
+  display: inline;
+}
+
+.descOculto {
+  display: none;
+}
+
+/**********************************************************************************/
+/* Footer                                                                         */
+/**********************************************************************************/
+
+#contenedorApp #footer{
+	padding-top:1.5%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 71.7%;
+	text-align: left;
+	color: black;
+	width: 950px;
+	height: 40px;
+	position:absolute;
+	top: 760px;
+	left: 0px;
+	border: 0px;	    
+}
+
+#contenedorApp #footer .creditos {
+	display:inline;
+}
+
+#contenedorApp #footer #creditos {
+	padding-right:1%;
+	/*border-right: 1px solid #808080;*/
+	font-weight: bold;
+}
+
+
+#contenedorApp #footer #creditos:hover {
+	color: #949493;
+	cursor: pointer;
+}
+
+#contenedorApp #footer #ppagrupados {
+	padding-left:1%;
+	font-weight: bold;
+}
+
+#contenedorApp #footer #ppagrupados:hover {
+	color: #949493;
+	cursor: pointer;
+}
+
+#contenedorApp #footer .creditos span {
+	color:#E06153;
+}
+
+#contenedorApp #footer #feedback a {
+	float:right;
+}
+
+#contenedorApp #footer #feedback a {
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	color: #949493;
+}
+
+#contenedorApp #footer #feedback a:hover {
+	color: black;
+	cursor: pointer;
+}
+
+
