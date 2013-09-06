@@ -216,7 +216,9 @@ var mapObject = function(map) {
               })
               .on("mouseover", function(d) {
 
-                this.parentNode.appendChild(this);
+                g.selectAll("path").sort(function (a) {
+                    return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : 0;
+                });
 
                 map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
                 map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].description);
