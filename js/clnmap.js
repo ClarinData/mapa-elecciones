@@ -216,7 +216,7 @@ var mapObject = function(map) {
               })
               .on("mouseover", function(d) {
 
-                g.selectAll("path").sort(function (a) {
+                g[sel].selectAll("path").sort(function (a) {
                     return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : 0;
                 });
 
