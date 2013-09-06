@@ -154,23 +154,26 @@
   transition: visibility 0s linear 1s, opacity 2s ease-out;
 }
 
-path {
-  cursor: pointer;
+path.admlevel1 {
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: url(img/zoomin.cur), pointer;
 }
 
 path.admlevel2 {
   /*stroke: #ffffff;*/
   stroke: #e8e7e7;
   stroke-width: 0.6pt;
+  cursor: pointer;
+}
+
+path.admlevel1:hover {
+  stroke-width: 1pt;
 }
 
 path.admlevel2:hover {
   stroke: black;
   /*opacity: .6;*/
-}
-
-path.admlevel1:hover {
-  stroke-width: 1pt;
 }
 
 circle {

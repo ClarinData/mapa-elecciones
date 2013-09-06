@@ -603,9 +603,11 @@
   transition: visibility 0s linear 1s, opacity 2s ease-out;
 }
 
-path {
+/*path {
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
   cursor: pointer;
-}
+}*/
 
 path.admlevel2 {
   /*stroke: #ffffff;*/
