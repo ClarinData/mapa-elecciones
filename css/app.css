@@ -3,6 +3,7 @@
 /**********************************************************************************/
 
 #contenedorApp{
+	font-family:Arial, Helvetica, sans-serif;
 	width: 950px;
 	height: 822px;
 	position:absolute;
@@ -34,17 +35,13 @@
 	font-weight: lighter;
 }
 
-#contenedorApp #cabezal #titulo #beta {
-	margin-left:1%;
-	padding:.5% 1% .5% 1%;
-	color:white;
-	background-color:#E06153;
-	font-family:Arial, Helvetica, sans-serif;
-	font-size:7.65px;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-	line-height: 2;
+#contenedorApp #cabezal #beta {
+    background: url("../img/sprite.png") no-repeat scroll -28px -108px transparent;
+    height: 20px;
+    left: 209px;
+    position: absolute;
+    top: 48px;
+    width: 28px;	
 }
 
 
@@ -63,22 +60,22 @@
 }
 
 .diputadosBtnSelected{
-	background: url("../img/dipusenasprite.png") no-repeat 0 0px;
+	background: url("../img/sprite.png") no-repeat 0 0px;
   	cursor: default;
 }
 
 .diputadosBtnNotSelected{
-	background: url("../img/dipusenasprite.png") no-repeat 0 -25px;
+	background: url("../img/sprite.png") no-repeat 0 -25px;
   	cursor: pointer;
 }
 
 .senadoresBtnSelected{
-	background: url("../img/dipusenasprite.png") no-repeat 0 -50px;
+	background: url("../img/sprite.png") no-repeat 0 -50px;
   	cursor: default;
 }
 
 .senadoresBtnNotSelected{
-	background: url("../img/dipusenasprite.png") no-repeat 0 -75px;
+	background: url("../img/sprite.png") no-repeat 0 -75px;
   	cursor: pointer;
 }
 

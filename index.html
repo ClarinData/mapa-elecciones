@@ -18,10 +18,12 @@
 	</head>
 
 	<body>	
-		<!-- App gral -->		
+
+		<!-- App gral -->
 		<div id="contenedorApp">
 			<div id="cabezal">
-				<div id="titulo">Primarias legislativas<span id="beta">BETA</span></div>
+				<div id="titulo">Primarias legislativas</div>
+				<div id="beta"> </div>
 				<div id="diputadosBtn" class="diputadosBtnSelected" onclick="updateVistaButton(this.id);updateTotales(elecciones.diputados['TOTALES']);"><span>DIPUTADOS</span></div>
 				<div id="senadoresBtn" class="senadoresBtnNotSelected"  onclick="updateVistaButton(this.id);updateTotales(elecciones.senadores['TOTALES']); "><span>SENADORES</span></div>
 				<div id="referenciasGenerales"> <p>REFERENCIAS<br />Los colores representan la orientación política del voto. A cada partido político se lo agrupó según alguna de las siguientes categorías:</p> </div>
@@ -59,7 +61,7 @@
 			<div id="footer">
 				<div class="creditos" id="creditos" onclick="abrirCreditos()"><span>»</span> Especificaciones y créditos</div>
 			<!--<div class="creditos" id="ppagrupados"><span>&#187;</span> Cómo se agruparon los partidos políticos </div>-->
-				<div class="creditos" id="feedback"><a href="mailto:infografia@clarin.com"><img src="img/sobre.png" width="16" height="11" alt="sobre">&nbsp; Escribinos</a></div>
+				<div class="creditos" id="feedback"><a href="mailto:infografia@clarin.com"><img src="img/sobre.png" width="16" height="11" alt="sobre" border="0">&nbsp; Escribinos</a></div>
 			</div>
 
 			<div id="selectorMapa" class="selectDiputados"> </div>
