@@ -1,5 +1,5 @@
-/* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 3, maxparams: 3, maxdepth: 2, maxstatements: 15 */
-/* global mapObject, d3, vista, window */
+/* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 4, maxparams: 3, maxdepth: 2, maxstatements: 15 */
+/* global mapObject, d3, vista, window, getQueryParams */
 /* exported argentina */
 
 var argentina = new mapObject({
@@ -13,7 +13,7 @@ var argentina = new mapObject({
       "senadores": {},
       "event": d3.dispatch("updatedata", "loaded", "ready", "viewchange"),
       "file": "data/datafiles.json",
-      "refresh": 2,
+      "refresh": 1,
       "load": function() {
         "use strict";
         var param = window.location.href.split('?', 1) | "rnd=" + Math.random();
@@ -138,9 +138,18 @@ var argentina = new mapObject({
 
     if (argentina.svg) {
 
-      window.setTimeout(function() {
+      var query = getQueryParams(),
+          vista = query.view || null,
+          selector = (query.id) ? argentina.svg.g.select("#" + argentina.id + "_" + query.id.toUpperCase()) : null,
+          datum = (selector) ? selector.datum() : null;
+
+      if (datum) { argentina.event.click(datum); }
+      if (vista) { argentina.vista[vista](); }
+
+      d3.timer(function () {
         elecciones.load();
         refreshView();
+        return true;
       }, elecciones.refresh * 60000);
 
     } else {
@@ -158,68 +167,78 @@ var argentina = new mapObject({
 
   argentina.event.on("click", function(d) {
 
-    argentina.selection = (d) ? d.properties.administrative_area.id : "TOTALES";
+      (function (d) {
 
-    elecciones.event.updatedata({
-      "diputados": elecciones.diputados[argentina.selection],
-      "senadores": elecciones.senadores[argentina.selection],
-      "d": (elecciones.diputados[argentina.selection] || elecciones.senadores[argentina.selection]) ? d : undefined
-    });
+        if ((!d) || (d.properties.administrative_area.length < 2)) {
 
-    if ((!d) || (d.properties.administrative_area.length < 2)) {
+        var centered = d || null;
 
-      var centered = d || null;
+        argentina.backbutton.visible(d);
 
-      argentina.backbutton.visible(d);
+        var b = argentina.svg.path.bounds(d);
 
-      var b = argentina.svg.path.bounds(d);
+        argentina.zoom = 0.95 / Math.max((b[1][0] - b[0][0]) / argentina.width, (b[1][1] - b[0][1]) / argentina.height);
 
-      argentina.zoom = 0.95 / Math.max((b[1][0] - b[0][0]) / argentina.width, (b[1][1] - b[0][1]) / argentina.height);
+        var translate = (argentina.zoom) ? [-(b[1][0] + b[0][0]) / 2, -(b[1][1] + b[0][1]) / 2] : [-argentina.width / 2, -argentina.height / 2];
 
-      var translate = (argentina.zoom) ? [-(b[1][0] + b[0][0]) / 2, -(b[1][1] + b[0][1]) / 2] : [-argentina.width / 2, -argentina.height / 2];
+        argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom) && argentina.vista.state === "votos");
 
-      argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom) && argentina.vista.state === "votos");
+        (function(g) {
 
-      (function(g) {
+            g.transition()
+              .duration(600)
+              .attr("transform", "translate(" + argentina.width / 2 + "," + argentina.height / 2 + ")" +
+                "scale(" + (argentina.zoom || 1) + ")" +
+                "translate(" + translate + ")"
+            );
 
-          g.transition()
-            .duration(600)
-            .attr("transform", "translate(" + argentina.width / 2 + "," + argentina.height / 2 + ")" +
-              "scale(" + (argentina.zoom || 1) + ")" +
-              "translate(" + translate + ")"
+            g.selectAll("path")
+              .style("stroke-width", function() {
+
+                return (argentina.zoom) ? 0.5 / argentina.zoom + "pt" : null;
+
+              })
+              .classed("active", centered && function(d) {
+
+                return (d === centered);
+
+              });
+
+            g.selectAll("circle")
+              .style("stroke-width", function() {
+
+                return (argentina.zoom) ? 0.5 / argentina.zoom + "pt" : null;
+
+              })
+              .each(function(d) {
+
+                  d3.select(this).attr("r", dataRadius(elecciones[vista][d.properties.administrative_area.id]));
+
+              });
+
+          })(
+
+            argentina.svg.g
+
           );
 
-          g.selectAll("path")
-            .style("stroke-width", function() {
+        }
+      })(
 
-              return (argentina.zoom) ? 0.5 / argentina.zoom + "pt" : null;
 
-            })
-            .classed("active", centered && function(d) {
+        ((!d) || (d.properties.administrative_area.id.length < 4)) ? d : argentina.svg.g.select("#" + argentina.id + "_" + d.properties.administrative_area.id.substr(0,3)).datum()
+      
+      );
 
-              return (d === centered);
+      console.log("URL: ", "http://localhost/mapa-elecciones/" + ((d) ? "?id=" + d.properties.administrative_area.id + "&data=" + vista + "&selection=" + argentina.vista.state : ""));
 
-            });
+      argentina.selection = (d) ? d.properties.administrative_area.id : "TOTALES";
 
-          g.selectAll("circle")
-            .style("stroke-width", function() {
-
-              return (argentina.zoom) ? 0.5 / argentina.zoom + "pt" : null;
-
-            })
-            .each(function(d) {
-
-                d3.select(this).attr("r", dataRadius(elecciones[vista][d.properties.administrative_area.id]));
-
-            });
-
-        })(
-
-          argentina.svg.g
-
-        );
-
-    }
+      elecciones.event.updatedata({
+        "diputados": elecciones.diputados[argentina.selection],
+        "senadores": elecciones.senadores[argentina.selection],
+        "d": (elecciones.diputados[argentina.selection] || elecciones.senadores[argentina.selection]) ? d : undefined
+      });
 
   });
 

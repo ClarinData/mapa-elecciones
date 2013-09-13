@@ -1,6 +1,6 @@
 /* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 3, maxparams: 3, maxdepth: 2, maxstatements: 15 */
-/* global d3, topojson, elecciones, vista */
-/* exported mapObject */
+/* global d3, topojson, elecciones, vista, navigator, window */
+/* exported mapObject, getQueryParams*/
 
 var mapObject = function(map) {
 
@@ -194,30 +194,77 @@ var mapObject = function(map) {
 
           function createPaths(obj, sel) {
 
-            obj.selectAll("text")
-              .data(topojson.feature(json, json.objects[sel]).features)
-              .enter()
-              .append("path")
-              .attr("id", function(d) {
+            obj.path = (function (dataObj) {
+                      
+              return dataObj.append("path");
 
-                var id = map.id + "_";
-                d.properties.administrative_area.id = "";
-                for (var i = 0; i < d.properties.administrative_area.length; i++) {
-                  id += d.properties.administrative_area[i].id;
-                  d.properties.administrative_area.id += d.properties.administrative_area[i].id;
-                }
-                return id;
+            })(
+              obj.selectAll("path")
+                 .data(topojson.feature(json, json.objects[sel]).features)
+                 .enter()
+            );
 
-              })
-              .attr("class", function(d) {
+            return obj;
 
-                return ("admlevel" + d.properties.administrative_area.length);
+          }
 
-              })
-              .on("mouseover", function(d) {
+          function pathsAttr(obj) {
 
-                g[sel].selectAll("path").sort(function (a) {
-                    return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : 0;
+            return obj
+                  .attr("id", function(d) {
+
+                    var id = map.id + "_";
+                    d.properties.administrative_area.id = "";
+                    for (var i = 0; i < d.properties.administrative_area.length; i++) {
+                      id += d.properties.administrative_area[i].id;
+                      d.properties.administrative_area.id += d.properties.administrative_area[i].id;
+                    }
+                    return id;
+
+                  })
+                  .attr("class", function(d) {
+
+                    return ("admlevel" + d.properties.administrative_area.length);
+
+                  })
+                  .on("mousemove", function() {
+
+                    var left = d3.event.pageX + 10;
+                    var top = ((d3.event.pageY - 10 + map.tooltip.height()) > 730) ? d3.event.pageY + 30 - map.tooltip.height() : d3.event.pageY - 10;
+
+                    return map.tooltip.style("top", top + "px")
+                      .style("left", left + "px");
+
+                  })
+                  .on("mouseout", function() {
+
+                    return map.tooltip.style("display", "none");
+
+                  })
+                  .on("click", function(d) {
+
+                    obj.sort(function (a) {
+                        return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
+                    });
+
+                    map.event.click(d);
+
+                  })
+                  .attr("d", map.svg.path)
+                  .call(
+                    d3.behavior
+                    .zoom().on("zoom", function(d) {
+                      map.event.zoom(d, d3.event.translate, d3.event.scale);
+                    })
+                  );
+
+          }
+
+          function mouseover (obj) {
+            obj.on("mouseover", function(d) {
+
+                obj.sort(function (a) {
+                    return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
                 });
 
                 map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
@@ -242,36 +289,7 @@ var mapObject = function(map) {
                   .style("top", d3.event.pageY + 5 + "px")
                   .style("display", "block");
 
-              })
-              .on("mousemove", function() {
-
-                var left = d3.event.pageX + 10;
-                var top = ((d3.event.pageY - 10 + map.tooltip.height()) > 730) ? d3.event.pageY + 30 - map.tooltip.height() : d3.event.pageY - 10;
-
-                return map.tooltip.style("top", top + "px")
-                  .style("left", left + "px");
-
-              })
-              .on("mouseout", function() {
-
-                return map.tooltip.style("display", "none");
-
-              })
-              .on("click", function(d) {
-
-                map.event.click(d);
-
-              })
-              .attr("d", map.svg.path)
-              .call(
-                d3.behavior
-                .zoom().on("zoom", function(d) {
-                  map.event.zoom(d, d3.event.translate, d3.event.scale);
-                })
-            );
-
-            return obj;
-
+              });
           }
 
           g.votes = (function(votes) {
@@ -312,27 +330,34 @@ var mapObject = function(map) {
 
           );
 
-          g.admlevel3 = (function(admlevel3) {
+          g.admlevel3 = createPaths(
+            g.append("g")
+             .attr("id", map.id + "_admlevel3")
+             .attr("class", "states"),
+          "admlevel3");
 
-            return createPaths(admlevel3, "admlevel3");
-
-          })(
-
-            g.append("g").attr("id", map.id + "_admlevel3")
-            .attr("class", "states")
-
+          g.admlevel3.pathAttr = pathsAttr(
+            g.admlevel3.path
           );
 
-          g.admlevel2 = (function(admlevel2) {
+          g.admlevel2 = createPaths(
+            g.append("g")
+             .attr("id", map.id + "_admlevel2")
+             .attr("class", "states"),
+          "admlevel2");
 
-            return createPaths(admlevel2, "admlevel2");
-
-          })(
-
-            g.append("g").attr("id", map.id + "_admlevel2")
-            .attr("class", "states")
-
+          g.admlevel2.pathAttr = pathsAttr(
+            g.admlevel2.path
           );
+
+          if (!navigator.touch) {
+            mouseover(
+              g.admlevel2.path
+            );
+            mouseover(
+              g.admlevel3.path
+            );
+          }         
 
           return g;
 
@@ -362,3 +387,21 @@ var mapObject = function(map) {
   return map;
 
 };
+
+function getQueryParams() {
+
+    "use strict";
+
+    var qs = window.location.search.split("+").join(" "),
+        params = {},
+        re = /[?&]?([^=]+)=([^&]*)/g,
+        tokens = re.exec(qs);
+
+    while (tokens) {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
+}
+
+navigator.touch = ('ontouchstart' in window);
