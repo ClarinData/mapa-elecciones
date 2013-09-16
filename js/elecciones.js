@@ -230,7 +230,7 @@ var argentina = new mapObject({
       
       );
 
-      console.log("URL: ", "http://localhost/mapa-elecciones/" + ((d) ? "?id=" + d.properties.administrative_area.id + "&data=" + vista + "&selection=" + argentina.vista.state : ""));
+      window.console.log("URL: ", "http://localhost/mapa-elecciones/" + ((d) ? "?id=" + d.properties.administrative_area.id + "&data=" + vista + "&selection=" + argentina.vista.state : ""));
 
       argentina.selection = (d) ? d.properties.administrative_area.id : "TOTALES";
 

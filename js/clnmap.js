@@ -1,5 +1,5 @@
 /* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 3, maxparams: 3, maxdepth: 2, maxstatements: 15 */
-/* global d3, topojson, elecciones, vista, navigator, window */
+/* global d3, topojson, elecciones, vista, navigator, window, document */
 /* exported mapObject, getQueryParams*/
 
 var mapObject = function(map) {
@@ -229,10 +229,14 @@ var mapObject = function(map) {
                   })
                   .on("mouseover", function(d) {
 
-                    navigator.isTouch ? preventDefault() :
+                    navigator.isTouch ? null :
 
                       obj.sort(function (a) {
-                            return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
+                            if (a.properties.administrative_area.id === d.properties.administrative_area.id) {
+                              return 1;
+                            } else {
+                              return -1
+                            };
                          });
 
                       map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
@@ -393,4 +397,4 @@ function getQueryParams() {
     return params;
 }
 
-navigator.isTouch = !!(typeof document.documentElement.ontouchstart != "undefined");
+navigator.isTouch = (typeof document.documentElement.ontouchstart !== "undefined");
