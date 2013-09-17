@@ -138,10 +138,11 @@
     position: absolute;
     top: 81px;
     width: 349px;
+	padding-left: 10px;
 }
 
 #referenciasColores table {
-	width: 100%;
+	width: 330px;
 	padding: 0px;
 	margin: 0px;
 }
@@ -149,13 +150,13 @@
 
 #referenciasColores .colorCelda {
 	width: 25px;
+	height: 10px;
 }
 
 #referenciasColores .textoCelda {
-	width: 150px;
     font-size: 71.5%;
-    line-height: 130%;	
-	
+    height: 18px;
+    width: 150px;
 }
 
 
