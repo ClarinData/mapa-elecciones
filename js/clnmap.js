@@ -37,7 +37,7 @@ var mapObject = function(map) {
   map.event = d3.dispatch("click", "zoom", "progress", "ready", "error");
 
   map.projection = d3.geo.transverseMercator()
-     .center([2,5, -38.5])
+     .center([2.5, -38.5])
      .rotate([66, 0])
      .scale((map.height * 56.5) / 33)
      .translate([(map.width / 2), (map.height / 2)]);
@@ -210,8 +210,7 @@ var mapObject = function(map) {
 
           function pathsAttr(obj) {
 
-            return obj
-                  .attr("id", function(d) {
+            obj.attr("id", function(d) {
 
                     var id = map.id + "_";
                     d.properties.administrative_area.id = "";
@@ -227,59 +226,11 @@ var mapObject = function(map) {
                     return ("admlevel" + d.properties.administrative_area.length);
 
                   })
-                  .on("mouseover", function(d) {
-
-                    navigator.isTouch ? null :
-
-                      obj.sort(function (a) {
-                            if (a.properties.administrative_area.id === d.properties.administrative_area.id) {
-                              return 1;
-                            } else {
-                              return -1
-                            };
-                         });
-
-                      map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
-                      map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].description);
-                      var dataE = elecciones[vista][d.properties.administrative_area.id];
-                      if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
-                        for(var x = 0; x < 3; x++) {
-                          map.tooltip.table.row.color[x].className = "fp_" + dataE.votacion.partidos_politicos[x].fuerza_politica;
-                          map.tooltip.table.row.name[x].innerHTML = dataE.votacion.partidos_politicos[x].nombre.toLowerCase();
-                          map.tooltip.table.row.percent[x].innerHTML = parseFloat(dataE.votacion.partidos_politicos[x].porcentaje).toLocaleString() + "%";
-                        }
-                        map.tooltip.table.classed("disabled", false);
-                      } else {
-                        map.tooltip.table.classed("disabled", true);
-                        map.tooltip.footer.innerHTML = (d.properties.administrative_area.id === "TDF999") ?
-                                    "<div>Territorio en disputa con el Reino Unido.</div><div>Sin datos para visualizar.</div>" :
-                                    "Sin datos para visualizar.";
-                      }
-
-                      return map.tooltip.style("left", d3.event.pageX + 5 + "px")
-                        .style("top", d3.event.pageY + 5 + "px")
-                        .style("display", "block");
-
-                  })
-                  .on("mousemove", function() {
-
-                    var left = d3.event.pageX + 10;
-                    var top = ((d3.event.pageY - 10 + map.tooltip.height()) > 730) ? d3.event.pageY + 30 - map.tooltip.height() : d3.event.pageY - 10;
-
-                    return map.tooltip.style("top", top + "px")
-                      .style("left", left + "px");
-
-                  })
-                  .on("mouseout", function() {
-
-                    return map.tooltip.style("display", "none");
-
-                  })
                   .on("click", function(d) {
 
                     obj.sort(function (a) {
-                          return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
-                       });
+                        return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
+                    });
 
                     map.event.click(d);
 
@@ -291,6 +242,57 @@ var mapObject = function(map) {
                       map.event.zoom(d, d3.event.translate, d3.event.scale);
                     })
                   );
+
+                  if (!navigator.isTouch) {
+                    obj.on("mouseover", function(d) {
+
+                        obj.sort(function (a) {
+                            if (a.properties.administrative_area.id === d.properties.administrative_area.id) {
+                              return 1;
+                            } else {
+                              return -1;
+                            };
+                        });
+
+                        map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
+                        map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].description);
+                        var dataE = elecciones[vista][d.properties.administrative_area.id];
+                        if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
+                          for(var x = 0; x < 3; x++) {
+                            map.tooltip.table.row.color[x].className = "fp_" + dataE.votacion.partidos_politicos[x].fuerza_politica;
+                            map.tooltip.table.row.name[x].innerHTML = dataE.votacion.partidos_politicos[x].nombre.toLowerCase();
+                            map.tooltip.table.row.percent[x].innerHTML = parseFloat(dataE.votacion.partidos_politicos[x].porcentaje).toLocaleString() + "%";
+                          }
+                          map.tooltip.table.classed("disabled", false);
+                        } else {
+                          map.tooltip.table.classed("disabled", true);
+                          map.tooltip.footer.innerHTML = (d.properties.administrative_area.id === "TDF999") ?
+                                      "<div>Territorio en disputa con el Reino Unido.</div><div>Sin datos para visualizar.</div>" :
+                                      "Sin datos para visualizar.";
+                        }
+
+                        return map.tooltip.style("left", d3.event.pageX + 5 + "px")
+                          .style("top", d3.event.pageY + 5 + "px")
+                          .style("display", "block");
+
+                      })
+                      .on("mousemove", function() {
+
+                        var left = d3.event.pageX + 10;
+                        var top = ((d3.event.pageY - 10 + map.tooltip.height()) > 730) ? d3.event.pageY + 30 - map.tooltip.height() : d3.event.pageY - 10;
+
+                        return map.tooltip.style("top", top + "px")
+                          .style("left", left + "px");
+
+                      })
+                      .on("mouseout", function() {
+
+                        return map.tooltip.style("display", "none");
+
+                      });
+                  }
+
+            return obj;
 
           }
 
@@ -350,7 +352,7 @@ var mapObject = function(map) {
 
           g.admlevel2.pathAttr = pathsAttr(
             g.admlevel2.path
-          );
+          );      
 
           return g;
 
@@ -381,20 +383,4 @@ var mapObject = function(map) {
 
 };
 
-function getQueryParams() {
-
-    "use strict";
-
-    var qs = window.location.search.split("+").join(" "),
-        params = {},
-        re = /[?&]?([^=]+)=([^&]*)/g,
-        tokens = re.exec(qs);
-
-    while (tokens) {
-        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
-    }
-
-    return params;
-}
-
-navigator.isTouch = (typeof document.documentElement.ontouchstart !== "undefined");
+navigator.isTouch = ('ontouchstart' in window);
