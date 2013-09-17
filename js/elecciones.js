@@ -138,14 +138,6 @@ var argentina = new mapObject({
 
     if (argentina.svg) {
 
-      var query = getQueryParams(),
-          vista = query.view || null,
-          selector = (query.id) ? argentina.svg.g.select("#" + argentina.id + "_" + query.id.toUpperCase()) : null,
-          datum = (selector) ? selector.datum() : null;
-
-      if (datum) { argentina.event.click(datum); }
-      if (vista) { argentina.vista[vista](); }
-
       d3.timer(function () {
         elecciones.load();
         refreshView();
@@ -185,9 +177,7 @@ var argentina = new mapObject({
 
         (function(g) {
 
-            g.transition()
-              .duration(600)
-              .attr("transform", "translate(" + argentina.width / 2 + "," + argentina.height / 2 + ")" +
+            g.attr("transform", "translate(" + argentina.width / 2 + "," + argentina.height / 2 + ")" +
                 "scale(" + (argentina.zoom || 1) + ")" +
                 "translate(" + translate + ")"
             );
@@ -230,7 +220,7 @@ var argentina = new mapObject({
       
       );
 
-      window.console.log("URL: ", "http://localhost/mapa-elecciones/" + ((d) ? "?id=" + d.properties.administrative_area.id + "&data=" + vista + "&selection=" + argentina.vista.state : ""));
+      window.console.log("URL: ", "http://localhost/mapa-elecciones/" + ((d) ? "?id=" + d.properties.administrative_area.id + "&data=" + vista + "&view=" + argentina.vista.state : ""));
 
       argentina.selection = (d) ? d.properties.administrative_area.id : "TOTALES";
 
@@ -244,36 +234,38 @@ var argentina = new mapObject({
 
   argentina.vista = {
 
-    votos: (function() {
+    voto: function() {
 
       argentina.svg.g.admlevel2.classed("transparent", true);
       argentina.svg.g.admlevel3.classed("transparent", true);
       argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom));
       argentina.svg.g.votes.classed("disabled", false);
-      argentina.vista.state = "votos";
+      argentina.vista.state = "voto";
+      updateLeftButton("votoBtn");
 
-    }),
+    },
 
-    partidos: (function() {
+    part: function() {
 
       argentina.svg.g.admlevel2.classed("transparent", true);
       argentina.svg.g.admlevel3.classed("transparent disabled", false);
       argentina.svg.g.votes.classed("disabled", true);
-      argentina.vista.state = "partidos";
+      argentina.vista.state = "part";
+      updateLeftButton("partBtn");
 
+    },
 
-    }),
-
-    provincias: (function() {
+    prov: function() {
 
       argentina.svg.g.admlevel2.classed("transparent", false);
       argentina.svg.g.admlevel3.classed("transparent disabled", false);
       argentina.svg.g.votes.classed("disabled", true);
-      argentina.vista.state = "provincias";
+      argentina.vista.state = "prov";
+      updateLeftButton("provBtn");
 
-    }),
+    },
 
-    state: "provincias"
+    state: "prov"
 
   };
 
