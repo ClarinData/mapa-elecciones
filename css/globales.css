@@ -37,3 +37,10 @@
 	left: 36px;
 }
 
+.descMuestro {
+  display: inline;
+}
+
+.descOculto {
+  display: none;
+}

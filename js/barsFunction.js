@@ -69,7 +69,7 @@ function updateVistaButton(option) {
 // Recibe el id del boton clickeado, lo desactiva y activa el resto
 function updateLeftButton(option) {
 	var cond = [false, true];
-	var arr = ["#provBtn", "#partBtn", "#votoBtn"];
+	var arr = ["#provBtn", "#partBtn", "#votoBtn","camaBtn"];
 	if (option == "votoBtn") {
 		cond[0] = true;
 		cond[1] = false;
@@ -80,16 +80,6 @@ function updateLeftButton(option) {
 	d3.select("#referenciasGenerales").classed("descOculto", cond[0]);
 	d3.select("#referenciasVotos").classed("descOculto", cond[1]);
 	d3.select("#referenciasVotos").classed("descMuestro", cond[0]);
-
-	// Activo todos los botones de la botonera de la izquieda
-	for (var i = 0; i < arr.length; i++) {
-		d3.select(arr[i]).classed("btnLeftIna", false);
-		d3.select(arr[i]).classed("btnLeftAct", true);
-	}
-
-	// desactivo botón clickeado de la botonera de la izquieda
-	d3.select("#" + option).classed("btnLeftAct", false);
-	d3.select("#" + option).classed("btnLeftIna", true);
 }
 
 /************************************************************************/

@@ -1,6 +1,5 @@
 /**********************************************************************************/
-/*  CONTENEDOR                                                                    */
-/**********************************************************************************/
+/* CONTENEDOR */
 
 #contenedorApp{
 	font-family:Arial, Helvetica, sans-serif;
@@ -9,44 +8,43 @@
 	position:absolute;
 	top: 0px;
 	left: 0px;
-	border: 0px;	    
 	border-spacing: 0; /* !ie*/ 	
 	border-collapse:collapse; /* ie*/
-	overflow: hidden;
 }
 
-#contenedorApp #cabezal{
+
+/**********************************************************************************/
+/* HEADER */
+
+#cabezal{
 	width: 950px;
-	height: 155px;
-	position:absolute;
-	top: 0px;
-	left: 0px;
-	border: 0px;
+	height: 162px;
 }
 
-#contenedorApp #cabezal #titulo {
-	position:absolute;
-	top: 60px;
-	left: 0px;	
-	height: 30px;
-	width: 381px;
-	font-family: Georgia, serif;
-	font-size: 150%;
-	font-weight: lighter;
-}
-
-#contenedorApp #cabezal #beta {
-    background: url("../img/sprite.png") no-repeat scroll -28px -108px transparent;
-    height: 20px;
-    left: 209px;
+#titulo {
+    font-family: Georgia,serif;
+    font-size: 150%;
+    font-weight: lighter;
+    height: 30px;
+    left: 0;
     position: absolute;
-    top: 48px;
-    width: 28px;	
+    top: 65px;
+    width: 381px;
 }
 
+#beta {
+    color: #FF0000;
+    font-size: 10px;
+    font-weight: bold;
+    height: 16px;
+    left: 152px;
+    position: absolute;
+    top: 56px;
+    width: 32px;
+}
 
-#contenedorApp #cabezal #diputadosBtn, #contenedorApp #cabezal #senadoresBtn {
-	font-family: Arial,Helvetica,sans-serif;
+#diputadosBtn,
+#senadoresBtn {
     font-size: 90%;	
 	height: 25px;
 	width: 175px;
@@ -55,7 +53,25 @@
     position: absolute;
 }
 
-#contenedorApp #cabezal #diputadosBtn:hover, #contenedorApp #cabezal #senadoresBtn:hover{
+#diputadosBtn{
+    left: 2px;
+    top: 114px;
+}
+
+#senadoresBtn{
+    left: 192px;
+    top: 114px;
+}
+
+#diputadosBtn span,
+#senadoresBtn span {
+    bottom: -4px;
+    position: absolute;
+    right: 26px;
+}
+
+#diputadosBtn:hover,
+#senadoresBtn:hover{
 	font-weight: bold;
 }
 
@@ -83,140 +99,186 @@
 	width: 35px;
 	height: 19px;
 	position: absolute;
-	top: 142px;
+	top: 148px;
 }
 
 .selectDiputados{
-	background: url("../img/selectores.png") no-repeat 0 0px;
+	background: url("../img/sprite.png") no-repeat scroll -28px -109px transparent;
 	left: 21px;	
 }
 
 .selectSenadores{
-	background: url("../img/selectores.png") no-repeat 0 -19px;
+	background: url("../img/sprite.png") no-repeat scroll -28px -130px transparent;
 	left: 212px;	
 }
 
-#contenedorApp #cabezal #diputadosBtn{
-	position:absolute;
-	top: 109px;
-	left: 2px;
-}
-
-#contenedorApp #cabezal #senadoresBtn{
+#referenciasGenerales,
+#referenciasVotos{
+    color: #949493;
+    font-size: 71.5%;
+    height: 91px;
+    left: 373px;
+    line-height: 130%;
     position: absolute;
-    left: 192px;
-    top: 109px;
+    top: 59px;
+    width: 123px;
 }
 
-#contenedorApp #cabezal #diputadosBtn span, #contenedorApp #cabezal #senadoresBtn span {
-    bottom: -4px;
-    position: absolute;
-    right: 26px;
-}
-
-#contenedorApp #cabezal #referenciasGenerales, #contenedorApp #cabezal #referenciasVotos{
-	border-left: 1px solid #CECECE;
-	border-right: 1px solid #CECECE;
-	height: 86px;
-    left: 382px;
-    position: absolute;
-    top: 54px;
-    width: 218px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 71.5%;
-	color: #949493;
-	line-height: 130%;
-}
-
-#contenedorApp #cabezal #referenciasGenerales p, #contenedorApp #cabezal #referenciasVotos p{
-	margin-left: 10px;
-	margin-right: 10px;
+#referenciasGenerales p, 
+#referenciasVotos p{
+	margin-left: 5px;
+	margin-right: 5px;
 }	
 	
-#contenedorApp #cabezal #referenciasColores	{
-	background: url("../img/colores.png") no-repeat;
-    height: 86px;
-    left: 602px;
+#referenciasColores	{
+    border-left: 1px solid #CECECE;
+    border-right: 1px solid #CECECE;
+    height: 66px;
+    left: 497px;
     position: absolute;
-    top: 54px;
-    width: 345px;
+    top: 81px;
+    width: 349px;
 }
+
+#referenciasColores table {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+#referenciasColores .colorCelda {
+	width: 25px;
+}
+
+#referenciasColores .textoCelda {
+	width: 150px;
+    font-size: 71.5%;
+    line-height: 130%;	
 	
-#contenedorApp #contenido{
+}
+
+
+#shareView	{
+    height: 66px;
+    left: 861px;
+    position: absolute;
+    top: 81px;
+    width: 86px; 
+}	
+
+#logoShare{
+	background: url("../img/sprite.png") no-repeat scroll 0px -156px transparent;
+	height: 18px;
+    width: 36px; 
+}
+
+#textoShare{
+    color: #949493;
+    font-size: 80%;
+}
+
+#arrowShare{
+    background: url("../img/sprite.png") no-repeat scroll -36px -156px transparent;
+    height: 31px;
+    float: right;
+    width: 19px;
+}
+
+#contenido{
 	width: 950px;
 	height: 600px;
-	position: absolute;
-	top: 156px;
-	left: 0px;
 	border-top: 1px solid #CECECE;
 	border-bottom: 1px solid #CECECE;
+	display: block;	
 }
 
-#contenedorApp #contenido #botones{
+/**********************************************************************************/
+/* La botonera izquierda */
+
+#botones{
+	float: left;
 	width: 130px;
 	height: 600px;
-	top: 0px;
-	left: 0px;
 }
 
-#contenedorApp #contenido #botones #provBtn, #contenedorApp #contenido #botones #partBtn, #contenedorApp #contenido #botones #votoBtn{
+
+#botones button{
 	width: 130px;
-	height: 200px;
-	left: 0px;
+	height: 25%;
 }
 
-#contenedorApp #contenido #map_arg{
+
+
+/**********************************************************************************/
+/* ASIGNARLE LOS TAMAÑOS E IMAGENES CORRESPONDIENTES */
+
+#botonUNO {
+	width: 90px;
+	height: 20px;
+	background: url("img/spriteBotones.png");
+}
+
+#botonUNO:hover {
+	background: url("img/spriteBotones.png");
+}
+
+#botonUNO:active {
+	background: url("img/spriteBotones.png");
+}
+
+#botonUNO:disable {
+	background: url("img/spriteBotones.png");
+}
+
+
+/**********************************************************************************/
+/* Le mapa */
+
+#map_arg{
 	width: 529px;
 	height: 600px;
-	top: 0px;
-	left: 130px;	
-	position: absolute;
+	left: 130px;
 }
 
+
+/**********************************************************************************/
+/* Las barras */
+
 #contenedorApp #contenido #barras{
+	float: right;
 	width: 290px;
 	height: 600px;
 	border-left: 1px solid #CECECE;
-	top: 0px;
-	right: 0px;	
-	position: absolute;
+
 }
 
-#contenedorApp #contenido #barras #referenciaBarras{
+#referenciaBarras{
 	width: 290px;
 	height: 115px;
-	background: url("../img/bgRight.png") no-repeat;
-	background-position: 0 0px;		
 }	
 
 
-#contenedorApp #contenido #barras #referenciaBarras #referenciaTituloProvincia{
-	position: absolute;
-	top: 20px;
-	left: 20px;	
+#referenciaTituloProvincia{
 	font-family: Arial,Helvetica,sans-serif;
     font-size: 90%;	
 	font-weight: bold;
 	color: #000000;
 }
 
-#contenedorApp #contenido #barras #referenciaBarras #referenciaTotal{
+#referenciaTotal{
 	background-color: #E6E6E6;
 	padding: 2px 4px 2px 4px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;	
-	position: absolute;
-	top: 42px;
-	left: 20px;	
 	font-family: Arial,Helvetica,sans-serif;
     font-size: 80%;	
 	font-weight: bold;
 	color: #595959;
-	
 }
 
-#contenedorApp #contenido #barras #referenciaBarras #referenciaNombreLocalidad{
+#referenciaNombreLocalidad{
     background-color: #000000;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -225,25 +287,20 @@
     font-family: Arial,Helvetica,sans-serif;
     font-size: 80%;
     font-weight: bold;
-    left: 65px;
     padding: 2px 4px 2px 4px;
-    position: absolute;
-    top: 42px;
 }
 
-#contenedorApp #contenido #barras #graficoBarras{
+#graficoBarras{
 	width: 290px;
 	height: 455px;
 	background-color: #FFFFFF;
 	overflow-x: hidden;
 }
 
-#contenedorApp #contenido #barras #totalBarras{
+#totalBarras{
 	border-top: 1px solid #CECECE;
 	width: 290px;
 	height: 30px;
-	background: url("../img/bgRight.png") no-repeat;
-	background-position: 0 -230px;	
 }
 
 #mesas{
@@ -251,8 +308,6 @@
     font-family: Arial,Helvetica,sans-serif;
     font-size: 59%;
     left: 232px;
-    position: relative;
-    top: 0px;
 }
 
 #votos{
@@ -260,17 +315,9 @@
     font-family: Arial,Helvetica,sans-serif;
     font-size: 59%;
     left: 146px;
-    position: relative;
-    top: 10px;
 }
 
-.descMuestro {
-  display: inline;
-}
 
-.descOculto {
-  display: none;
-}
 
 /**********************************************************************************/
 /* Footer                                                                         */

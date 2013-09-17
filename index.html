@@ -2,7 +2,7 @@
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />
-		<title>Primarias Legislativas 2013</title>
+		<title>Mapa Legislativo 2013</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta name="description" content="Mapa interactivo de las elecciones Primarias Legislativas 2013" />
 		<meta name="author" content="Clarin.com" />
@@ -22,27 +22,66 @@
 		<!-- App gral -->
 		<div id="contenedorApp">
 			<div id="cabezal">
-				<div id="titulo">Primarias legislativas</div>
-				<div id="beta"> </div>
+				<div id="titulo">Mapa legislativo</div>
+				<div id="beta">(BETA)</div>
 				<div id="diputadosBtn" class="diputadosBtnSelected" onclick="updateVistaButton(this.id);updateTotales(elecciones.diputados['TOTALES']);"><span>DIPUTADOS</span></div>
 				<div id="senadoresBtn" class="senadoresBtnNotSelected"  onclick="updateVistaButton(this.id);updateTotales(elecciones.senadores['TOTALES']); "><span>SENADORES</span></div>
-				<div id="referenciasGenerales"> <p>REFERENCIAS<br />Los colores representan la orientación política del voto. A cada partido político se lo agrupó según alguna de las siguientes categorías:</p> </div>
-				<div id="referenciasVotos" class="descOculto"> <img id="circulos" style="float: right" width="59" height="80" alt="circulos" src="img/circulos.png"> <p>REFERENCIAS<br />El tamaño de los círculos representan la cantidad de votos del obtenidos por el candidato ganador.</p> </div>
-				<div id="referenciasColores"> </div>
+				<div id="referenciasGenerales"> <p>REFERENCIAS<br />Este es todo el espacio que hay para las categorías:</p> </div>
+				<div id="referenciasVotos" class="descOculto"> <p>REFERENCIAS<br />Este es todo el espacio que hay para los circulos.</p> </div>
+				<div id="referenciasColores">
+					<table>
+						<tr>
+							<td class="fp_K colorCelda"> </td>
+							<td class="textoCelda">Kirchneristas y aliados</td>
+							<td class="fp_PJ colorCelda"> </td>
+							<td class="textoCelda">Peronistas opositores</td>
+						</tr>
+
+						<tr>
+							<td class="fp_FP colorCelda"> </td>
+							<td class="textoCelda">UCR, Socialistas y aliados</td>
+							<td class="fp_PRO colorCelda"> </td>
+							<td class="textoCelda">PRO y aliados</td>
+						</tr>
+
+						<tr>
+							<td class="fp_IZ colorCelda"> </td>
+							<td class="textoCelda">Izquierda</td>
+							<td class="fp_OT colorCelda"> </td>
+							<td class="textoCelda">Otros</td>
+						</tr>
+
+
+
+					</table>
+					
+				</div>
+				<div id="shareView">
+					<div id="logoShare"> </div>
+					<div id="textoShare">Compartí los resultados de tu localidad</div>
+					<div id="arrowShare"> </div> 
+				</div>
 			</div>
+
 			
 			<div id="contenido">
-				<div id="botones" class="slashback">
-					<div id="provBtn" class="btnLeftIna" onclick="updateLeftButton(this.id); argentina.vista.prov(); "><img src="img/bgl1.png" width="130" height="200" border="0"><span class="labelLeft">Provincias</span></div>	
-					<div id="partBtn" class="btnLeftAct" onclick="updateLeftButton(this.id); argentina.vista.part();"><img src="img/bgl2.png" width="130" height="200" border="0"><span class="labelLeft">Departamentos</span></div>	
-					<div id="votoBtn" class="btnLeftAct" onclick="updateLeftButton(this.id); argentina.vista.voto();"><img src="img/bgl3.png" width="130" height="200" border="0"><span class="labelLeft">Votos</span></div>	
-				</div>
 
 				<div id="map_arg">
 					<!-- Loader -->
 					<div id="preloader">Cargando...</div>
 				</div>
 				
+
+
+				<div id="botones" class="slashback">
+					<button id="provBtn" onclick="updateLeftButton(this.id); argentina.vista.prov(); "> Provincias </button>
+					<button id="partBtn" onclick="updateLeftButton(this.id); argentina.vista.part(); "> Partidos </button>
+					<button id="votoBtn" onclick="updateLeftButton(this.id); argentina.vista.voto(); "> Voto </button>
+					<button id="camaBtn" onclick="" disabled> Camaras </button>
+				</div>
+
+
+
 				<div id="barras" class="slashback"> 
 					<div id="referenciaBarras">
 						<div id="referenciaTituloProvincia" class="descOculto"> </div>
