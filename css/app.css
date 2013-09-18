@@ -33,7 +33,7 @@
 }
 
 #beta {
-    color: #FF0000;
+    color: #E06153;
     font-size: 10px;
     font-weight: bold;
     height: 16px;
@@ -121,12 +121,12 @@
     line-height: 130%;
     position: absolute;
     top: 59px;
-    width: 123px;
+    width: 160px;
 }
 
 #referenciasGenerales p, 
 #referenciasVotos p{
-	margin-left: 5px;
+	margin-left: 0px;
 	margin-right: 5px;
 }	
 	
@@ -134,15 +134,16 @@
     border-left: 1px solid #CECECE;
     border-right: 1px solid #CECECE;
     height: 66px;
-    left: 497px;
+    left: 534px;
+    padding-left: 11px;
     position: absolute;
     top: 81px;
-    width: 349px;
-	padding-left: 10px;
+    width: 296px;
 }
 
 #referenciasColores table {
-	width: 330px;
+    font-size: 71.5%;
+	width: 290px;
 	padding: 0px;
 	margin: 0px;
 }
@@ -153,16 +154,20 @@
 	height: 10px;
 }
 
-#referenciasColores .textoCelda {
-    font-size: 71.5%;
+#referenciasColores .textoCeldaLargo {
     height: 18px;
-    width: 150px;
+    width: 120px;
+}
+
+#referenciasColores .textoCeldaCorto {
+    height: 18px;
+    width: 60px;
 }
 
 
 #shareView	{
     height: 66px;
-    left: 861px;
+    left: 860px;
     position: absolute;
     top: 81px;
     width: 86px; 
@@ -175,7 +180,7 @@
 }
 
 #textoShare{
-    color: #949493;
+    color: #E06153;
     font-size: 80%;
 }
 
@@ -206,30 +211,66 @@
 
 #botones button{
 	width: 130px;
-	height: 25%;
+	cursor: pointer;
+	border: 0px;
 }
 
+#botones button:disabled{
+	width: 130px;
+	cursor: default;
+}
 
 
 /**********************************************************************************/
 /* ASIGNARLE LOS TAMAÑOS E IMAGENES CORRESPONDIENTES */
 
-#botonUNO {
-	width: 90px;
-	height: 20px;
-	background: url("img/spriteBotones.png");
+
+#provBtn {
+	height: 165px;
+	background: url("../img/spriteBotones.png") 0 0 no-repeat;
 }
 
-#botonUNO:hover {
-	background: url("img/spriteBotones.png");
+#partBtn {
+	height: 165px;
+	background: url("../img/spriteBotones.png") 0 -165px no-repeat;
+} 
+
+#votoBtn {
+	height: 165px;
+	background: url("../img/spriteBotones.png") 0 -330px no-repeat;
 }
 
-#botonUNO:active {
-	background: url("img/spriteBotones.png");
+#camaBtn {
+	height: 105px;
+	background: url("../img/spriteBotones.png") 0 -495px no-repeat;
 }
 
-#botonUNO:disable {
-	background: url("img/spriteBotones.png");
+
+
+#provBtn:hover {
+	background: url("../img/spriteBotones.png") -130px 0px no-repeat;
+}
+#partBtn:hover {
+	background: url("../img/spriteBotones.png") -130px -160px no-repeat;
+}
+#votoBtn:hover {
+	background: url("../img/spriteBotones.png") -130px -330px no-repeat;
+}
+#camaBtn:hover {
+	background: url("../img/spriteBotones.png") -130px -495px no-repeat;
+}
+
+#provBtn:disabled {
+	background: url("../img/spriteBotones.png") -260px 0px no-repeat;
+}
+#partBtn:disabled {
+	background: url("../img/spriteBotones.png") -260px -160px no-repeat;
+}
+#votoBtn:disabled {
+	background: url("../img/spriteBotones.png") -260px -330px no-repeat;
+}
+#camaBtn:disabled {
+	background: url("../img/spriteBotones.png") -260px -495px no-repeat;
 }
 
 
@@ -321,8 +362,7 @@
 
 
 /**********************************************************************************/
-/* Footer                                                                         */
-/**********************************************************************************/
+/* Footer */
 
 #contenedorApp #footer{
 	padding-top:1.5%;

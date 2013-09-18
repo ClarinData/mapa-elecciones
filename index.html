@@ -26,29 +26,33 @@
 				<div id="beta">(BETA)</div>
 				<div id="diputadosBtn" class="diputadosBtnSelected" onclick="updateVistaButton(this.id);updateTotales(elecciones.diputados['TOTALES']);"><span>DIPUTADOS</span></div>
 				<div id="senadoresBtn" class="senadoresBtnNotSelected"  onclick="updateVistaButton(this.id);updateTotales(elecciones.senadores['TOTALES']); "><span>SENADORES</span></div>
-				<div id="referenciasGenerales"> <p>REFERENCIAS<br />Este es todo el espacio que hay para las categorías:</p> </div>
-				<div id="referenciasVotos" class="descOculto"> <p>REFERENCIAS<br />Este es todo el espacio que hay para los circulos.</p> </div>
+				<div id="referenciasGenerales"> <p>REFERENCIAS<br />Los colores representan la orientación política del voto. A cada partido político se lo agrupó según alguna de las siguientes categorías:</p> </div>
+				<div id="referenciasVotos" class="descOculto"> <img id="circulos" style="float: right" alt="circulos" src="img/circulos.png" height="80" width="59"> <p>REFERENCIAS<br />El tamaño de los círculos representan la cantidad de votos del obtenidos por el candidato ganador.</p> </div>
 				<div id="referenciasColores">
 					<table>
 						<tr>
-							<td><div class="fp_K colorCelda"> </div></td>
-							<td class="textoCelda">Kirchneristas y aliados</td>
-							<td><div class="fp_PJ colorCelda"> </div></td>
-							<td class="textoCelda">Peronistas opositores</td>
+							<td class="colorCelda"><div class="fp_K colorCelda"> </div></td>
+							<td class="textoCeldaLargo">Kirchneristas y aliados</td>
+							
+							<td class="colorCelda"><div class="fp_PRO colorCelda"> </div></td>
+							<td class="textoCeldaCorto">PRO y aliados</td>							
 						</tr>
 
 						<tr>
-							<td><div class="fp_FP colorCelda"> </div></td>
-							<td class="textoCelda">UCR, Socialistas y aliados</td>
-							<td><div class="fp_PRO colorCelda"> </div></td>
-							<td class="textoCelda">PRO y aliados</td>
+							<td class="colorCelda"><div class="fp_PJ colorCelda"> </div></td>
+							<td class="textoCeldaLargo">Peronistas opositores</td>
+ 
+							<td class="colorCelda"><div class="fp_IZ colorCelda"> </div></td>
+							<td class="textoCeldaCorto">Izquierda</td>
+ 
 						</tr>
 
 						<tr>
-							<td><div class="fp_IZ colorCelda"> </div></td>
-							<td class="textoCelda">Izquierda</td>
-							<td><div class="fp_OT colorCelda"> </div></td>
-							<td class="textoCelda">Otros</td>
+							<td class="colorCelda"><div class="fp_FP colorCelda"> </div></td>
+							<td class="textoCeldaLargo">UCR, Socialistas y aliados</td>
+
+							<td class="colorCelda"><div class="fp_OT colorCelda"> </div></td>
+							<td class="textoCeldaCorto">Otros</td>
 						</tr>
 					</table>
 					
@@ -71,10 +75,10 @@
 
 
 				<div id="botones" class="slashback">
-					<button id="provBtn" onclick="updateLeftButton(this.id); argentina.vista.prov(); "> Provincias </button>
-					<button id="partBtn" onclick="updateLeftButton(this.id); argentina.vista.part(); "> Partidos </button>
-					<button id="votoBtn" onclick="updateLeftButton(this.id); argentina.vista.voto(); "> Voto </button>
-					<button id="camaBtn" onclick="" disabled> Camaras </button>
+					<button id="provBtn" onclick="updateLeftButton(this.id); argentina.vista.prov(); "> </button>
+					<button id="partBtn" onclick="updateLeftButton(this.id); argentina.vista.part(); "> </button>
+					<button id="votoBtn" onclick="updateLeftButton(this.id); argentina.vista.voto(); "> </button>
+					<button id="camaBtn" onclick="" disabled> </button>
 				</div>
 
 
