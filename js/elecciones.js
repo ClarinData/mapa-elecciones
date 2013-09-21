@@ -194,26 +194,18 @@ var argentina = new mapObject({
 
             g.selectAll("path")
               .style("stroke-width", function() {
-
                 return (argentina.zoom) ? 0.5 / argentina.zoom + "pt" : null;
-
               })
               .classed("active", centered && function(d) {
-
                 return (d === centered);
-
               });
 
             g.selectAll("circle")
               .style("stroke-width", function() {
-
                 return (argentina.zoom) ? 0.5 / argentina.zoom + "pt" : null;
-
               })
               .each(function(d) {
-
                   d3.select(this).attr("r", dataRadius(elecciones[vista][d.properties.administrative_area.id]));
-
               });
 
           })(
@@ -224,13 +216,10 @@ var argentina = new mapObject({
 
         }
       })(
-
-
-        ((!d) || (d.properties.administrative_area.id.length < 4)) ? d : argentina.svg.g.select("#" + argentina.id + "_" + d.properties.administrative_area.id.substr(0,3)).datum()
-      
+        ((!d) || (d.properties.administrative_area.id.length < 4)) ? d : argentina.svg.g.select("#" + argentina.id + "_" + d.properties.administrative_area.id.substr(0,3)).datum()      
       );
 
-      window.console.log("URL: ", "http://localhost/mapa-elecciones/" + ((d) ? "?id=" + d.properties.administrative_area.id + "&data=" + vista + "&view=" + argentina.vista.state : ""));
+    window.console.log("URL: ", "http://localhost/mapa-elecciones/" + ((d) ? "?id=" + d.properties.administrative_area.id + "&data=" + vista + "&view=" + argentina.vista.state : ""));
 
       argentina.selection = (d) ? d.properties.administrative_area.id : "TOTALES";
 
