@@ -138,6 +138,16 @@ var argentina = new mapObject({
 
     if (argentina.svg) {
 
+      var query = getQueryParams(),
+          selector = (query.id) ? argentina.svg.g.select("#" + argentina.id + "_" + query.id.toUpperCase()) : null,
+          datum = (selector) ? selector.datum() : null;
+
+      if (query.data) { updateVistaButton(query.data + "Btn"); }
+      if (query.view) { argentina.vista[query.view](); }
+      if (datum) { argentina.event.click(datum); }
+
+      query = {};
+
       d3.timer(function () {
         elecciones.load();
         refreshView();
@@ -184,26 +194,18 @@ var argentina = new mapObject({
 
             g.selectAll("path")
               .style("stroke-width", function() {
-
                 return (argentina.zoom) ? 0.5 / argentina.zoom + "pt" : null;
-
               })
               .classed("active", centered && function(d) {
-
                 return (d === centered);
-
               });
 
             g.selectAll("circle")
               .style("stroke-width", function() {
-
                 return (argentina.zoom) ? 0.5 / argentina.zoom + "pt" : null;
-
               })
               .each(function(d) {
-
                   d3.select(this).attr("r", dataRadius(elecciones[vista][d.properties.administrative_area.id]));
-
               });
 
           })(
@@ -214,13 +216,10 @@ var argentina = new mapObject({
 
         }
       })(
-
-
-        ((!d) || (d.properties.administrative_area.id.length < 4)) ? d : argentina.svg.g.select("#" + argentina.id + "_" + d.properties.administrative_area.id.substr(0,3)).datum()
-      
+        ((!d) || (d.properties.administrative_area.id.length < 4)) ? d : argentina.svg.g.select("#" + argentina.id + "_" + d.properties.administrative_area.id.substr(0,3)).datum()      
       );
 
-      window.console.log("URL: ", "http://localhost/mapa-elecciones/" + ((d) ? "?id=" + d.properties.administrative_area.id + "&data=" + vista + "&view=" + argentina.vista.state : ""));
+    window.console.log("URL: ", "http://localhost/mapa-elecciones/" + ((d) ? "?id=" + d.properties.administrative_area.id + "&data=" + vista + "&view=" + argentina.vista.state : ""));
 
       argentina.selection = (d) ? d.properties.administrative_area.id : "TOTALES";
 
@@ -272,3 +271,55 @@ var argentina = new mapObject({
   elecciones.load();
 
 })();
+
+function getQueryParams(qs)
+{
+    var parameters= {};
+
+    // If no query string  was passed in use the one from the current page
+    if (!qs) qs= location.search;
+
+    // Delete leading question mark, if there is one
+    if (qs.charAt(0) == '?') qs= qs.substring(1);
+
+    // Parse it
+    var re= /([^=&]+)(=([^&]*))?/g;
+    while (match = re.exec(qs))
+    {
+        var key = decodeURIComponent(match[1].replace(/\+/g,' '));
+        var value = match[3] ? getQueryParams.decode(match[3]) : '';
+            parameters[key] = value;
+    }
+
+    return parameters;
+}
+
+getQueryParams.decode= function(s)
+{
+    s= s.replace(/\+/g,' ');
+    s= s.replace(/%([EF][0-9A-F])%([89AB][0-9A-F])%([89AB][0-9A-F])/g,
+        function(code,hex1,hex2,hex3)
+        {
+            var n1= parseInt(hex1,16)-0xE0;
+            var n2= parseInt(hex2,16)-0x80;
+            if (n1 == 0 && n2 < 32) return code;
+            var n3= parseInt(hex3,16)-0x80;
+            var n= (n1<<12) + (n2<<6) + n3;
+            if (n > 0xFFFF) return code;
+            return String.fromCharCode(n);
+        });
+    s= s.replace(/%([CD][0-9A-F])%([89AB][0-9A-F])/g,
+        function(code,hex1,hex2)
+        {
+            var n1= parseInt(hex1,16)-0xC0;
+            if (n1 < 2) return code;
+            var n2= parseInt(hex2,16)-0x80;
+            return String.fromCharCode((n1<<6)+n2);
+        });
+    s= s.replace(/%([0-7][0-9A-F])/g,
+        function(code,hex)
+        {
+            return String.fromCharCode(parseInt(hex,16));
+        });
+    return s;
+};
