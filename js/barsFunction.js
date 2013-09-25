@@ -1,18 +1,15 @@
-/* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 5, maxparams: 3, maxdepth: 2, maxstatements: 20 */
-/* global mapObject, d3 */
-/* exported argentina elecciones */
+/************************************************************************/
+// modal de creditos
+function abrirCreditos() {
+	d3.select("#modal").style("display", "inline");
+}
+
+function cerrarCreditos() {
+	d3.select("#modal").style("display", "none");
+}
 
 /************************************************************************/
-/*                                                                      */
-/*  Funciones de las barras de valores del panel derecho  08-2013       */
-/*                                                                      */
-/************************************************************************/
-
-var vista = "diputados";
-//  ["diputados" || "senadores"]
-
-/************************************************************************/
-// recibe un String y devuelve con separador de miles
+// separador de miles
 function miles(n) {
 	var r = "";
 	for (var p, i = n.length - 1, p = 0; i >= 0; i--, p++) {
@@ -21,48 +18,41 @@ function miles(n) {
 	return r;
 }
 
-/************************************************************************/
-// Abre el modal de creditos
-function abrirCreditos() {
-	d3.select("#modal").style("display", "inline");
-}
+
+var vistaActiva = new Array ("diputadosBtn","provBtn");
+var botonesHeader = new Array ("diputadosBtn","senadoresBtn");
+var botonesMenu = new Array ("provBtn","partBtn","votoBtn","camaBtn");
+
+
+var vista = "diputados";
 
 /************************************************************************/
-// Cierra el modal de creditos
-function cerrarCreditos() {
-	d3.select("#modal").style("display", "none");
-}
+// Cambia status de botones
+function updateBotones(option) {
 
-/************************************************************************/
-// Cambia status de boton Mapa izquierdo y cartel descriptivo de arriba
-function updateVistaButton(option) {
-	var activo = true;
+	if ( botonesHeader.indexOf(option) < 0 ){
 
-	switch (option) {
-		case "diputadosBtn":
-			vista = "diputados";
-			d3.select("#diputadosBtn").classed("diputadosBtnNotSelected", false);
-			d3.select("#senadoresBtn").classed("senadoresBtnSelected", false);
-			d3.select("#selectorMapa").classed("selectSenadores", false);
-
-			d3.select("#diputadosBtn").classed("diputadosBtnSelected", true);
-			d3.select("#senadoresBtn").classed("senadoresBtnNotSelected", true);
-			d3.select("#selectorMapa").classed("selectDiputados", true);
-			break;
-
-		case "senadoresBtn":
-			d3.select("#senadoresBtn").classed("senadoresBtnNotSelected", false);
-			d3.select("#diputadosBtn").classed("diputadosBtnSelected", false);
-			d3.select("#selectorMapa").classed("selectDiputados", false);
-
-			d3.select("#senadoresBtn").classed("senadoresBtnSelected", true);
-			d3.select("#diputadosBtn").classed("diputadosBtnNotSelected", true);
-			d3.select("#selectorMapa").classed("selectSenadores", true);
-			vista = "senadores";
-			break;
+		botonesMenu.forEach( function (btn){ document.getElementById(btn).disabled = false; } );
 	}
 
+	if ( botonesMenu.indexOf(option) < 0){
+
+		botonesHeader.forEach( function (btn){ document.getElementById(btn).disabled = false; } );
+		
+		if (option == "diputadosBtn"){
+			document.getElementById("selectorMapa").className = "selectDiputados";	
+			vista = "diputados";	
+			elecciones.dataset = "diputados";
+		}else{
+			document.getElementById("selectorMapa").className = "selectSenadores";
+			vista = "senadores";	
+			elecciones.dataset = "senadores";
+		}
+	}
+	
+	document.getElementById(option).disabled = true;
 	elecciones.event.viewchange(vista);
+	
 }
 
 /************************************************************************/

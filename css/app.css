@@ -51,14 +51,19 @@
 	border-left: 1px solid #CECECE;
     cursor: pointer;
     position: absolute;
+    border: 0;
 }
 
 #diputadosBtn{
+	background: url("../img/sprite.png") no-repeat 0 -25px;
+  	cursor: pointer;
     left: 2px;
     top: 114px;
 }
 
 #senadoresBtn{
+	background: url("../img/sprite.png") no-repeat 0 -75px;
+  	cursor: pointer;
     left: 192px;
     top: 114px;
 }
@@ -75,25 +80,17 @@
 	font-weight: bold;
 }
 
-.diputadosBtnSelected{
-	background: url("../img/sprite.png") no-repeat 0 0px;
-  	cursor: default;
-}
 
-.diputadosBtnNotSelected{
-	background: url("../img/sprite.png") no-repeat 0 -25px;
-  	cursor: pointer;
-}
-
-.senadoresBtnSelected{
+#senadoresBtn:disabled{
 	background: url("../img/sprite.png") no-repeat 0 -50px;
   	cursor: default;
 }
 
-.senadoresBtnNotSelected{
-	background: url("../img/sprite.png") no-repeat 0 -75px;
-  	cursor: pointer;
+#diputadosBtn:disabled{
+	background: url("../img/sprite.png") no-repeat 0 0px;
+  	cursor: default;
 }
+
 
 #contenedorApp #selectorMapa {
 	width: 35px;
