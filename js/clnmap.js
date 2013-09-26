@@ -188,7 +188,7 @@ var mapObject = function(map) {
                 });
                 map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
                 map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].description);
-                var dataE = elecciones[vista][d.properties.administrative_area.id];
+                var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];
                 if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
                   for (var x = 0; x < 3; x++) {
                     map.tooltip.table.row.color[x].property("className", "fp_" + dataE.votacion.partidos_politicos[x].fuerza_politica);

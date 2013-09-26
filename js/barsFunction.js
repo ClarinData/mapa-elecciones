@@ -24,34 +24,28 @@ var botonesHeader = new Array ("diputadosBtn","senadoresBtn");
 var botonesMenu = new Array ("provBtn","partBtn","votoBtn","camaBtn");
 
 
-var vista = "diputados";
 
 /************************************************************************/
 // Cambia status de botones
 function updateBotones(option) {
 
 	if ( botonesHeader.indexOf(option) < 0 ){
-
 		botonesMenu.forEach( function (btn){ document.getElementById(btn).disabled = false; } );
 	}
 
 	if ( botonesMenu.indexOf(option) < 0){
-
 		botonesHeader.forEach( function (btn){ document.getElementById(btn).disabled = false; } );
-		
 		if (option == "diputadosBtn"){
 			document.getElementById("selectorMapa").className = "selectDiputados";	
-			vista = "diputados";	
 			elecciones.dataset = "diputados";
 		}else{
 			document.getElementById("selectorMapa").className = "selectSenadores";
-			vista = "senadores";	
 			elecciones.dataset = "senadores";
 		}
 	}
 	
 	document.getElementById(option).disabled = true;
-	elecciones.event.viewchange(vista);
+	elecciones.event.viewchange(elecciones.dataset);
 	
 }
 
@@ -207,7 +201,7 @@ function updateBars(objeto) {"use strict";
 /************************************************************************/
 // eventos
 elecciones.event.on("updatedata", function(dataE) {"use strict";
-	switch (vista) {
+	switch (elecciones.dataset) {
 		case "diputados":
 			if (dataE.diputados !== undefined) {
 				if (dataE.diputados.id == "TOTALES") {
