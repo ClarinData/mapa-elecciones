@@ -49,22 +49,6 @@ function updateBotones(option) {
 	
 }
 
-/************************************************************************/
-// Recibe el id del boton clickeado, lo desactiva y activa el resto
-function updateLeftButton(option) {
-	var cond = [false, true];
-	var arr = ["#provBtn", "#partBtn", "#votoBtn","camaBtn"];
-	if (option == "votoBtn") {
-		cond[0] = true;
-		cond[1] = false;
-	}
-
-	// Muestro Descripcion Relevante (Arriba)
-	d3.select("#referenciasGenerales").classed("descMuestro", cond[1]);
-	d3.select("#referenciasGenerales").classed("descOculto", cond[0]);
-	d3.select("#referenciasVotos").classed("descOculto", cond[1]);
-	d3.select("#referenciasVotos").classed("descMuestro", cond[0]);
-}
 
 /************************************************************************/
 // redibuja las barras totales pais
