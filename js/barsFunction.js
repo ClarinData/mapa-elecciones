@@ -1,5 +1,5 @@
 /************************************************************************/
-// modal de creditos
+// modal de creditos OK
 function abrirCreditos() {
 	d3.select("#modal").style("display", "inline");
 }
@@ -9,7 +9,7 @@ function cerrarCreditos() {
 }
 
 /************************************************************************/
-// separador de miles
+// separador de miles OK
 function miles(n) {
 	var r = "";
 	for (var p, i = n.length - 1, p = 0; i >= 0; i--, p++) {
@@ -26,7 +26,7 @@ var botonesMenu = new Array ("provBtn","partBtn","votoBtn","camaBtn");
 
 
 /************************************************************************/
-// Cambia status de botones
+// Cambia status de botones OK
 function updateBotones(option) {
 
 	if ( botonesHeader.indexOf(option) < 0 ){
@@ -53,8 +53,13 @@ function updateBotones(option) {
 // redibuja las barras totales pais
 function updateTotales(objeto) { "use strict";
 	
-	document.getElementById("graficoBarras").innerHTML = "Muestro TOTAL PAIS";
+	document.getElementById("referenciaTituloProvincia").innerHTML = "TOTAL ARGENTINA";
 
+	// D3 magic goes here
+	document.getElementById("graficoBarras").innerHTML = "Armo barras de totales pais";
+	
+	
+	
 	d3.select("#votos").text(objeto.votacion.votos.porcentaje + "%");
 	d3.select("#mesas").text(objeto.votacion.mesas.porcentaje + "%");
 }
@@ -64,7 +69,15 @@ function updateTotales(objeto) { "use strict";
 
 function updateBars(objeto) { "use strict";
 
-	document.getElementById("graficoBarras").innerHTML = "Mustro DETALLE";
+	if (objeto.nivel_administrativo == 1) {
+		document.getElementById("referenciaTituloProvincia").innerHTML = objeto.nombre.toUpperCase();
+	}
+	
+	document.getElementById("graficoBarras").innerHTML = "Armo barras para " + objeto.nombre;
+
+	// D3 magic goes here
+
+
 
 	d3.select("#votos").text(objeto.votacion.votos.porcentaje + "%");
 	d3.select("#mesas").text(objeto.votacion.mesas.porcentaje + "%");
