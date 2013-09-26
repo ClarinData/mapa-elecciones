@@ -70,30 +70,39 @@
 					<!-- Loader -->
 					<div id="preloader">Cargando...</div>
 				</div>
-				
-
 
 				<div id="botones" class="slashback">
-					<button id="provBtn" onclick="updateBotones(this.id); argentina.vista.prov(); " disabled> </button>
-					<button id="partBtn" onclick="updateBotones(this.id); argentina.vista.part(); "> </button>
+				 	<button id="provBtn" onclick="updateBotones(this.id); argentina.vista.prov(); " disabled> </button>
+				 	<button id="partBtn" onclick="updateBotones(this.id); argentina.vista.part(); "> </button>
 					<button id="votoBtn" onclick="updateBotones(this.id); argentina.vista.voto(); "> </button>
 					<button id="camaBtn" onclick="updateBotones(this.id);"> </button>
 				</div>
 
-
-
 				<div id="barras" class="slashback"> 
 					<div id="referenciaBarras">
-						<div id="referenciaTituloProvincia" class="descOculto"> </div>
-						<div id="referenciaTotal" class="descOculto"> </div>
-						<div id="referenciaNombreLocalidad" class="descOculto"> </div>
-						<button id="shareTwitter" onclick="console.log('twitter: ', shareURL());"> </button> 
-						<button id="shareFacebook" onclick="console.log('facebook: ', shareURL());"> </button> 
+
+						<div id="fondoReferencia">
+							<div id="referenciaTituloProvincia" class="descMuestro"> </div>
+							<div id="referenciaTotal" class="descMuestro"> </div>
+							<div id="referenciaNombreLocalidad" class="descMuestro"> </div>
+ 						</div>	
+							<button id="shareTwitter" onclick="console.log('twitter: ', shareURL());"> </button> 
+							<button id="shareFacebook" onclick="console.log('facebook: ', shareURL());"> </button> 
+
 					</div>	
+
 					<div id="graficoBarras"> </div>	
+
 					<div id="totalBarras">
-						<div id="votos"> </div>
-						<div id="mesas"> </div>						
+						<div id="fondoTotalBarras">
+							<span class="textoTotalesEscrutado">ESCRUTADO</span>
+							<span class="textoTotales">| Votos: </span>
+							
+							
+							<span id="votos"> </span>
+							<span class="textoTotales">| Mesas: </span>
+							<span id="mesas"> </span>						
+						</div>
 					</div>	
 				</div>
 

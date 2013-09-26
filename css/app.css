@@ -163,6 +163,7 @@
 
 
 #shareView	{
+    z-index: 999;
     height: 66px;
     left: 860px;
     position: absolute;
@@ -176,7 +177,7 @@
     height: 25px;
     position: absolute;
     right: 15px;
-    top: 225px;
+    top: 208px;
     width: 25px;
 	cursor: pointer;
 }
@@ -188,7 +189,7 @@
     height: 25px;
     position: absolute;
     right: 15px;
-    top: 190px;
+    top: 180px;
     width: 25px;
 	cursor: pointer;
 }
@@ -329,6 +330,14 @@
 	height: 115px;
 }	
 
+#fondoReferencia{
+    background-color: #FFFFFF;
+    height: 70px;
+    left: 10px;
+    position: relative;
+    top: 7px;
+    width: 270px;
+}
 
 #referenciaTituloProvincia{
 	font-family: Arial,Helvetica,sans-serif;
@@ -374,18 +383,39 @@
 	height: 30px;
 }
 
-#mesas{
-    color: #990000;
+#fondoTotalBarras{
+    background-color: #FFFFFF;
+    height: 15px;
+    left: 10px;
+    position: relative;
+    top: 7px;
+    width: 270px;
+	line-height: 15px;
+	text-align: center;	
+}
+
+#fondoTotalBarras span{
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;   
     font-family: Arial,Helvetica,sans-serif;
     font-size: 59%;
-    left: 232px;
+}
+
+.textoTotales{
+    color: #000000;
+}
+
+.textoTotalesEscrutado{
+    color: #595959;
+}
+
+#mesas{
+    color: #990000;
 }
 
 #votos{
     color: #990000;
-    font-family: Arial,Helvetica,sans-serif;
-    font-size: 59%;
-    left: 146px;
 }
 
 
