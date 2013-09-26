@@ -170,6 +170,37 @@
     width: 86px; 
 }	
 
+#shareTwitter{
+    background: url("../img/sprite.png") no-repeat scroll 2px -131px transparent;
+    border: 0px;
+    height: 25px;
+    position: absolute;
+    right: 15px;
+    top: 225px;
+    width: 25px;
+	cursor: pointer;
+}
+
+
+#shareFacebook{
+    background: url("../img/sprite.png") no-repeat scroll 2px -107px transparent;
+    border: 0px;
+    height: 25px;
+    position: absolute;
+    right: 15px;
+    top: 190px;
+    width: 25px;
+	cursor: pointer;
+}
+
+#shareTwitter:hover{
+    background: url("../img/sprite.png") no-repeat scroll 3px -130px transparent;
+}
+#shareFacebook:hover{
+    background: url("../img/sprite.png") no-repeat scroll 3px -106px transparent;
+}
+
+
 #logoShare{
 	background: url("../img/sprite.png") no-repeat scroll 0px -156px transparent;
 	height: 18px;
@@ -210,6 +241,7 @@
 	width: 130px;
 	cursor: pointer;
 	border: 0px;
+	vertical-align: top;
 }
 
 #botones button:disabled{
