@@ -45,10 +45,10 @@ var mapObject = function(map) {
       return tooltip.property("clientWidth");
     };
     tooltip.left = function() {
-      return tooltip.property("offsetLeft");
+      return tooltip.property("clientLeft");
     };
     tooltip.top = function() {
-      return tooltip.property("offsetTop");
+      return tooltip.property("clientTop");
     };
     tooltip.title = d3.select("#tooltip_title");
     tooltip.info = (function(info) {
@@ -144,8 +144,8 @@ var mapObject = function(map) {
               return dataObj.append("path");
             })(
               obj.selectAll("path")
-              .data(topojson.feature(json, json.objects[sel]).features)
-              .enter()
+                 .data(topojson.feature(json, json.objects[sel]).features)
+                 .enter()
             );
             return obj;
           }
@@ -221,7 +221,7 @@ var mapObject = function(map) {
           }
 
           g.votes = (function(votes) {
-            votes.selectAll("text")
+            votes.selectAll("circle")
               .attr("class", "disabled")
               .data(topojson.feature(json, json.objects.admlevel3).features)
               .enter()
@@ -266,6 +266,10 @@ var mapObject = function(map) {
           g.admlevel2.pathAttr = pathsAttr(
             g.admlevel2.path
           );
+
+          g.circles = g.selectAll("circle");
+
+          g.paths = g.selectAll("path");
 
           return g;
 
