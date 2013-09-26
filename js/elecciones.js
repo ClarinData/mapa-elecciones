@@ -341,7 +341,9 @@ function shareURL() {
     var param = [];
     myUrl += "?";
     Object.getOwnPropertyNames(url.parameters || {}).forEach(function(val, i, array) {
-      param[i] = val + "=" + url.parameters[val];
+      if (url.parameters[val]) {
+        param[i] = val + "=" + url.parameters[val];
+      }
     });
     myUrl += param.join("&");
   }
