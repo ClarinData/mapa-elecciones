@@ -53,7 +53,7 @@ function updateBotones(option) {
 // redibuja las barras totales pais
 function updateTotales(objeto) { "use strict";
 	
-	document.getElementById("referenciaTituloProvincia").innerHTML = "TOTAL ARGENTINA";
+	document.getElementById("referenciaTituloProvincia").innerHTML = "RESULTADO GENERAL 2013<br><span id='textoReferencial'>Es la suma de los votos obtenidos en <br />todas las provincias, agrupados según<br /> la orientación política del voto.</spam>";
 
 	// D3 magic goes here
 	document.getElementById("graficoBarras").innerHTML = "Armo barras de totales pais";
@@ -73,7 +73,7 @@ function updateBars(objeto) { "use strict";
 		document.getElementById("referenciaTituloProvincia").innerHTML = objeto.nombre.toUpperCase();
 	}
 	
-	document.getElementById("graficoBarras").innerHTML = "Armo barras para " + objeto.nombre;
+	document.getElementById("graficoBarras").innerHTML = "Armo barras para " + objeto.nombre + "con el dataset de " + elecciones.dataset;
 
 	// D3 magic goes here
 

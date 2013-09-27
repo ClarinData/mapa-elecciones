@@ -332,7 +332,7 @@
 
 #fondoReferencia{
     background-color: #FFFFFF;
-    height: 70px;
+    height: 95px;
     left: 10px;
     position: relative;
     top: 7px;
@@ -347,8 +347,6 @@
     position: relative;
     top: 5px;
 }
-
-
 
 #graficoBarras{
 	width: 290px;
@@ -381,6 +379,13 @@
 	line-height: normal;   
     font-family: Arial,Helvetica,sans-serif;
     font-size: 59%;
+}
+
+#textoReferencial{
+    font-size: 80%;
+    color: #595959;
+    font-weight: normal;
+    width: 100px;
 }
 
 .textoTotales{
