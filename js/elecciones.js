@@ -338,13 +338,14 @@ function getQueryParams(qs) {
 function shareURL() {
   var myUrl = url.base;
   if (url.parameters) {
-    var param = [];
     myUrl += "?";
-    Object.getOwnPropertyNames(url.parameters || {}).forEach(function(val, i, array) {
-      if (url.parameters[val]) {
-        param[i] = val + "=" + url.parameters[val];
-      }
-    });
+    var param = [];
+    Object.getOwnPropertyNames(url.parameters)
+          .forEach(function(val, i, array) {
+            if (url.parameters[val]) {
+              param[i] = val + "=" + url.parameters[val];
+            }
+          });
     myUrl += param.join("&");
   }
   return myUrl;
