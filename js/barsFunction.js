@@ -19,15 +19,11 @@ function miles(n) {
 }
 
 
-var vistaActiva = new Array ("diputadosBtn","provBtn");
-var botonesHeader = new Array ("diputadosBtn","senadoresBtn");
-var botonesMenu = new Array ("provBtn","partBtn","votoBtn","camaBtn");
-
-
-
 /************************************************************************/
 // Cambia status de botones OK
 function updateBotones(option) {
+	var botonesHeader = new Array ("diputadosBtn","senadoresBtn");
+	var botonesMenu = new Array ("provBtn","partBtn","votoBtn","camaBtn");
 
 	if ( botonesHeader.indexOf(option) < 0 ){
 		botonesMenu.forEach( function (btn){ document.getElementById(btn).disabled = false; } );
@@ -54,37 +50,33 @@ function updateBotones(option) {
 function updateTotales(objeto) { "use strict";
 	
 	document.getElementById("referenciaTituloProvincia").innerHTML = "RESULTADO GENERAL 2013<br><span id='textoReferencial'>Es la suma de los votos obtenidos en <br />todas las provincias, agrupados según<br /> la orientación política del voto.</spam>";
-
-	// D3 magic goes here
-	document.getElementById("graficoBarras").innerHTML = "Armo barras de totales pais";
-	
-	
-	
 	d3.select("#votos").text(objeto.votacion.votos.porcentaje + "%");
 	d3.select("#mesas").text(objeto.votacion.mesas.porcentaje + "%");
+
+	// D3 magic goes here
+	document.getElementById("graficoBarras").innerHTML = "Pais - Dataset: " + elecciones.dataset;
+
 }
 
 /************************************************************************/
 // redibuja las barras detalladas
 
 function updateBars(objeto) { "use strict";
-
+	
 	if (objeto.nivel_administrativo == 1) {
 		document.getElementById("referenciaTituloProvincia").innerHTML = objeto.nombre.toUpperCase();
 	}
-	
-	document.getElementById("graficoBarras").innerHTML = "Armo barras para " + objeto.nombre + "con el dataset de " + elecciones.dataset;
-
-	// D3 magic goes here
-
-
-
 	d3.select("#votos").text(objeto.votacion.votos.porcentaje + "%");
 	d3.select("#mesas").text(objeto.votacion.mesas.porcentaje + "%");
+
+	// D3 magic goes here
+	document.getElementById("graficoBarras").innerHTML = "Region: " + objeto.nombre + " - dataset: " + elecciones.dataset;
+	
 }
 
 /************************************************************************/
 // eventos
+
 elecciones.event.on("updatedata", function(dataE) {"use strict";
 	switch (elecciones.dataset) {
 		case "diputados":
@@ -108,3 +100,7 @@ elecciones.event.on("updatedata", function(dataE) {"use strict";
 			break;
 	}
 });
+
+
+
+
