@@ -139,11 +139,12 @@ var mapObject = function(map) {
           map.event.error(error, json);
         }
         map.svg.g = (function(g) {
+
           function createPaths(obj, sel) {
             obj.path = (function(dataObj) {
               return dataObj.append("path");
             })(
-              obj.selectAll("path")
+              obj.selectAll("path use")
                  .data(topojson.feature(json, json.objects[sel]).features)
                  .enter()
             );
@@ -160,25 +161,34 @@ var mapObject = function(map) {
               }
               return id;
             })
-              .attr("class", function(d) {
-                return ("admlevel" + d.properties.administrative_area.length);
+            .attr("class", function(d) {
+              return ("admlevel" + d.properties.administrative_area.length);
+            })
+            .on("click", function(d) {
+
+              d = d || this.correspondingElement.__data__;
+
+              obj.sort(function(a) {
+                return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
+              });
+              map.event.click(d);
+            })
+            .attr("d", map.svg.path)
+            .call(
+              d3.behavior
+              .zoom().on("zoom", function(d) {
+                
+                d = d || this.correspondingElement.__data__;
+
+                map.event.zoom(d, d3.event.translate, d3.event.scale);
               })
-              .on("click", function(d) {
-                obj.sort(function(a) {
-                  return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
-                });
-                map.event.click(d);
-              })
-              .attr("d", map.svg.path)
-              .call(
-                d3.behavior
-                .zoom().on("zoom", function(d) {
-                  map.event.zoom(d, d3.event.translate, d3.event.scale);
-                })
             );
 
             if (!navigator.isTouch) {
               obj.on("mouseover", function(d) {
+
+                d = d || this.correspondingElement.__data__;
+
                 obj.sort(function(a) {
                   if (a.properties.administrative_area.id === d.properties.administrative_area.id) {
                     return 1;
@@ -207,15 +217,15 @@ var mapObject = function(map) {
                   .style("top", d3.event.pageY + 5 + "px")
                   .style("display", "block");
               })
-                .on("mousemove", function() {
-                  var left = d3.event.pageX + 10;
-                  var top = ((d3.event.pageY - 10 + map.tooltip.height()) > 730) ? d3.event.pageY + 30 - map.tooltip.height() : d3.event.pageY - 10;
-                  return map.tooltip.style("top", top + "px")
-                    .style("left", left + "px");
-                })
-                .on("mouseout", function() {
-                  return map.tooltip.style("display", "none");
-                });
+              .on("mousemove", function() {
+                var left = d3.event.pageX + 10;
+                var top = ((d3.event.pageY - 10 + map.tooltip.height()) > 730) ? d3.event.pageY + 30 - map.tooltip.height() : d3.event.pageY - 10;
+                return map.tooltip.style("top", top + "px")
+                  .style("left", left + "px");
+              })
+              .on("mouseout", function() {
+                return map.tooltip.style("display", "none");
+              });
             }
             return obj;
           }
@@ -262,6 +272,10 @@ var mapObject = function(map) {
             .attr("id", map.id + "_admlevel2")
             .attr("class", "states"),
             "admlevel2");
+
+          // g.admlevel2.caba = g.admlevel2.append("use")
+          //                     .attr("xlink:href", "#map_arg_CAP")
+          //                     .attr("transform", "scale(4) translate(-210,-155)");
 
           g.admlevel2.pathAttr = pathsAttr(
             g.admlevel2.path

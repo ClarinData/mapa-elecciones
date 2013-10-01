@@ -78,6 +78,7 @@ function updateBars(objeto) { "use strict";
 // eventos
 
 elecciones.event.on("updatedata", function(dataE) {"use strict";
+
 	switch (elecciones.dataset) {
 		case "diputados":
 			if (dataE.diputados !== undefined) {
