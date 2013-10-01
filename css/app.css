@@ -239,17 +239,18 @@
 
 
 #botones button{
+	float: left;
 	width: 130px;
 	cursor: pointer;
 	border: 0px;
 	vertical-align: top;
+	margin-top: 0px;
 }
 
 #botones button:disabled{
 	width: 130px;
 	cursor: default;
 }
-
 
 /**********************************************************************************/
 /* ASIGNARLE LOS TAMAÑOS E IMAGENES CORRESPONDIENTES */
@@ -275,13 +276,11 @@
 	background: url("../img/spriteBotones.png") 0 -495px no-repeat;
 }
 
-
-
 #provBtn:hover {
 	background: url("../img/spriteBotones.png") -130px 0px no-repeat;
 }
 #partBtn:hover {
-	background: url("../img/spriteBotones.png") -130px -160px no-repeat;
+	background: url("../img/spriteBotones.png") -130px -165px no-repeat;
 }
 #votoBtn:hover {
 	background: url("../img/spriteBotones.png") -130px -330px no-repeat;
@@ -294,7 +293,7 @@
 	background: url("../img/spriteBotones.png") -260px 0px no-repeat;
 }
 #partBtn:disabled {
-	background: url("../img/spriteBotones.png") -260px -160px no-repeat;
+	background: url("../img/spriteBotones.png") -260px -165px no-repeat;
 }
 #votoBtn:disabled {
 	background: url("../img/spriteBotones.png") -260px -330px no-repeat;
