@@ -33,10 +33,10 @@ function updateBotones(option) {
 		botonesHeader.forEach( function (btn){ document.getElementById(btn).disabled = false; } );
 		if (option == "diputadosBtn"){
 			document.getElementById("selectorMapa").className = "selectDiputados";	
-			elecciones.dataset = "diputados";
+			//elecciones.dataset = "diputados";
 		}else{
 			document.getElementById("selectorMapa").className = "selectSenadores";
-			elecciones.dataset = "senadores";
+			//elecciones.dataset = "senadores";
 		}
 	}
 	
