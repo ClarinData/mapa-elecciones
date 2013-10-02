@@ -170,9 +170,6 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       var selector = (query.id) ? argentina.svg.g.select("#" + argentina.id + "_" + query.id.toUpperCase()) : null,
         datum = (selector) ? selector.datum() : null;
 
-      if (query.data) {
-        updateBotones(query.data + "Btn");
-      }
       if (query.view) {
         argentina.vista[query.view]();
       }
@@ -314,7 +311,6 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom));
       argentina.svg.g.votes.classed("disabled", false);
       argentina.vista.state = "voto";
-      updateBotones(argentina.vista.selected + "Btn");
       url.parameters.view = argentina.vista.selected;
       tweeter(shareURL());
 
@@ -326,7 +322,6 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       argentina.svg.g.admlevel3.classed("transparent disabled", false);
       argentina.svg.g.votes.classed("disabled", true);
       argentina.vista.state = "part";
-      updateBotones(argentina.vista.selected + "Btn");
       url.parameters.view = argentina.vista.selected;
       tweeter(shareURL());
 
@@ -338,7 +333,6 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       argentina.svg.g.admlevel3.classed("transparent disabled", false);
       argentina.svg.g.votes.classed("disabled", true);
       argentina.vista.state = "prov";
-      updateBotones(argentina.vista.selected + "Btn");
       url.parameters.view = argentina.vista.selected;
       tweeter(shareURL());
 
