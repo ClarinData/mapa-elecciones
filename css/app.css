@@ -48,49 +48,46 @@
     font-size: 90%;	
 	height: 25px;
 	width: 175px;
-	border-left: 1px solid #CECECE;
     cursor: pointer;
     position: absolute;
-    border: 0;
+	border: 0px;
+	border-left: 1px solid #CECECE;
+}
+
+
+#diputadosBtn,
+#senadoresBtn{
+  	cursor: pointer;
+    top: 120px;
 }
 
 #diputadosBtn{
-	background: url("../img/sprite.png") no-repeat 0 -25px;
-  	cursor: pointer;
+	background: url("../img/spriteDipSen.png") no-repeat 0 0px;
     left: 2px;
-    top: 114px;
 }
 
-#senadoresBtn{
-	background: url("../img/sprite.png") no-repeat 0 -75px;
-  	cursor: pointer;
-    left: 192px;
-    top: 114px;
-}
-
-#diputadosBtn span,
-#senadoresBtn span {
-    bottom: -4px;
-    position: absolute;
-    right: 26px;
-}
-
-#diputadosBtn:hover,
-#senadoresBtn:hover{
-	font-weight: bold;
-}
-
-
-#senadoresBtn:disabled{
-	background: url("../img/sprite.png") no-repeat 0 -50px;
-  	cursor: default;
+#diputadosBtn:hover{
+	background: url("../img/spriteDipSen.png") no-repeat 0 -25px;
 }
 
 #diputadosBtn:disabled{
-	background: url("../img/sprite.png") no-repeat 0 0px;
+	background: url("../img/spriteDipSen.png") no-repeat 0 -50px;
   	cursor: default;
 }
 
+#senadoresBtn{
+	background: url("../img/spriteDipSen.png") no-repeat -175px -0px;
+    left: 180px;
+}
+
+#senadoresBtn:hover{
+	background: url("../img/spriteDipSen.png") no-repeat -175px -25px;
+}
+
+#senadoresBtn:disabled{
+	background: url("../img/spriteDipSen.png") no-repeat -175px -50px;
+  	cursor: default;
+}
 
 #contenedorApp #selectorMapa {
 	width: 35px;
@@ -100,12 +97,12 @@
 }
 
 .selectDiputados{
-	background: url("../img/sprite.png") no-repeat scroll -28px -109px transparent;
+	background: url("../img/sprite.png") no-repeat scroll -28px 0px transparent;
 	left: 21px;	
 }
 
 .selectSenadores{
-	background: url("../img/sprite.png") no-repeat scroll -28px -130px transparent;
+	background: url("../img/sprite.png") no-repeat scroll -28px -19px transparent;
 	left: 212px;	
 }
 
@@ -113,18 +110,29 @@
 #referenciasVotos{
     color: #949493;
     font-size: 71.5%;
-    height: 91px;
-    left: 373px;
+    height: 66px;
+    left: 353px;
     line-height: 130%;
     position: absolute;
-    top: 59px;
-    width: 160px;
+    top: 80px;
+    width: 180px;
 }
 
-#referenciasGenerales p, 
-#referenciasVotos p{
-	margin-left: 0px;
-	margin-right: 5px;
+#referenciasGenerales{ /* esto reemplazarlo por una vez que Loscri apruebe el diseño #referenciasVotos */
+	border-left: 1px solid #CECECE;
+	background: url('../img/circulos.png'); 
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: 95% 100%;			
+}
+
+
+#referenciasGenerales div, 
+#referenciasVotos div{
+    width: 130px;
+    position: relative;
+    left: 10px;
+    top: 7px;
 }	
 	
 #referenciasColores	{
@@ -172,7 +180,7 @@
 }	
 
 #shareTwitter{
-    background: url("../img/sprite.png") no-repeat scroll 2px -131px transparent;
+    background: url("../img/sprite.png") no-repeat scroll 2px -21px transparent;
     border: 0px;
     height: 25px;
     position: absolute;
@@ -184,7 +192,7 @@
 
 
 #shareFacebook{
-    background: url("../img/sprite.png") no-repeat scroll 2px -107px transparent;
+    background: url("../img/sprite.png") no-repeat scroll 2px 0px transparent;
     border: 0px;
     height: 25px;
     position: absolute;
@@ -195,15 +203,15 @@
 }
 
 #shareTwitter:hover{
-    background: url("../img/sprite.png") no-repeat scroll 3px -130px transparent;
+    background: url("../img/sprite.png") no-repeat scroll 3px -20px transparent;
 }
 #shareFacebook:hover{
-    background: url("../img/sprite.png") no-repeat scroll 3px -106px transparent;
+    background: url("../img/sprite.png") no-repeat scroll 3px 1px transparent;
 }
 
 
 #logoShare{
-	background: url("../img/sprite.png") no-repeat scroll 0px -156px transparent;
+	background: url("../img/sprite.png") no-repeat scroll 0px -46px transparent;
 	height: 18px;
     width: 36px; 
 }
@@ -214,7 +222,7 @@
 }
 
 #arrowShare{
-    background: url("../img/sprite.png") no-repeat scroll -36px -156px transparent;
+    background: url("../img/sprite.png") no-repeat scroll -36px -46px transparent;
     height: 31px;
     float: right;
     width: 19px;
