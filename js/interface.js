@@ -1,3 +1,6 @@
+var botonesHeader = new Array ("diputadosBtn","senadoresBtn");
+var botonesMenu = new Array ("provBtn","partBtn","votoBtn","camaBtn");
+
 /************************************************************************/
 // modal de creditos OK
 function abrirCreditos() {
@@ -22,8 +25,6 @@ function miles(n) {
 /************************************************************************/
 // Cambia status de botones OK
 function updateBotones(option) {
-	var botonesHeader = new Array ("diputadosBtn","senadoresBtn");
-	var botonesMenu = new Array ("provBtn","partBtn","votoBtn","camaBtn");
 
 	if ( botonesHeader.indexOf(option) < 0 ){
 		botonesMenu.forEach( function (btn){ document.getElementById(btn).disabled = false; } );

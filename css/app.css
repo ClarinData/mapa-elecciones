@@ -118,7 +118,7 @@
     width: 180px;
 }
 
-#referenciasGenerales{ /* esto reemplazarlo por una vez que Loscri apruebe el diseño #referenciasVotos */
+#referenciasVotos{ 
 	border-left: 1px solid #CECECE;
 	background: url('../img/circulos.png'); 
 	background-color: white;
