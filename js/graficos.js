@@ -28,8 +28,10 @@ function dibuja(){
 			document.getElementById("referenciasVotos").className  = "descMuestro";
 			break;
 	}
-
-	document.getElementById("graficoBarras").innerHTML  = "Se hizo click en " + this.id;
+	
+	
+	var dondeEstoy = (argentina.selection) ? argentina.selection :  "Argentina";
+	document.getElementById("graficoBarras").innerHTML  = "Se desactiva: " + this.id + "<br> Mi set de datos es: " + elecciones.dataset + "<br> Seleccion: " + dondeEstoy;
 
 }
 
