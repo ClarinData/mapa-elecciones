@@ -335,6 +335,7 @@
 #referenciaBarras{
 	width: 290px;
 	height: 115px;
+    border-bottom: 1px solid #CECECE;
 }	
 
 #fondoReferencia{
@@ -353,6 +354,26 @@
     left: 10px;
     position: relative;
     top: 5px;
+}
+
+#referenciaTotal{
+    color: #333333;
+    display: block;
+    font-size: 80%;
+    left: 10px;
+    position: relative;
+    top: 6px;
+    width: 219px;
+}
+
+#referenciaBarrasDetalle{
+    background: url("../img/spriteDipSen.png") no-repeat scroll 0 -75px #FFFFFF;
+    border-top: 1px solid #CECECE;
+    height: 30px;
+    left: -10px;
+    position: absolute;
+    top: 77px;
+    width: 290px;
 }
 
 #graficoBarras{
