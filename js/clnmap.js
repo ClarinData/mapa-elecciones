@@ -169,8 +169,10 @@ var mapObject = function(map) {
               d = d || this.correspondingElement.__data__;
 
               obj.sort(function(a) {
+                a = a || this.correspondingElement.__data__;
                 return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
               });
+
               map.event.click(d);
             })
             .attr("d", map.svg.path)
@@ -190,12 +192,10 @@ var mapObject = function(map) {
                 d = d || this.correspondingElement.__data__;
 
                 obj.sort(function(a) {
-                  if (a.properties.administrative_area.id === d.properties.administrative_area.id) {
-                    return 1;
-                  } else {
-                    return -1;
-                  };
+                  a = a || this.correspondingElement.__data__;
+                  return a.properties.administrative_area.id === d.properties.administrative_area.id ? 1: -1;
                 });
+                
                 map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
                 map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].description);
                 var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];

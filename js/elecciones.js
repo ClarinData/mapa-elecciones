@@ -123,25 +123,43 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
 
     if (argentina.svg) {
 
-     argentina.svg.g.admlevel2.caba = argentina.svg.g.admlevel2.caba || (function (b,zoom) {
+     argentina.svg.g.admlevel2.caba = argentina.svg.g.admlevel2.caba || (function (d,zoom) {
+
+        var b = argentina.svg.path.bounds(d),
+            translate = [-(b[1][0] + b[0][0]) / 2, -(b[1][1] + b[0][1]) / 2];
 
         argentina.svg.g.admlevel2.append("use")
-                                 .attr("id", "map_arg_CAP_use")
-                                 .attr("xlink:href", "#map_arg_CAP")
+                                 .attr("xlink:href", "#" + argentina.id + "_CAP")
                                  .attr("transform", function () {
-                                   var b = argentina.svg.path.bounds(d3.select("#map_arg_CAP").data()[0]),
-                                       translate = [-(b[1][0] + b[0][0]) / 2, -(b[1][1] + b[0][1]) / 2];
                                    return "translate(" + [(argentina.width / 3) * 2.17, (argentina.height / 3) * 1.02]+ ") scale("+ zoom + ") translate(" + translate + ")";
                                  })
                                  .style("stroke-width", function() {
                                    return 0.5 / zoom + "pt";
                                  });
-        })(
 
-          argentina.svg.path.bounds(d3.select("#map_arg_CAP").data()[0]),
-          7
+        argentina.svg.g.paths.filter(function (e) {
+                               return (e.properties.administrative_area[0].id === "CAP") &&
+                                      (e.properties.administrative_area.length > 1);
+                             })
+                             .each(function (e) {
+                                argentina.svg.g.admlevel3.append("use")
+                                                         .attr("xlink:href", function () {
+                                                            return "#" + argentina.id + "_" + e.properties.administrative_area.id;
+                                                         })
+                                                         .attr("transform", function () {
+                                                           return "translate(" + [(argentina.width / 3) * 2.17, (argentina.height / 3) * 1.02]+ ") scale("+ zoom + ") translate(" + translate + ")";
+                                                         })
+                                                         .style("stroke-width", function() {
+                                                           return 0.5 / zoom + "pt";
+                                                         });
+                             });
 
-        );
+     })(
+
+       d3.select("#map_arg_CAP").datum(),
+       7
+
+     );
 
       var selector = (query.id) ? argentina.svg.g.select("#" + argentina.id + "_" + query.id.toUpperCase()) : null,
         datum = (selector) ? selector.datum() : null;
