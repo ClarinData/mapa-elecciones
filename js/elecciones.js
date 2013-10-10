@@ -189,7 +189,6 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
   });
 
   elecciones.event.on("viewchange", function() {
-
     argentina.svg.g.paths
       .classed("fp_K fp_PJ fp_FP fp_PRO fp_IZ fp_OT fp_SFP", false)
       .attr("class", function(d) {
@@ -228,7 +227,6 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
   });
 
   argentina.event.on("click", function(d) {
-
     argentina.datum = d;
 
     (function(d) {
@@ -296,6 +294,8 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       "dataset" : elecciones.dataset,
       "data" : elecciones[elecciones.dataset][argentina.selection]
     });
+   	dibuja();
+ 
 
   });
 
