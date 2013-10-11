@@ -320,6 +320,20 @@
 	left: 130px;
 }
 
+/**********************************************************************************/
+/* Las barras */
+#lasCamaras	{
+    background-color: #FFFFFF;
+    border: 0 none;
+    height: 600px;
+    left: 131px;
+    position: absolute;
+    top: 163px;
+    width: 819px;
+    display: none;
+}
+
+
 
 /**********************************************************************************/
 /* Las barras */
