@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+		 
+<META charset="utf-8">		 
+
+<SCRIPT src="d3.v3.min.js"></SCRIPT>		 
+
+<STYLE type="text/css">
+
+		
+/******* COLORES GLOBALES *********/
+
+			
+			.fp_K {
+				fill: #95ccee;
+				background-color: #95ccee;
+				border-top-color: #95ccee;
+			}
+
+			.fp_PJ {
+				fill: #c3adce;
+				background-color: #c3adce;
+				border-top-color: #c3adce;
+			}
+
+			.fp_FP {
+				fill: #eea196;
+				background-color: #eea196;
+			}
+
+			.fp_PRO {
+				fill: #f3dd4a;
+				background-color: #f3dd4a;
+			}
+
+			.fp_IZ {
+				fill: #b6c79f;
+				background-color: #b6c79f;
+			}
+
+			.fp_OT {
+				fill: #CCCCCC;
+				background-color: #CCCCCC;
+			}
+
+			.fp_SFP {/*Sin Fuerza Política*/
+				fill: #666666;
+				background-color: #666666;
+			}
+		
+		
+/******* CSS CAMARA *********/
+		
+			body {
+				-webkit-font-smoothing: antialiased;
+			}
+		
+			#contenedorCamara {
+				width:819px;
+				height:600px;
+				background-image: url('aboceto_senadores_copy.png');
+			}
+	
+			
+			
+			#contenedorCamara .porciones path {
+				stroke: white;
+				stroke-width: 3;
+			}
+
+			#contenedorCamara .porciones {
+				font-family: Arial, Helvetica, sans-serif;
+				font-weight: lighter;
+				font-size: 100%;
+			}
+			
+			
+/******* toolTip *********/			
+			
+			#contenedorCamara div.tooltip {
+				background-color: white;
+				position: absolute;
+				text-align: left;
+				width: auto;
+				height: auto;
+				padding: 4px;
+				font: 12px sans-serif;
+				border: solid 1px #ccc;
+				pointer-events: none;
+			}
+
+			#contenedorCamara div.tooltip:after, #contenedorCamara div.tooltip:before {
+				top: 100%;
+				border: solid transparent;
+				content: " ";
+				height: 0;
+				width: 0;
+				position: absolute;
+				pointer-events: none;
+			}
+
+			#contenedorCamara div.tooltip:after {
+				border-color: rgba(255, 255, 255, 0);
+				border-top-color: #ffffff;
+				border-width: 5px;
+				margin-left: -5px;
+			}
+
+			#contenedorCamara div.tooltip:before {
+				border-color: rgba(201, 199, 195, 0);
+				border-top-color: #c9c7c3;
+				border-width: 6px;
+				margin-left: -6px;
+			}
+
+			#contenedorCamara div #bloque {
+				margin:0px;
+			}
+			
+			#contenedorCamara div #fp_ {
+				margin:3px 0px 3px 0px;
+				font-family: Arial, Helvetica, sans-serif;
+				font-weight: bold;
+			}
+			
+			#contenedorCamara div #nota {
+				margin:7px 0px 3px 0px;
+				color:#777777;
+				font-size: 80%;
+			}
+			
+			#contenedorCamara .arrowLeft:before, .arrowLeft:after {
+				left: 90%;
+			}
+
+			#contenedorCamara .arrowRight:before, .arrowRight:after {
+				left: 10%;
+			}
+
+			#contenedorCamara .quorum {
+				stroke: black;
+				stroke-width: 1px;
+				fill: none
+			}
+			
+			#contenedorCamara #bNuevas {
+				display: none;
+			}
+			
+			 
+			
+			#contenedorCamara #camara {
+				width: 819px;
+				height:457px;
+				margin: 0px;
+				
+			}
+			
+			#contenedorCamara #separador {
+				width:785px;
+				margin-left:34px;
+				border-bottom-width:1px;
+				border-bottom-color:#CCCCCC;
+				border-bottom-style:solid;
+				margin-bottom: 10px;
+			}
+			
+		
+/******* tablas *********/			
+
+
+		
+			#contenedorCamara #tablaDetalle {
+				font-family: Arial, Helvetica, sans-serif;
+				text-align:left;
+				height: 137px;
+				left: 40px;
+				position: absolute;
+				
+				
+				
+			}
+			
+			#tablaDetalle .tabla {
+    			display: inline-table;
+    			width: 130px;
+    			font-family: Arial, Helvetica, sans-serif;
+    			text-align:left;
+    			border-left: 1px solid #CCCCCC;
+    			padding-left:8px;
+    			padding-right:8px;
+    			border-spacing: 0;
+    			
+    		}
+    
+    		#tablaDetalle .tabla:first-child {
+    			border-left:none;
+    			padding-left:0px;
+    			width: 123px;
+    		}
+    		
+    		#tablaDetalle .tabla caption {
+    			height:25px;
+    			width: 110px;
+       			padding-bottom:8px;
+    			padding-left:10px;
+    			padding-right:8px;
+    			font-size: 12px;
+    			font-weight:bold;
+    			text-align:left;
+    			line-height: 13px;
+    			border-left: 1px solid #CCCCCC;
+    		}
+    		
+    		
+    		
+    		#tablaDetalle .tabla:first-child caption {
+    			border-left:none;
+    			padding-left:1px;
+    			padding-right:8px;
+    		}
+    		 
+    		#tablaDetalle .tabla tr {
+    			border-right:none;
+    			border-left:none;
+    		}    		
+    
+			#tablaDetalle .tabla tr td {
+    			font-size: 12px;
+    			font-weight:lighter;
+    		}
+    		
+    		#tablaDetalle .tabla tr:first-child td {
+    			background-color: inherit;
+    		}
+        
+        	#tablaDetalle .tabla .primero,
+        	#tablaDetalle .tabla .primero_nro {
+        		border-top-width: 4px;
+				border-top-style: solid;
+				
+        	}
+        
+        	#contenedorCamara #tablaDetalle .tabla .bancasTenian, 
+        	#contenedorCamara #tablaDetalle .tabla .bancasObtuvieron,
+        	#contenedorCamara #tablaDetalle .tabla .bancasRenovaron {
+				font-size: 11px;
+				color: black;
+				line-height: 17px;
+				border-bottom: 1px #CCCCCC solid;
+			}
+			
+			#contenedorCamara #tablaDetalle .tabla .bancasObtuvieron,
+        	#contenedorCamara #tablaDetalle .tabla .bancasRenovaron {
+        		font-weight:900;
+        	}
+			
+			#contenedorCamara #tablaDetalle .tabla .bancasTenian_nro,
+			#contenedorCamara #tablaDetalle .tabla .bancasObtuvieron_nro,
+			#contenedorCamara #tablaDetalle .tabla .bancasRenovaron_nro {
+				text-align:right;
+				font-size: 11px;
+				color: black;
+				line-height: 17px;
+				border-bottom: 1px #CCCCCC solid;
+			}
+			
+			#contenedorCamara #tablaDetalle .tabla .bancasObtuvieron_nro,
+			#contenedorCamara #tablaDetalle .tabla .bancasObtuvieron {
+				border-bottom: none;
+			}
+			
+			
+			#contenedorCamara #tablaDetalle .tabla .bancasObtuvieron_nro,
+        	#contenedorCamara #tablaDetalle .tabla .bancasRenovaron_nro {
+        		font-weight:900;
+        		
+        	}
+        	
+			#contenedorCamara #tablaDetalle .tabla .bancasDiferencia {
+				height:25px;
+				color:white;
+				padding: 2px 0px 0px 4px;
+				font-size: 12px;
+				font-weight:bold;
+			}
+			
+			#contenedorCamara #tablaDetalle .tabla .bancasDiferencia_nro {
+				font-weight:bold;
+				color:white;
+				font-size: 15px;
+			}
+			
+			
+/***css tomado de nico, BORRAR *****/
+	
+			#totalCam_sen {
+				position: absolute;
+				top: 385px;
+				left: 315px;
+				width: 215px;
+				height: 40px;
+			}
+
+			
+			#fondoTotalCam_sen {
+			  
+    			background-color: #FFFFFF;
+   				height: 15px;
+    			left: 8px;
+    			position: relative;
+    			top: 12px;
+    			width: 200px;
+				line-height: 15px;
+				text-align: center;	
+				border-top: 1px solid #CECECE;
+			}
+
+			#fondoTotalCam_sen span {
+				display: inline-block;
+				vertical-align: middle;
+				line-height: normal;   
+    			font-family: Arial,Helvetica,sans-serif;
+    			font-size: 59%;
+			}
+
+			#textoReferencial_sen {
+    			font-size: 80%;
+    			color: #595959;
+    			font-weight: normal;
+    			width: 100px;
+			}
+
+			.textoTotales_sen {
+    			color: #000000;
+			}
+
+			.textoTotales_sen_Escrutado {
+    			color: #595959;
+			}
+
+			#mesasSen {
+    			color: #990000;
+			}
+
+			#votosSen {
+    			color: #990000;
+			}
+
+			#totalSen {
+				font-family: Arial,Helvetica,sans-serif;
+    			font-size: 130%;
+    			text-align: center;	
+    			color:#777777;
+    			line-height: 15px; 
+   			}
+   			
+   			#totalSen span {
+   				font-size: 60%;
+   			}
+   			
+   			#antes_despues_form {
+   				
+   				left:400px;
+   				color:#777777;
+   				position:absolute;
+   				font-size: 70%;
+   				font-family: Arial, Helvetica, sans-serif;
+   			}
+
+			
+			#contenedorCamara #quorum_bancas_form {
+			 	top:23px;
+			    left:30px;
+			 	position: absolute;
+			 	display: inline-block;
+			 	width: 500px;
+			 	font-family: Arial,Helvetica,sans-serif;
+   				font-size: 60%;
+   				color:#777777;
+			 }
+
+			
+		</STYLE>
+	 
+<BODY>
+
+<div id="contenedorCamara">
+		
+		<form id="quorum_bancas_form">
+			<input class="quorum_bancas_form" id="quorum" type="checkbox" name="opcionUnica" value="quorum"><label for="opcionUnica">DIPUTADOS NECESARIOS PARA QUORUM (37)</label><br />
+			<input class="quorum_bancas_form" id="bancasNuevas" type="checkbox" name="opcionUnica" value="quorum">BANCAS OBTENIDAS EN ESTA ELECCION
+		</form>
+		
+		<form id="antes_despues_form">
+			<input id="camaraActual" type="radio" name="antesydespues" value="antes" checked>CAMARA ACTUAL
+			<input id="camaraNueva" type="radio" name="antesydespues" value="despues">CAMARA NUEVA
+		</form>
+		
+		<div id="camara"> </div>
+		
+		<div id="totalCam_sen">
+						
+						<div id="totalSen">72<br />
+							<span>BANCAS TOTALES</span>
+						</div>
+						
+						<div id="fondoTotalCam_sen">
+							<span class="textoTotales_sen_Escrutado">ESCRUTADO</span>
+							<span class="textoTotales_sen">| Votos: </span>
+							
+							
+							<span id="votosSen">91.9%</span>
+							<span class="textoTotales_sen">| Mesas: </span>
+							<span id="mesasSen">91.9% </span>						
+						</div>
+		</div>
+		
+		
+		<div id="separador"> </div>
+		
+		<div id="tablaDetalle"> 
+			
+	
+			
+			<table class="tabla">
+			
+				<caption> </caption>
+			
+				
+				<tr>
+					<td class="bancasTenian primero">Tenían</td>
+					<td class="bancasTenian_nro primero_nro">157</td>
+				</tr>
+				<tr>
+					<td class="bancasRenovaron"><span>Renovaron</span></td>
+					<td class="bancasRenovaron_nro"><span>54</span></td>
+				</tr>
+				<tr>
+					<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+					<td class="bancasObtuvieron_nro"><span>60</span></td>
+				</tr>
+				<tr>
+					<td class="bancasDiferencia">Diferencia</td>
+					<td class="bancasDiferencia_nro"><span>+99</span></td>
+				</tr>		
+			
+			</table>
+			
+		
+			
+			<table class="tabla">
+			
+				<caption> </caption>
+			
+				
+				<tr>
+					<td class="bancasTenian primero">Tenían</td>
+					<td class="bancasTenian_nro primero_nro">157</td>
+				</tr>
+				<tr>
+					<td class="bancasRenovaron"><span>Renovaron</span></td>
+					<td class="bancasRenovaron_nro"><span>54</span></td>
+				</tr>
+				<tr>
+					<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+					<td class="bancasObtuvieron_nro"><span>60</span></td>
+				</tr>
+				<tr>
+					<td class="bancasDiferencia">Diferencia</td>
+					<td class="bancasDiferencia_nro"><span>+99</span></td>
+				</tr>	
+			
+			</table>
+			<table class="tabla">
+			
+				<caption> </caption>
+			
+				
+				<tr>
+					<td class="bancasTenian primero">Tenían</td>
+					<td class="bancasTenian_nro primero_nro">157</td>
+				</tr>
+				<tr>
+					<td class="bancasRenovaron"><span>Renovaron</span></td>
+					<td class="bancasRenovaron_nro"><span>54</span></td>
+				</tr>
+				<tr>
+					<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+					<td class="bancasObtuvieron_nro"><span>60</span></td>
+				</tr>
+				<tr>
+					<td class="bancasDiferencia">Diferencia</td>
+					<td class="bancasDiferencia_nro"><span>+99</span></td>
+				</tr>		
+			
+			</table>
+			<table class="tabla">
+			
+				<caption> </caption>
+			
+				
+				<tr>
+					<td class="bancasTenian primero">Tenían</td>
+					<td class="bancasTenian_nro primero_nro">157</td>
+				</tr>
+				<tr>
+					<td class="bancasRenovaron"><span>Renovaron</span></td>
+					<td class="bancasRenovaron_nro"><span>54</span></td>
+				</tr>
+				<tr>
+					<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+					<td class="bancasObtuvieron_nro"><span>60</span></td>
+				</tr>
+				<tr>
+					<td class="bancasDiferencia">Diferencia</td>
+					<td class="bancasDiferencia_nro"><span>+99</span></td>
+				</tr>		
+			
+			</table>
+			<table class="tabla">
+			
+				<caption> </caption>
+			
+				
+				<tr>
+					<td class="bancasTenian primero">Tenían</td>
+					<td class="bancasTenian_nro primero_nro">157</td>
+				</tr>
+				<tr>
+					<td class="bancasRenovaron"><span>Renovaron</span></td>
+					<td class="bancasRenovaron_nro"><span>54</span></td>
+				</tr>
+				<tr>
+					<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+					<td class="bancasObtuvieron_nro"><span>60</span></td>
+				</tr>
+				<tr>
+					<td class="bancasDiferencia">Diferencia</td>
+					<td class="bancasDiferencia_nro"><span>+99</span></td>
+				</tr>		
+			
+			</table>
+			<table class="tabla">
+			
+				<caption> </caption>
+			
+				
+				<tr>
+					<td class="bancasTenian primero">Tenían</td>
+					<td class="bancasTenian_nro primero_nro">157</td>
+				</tr>
+				<tr>
+					<td class="bancasRenovaron"><span>Renovaron</span></td>
+					<td class="bancasRenovaron_nro"><span>54</span></td>
+				</tr>
+				<tr>
+					<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+					<td class="bancasObtuvieron_nro"><span>60</span></td>
+				</tr>
+				<tr>
+					<td class="bancasDiferencia">Diferencia</td>
+					<td class="bancasDiferencia_nro"><span>+99</span></td>
+				</tr>		
+			
+			</table>
+		
+		</div>
+		
+	
+		
+		
+		<div class="tooltip" id="tooltip">
+			<P id="bloque"><STRONG>BLOQUE</STRONG></P>
+			<P id="fp_"> </P>
+			<P id="bNuevas"> </P>
+			<P id="nota">TOTAL DE BANCAS</P>
+		</div>
+		
+</div>
+
+
+<SCRIPT type="text/javascript">
+
+
+
+var wCam = 819, hCam = 463, r = 292, ir = 284, pi = Math.PI;
+
+//Datos Dummy
+
+	var data = [{"fp":"K", "obtuvieron":17, "viejos":15},
+				{"fp":"PJ", "obtuvieron":5, "viejos":7},
+				{"fp":"FP", "obtuvieron":6, "viejos":4},
+				{"fp":"PRO", "obtuvieron":0, "viejos":8},
+				{"fp":"IZ", "obtuvieron":1, "viejos":0},
+				{"fp":"OT", "obtuvieron":5, "viejos":4}];
+
+//Datos fijos: macheo con var=data
+				
+	var camara = {"fp_K"  :{"nombre":"Kirchneristas y aliados", 	"tenian": 30, "renovaron": 15, 	"color":"#95ccee", "fp":"K"},
+				  "fp_FP" :{"nombre":"UCR, Socialistas y aliados",	"tenian": 8, "renovaron": 4, 	"color":"#eea196", "fp":"FP"},	
+				  "fp_PRO":{"nombre":"PRO y aliados",				"tenian": 10, "renovaron": 2, 	"color":"#f3dd4a", "fp":"PRO"},
+				  "fp_PJ" :{"nombre":"Peronistas opositores",		"tenian": 14, "renovaron": 7, 	"color":"#c3adce", "fp":"PJ"},
+				  "fp_IZ" :{"nombre":"Partidos de izquierda",		"tenian": 2, "renovaron": 2, 	"color":"#b6c79f", "fp":"IZ"},
+				  "fp_OT" :{"nombre":"Otros partidos",				"tenian": 8, "renovaron": 4, 	"color":"#cccccc", "fp":"OT"}
+				  };
+				  
+				  
+//Data procesada pintar los circulos y asociar las clases a los rect del mouseover			  
+
+		var camaraNueva = function () {
+			var total = new Array();
+			for(var i in data) {
+				for(var n = 0; n < (data[i].obtuvieron + data[i].viejos); n++) {
+					total.push({"fp": data[i].fp, "renueva": (data[i].obtuvieron <= n), "obtuvieron" : data[i].obtuvieron});
+				}
+			}
+			console.log(total);
+			return total;
+		},
+
+
+		 camaraActual = function () {
+			var total = new Array();
+			for(var i in camara) {
+				for(var n = 0; n < camara[i].tenian; n++) {
+					total.push({"fp": camara[i].fp});
+				}
+			}
+			
+			return total;
+		}
+		
+		
+		//Creo svg
+
+			var svg = d3.select("body")
+						.select("#camara")
+						.append("svg")
+						.attr("width", wCam)
+						.attr("height", hCam);
+						
+//*************CARGO LOS DATOS EN LAS TABLAS***********************//
+				
+				
+			var seleccionTablas = d3.selectAll (".tabla")	
+								 .data(data);
+									
+			
+				//******** Cargo numeros **********//			
+			
+				seleccionTablas.select("caption")
+							   .text(function (d) {
+							   	return camara["fp_" + d.fp].nombre
+							   });	
+							  
+				seleccionTablas.select(".bancasTenian_nro")
+							   .text(function (d) {
+							    	return camara["fp_" + d.fp].tenian
+							   });
+				
+				seleccionTablas.select(".bancasRenovaron_nro")
+							   .text(function (d) {
+							    	return camara["fp_" + d.fp].renovaron
+							   });
+				
+				seleccionTablas.select(".bancasObtuvieron_nro")
+							   .text(function (d) {
+							    	return d.obtuvieron
+							   });
+					
+				seleccionTablas.select(".bancasDiferencia_nro")
+							   .text(function (d) {
+							    	var dif = (d.obtuvieron - camara["fp_" + d.fp].renovaron);
+							    	return (dif > 0) ? ("+" + dif) : dif;
+							   });
+							   
+							   
+				//******** Cargo colores **********//
+				
+				seleccionTablas.each(function(d) {
+								  var thisClass = "fp_" + d.fp;
+							 	  d3.select(this)
+							   	    .selectAll("tr:first-child td, tr:last-child td")
+							   	    .classed("fp_K fp_PJ fp_FP fp_IZ fp_PRO fp_OT", false) // expandir lista
+							        .classed(thisClass, true);
+							   });
+
+
+//*************GENERO DIBUJO DE LA CAMARA***********************//
+//
+//
+
+		var filas = svg.selectAll(".filas")
+						.data(function () {
+								return new Array(18);
+								})
+						.enter().append("g")
+						.attr("transform", function (d,i) {
+								return "translate(415,430) rotate(" + (i * 10.588235294) + ")";}
+								);
+
+		//creo rectangulos para el mouseover sobre los circulos
+
+				filas.selectAll("rect")
+						.data(new Array(4))
+						.enter().append("rect")
+						.attr("y", -24)
+						.attr("x", function (d,i) {return ((i+4) * -36)-17;})
+						.attr("width", 40)
+						.attr("height",49);
+
+		//creo los circulos que forman la camara
+
+				   filas.selectAll("circle")
+						.data(new Array(4))
+						.enter().append("circle")
+						.attr("cy", 0)
+						.attr("cx", function (d,i) {return (i+4) * -36;})
+						.attr("r", function (d,i) {return (Math.pow((i+6),1/3)*3);}) ///aumento paulatino
+						.attr("pointer-events", "none");
+
+		//aplico clases para pintar circulos y borro los que sobran (si es que sobran!)
+
+		var bancas = svg.selectAll("circle");
+
+				bancas.data(camaraNueva)
+						.attr("class", 
+							function(d) {
+								return (d.fp) ? "fp_" + d.fp + " bancas": null;
+							})
+						.exit()
+						.remove();
+
+
+		//aplico clases a los rectangulos del mousever
+
+					 svg.selectAll("rect")
+						.data(camaraNueva)
+						.attr("class", function(d) {
+								return (d.fp) ? "fp_" + d.fp : null;})
+						.attr("opacity",0)
+						.on("mouseover", mouseover)
+						.on("mouseout", mouseout)
+						.exit()
+						.remove();
+
+
+//********************* GENERO DIBUJO DE LOS ARCOS ***************************//
+
+
+			var vis = d3.select("svg")
+						.data([data])
+						.append("g")
+						.attr("transform", "translate(" + ((wCam/2)+7) + "," + (hCam-25) + ")");
+
+			var arc = d3.svg.arc()
+						.outerRadius(r)
+						.innerRadius(ir);
+			
+			var arcTxt = d3.svg.arc()
+						.outerRadius(r+8)
+						.innerRadius(ir+8);
+
+			var pie = d3.layout.pie()
+						.sort(null)
+						.value(function(d) { return (d.value);
+						})
+						.startAngle(-90 * (pi/180))
+						.endAngle(90 * (pi/180));
+						
+			data.forEach(function(d) {
+		    	d.value = d.obtuvieron + d.viejos;
+		    });
+
+		var arcs = (function (arcs) {
+
+		//genero arcos para los colores
+		
+					arcs.append("path")
+						.attr("class", function(d,i) { return "fp_" + data[i].fp; })
+						.attr("d", arc);
+		
+		//genero arco para los numeros - ie -				
+				
+					arcs.append("path")
+						.attr("id" , function(d,i) { return "path" + i; })
+						.attr("opacity", 0)
+						.attr("d", arcTxt);
+					
+					arcs.append("text")
+						.attr("text-anchor", "end")
+
+		//agrego id a los textos para obtener su posicion
+
+						.attr("id", function(d,i) { return "fp_" + data[i].fp; })
+						.append("textPath")
+						.attr("xlink:href",function(d,i){return "#path"+i;})
+						.attr("startOffset", "25%")
+						.append("tspan")
+						.text(function(d, i) {
+									var total = new Array();
+									total.push((data[i].obtuvieron) + (data[i].viejos) || null);
+									return total;
+									});
+						return arcs;
+
+					})(
+		
+					 vis.selectAll("g.porciones")
+						.data(pie)
+						.enter()
+						.append("g")
+						.attr("class", "porciones")
+						);
+
+
+
+
+//********* TOOLTIP **************//
+		
+					
+		var toolTip = d3.select(".tooltip")
+						.style("opacity", 0);
+						
+		
+		
+		// funciones del mouseover en la camara
+
+		function mouseover(d) {
+					 svg.selectAll( "circle." + this.getAttribute('class'))
+						.style("stroke", "grey")
+						.transition()
+						.style("stroke-opacity", 1)
+        				.style("stroke-width", 1)
+						
+
+		// obtengo x y de los labels de los arcos
+
+						var myDiv = document.getElementById(this.getAttribute('class'))
+						var rect = myDiv.getBoundingClientRect();
+						var yNum,xNum,hTool,wTool;
+						var scrollTop =  document.documentElement.scrollTop ? document.documentElement.scrollTop:document.body.scrollTop;
+						var scrollLeft = document.documentElement.scrollLeft? document.documentElement.scrollLeft:document.body.scrollLeft;
+						
+						var myTooldiv = document.getElementById("tooltip")
+						var recTool = myTooldiv.getBoundingClientRect();
+						
+						hTool = recTool.height
+						wTool = recTool.width
+						yNum = rect.top+scrollTop-73;
+						xNum = rect.left+scrollLeft < ((wCam/2)+7) && rect.left+scrollLeft > 110 || rect.left+scrollLeft > 750 && rect.left+scrollLeft < 840 
+							   ? rect.left+scrollLeft-110
+							   : rect.left+scrollLeft;
+						//console.log(yNum,xNum,hTool,wTool)
+
+		//muestro tooltip
+
+				 toolTip.transition()
+						.style("opacity", 1)
+						.select("#bloque")
+						.style("color", getComputedStyle(this).backgroundColor)
+					  d3.select("#fp_")
+						.text(camara[this.getAttribute('class')].nombre)
+						
+		//posicionamiento dinamico del tooltip en la pagina (margin safe)	
+											
+				 toolTip.style("left",(xNum) + "px")
+						.style("top",(yNum-hTool+60) + "px")
+						.attr("class", rect.left+scrollLeft < ((wCam/2)+7)  & rect.left+scrollLeft > 110 ? "tooltip arrowLeft" : "tooltip arrowRight");
+						
+					  d3.select("#bNuevas")
+						.text (function() {
+							return d.obtuvieron;
+						});
+						
+		}
+
+		
+		function mouseout () {
+					 svg.selectAll("circle." + this.getAttribute('class'))
+						.transition()
+						.style("stroke-opacity", 0)
+				 toolTip.transition()
+						.duration(500)
+						.style("opacity", 1e-6);
+		}		
+
+		var filasQ =
+		 svg.selectAll(".filasq")
+		 	.data(function() {
+		 		return new Array(18);
+		 	})
+		 	.enter().append("g")
+		 	.attr("class", "filasq")
+		 	.attr("transform", function(d, i) {
+		 		var commands = "translate(415,430) rotate(" + (i * 10.588235294) + ")";
+
+		 		return commands;
+		 	});
+
+		 filasQ.selectAll("circle")
+		 	.data(new Array(4))
+		 	.enter().append("circle")
+		 	.attr("class", "quorum")
+		 	.attr("cy", 0)
+		 	.attr("cx", function(d, i) {
+		 		return (i + 4) * -36;
+		 	})
+		 	.attr("r", 0)
+		 	.attr("pointer-events", "none");
+
+		 svg.selectAll(".quorum")
+		 	.data(new Array(37))
+		 	.exit()
+		 	.remove();
+
+
+
+//*********** BOTON QUORUM **************//
+
+
+d3.select("#quorum").on("change", 
+	function() {
+		var checked = this.checked,
+			circleOut = function () {
+				this.attr("stroke-opacity", 0)
+					.attr("r", 25);
+			},
+			circleIn = function () {
+				this.attr("stroke-opacity", 1)
+					.attr("r", function (d,i) {
+						return Math.pow((i+6),1/3)*4;
+					});
+			},
+			circleRun = (checked) ? [circleOut, circleIn] : [circleIn, circleOut];
+
+ 	 	filasQ.selectAll(".quorum")
+		.call(circleRun[0])
+		.transition().duration(750)
+		.call(circleRun[1]);
+	 });
+ 
+
+
+//*********** BOTON BANCAS NUEVAS **************//
+
+
+d3.select("#bancasNuevas")
+		.on("change", 
+	function() { 
+		var apagarBancas = 
+			function() {
+				bancas.transition()
+					  .style("fill-opacity", 
+						function (d) {return (d.renueva) ? 0 : 1;
+						})
+					  d3.select("#bNuevas")
+						.style("display","block");
+			},
+			
+			
+		prenderBancas = 
+			function () {
+				bancas.transition()
+					  .style("fill-opacity", 1)
+					  d3.select("#bNuevas")
+						.style("display","none");
+						
+			},
+		
+		bancasRun = (this.checked) ? apagarBancas : prenderBancas;
+		
+		bancas.selectAll(".bancas")
+			.call(bancasRun);
+	});
+
+
+		</SCRIPT>
+</BODY>
