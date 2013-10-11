@@ -1,7 +1,8 @@
 /*.project
 /datos/
 /*.DS_Store
-*~
+/*.DS_Store
+thumbs.db
 *.ai
 *.psd
 *_CDT/**/*
