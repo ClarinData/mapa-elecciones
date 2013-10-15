@@ -1,6 +1,14 @@
 /**********************************************************************************/
 /* General Bar Styles                                                             */
 /**********************************************************************************/
+
+.sinDatos {
+    font-weight: bold;
+    left: 10px;
+    position: relative;
+    top: 10px;
+}
+
 .contenedorBar{
 	width: 285px;
 	height: 62px;
@@ -13,6 +21,7 @@
 	font: 11px Arial, Helvetica, sans-serif;
 	font-weight:bold;
 }
+
 
 .barraBar {
 	height: 24px;
@@ -40,54 +49,72 @@
 /**********************************************************************************/
 
 .contenedorDet {
+	position:relative;	
 	width: 270px;
-	height: 60px;
 	border-top: 1px solid #CECECE;
 	padding-left: 5px;
 	padding-top: 13px;
 	overflow: hidden;
+	background: url("../img/caritas/silueta.png"); 
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: 95% 100%;			
 }
 
 .nombreDet {
 	font: 11px Arial, Helvetica, sans-serif;
 	font-weight:bold;
+	width: 180px;	
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
+.candidatoDet {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #808080;
+}
+
+
+.cantidadDet {
+	font: 10px "Arial Narrow", Helvetica, sans-serif;
+	color: #808080;
 }
 
 .barraDet {
 	height: 13px;
 	width: 1px;
-	position:relative;
-	top: 7px;
+	margin-top: 10px;
 }
 
 .porcentajeDet {
-	font: 12px Arial, Helvetica, sans-serif;
+	font: 14px Arial, Helvetica, sans-serif;
 	font-weight:bold;
-	position:relative;
-	top: -6px;
+    position: relative;
+    top: -16px;	
 }
 
-.cantidadDet {
-	font: 10px "Arial Narrow", Helvetica, sans-serif;
-	position:relative;
-	top: -20px;
-	color: #808080;
+.lineaDet{
+    border-left: 1px solid #CECECE;
+    height: 100%;
+    left: 190px;
+    position: absolute;
+    top: 0;
+    width: 10px;
 }
 
-.tituloInternaDet {
-	font: 9px "Arial", Helvetica, sans-serif;
-	position:relative;
-	top: -15px;
-	color: #000000;
-}
-
-.tituloInternaDet:hover {
-	background-color: #eeeeee;
-  	cursor: pointer;
-}
-
-.contenidoInternaDet {
-	font: 12px Arial , Helvetica, sans-serif;
-	color: #808080;
+.bancasDet{
+	font: 14px Arial, Helvetica, sans-serif;
+	font-weight:bold;	
+    bottom: 15px;
+    height: 20px;
+    left: 181px;
+    position: absolute;
+    width: 20px;
+    text-align: center;
+	-webkit-border-radius: 100px;
+	-o-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;   
 }
 
