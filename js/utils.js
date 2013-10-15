@@ -42,8 +42,8 @@ function getQueryParams(qs) {
 
   // Parse it
   var re = /([^=&]+)(=([^&]*))?/g;
-
-  while (match = re.exec(qs)) {
+  while (match) {
+    match = re.exec(qs);
     var key = decodeURIComponent(match[1].replace(/\+/g, ' '));
     var value = match[3] ? getQueryParams.decode(match[3]) : '';
     parameters[key] = value;
