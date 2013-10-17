@@ -63,8 +63,8 @@ function dibuja(){
 		datos = datos[argentina.selection];
 		if (datos){
 			//si hay datos se arman las barras detalladas
-			m_txt = datos.votacion.mesas.porcentaje.toLocaleString() + "%";
-			v_txt = datos.votacion.votos.porcentaje.toLocaleString() + "%";
+			m_txt = datos.votacion.mesas.per.toLocaleString() + "%";
+			v_txt = datos.votacion.votos.per.toLocaleString() + "%";
 			document.getElementById("referenciaBarrasDetalle").className = "descMuestro";		
 
 			if (datos.nivel_administrativo == 2){
@@ -93,8 +93,8 @@ function dibuja(){
 		document.getElementById("referenciaBarrasDetalle").className = "descOculto";		
 		
 		datos = datos.TOTALES;
-			m_txt = datos.votacion.mesas.porcentaje.toLocaleString() + "%";
-			v_txt = datos.votacion.votos.porcentaje.toLocaleString() + "%";
+			m_txt = datos.votacion.mesas.per.toLocaleString() + "%";
+			v_txt = datos.votacion.votos.per.toLocaleString() + "%";
 	}
 
 
@@ -113,10 +113,10 @@ function dibujaBarras(dataset){
 			
 			d3.select("#graficoBarras").selectAll("div").remove();
 			var maximo = 200;
-			var dominio = d3.scale.linear().domain([0, dataset.votacion.partidos_politicos[0].votos]).range([0, maximo]);
+			var dominio = d3.scale.linear().domain([0, dataset.votacion.pp[0].votos]).range([0, maximo]);
 		
 			var contenido = d3.select("#graficoBarras").selectAll(".contenedorBar").data(function() {
-				return dataset.votacion.partidos_politicos;
+				return dataset.votacion.pp;
 			});
 		
 			var contenidoEnter = contenido.enter().append("div").classed("contenedorBar", true);
@@ -127,8 +127,8 @@ function dibujaBarras(dataset){
 		
 			contenidoEnter.append("div").attr("class", function(d) {
 				var tempClass = "";
-				if (d.fuerza_politica) {
-					tempClass = "fp_" + d.fuerza_politica;
+				if (d.fuerza) {
+					tempClass = "fp_" + d.fuerza;
 				} else {
 					tempClass = "fp_SFP";
 				}
@@ -140,7 +140,7 @@ function dibujaBarras(dataset){
 			contenidoEnter.append("div").classed("porcentajeBar", true).style("left", function(d) {
 				return Math.ceil(dominio(d.votos) + 5) + "px";
 			}).text(function(d) {
-				return d.porcentaje.toLocaleString() + "%";
+				return d.per.toLocaleString() + "%";
 			});
 
 			contenidoEnter.append("div").classed("cantidadBar", true).style("left", function(d) {
@@ -158,10 +158,10 @@ function dibujaBarras(dataset){
 			d3.select("#graficoBarras").selectAll("div").remove();
 			d3.select("#referenciaBarras").style("background-position", "0 -115px");
 		
-			var dominio = d3.scale.linear().domain([0, dataset.votacion.partidos_politicos[0].votos]).range([0, maximo]);
+			var dominio = d3.scale.linear().domain([0, dataset.votacion.pp[0].votos]).range([0, maximo]);
 		
 			var contenido = d3.selectAll("#graficoBarras").selectAll(".contenedorBar").data(function(d) {
-				return dataset.votacion.partidos_politicos;
+				return dataset.votacion.pp;
 			});
 		
 			var contenidoEnter = contenido.enter().append("div").classed("contenedorDet", true);
@@ -190,8 +190,8 @@ function dibujaBarras(dataset){
 		
 			contenidoEnter.append("div").attr("class", function(d) {
 				var tempClass = "";
-				if (d.fuerza_politica !== undefined) {
-					tempClass = "fp_" + d.fuerza_politica;
+				if (d.fuerza !== undefined) {
+					tempClass = "fp_" + d.fuerza;
 				} else {
 					tempClass = "fp_SFP";
 				}
@@ -203,7 +203,7 @@ function dibujaBarras(dataset){
 			contenidoEnter.append("div").classed("porcentajeDet", true).style("left", function(d) {
 					return Math.ceil(dominio(d.votos) + 5) + "px";
 				}).text(function(d) {
-					return d.porcentaje.toLocaleString() + "%";
+					return d.per.toLocaleString() + "%";
 				});
 		
 			contenidoEnter.append("div").classed("lineaDet", true);
@@ -215,8 +215,8 @@ function dibujaBarras(dataset){
 					return "-";
 				}).attr("class", function(d) {
 				var tempClass = "";
-				if (d.fuerza_politica !== undefined) {
-					tempClass = "fp_" + d.fuerza_politica;
+				if (d.fuerza !== undefined) {
+					tempClass = "fp_" + d.fuerza;
 				} else {
 					tempClass = "fp_SFP";
 					if (d.id === "blancos"){ tempClass = "";};

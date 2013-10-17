@@ -39,7 +39,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
   d3.select("#preloader").style("display", "block");
 
   function dataRadius(dataE) {
-    var v = (dataE) ? dataE.votacion.partidos_politicos[0].votos / (700 * (argentina.zoom || 1)) : 0;
+    var v = (dataE) ? dataE.votacion.pp[0].votos / (700 * (argentina.zoom || 1)) : 0;
     return Math.sqrt(v / Math.PI);
   }
 
@@ -195,8 +195,8 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       .attr("class", function(d) {
         var current_attr = (this.getAttributeNode("class")) ? this.getAttributeNode("class").value : "";
         var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];
-        if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
-          return "fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica + " " + current_attr;
+        if (dataE && (dataE.votacion.pp[0].votos > 0)) {
+          return "fp_" + dataE.votacion.pp[0].fuerza + " " + current_attr;
         } else {
           return current_attr;
         }
@@ -207,8 +207,8 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       .attr("class", function(d) {
         var current_attr = (this.getAttributeNode("class")) ? this.getAttributeNode("class").value : "";
         var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];
-        if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
-          return "fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica + " " + current_attr;
+        if (dataE && (dataE.votacion.pp[0].votos > 0)) {
+          return "fp_" + dataE.votacion.pp[0].fuerza + " " + current_attr;
         } else {
           return current_attr;
         }
