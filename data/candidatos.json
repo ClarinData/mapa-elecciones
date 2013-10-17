@@ -1,0 +1,1075 @@
+{
+   "diputados":{
+      "BUE":{
+         "votacion":{
+            "candidatos":{
+               "501":{
+                  "nombre":"M. Insaurralde"
+               }
+            },
+            "candidatos":{
+               "505":{
+                  "nombre":"N. Pitrola"
+               }
+            },
+            "candidatos":{
+               "507":{
+                  "nombre":"F. De Narvaez "
+               }
+            },
+            "candidatos":{
+               "510":{
+                  "nombre":"S. Massa"
+               }
+            },
+            "candidatos":{
+               "513":{
+                  "nombre":"G. Venegas"
+               }
+            },
+            "candidatos":{
+               "514":{
+                  "nombre":"M. Stolbizer"
+               }
+            }
+         }
+      },
+      "AP":{
+         "votacion":{
+            "candidatos":{
+               "187":{
+                  "nombre":"L. Zamora"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"J. Cabandié"
+               }
+            },
+            "candidatos":{
+               "502":{
+                  "nombre":"E. Carrió"
+               }
+            },
+            "candidatos":{
+               "503":{
+                  "nombre":"S. Bergman"
+               }
+            },
+            "candidatos":{
+               "505":{
+                  "nombre":"J. Altamira "
+               }
+            },
+            "candidatos":{
+               "506":{
+                  "nombre":"I. Hagman"
+               }
+            }
+         }
+      },
+      "CAT":{
+         "votacion":{
+            "candidatos":{
+               "014":{
+                  "nombre":"A. López"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"N. Tomassi "
+               }
+            },
+            "candidatos":{
+               "508":{
+                  "nombre":"E. Brizuela del Moral "
+               }
+            },
+            "candidatos":{
+               "509":{
+                  "nombre":"J. Barrionuevo"
+               }
+            },
+            "candidatos":{
+               "003":{
+                  "nombre":"O. Aguad"
+               }
+            },
+            "candidatos":{
+               "047":{
+                  "nombre":"R. Cucui"
+               }
+            },
+            "candidatos":{
+               "191":{
+                  "nombre":"O. Ruitort"
+               }
+            },
+            "candidatos":{
+               "217":{
+                  "nombre":"M. Marcone"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"C. Scotto"
+               }
+            },
+            "candidatos":{
+               "503":{
+                  "nombre":"H. Baldassi"
+               }
+            },
+            "candidatos":{
+               "505":{
+                  "nombre":"L. Olivero"
+               }
+            },
+            "candidatos":{
+               "512":{
+                  "nombre":"J. Schiaretti"
+               }
+            },
+            "candidatos":{
+               "514":{
+                  "nombre":"E. Martínez Carignano"
+               }
+            }
+         }
+      },
+      "CHA":{
+         "votacion":{
+            "candidatos":{
+               "501":{
+                  "nombre":"J. Pedrini "
+               }
+            },
+            "candidatos":{
+               "505":{
+                  "nombre":"J. Esquivel"
+               }
+            },
+            "candidatos":{
+               "519":{
+                  "nombre":"M. Tejedor"
+               }
+            }
+         }
+      },
+      "CHU":{
+         "votacion":{
+            "candidatos":{
+               "003":{
+                  "nombre":"E. Conde"
+               }
+            },
+            "candidatos":{
+               "038":{
+                  "nombre":"S. Muñoz"
+               }
+            },
+            "candidatos":{
+               "047":{
+                  "nombre":"C. Reinoso"
+               }
+            },
+            "candidatos":{
+               "152":{
+                  "nombre":"O. Petersen"
+               }
+            },
+            "candidatos":{
+               "157":{
+                  "nombre":"M. Das Neves"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"N. Yahuar"
+               }
+            }
+         }
+      },
+      "COR":{
+         "votacion":{
+            "candidatos":{
+               "501":{
+                  "nombre":"C. Rubín"
+               }
+            },
+            "candidatos":{
+               "515":{
+                  "nombre":"L. Gutnisky"
+               }
+            },
+            "candidatos":{
+               "516":{
+                  "nombre":"N. Artaza"
+               }
+            },
+            "candidatos":{
+               "517":{
+                  "nombre":"G. Valdés"
+               }
+            }
+         }
+      },
+      "ERI":{
+         "votacion":{
+            "candidatos":{
+               "003":{
+                  "nombre":"J. D’Agostino "
+               }
+            },
+            "candidatos":{
+               "068":{
+                  "nombre":"L. Meiners "
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"J. Lauritto"
+               }
+            },
+            "candidatos":{
+               "528":{
+                  "nombre":"A. Schvartzman"
+               }
+            },
+            "candidatos":{
+               "545":{
+                  "nombre":"C. Cremer de Busti "
+               }
+            }
+         }
+      },
+      "FOR":{
+         "votacion":{
+            "candidatos":{
+               "014":{
+                  "nombre":"C. Servín"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"J. Díaz Roig "
+               }
+            },
+            "candidatos":{
+               "521":{
+                  "nombre":"R. Buryaile "
+               }
+            }
+         }
+      },
+      "JUJ":{
+         "votacion":{
+            "candidatos":{
+               "068":{
+                  "nombre":"B. Rivero"
+               }
+            },
+            "candidatos":{
+               "208":{
+                  "nombre":"L. Santillán"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"H. Tentor"
+               }
+            },
+            "candidatos":{
+               "505":{
+                  "nombre":"A.  Vilca"
+               }
+            },
+            "candidatos":{
+               "522":{
+                  "nombre":"M. Fiad"
+               }
+            },
+            "candidatos":{
+               "523":{
+                  "nombre":"D. Pubzolu"
+               }
+            },
+            "candidatos":{
+               "524":{
+                  "nombre":"I. Calsina"
+               }
+            }
+         }
+      },
+      "LAP":{
+         "votacion":{
+            "candidatos":{
+               "002":{
+                  "nombre":"G. Fernández Mendía"
+               }
+            },
+            "candidatos":{
+               "022":{
+                  "nombre":"R. Costabel"
+               }
+            },
+            "candidatos":{
+               "184":{
+                  "nombre":"D. Hernández"
+               }
+            },
+            "candidatos":{
+               "190":{
+                  "nombre":"C. Lupardo"
+               }
+            },
+            "candidatos":{
+               "525":{
+                  "nombre":"F. Torroba"
+               }
+            },
+            "candidatos":{
+               "526":{
+                  "nombre":"C. Mac Allister"
+               }
+            }
+         }
+      },
+      "LRJ":{
+         "votacion":{
+            "candidatos":{
+               "061":{
+                  "nombre":"H. Pavón"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"T. Madera "
+               }
+            },
+            "candidatos":{
+               "504":{
+                  "nombre":"C. Santander"
+               }
+            },
+            "candidatos":{
+               "548":{
+                  "nombre":"J. Martínez"
+               }
+            },
+            "candidatos":{
+               "549":{
+                  "nombre":"J. Yoma "
+               }
+            }
+         }
+      },
+      "MIS":{
+         "votacion":{
+            "candidatos":{
+               "003":{
+                  "nombre":"L. Pastori"
+               }
+            },
+            "candidatos":{
+               "050":{
+                  "nombre":"N. Fernández Flores"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"J. Ríos"
+               }
+            },
+            "candidatos":{
+               "529":{
+                  "nombre":"A. Ziegler"
+               }
+            },
+            "candidatos":{
+               "531":{
+                  "nombre":"R. Puerta"
+               }
+            }
+         }
+      },
+      "MZA":{
+         "votacion":{
+            "candidatos":{
+               "003":{
+                  "nombre":"J. Cobos"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"A. Abraham "
+               }
+            },
+            "candidatos":{
+               "504":{
+                  "nombre":"D. Cassia"
+               }
+            },
+            "candidatos":{
+               "505":{
+                  "nombre":"Nicolás Del Caño"
+               }
+            },
+            "candidatos":{
+               "527":{
+                  "nombre":"L. Rosales "
+               }
+            },
+            "candidatos":{
+               "528":{
+                  "nombre":"A. Montbrun"
+               }
+            }
+         }
+      },
+      "NEU":{
+         "votacion":{
+            "candidatos":{
+               "023":{
+                  "nombre":"G. Bourdieu"
+               }
+            },
+            "candidatos":{
+               "040":{
+                  "nombre":"P. Sánchez"
+               }
+            },
+            "candidatos":{
+               "153":{
+                  "nombre":"M. Villar Molina"
+               }
+            },
+            "candidatos":{
+               "166":{
+                  "nombre":"F. Baggio"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"N. Parrilli"
+               }
+            },
+            "candidatos":{
+               "505":{
+                  "nombre":"A. Blanco"
+               }
+            },
+            "candidatos":{
+               "532":{
+                  "nombre":"R. Etcheverry"
+               }
+            },
+            "candidatos":{
+               "533":{
+                  "nombre":"A. Barragán"
+               }
+            }
+         }
+      },
+      "RNO":{
+         "votacion":{
+            "candidatos":{
+               "003":{
+                  "nombre":"A. Zidar "
+               }
+            },
+            "candidatos":{
+               "014":{
+                  "nombre":"A. Quintillán"
+               }
+            },
+            "candidatos":{
+               "154":{
+                  "nombre":"M. Piedrabuena"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"M. Soria"
+               }
+            },
+            "candidatos":{
+               "534":{
+                  "nombre":"M. Alvarez"
+               }
+            }
+         }
+      },
+      "SAL":{
+         "votacion":{
+            "candidatos":{
+               "002":{
+                  "nombre":"E. Isa"
+               }
+            },
+            "candidatos":{
+               "014":{
+                  "nombre":"P. López"
+               }
+            },
+            "candidatos":{
+               "038":{
+                  "nombre":"C. Gómez"
+               }
+            },
+            "candidatos":{
+               "054":{
+                  "nombre":"S. Leavy"
+               }
+            },
+            "candidatos":{
+               "060":{
+                  "nombre":"J. Ibarra"
+               }
+            },
+            "candidatos":{
+               "155":{
+                  "nombre":"R. Gramaglia"
+               }
+            },
+            "candidatos":{
+               "200":{
+                  "nombre":"P. Viel"
+               }
+            },
+            "candidatos":{
+               "203":{
+                  "nombre":"J. Singh "
+               }
+            },
+            "candidatos":{
+               "216":{
+                  "nombre":"F. Posadas"
+               }
+            },
+            "candidatos":{
+               "535":{
+                  "nombre":"G. Durand Cornejo"
+               }
+            },
+            "candidatos":{
+               "536":{
+                  "nombre":"S. Vargas"
+               }
+            }
+         }
+      },
+      "SCR":{
+         "votacion":{
+            "candidatos":{
+               "002":{
+                  "nombre":"N. Beroiza"
+               }
+            },
+            "candidatos":{
+               "014":{
+                  "nombre":"O. Latini"
+               }
+            },
+            "candidatos":{
+               "038":{
+                  "nombre":"E. Poliak"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"M. Gómez Bull"
+               }
+            },
+            "candidatos":{
+               "538":{
+                  "nombre":"E. Costa"
+               }
+            }
+         }
+      },
+      "SFE":{
+         "votacion":{
+            "candidatos":{
+               "068":{
+                  "nombre":"A. Parlante"
+               }
+            },
+            "candidatos":{
+               "180":{
+                  "nombre":"R. Carignano"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"J. Obeid"
+               }
+            },
+            "candidatos":{
+               "505":{
+                  "nombre":"O. Crivaro"
+               }
+            },
+            "candidatos":{
+               "514":{
+                  "nombre":"H. Binner"
+               }
+            },
+            "candidatos":{
+               "539":{
+                  "nombre":"J. Bonacci"
+               }
+            },
+            "candidatos":{
+               "547":{
+                  "nombre":"M. del Sel"
+               }
+            }
+         }
+      },
+      "SGO":{
+         "votacion":{
+            "candidatos":{
+               "061":{
+                  "nombre":"A. Favoretti"
+               }
+            },
+            "candidatos":{
+               "324":{
+                  "nombre":"P. Brue"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"M. Nazar"
+               }
+            },
+            "candidatos":{
+               "514":{
+                  "nombre":"P. Griggio"
+               }
+            },
+            "candidatos":{
+               "541":{
+                  "nombre":"C. Oliva"
+               }
+            }
+         }
+      },
+      "SJU":{
+         "votacion":{
+            "candidatos":{
+               "003":{
+                  "nombre":"H. Domínguez"
+               }
+            },
+            "candidatos":{
+               "061":{
+                  "nombre":"G. Cimino"
+               }
+            },
+            "candidatos":{
+               "156":{
+                  "nombre":"N. Avelín"
+               }
+            },
+            "candidatos":{
+               "168":{
+                  "nombre":"A. Sánchez"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"H. Tomas"
+               }
+            },
+            "candidatos":{
+               "504":{
+                  "nombre":"E. Cáceres "
+               }
+            },
+            "candidatos":{
+               "537":{
+                  "nombre":"A. Agüero"
+               }
+            }
+         }
+      },
+      "SLU":{
+         "votacion":{
+            "candidatos":{
+               "150":{
+                  "nombre":"J. Barbeito"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"N. Piguillém"
+               }
+            },
+            "candidatos":{
+               "504":{
+                  "nombre":"B. Arenas"
+               }
+            },
+            "candidatos":{
+               "514":{
+                  "nombre":"J. Riccardo "
+               }
+            }
+         }
+      },
+      "TDF":{
+         "votacion":{
+            "candidatos":{
+               "002":{
+                  "nombre":"P. García"
+               }
+            },
+            "candidatos":{
+               "003":{
+                  "nombre":"J. Martín"
+               }
+            },
+            "candidatos":{
+               "069":{
+                  "nombre":"J. Torres "
+               }
+            },
+            "candidatos":{
+               "158":{
+                  "nombre":"M. Löffler"
+               }
+            },
+            "candidatos":{
+               "174":{
+                  "nombre":"E. Welsch "
+               }
+            },
+            "candidatos":{
+               "199":{
+                  "nombre":"H. Chaves"
+               }
+            },
+            "candidatos":{
+               "201":{
+                  "nombre":"O. Martinez"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"M. Pérez"
+               }
+            },
+            "candidatos":{
+               "544":{
+                  "nombre":"M. Ferreyra"
+               }
+            }
+         }
+      },
+      "TUC":{
+         "votacion":{
+            "candidatos":{
+               "064":{
+                  "nombre":"A. Colombres"
+               }
+            },
+            "candidatos":{
+               "181":{
+                  "nombre":"R. Bussi"
+               }
+            },
+            "candidatos":{
+               "186":{
+                  "nombre":"B. García Hamilton "
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"J. Manzur"
+               }
+            },
+            "candidatos":{
+               "505":{
+                  "nombre":"D. Blanco"
+               }
+            },
+            "candidatos":{
+               "542":{
+                  "nombre":"M. Parajón"
+               }
+            },
+            "candidatos":{
+               "543":{
+                  "nombre":"J. Cano"
+               }
+            }
+         }
+      }
+   },
+   "senadores":{
+      "CAP":{
+         "votacion":{
+            "candidatos":{
+               "187":{
+                  "nombre":"S. Sallustio"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"D. Filmus"
+               }
+            },
+            "candidatos":{
+               "502":{
+                  "nombre":"P. Solanas"
+               }
+            },
+            "candidatos":{
+               "503":{
+                  "nombre":"G. Michetti"
+               }
+            },
+            "candidatos":{
+               "505":{
+                  "nombre":"C. Dellecarbonara"
+               }
+            },
+            "candidatos":{
+               "506":{
+                  "nombre":"C. Lozano"
+               }
+            }
+         }
+      },
+      "CHA":{
+         "votacion":{
+            "candidatos":{
+               "501":{
+                  "nombre":"E. Aguilar "
+               }
+            },
+            "candidatos":{
+               "505":{
+                  "nombre":"A. García"
+               }
+            },
+            "candidatos":{
+               "519":{
+                  "nombre":"A. Rozas "
+               }
+            }
+         }
+      },
+      "ERI":{
+         "votacion":{
+            "candidatos":{
+               "003":{
+                  "nombre":"A. Benedetti "
+               }
+            },
+            "candidatos":{
+               "068":{
+                  "nombre":"G. Geist "
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"P. Guastavino"
+               }
+            },
+            "candidatos":{
+               "528":{
+                  "nombre":"L. Viale"
+               }
+            },
+            "candidatos":{
+               "545":{
+                  "nombre":"A. De Ángeli "
+               }
+            }
+         }
+      },
+      "NEU":{
+         "votacion":{
+            "candidatos":{
+               "023":{
+                  "nombre":"G. Romero"
+               }
+            },
+            "candidatos":{
+               "040":{
+                  "nombre":"E. Benítez"
+               }
+            },
+            "candidatos":{
+               "153":{
+                  "nombre":"G. Pereyra"
+               }
+            },
+            "candidatos":{
+               "166":{
+                  "nombre":"A. Rosso"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"M. Fuentes"
+               }
+            },
+            "candidatos":{
+               "505":{
+                  "nombre":"P. Jure"
+               }
+            },
+            "candidatos":{
+               "532":{
+                  "nombre":"M. Inaudi"
+               }
+            },
+            "candidatos":{
+               "533":{
+                  "nombre":"P. Otton"
+               }
+            }
+         }
+      },
+      "RNO":{
+         "votacion":{
+            "candidatos":{
+               "003":{
+                  "nombre":"M. Saiz"
+               }
+            },
+            "candidatos":{
+               "014":{
+                  "nombre":"N. Dardik"
+               }
+            },
+            "candidatos":{
+               "154":{
+                  "nombre":"O. Zuñiga"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"M. Pichetto"
+               }
+            },
+            "candidatos":{
+               "534":{
+                  "nombre":"M. Odarda"
+               }
+            }
+         }
+      },
+      "SAL":{
+         "votacion":{
+            "candidatos":{
+               "014":{
+                  "nombre":"C. Foffani"
+               }
+            },
+            "candidatos":{
+               "155":{
+                  "nombre":"A. Zottos"
+               }
+            },
+            "candidatos":{
+               "203":{
+                  "nombre":"A. Olmedo"
+               }
+            },
+            "candidatos":{
+               "535":{
+                  "nombre":"J. Romero"
+               }
+            },
+            "candidatos":{
+               "536":{
+                  "nombre":"B. Biella Calvet"
+               }
+            }
+         }
+      },
+      "SGO":{
+         "votacion":{
+            "candidatos":{
+               "061":{
+                  "nombre":"N. Basualdo"
+               }
+            },
+            "candidatos":{
+               "324":{
+                  "nombre":"A. Calabrese"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"A. Corradi"
+               }
+            },
+            "candidatos":{
+               "514":{
+                  "nombre":"E. Rached"
+               }
+            },
+            "candidatos":{
+               "541":{
+                  "nombre":"D. Brue"
+               }
+            }
+         }
+      },
+      "TDF":{
+         "votacion":{
+            "candidatos":{
+               "002":{
+                  "nombre":"R. Sciutto"
+               }
+            },
+            "candidatos":{
+               "003":{
+                  "nombre":"A. Da Fonseca"
+               }
+            },
+            "candidatos":{
+               "069":{
+                  "nombre":"0"
+               }
+            },
+            "candidatos":{
+               "158":{
+                  "nombre":"J. Garramuño"
+               }
+            },
+            "candidatos":{
+               "174":{
+                  "nombre":"J. Colazo"
+               }
+            },
+            "candidatos":{
+               "199":{
+                  "nombre":"O. López"
+               }
+            },
+            "candidatos":{
+               "201":{
+                  "nombre":"0"
+               }
+            },
+            "candidatos":{
+               "501":{
+                  "nombre":"R. Bertone"
+               }
+            },
+            "candidatos":{
+               "544":{
+                  "nombre":"L. Fadul"
+               }
+            }
+         }
+      }
+   }
+}
