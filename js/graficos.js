@@ -116,7 +116,6 @@ function dibujaBarras(dataset){
 			var dominio = d3.scale.linear().domain([0, dataset.votacion.partidos_politicos[0].votos]).range([0, maximo]);
 		
 			var contenido = d3.select("#graficoBarras").selectAll(".contenedorBar").data(function() {
-				console.log("dataset:" ,dataset);
 				return dataset.votacion.partidos_politicos;
 			});
 		
