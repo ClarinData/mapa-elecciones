@@ -1,6 +1,6 @@
 // Agrego listeners a todos los botones.
 
-document.getElementById("diputadosBtn").addEventListener("click", dibuja(), false);
+document.getElementById("diputadosBtn").addEventListener("click", dibuja, false);
 document.getElementById("senadoresBtn").addEventListener("click", dibuja, false);
 document.getElementById("provBtn").addEventListener("click", dibuja, false);
 document.getElementById("partBtn").addEventListener("click", dibuja, false);
@@ -48,7 +48,6 @@ function dibuja(){
 			elecciones.event.viewchange();
         	break;
 	}
-	
 	if (elecciones.dataset === "diputados") { // elijo dataset según la vista
 
 		datos = elecciones.diputados;
