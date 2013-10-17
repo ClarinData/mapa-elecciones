@@ -1,6 +1,6 @@
 /* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 4, maxparams: 4, maxdepth: 2, maxstatements: 15 */
-/* global d3, window*/
-/* exported getQueryParams, shareURL, tweeter, */
+/* global d3, window, url*/
+/* exported getQueryParams, shareURL, tweeter_share, facebook_share */
 
 function getQueryParams(qs) {
   "use strict";
@@ -42,14 +42,13 @@ function getQueryParams(qs) {
 
   // Parse it
   var re = /([^=&]+)(=([^&]*))?/g;
-  while (match) {
-    match = re.exec(qs);
-    var key = decodeURIComponent(match[1].replace(/\+/g, ' '));
-    var value = match[3] ? getQueryParams.decode(match[3]) : '';
-    parameters[key] = value;
-  }
+  while ((match = re.exec(qs))) {
+      var key = decodeURIComponent(match[1].replace(/\+/g, ' '));
+      var value = match[3] ? getQueryParams.decode(match[3]) : '';
+      parameters[key] = value;
+    }
 
-  return parameters;
+    return parameters;
 }
 
 function shareURL(url) {
@@ -69,7 +68,7 @@ function shareURL(url) {
   return myUrl;
 }
 
-function tweeter(url,d) {
+function tweeter_share(url,d) {
   "use strict";
   d3.select("#shareTwitter")
     .attr("href", function () {
@@ -87,5 +86,55 @@ function tweeter(url,d) {
                "text=" + encodeURIComponent("Mirá los resultados" + text) + "%0A&" +
                "&tw_p=tweetbutton&url=" + encodeURIComponent(url) + "&" +
                "via=clarincom";
+    });
+}
+
+function facebook_share(myurl,d) {
+  "use strict";
+  d3.select("#shareFacebook")
+    .attr("href", function () {
+        var p,
+            provincia,
+            distrito,
+            text = " a nivel nacional";
+        if (d && d.properties && d.properties.administrative_area && d.properties.administrative_area.id != "TDF999") {
+          provincia = d.properties.administrative_area[0].name;
+          distrito = (d.properties.administrative_area[1]) ? d.properties.administrative_area[1].name : null;
+          text = " en " + ((distrito) && (distrito + ((d.properties.administrative_area[0].id !== "CAP") ? " provincia de " : " de la ") + provincia) || provincia);
+          p = {
+            title : "Elecciones 2013",
+            summary : "Mirá los resultados de las elecciones" + text,
+            images : ['http://dummyimage.com/116x116/000000/fff.png&text=' + d.properties.administrative_area[0].id],
+            url : myurl
+          };
+        } else {
+          p = {
+            title : "Elecciones 2013",
+            summary : "Mirá los resultados de las elecciones a nivel nacional",
+            images : ['http://dummyimage.com/116x116/000000/fff.png&text=ARG'],
+            url : url.base
+          };
+        }
+
+        return 'http://www.facebook.com/sharer.php?' +
+                's=100' + "&" +
+                'p[title]=' + encodeURIComponent(p.title) + "&" +
+                'p[summary]=' + encodeURIComponent(p.summary) + "&" +
+                'p[images][0]=' + encodeURIComponent(p.images[0]) + "&" +
+                'p[url]=' + encodeURIComponent(p.url);
+
+    })
+    .on("mouseover", function () {
+      facebook_share.url = this.href || facebook_share.url;
+      this.href = this.href || facebook_share.url;
+    })
+    .on("click", function () {
+      var url = this.href,
+          width = 550,
+          height = 520;
+      this.href = null;
+      window.open(url,
+                  "Comparte en Facebook",
+                  "width=" + width + ", height=" + height + ", left=" + (window.innerWidth - width)/2 + ", top=" + (window.innerHeight - height)/2 + ", toolbar=0, location=0, menubar=0");
     });
 }

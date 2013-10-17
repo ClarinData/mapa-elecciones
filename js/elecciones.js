@@ -1,5 +1,5 @@
 /* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 4, maxparams: 3, maxdepth: 2, maxstatements: 15 */
-/* global mapObject, d3, window, getQueryParams, tweeter, shareURL */
+/* global mapObject, d3, window, getQueryParams, tweeter_share, facebook_share, shareURL, dibuja */
 /* exported argentina */
 
 var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
@@ -39,7 +39,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
   d3.select("#preloader").style("display", "block");
 
   function dataRadius(dataE) {
-    var v = (dataE) ? dataE.votacion.partidos_politicos[0].votos / (700 * (argentina.zoom || 1)) : 0;
+    var v = (dataE) ? dataE.votacion.pp[0].votos / (700 * (argentina.zoom || 1)) : 0;
     return Math.sqrt(v / Math.PI);
   }
 
@@ -172,7 +172,8 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       }
 
       query = {};
-      tweeter(shareURL(url),datum);
+      tweeter_share(shareURL(url),datum);
+      facebook_share(shareURL(url),datum);
 
       d3.timer(function() {
         elecciones.load();
@@ -194,8 +195,8 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       .attr("class", function(d) {
         var current_attr = (this.getAttributeNode("class")) ? this.getAttributeNode("class").value : "";
         var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];
-        if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
-          return "fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica + " " + current_attr;
+        if (dataE && (dataE.votacion.pp[0].votos > 0)) {
+          return "fp_" + dataE.votacion.pp[0].fuerza + " " + current_attr;
         } else {
           return current_attr;
         }
@@ -206,8 +207,8 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       .attr("class", function(d) {
         var current_attr = (this.getAttributeNode("class")) ? this.getAttributeNode("class").value : "";
         var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];
-        if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
-          return "fp_" + dataE.votacion.partidos_politicos[0].fuerza_politica + " " + current_attr;
+        if (dataE && (dataE.votacion.pp[0].votos > 0)) {
+          return "fp_" + dataE.votacion.pp[0].fuerza + " " + current_attr;
         } else {
           return current_attr;
         }
@@ -284,7 +285,8 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
     argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom && (argentina.vista.selected == "voto")));
 
     url.parameters.id = (d) ? d.properties.administrative_area.id : "";
-    tweeter(shareURL(url),d);
+    tweeter_share(shareURL(url),d);
+    facebook_share(shareURL(url),d);
 
     argentina.selection = (d) ? d.properties.administrative_area.id : null;
 
@@ -294,7 +296,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       "dataset" : elecciones.dataset,
       "data" : elecciones[elecciones.dataset][argentina.selection]
     });
-   	dibuja();
+    dibuja();
  
 
   });
@@ -308,8 +310,9 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom));
       argentina.svg.g.votes.classed("disabled", false);
       argentina.vista.state = "voto";
-      url.parameters.view = argentina.vista.selected;
-      tweeter(shareURL(url),argentina.datum);
+      url.parameters.view = argentina.vista.state;
+      tweeter_share(shareURL(url),argentina.datum);
+      facebook_share(shareURL(url),argentina.datum);
 
     },
 
@@ -319,8 +322,9 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       argentina.svg.g.admlevel3.classed("transparent disabled", false);
       argentina.svg.g.votes.classed("disabled", true);
       argentina.vista.state = "part";
-      url.parameters.view = argentina.vista.selected;
-      tweeter(shareURL(url),argentina.datum);
+      url.parameters.view = argentina.vista.state;
+      tweeter_share(shareURL(url),argentina.datum);
+      facebook_share(shareURL(url),argentina.datum);
 
     },
 
@@ -330,8 +334,9 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       argentina.svg.g.admlevel3.classed("transparent disabled", false);
       argentina.svg.g.votes.classed("disabled", true);
       argentina.vista.state = "prov";
-      url.parameters.view = argentina.vista.selected;
-      tweeter(shareURL(url),argentina.datum);
+      url.parameters.view = argentina.vista.state;
+      tweeter_share(shareURL(url),argentina.datum);
+      facebook_share(shareURL(url),argentina.datum);
 
     },
 

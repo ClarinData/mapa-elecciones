@@ -1,5 +1,5 @@
 /* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 3, maxparams: 3, maxdepth: 2, maxstatements: 15 */
-/* global d3, topojson, elecciones, vista, navigator, window, document */
+/* global d3, topojson, elecciones, navigator, window */
 /* exported mapObject, getQueryParams*/
 
 var mapObject = function(map) {
@@ -199,11 +199,11 @@ var mapObject = function(map) {
                 map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
                 map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].description);
                 var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];
-                if (dataE && (dataE.votacion.partidos_politicos[0].votos > 0)) {
+                if (dataE && (dataE.votacion.pp[0].votos > 0)) {
                   for (var x = 0; x < 3; x++) {
-                    map.tooltip.table.row.color[x].property("className", "fp_" + dataE.votacion.partidos_politicos[x].fuerza_politica);
-                    map.tooltip.table.row.name[x].property("innerHTML", dataE.votacion.partidos_politicos[x].nombre.toLowerCase());
-                    map.tooltip.table.row.percent[x].property("innerHTML", parseFloat(dataE.votacion.partidos_politicos[x].porcentaje).toLocaleString() + "%");
+                    map.tooltip.table.row.color[x].property("className", "fp_" + dataE.votacion.pp[x].fuerza);
+                    map.tooltip.table.row.name[x].property("innerHTML", dataE.votacion.pp[x].nombre.toLowerCase());
+                    map.tooltip.table.row.percent[x].property("innerHTML", parseFloat(dataE.votacion.pp[x].per).toLocaleString() + "%");
                   }
                   map.tooltip.table.classed("disabled", false);
                 } else {
