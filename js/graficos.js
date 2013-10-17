@@ -1,18 +1,20 @@
 // Agrego listeners a todos los botones.
 
-document.getElementById("diputadosBtn").addEventListener("click", dibuja, false);
+document.getElementById("diputadosBtn").addEventListener("click", dibuja(), false);
 document.getElementById("senadoresBtn").addEventListener("click", dibuja, false);
 document.getElementById("provBtn").addEventListener("click", dibuja, false);
 document.getElementById("partBtn").addEventListener("click", dibuja, false);
 document.getElementById("votoBtn").addEventListener("click", dibuja, false);
 document.getElementById("camaBtn").addEventListener("click", dibuja, false);
-	
-	
-	
+
+
+
+// maneja los botones, header y footer de barras.
+
+
 function dibuja(){
 
-	var queDatoMuestro,
-		datos,
+	var datos,
 		v_txt = "Sin datos",
 		m_txt = "Sin datos";
 
@@ -68,11 +70,9 @@ function dibuja(){
 			document.getElementById("referenciaBarrasDetalle").className = "descMuestro";		
 
 			if (datos.nivel_administrativo == 2){
-				queDatoMuestro = "<p> Barras localidad</p>";
 				document.getElementById("referenciaTotal").innerHTML = datos.nombre;
 			}else{
 
-				queDatoMuestro = "<p> Barras de provincia.</p>";
 				document.getElementById("referenciaTituloProvincia").innerHTML = datos.nombre;
 				document.getElementById("referenciaTotal").innerHTML = "";
 			};	
@@ -80,13 +80,10 @@ function dibuja(){
 			// si no hay datos se avisa que no hay datos
 			document.getElementById("referenciaTituloProvincia").innerHTML = argentina.datum.properties.administrative_area[0].name;
 			document.getElementById("referenciaTotal").innerHTML = "";
-			queDatoMuestro = "<p> Sin datos para visualizar</p>";
 		}
 
 		
 	}else{ // Se esta viendo el mapa completo
-
-		queDatoMuestro = "<p> Barras de país </p>";
 		
 		document.getElementById("referenciaTituloProvincia").innerHTML = "RESULTADO GENERAL 2013";
 		document.getElementById("referenciaTotal").innerHTML = "Es la suma de los votos obtenidos en todas las provincias, agupados según la orientación política del voto.";
@@ -99,12 +96,14 @@ function dibuja(){
 
 
 	dibujaBarras(datos);
-//	document.getElementById("graficoBarras").innerHTML = queDatoMuestro;
 	
 	document.getElementById("mesas").innerHTML = m_txt;
 	document.getElementById("votos").innerHTML = v_txt;
 }
 
+
+
+// dibuja las barras
 
 function dibujaBarras(dataset){
 		
@@ -116,7 +115,6 @@ function dibujaBarras(dataset){
 			var dominio = d3.scale.linear().domain([0, dataset.votacion.partidos_politicos[0].votos]).range([0, maximo]);
 		
 			var contenido = d3.select("#graficoBarras").selectAll(".contenedorBar").data(function() {
-				console.log("dataset:" ,dataset);
 				return dataset.votacion.partidos_politicos;
 			});
 		
@@ -178,10 +176,11 @@ function dibujaBarras(dataset){
 		
 		
 			contenidoEnter.append("span").classed("candidatoDet", true).text(function(d) {
-				if (d.id === "blancos"){return "";};
-				if (d.id === "nulos"){return "";};
-				if (d.id === "recurridos"){return "";};
-				return "N. Apellido / ";
+				if ( descartar(d.id) ) {
+					return "";			
+				} else {
+					return "N. Apellido / ";
+				}
 			});		
 
 			contenidoEnter.append("span").classed("cantidadDet", true).text(function(d) {
@@ -210,9 +209,9 @@ function dibujaBarras(dataset){
 			contenidoEnter.append("div").classed("lineaDet", true);
 
 			contenidoEnter.append("div").text(function(d) {
-					if (d.id === "blancos"){return "";};
-					if (d.id === "nulos"){return "";};
-					if (d.id === "recurridos"){return "";};
+					if ( descartar(d.id) ) {
+						return "";			
+					}
 					return "-";
 				}).attr("class", function(d) {
 				var tempClass = "";
@@ -220,9 +219,9 @@ function dibujaBarras(dataset){
 					tempClass = "fp_" + d.fuerza_politica;
 				} else {
 					tempClass = "fp_SFP";
-					if (d.id === "blancos"){ tempClass = "";};
-					if (d.id === "nulos"){ tempClass = "";};
-					if (d.id === "recurridos"){tempClass = "";};
+					if ( descartar(d.id) ) {
+						tempClass = "";			
+					}
 				}
 				return "bancasDet " + tempClass;
 			});
@@ -230,11 +229,8 @@ function dibujaBarras(dataset){
 			contenido.exit().remove();
 		}
 	
-	} else {
-		
+	} else { // Es una provincia sin datos
 		d3.select("#graficoBarras").selectAll("div").remove();
 		d3.select("#graficoBarras").append("div").classed("sinDatos", true).text("Sin Datos Para Visualizar");
-		
 	}
-	
 }
