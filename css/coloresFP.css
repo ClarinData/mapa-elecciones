@@ -4,34 +4,41 @@
 .fp_K {
 	fill: #95ccee;
 	background-color: #95ccee;
+	border-top-color: #95ccee;
 }
 
 .fp_PJ {
 	fill: #c3adce;
 	background-color: #c3adce;
+	border-top-color: #c3adce;
 }
 
 .fp_FP {
 	fill: #eea196;
 	background-color: #eea196;
+	border-top-color: #eea196;
 }
 
 .fp_PRO {
 	fill: #f3dd4a;
 	background-color: #f3dd4a;
+	border-top-color: #f3dd4a;
 }
 
 .fp_IZ {
 	fill: #b6c79f;
 	background-color: #b6c79f;
+	border-top-color: #b6c79f;
 }
 
 .fp_OT {
 	fill: #CCCCCC;
 	background-color: #CCCCCC;
+	border-top-color: #CCCCCC;
 }
 
 .fp_SFP {/*Sin Fuerza Política*/
 	fill: #666666;
 	background-color: #666666;
+	border-top-color: #666666;
 }

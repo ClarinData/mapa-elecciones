@@ -1,0 +1,348 @@
+button{
+	height: 50px;
+	width: 50px;	
+	border: 0;
+	background-image: url('fondoDelBoton.png');
+}
+
+
+
+
+
+/******* CSS CAMARA *********/
+
+#contenedorCamara {
+	width:819px;
+	height:600px;
+}
+
+
+
+#contenedorCamara .porciones path {
+	stroke: white;
+	stroke-width: 3;
+}
+
+#contenedorCamara .porciones {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: lighter;
+	font-size: 100%;
+}
+
+
+/******* toolTip *********/			
+
+#contenedorCamara div.tooltipCam {
+	background-color: white;
+	position: absolute;
+	text-align: left;
+	width: 150px;
+	height: auto;
+	padding: 4px;
+	font: 12px sans-serif;
+	border: solid 1px #ccc;
+	pointer-events: none;
+	opacity: 0;
+}
+
+#contenedorCamara div.tooltipCam:after, #contenedorCamara div.tooltipCam:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+#contenedorCamara div.tooltipCam:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #ffffff;
+	border-width: 5px;
+	margin-left: -5px;
+}
+
+#contenedorCamara div.tooltipCam:before {
+	border-color: rgba(201, 199, 195, 0);
+	border-top-color: #c9c7c3;
+	border-width: 6px;
+	margin-left: -6px;
+}
+
+#contenedorCamara div #bloque {
+	margin:0px;
+}
+
+#contenedorCamara div #fp_ {
+	margin:3px 0px 3px 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+#contenedorCamara div #nota {
+	margin:7px 0px 3px 0px;
+	color:#777777;
+	font-size: 80%;
+}
+
+#contenedorCamara .arrowLeft:before, .arrowLeft:after {
+	left: 80%;
+}
+
+#contenedorCamara .arrowRight:before, .arrowRight:after {
+	left: 10%;
+}
+
+#contenedorCamara .quorum {
+	stroke: black;
+	stroke-width: 1px;
+	fill: none
+}
+
+#contenedorCamara #bNuevas {
+	display: none;
+	margin-top:7px;
+	margin-bottom:5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11px;
+	line-height:3px;
+    opacity:.7;
+    border-top: 1px dotted #cccccc;
+   	padding-top:10px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom:10px;
+}
+
+
+#contenedorCamara #camara {
+	width: 819px;
+	height:457px;
+	margin: 0px;
+}
+
+#contenedorCamara #separador {
+	width:785px;
+	margin-left:34px;
+	border-bottom-width:1px;
+	border-bottom-color:#CCCCCC;
+	border-bottom-style:solid;
+	margin-bottom: 10px;
+}
+
+
+/******* tablas *********/			
+
+#contenedorCamara #tablaDetalle {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align:left;
+	height: 137px;
+	left: 40px;
+	position: absolute;
+}
+
+
+#contenedorCamara #tablaDetalle .tabla {
+	display: inline-table;
+	width: 130px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align:left;
+	border-left: 1px solid #CCCCCC;
+	padding-left:8px;
+	padding-right:8px;
+	border-spacing: 0;
+}
+
+#contenedorCamara #tablaDetalle .tabla:first-child {
+	border-left:none;
+	padding-left:0px;
+	width: 123px;
+}
+
+#contenedorCamara #tablaDetalle .tabla caption {
+	height:25px;
+	width: 110px;
+	padding-bottom:8px;
+	padding-left:10px;
+	padding-right:8px;
+	font-size: 12px;
+	font-weight:bold;
+	text-align:left;
+	line-height: 13px;
+	border-left: 1px solid #CCCCCC;
+}
+
+
+
+#contenedorCamara #tablaDetalle .tabla:first-child caption {
+	border-left:none;
+	padding-left:1px;
+	padding-right:8px;
+}
+ 
+#contenedorCamara #tablaDetalle .tabla tr {
+	border-right:none;
+	border-left:none;
+}    		
+
+#contenedorCamara #tablaDetalle .tabla tr td {
+	font-size: 12px;
+	font-weight:lighter;
+}
+
+#contenedorCamara #tablaDetalle .tabla tr:first-child td {
+	background-color: inherit;
+}
+
+#contenedorCamara #tablaDetalle .tabla .primero,
+#contenedorCamara #tablaDetalle .tabla .primero_nro {
+	border-top-width: 4px;
+	border-top-style: solid;
+	
+}
+
+#contenedorCamara #tablaDetalle .tabla .bancasTenian, 
+#contenedorCamara #tablaDetalle .tabla .bancasObtuvieron,
+#contenedorCamara #tablaDetalle .tabla .bancasRenovaron {
+	font-size: 11px;
+	color: black;
+	line-height: 17px;
+	border-bottom: 1px #CCCCCC solid;
+}
+
+#contenedorCamara #tablaDetalle .tabla .bancasObtuvieron,
+#contenedorCamara #tablaDetalle .tabla .bancasRenovaron {
+	font-weight:900;
+}
+
+#contenedorCamara #tablaDetalle .tabla .bancasTenian_nro,
+#contenedorCamara #tablaDetalle .tabla .bancasObtuvieron_nro,
+#contenedorCamara #tablaDetalle .tabla .bancasRenovaron_nro {
+	text-align:right;
+	font-size: 11px;
+	color: black;
+	line-height: 17px;
+	border-bottom: 1px #CCCCCC solid;
+}
+
+#contenedorCamara #tablaDetalle .tabla .bancasObtuvieron_nro,
+#contenedorCamara #tablaDetalle .tabla .bancasObtuvieron {
+	border-bottom: none;
+}
+
+
+#contenedorCamara #tablaDetalle .tabla .bancasObtuvieron_nro,
+#contenedorCamara #tablaDetalle .tabla .bancasRenovaron_nro {
+	font-weight:900;
+	
+}
+
+#contenedorCamara #tablaDetalle .tabla .bancasDiferencia {
+	height:25px;
+	color:white;
+	padding: 2px 0px 0px 4px;
+	font-size: 12px;
+	font-weight:bold;
+}
+
+#contenedorCamara #tablaDetalle .tabla .bancasDiferencia_nro {
+	font-weight:bold;
+	color:white;
+	font-size: 15px;
+}
+
+
+/*** TOTALIZADORES PAIS *****/
+
+#contenedorCamara #totalCam_leg {
+	position: absolute;
+	top: 372px;
+	left: 321px;
+	width: 215px;
+	height: 40px;
+}
+
+
+#contenedorCamara #fondoTotalCam_leg {
+  
+	background-color: #FFFFFF;
+	height: 15px;
+	left:3px;
+	position: relative;
+	top: 12px;
+	width: auto;
+	line-height: 15px;
+	text-align: center;	
+	border-top: 1px solid #CECECE;
+}
+
+#contenedorCamara #fondoTotalCam_leg span {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;   
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 59%;
+}
+
+#contenedorCamara #textoReferencial_leg {
+	font-size: 80%;
+	color: #595959;
+	font-weight: normal;
+	width: 100px;
+}
+
+#contenedorCamara .textoTotales_leg {
+	color: #000000;
+}
+
+#contenedorCamara .textoTotales_leg_Escrutado {
+	color: #595959;
+}
+
+#contenedorCamara #mesasSen {
+	color: #990000;
+}
+
+#contenedorCamara #votosSen {
+	color: #990000;
+}
+
+#contenedorCamara #totalSen {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 130%;
+	text-align: center;	
+	color:#777777;
+	
+}
+
+#contenedorCamara #bancasTotales {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size:80%;
+	text-align: center;	
+	color:#777777;
+	line-height: 20px; 
+}
+
+
+/*** BOTONES ACTUAL - NUEVA *****/ 		
+
+#contenedorCamara #antes_despues_form {
+	
+	left:400px;
+	color:#777777;
+	position:absolute;
+	font-size: 70%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#contenedorCamara #quorum_bancas_form {
+ 	top:23px;
+    left:30px;
+ 	position: absolute;
+ 	display: inline-block;
+ 	width: 500px;
+ 	font-family: Arial,Helvetica,sans-serif;
+	font-size: 60%;
+	color:#777777;
+ }
+

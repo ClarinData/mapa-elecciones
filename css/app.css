@@ -2,6 +2,8 @@
 /* CONTENEDOR */
 
 #contenedorApp{
+	-webkit-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
 	font-family:Arial, Helvetica, sans-serif;
 	width: 950px;
 	height: 822px;
@@ -45,18 +47,12 @@
 
 #diputadosBtn,
 #senadoresBtn {
-    font-size: 90%;	
 	height: 25px;
 	width: 175px;
     cursor: pointer;
     position: absolute;
 	border: 0px;
 	border-left: 1px solid #CECECE;
-}
-
-
-#diputadosBtn,
-#senadoresBtn{
   	cursor: pointer;
     top: 120px;
 }

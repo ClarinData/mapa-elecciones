@@ -36,6 +36,13 @@ function dibuja(){
 			document.getElementById("referenciasVotos").className  = "descMuestro";
 			break;
 			
+		case "camaBtn":
+			argentina.vista.voto();
+			document.getElementById("referenciasVotos").className  = "descOculto";
+			break;
+
+
+
 		case "diputadosBtn":
 			elecciones.dataset = "diputados";
 			//cambia el display del mapa;	
