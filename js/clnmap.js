@@ -273,10 +273,6 @@ var mapObject = function(map) {
             .attr("class", "states"),
             "admlevel2");
 
-          // g.admlevel2.caba = g.admlevel2.append("use")
-          //                     .attr("xlink:href", "#map_arg_CAP")
-          //                     .attr("transform", "scale(4) translate(-210,-155)");
-
           g.admlevel2.pathAttr = pathsAttr(
             g.admlevel2.path
           );
