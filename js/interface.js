@@ -65,9 +65,11 @@ function updateBotones(option) {
 		// dependiendo de document.getElementById("diputadosBtn").disabled
 		// tambien mover de lugar los botones de share
 		// y upgradear el texto de "comparti los resultados..."
-		document.getElementById("lasCamaras").innerHTML = "	Aca viene la cámara seleccionada "; 
-
-
+		if (diputadosBtn.disabled){
+			armoCamara (senParametros, totalSen, camaraSen);
+		}else{
+			armoCamara (dipParametros, totalDip, camaraDip);
+		}
 
 
 		d3.select("#referenciasColores").style("display", "none");

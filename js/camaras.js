@@ -1,4 +1,6 @@
 var wCam = 819, hCam = 463, pi = Math.PI, camaraDS="nueva";
+var checkedQ = false;
+var checkedB = false;
 var camaraSeleccionada;
 var datosNuevos,parametros ; 
 var toolTip = d3.select(".tooltipCam")
@@ -25,9 +27,6 @@ var totalDip = {"fuerzas":[{"fp":"K", "obtuvieron":46, "viejos":85},
 				"status":"true",
 				"porcentajeMesas":95.55,
 				"porcentajeVotos":99.99};
-
-
-
 
 //Datos fijos: macheo con var=data
 				
@@ -94,9 +93,8 @@ var dipParametros = [	33,				///camParametros[0]		hileras
 						337   			///camParametros[20]	ir
 						 ];
 
-
 // Dibujo div donde van a dibujarse las camaras
-var svg = d3.select("body")
+var svgCamaras = d3.select("body")
 			.select("#camara")
 			.append("svg")
 			.attr("width", wCam)
@@ -105,13 +103,15 @@ var svg = d3.select("body")
 
 var datosCamara;		  
 	 
-
-
 //Parseo de datos para las diferentes necesidades
 function armoDatos (totalCam, camara){
 	 datosCamara = {
 		nueva : function () {
-					document.getElementById("textoBancas").innerHTML = "Texto Nueva";
+					document.getElementById("textoBancas").innerHTML = "BANCAS OBTENIDAS EN ESTA ELECCION";
+					//document.getElementById("bNuevas").innerHTML = "Bancas 2013: ";
+					
+					d3.select("#bNuevas_txt").text("Bancas 2013: ");
+					
 					var total = new Array(),
 						total_arcos = new Array();
 				
@@ -125,7 +125,8 @@ function armoDatos (totalCam, camara){
 		},
 				
 		vieja: function () {
-					document.getElementById("textoBancas").innerHTML = "Texto vieja";
+					document.getElementById("textoBancas").innerHTML = "BANCAS QUE RENUEVAN";
+					d3.select("#bNuevas_txt").text("Bancas que renuevan: ");//document.getElementById("bNuevas").innerHTML = "Bancas que renuevan: ";
 					var total = new Array(),
 						total_arcos = new Array();
 				
@@ -204,8 +205,8 @@ function llenaTablas (totalCam,camara){
 
 function armaCamaraVacia(camParametros){
 	
-	d3.selectAll("g").remove();
-	var filas = svg.selectAll(".filas")
+	d3.selectAll("#camara svg g").remove(); //////////////////////////////////////////////////////
+	var filas = svgCamaras.selectAll(".filas")
 		.data( function () {return new Array(camParametros[0]);} )
 		.enter()
 		.append("g")
@@ -237,12 +238,12 @@ function armaCamaraVacia(camParametros){
 
 		//Bindeo los datos y borro los circulos que sobran (si es que sobran!)
 
-		var bind = svg.selectAll("circle")
+		var bind = svgCamaras.selectAll("circle")
 					    .data(datosCamara["vieja"]()[0])
 						.exit()
 						.remove();
 		
-		var bindRect = svg.selectAll("rect")
+		var bindRect = svgCamaras.selectAll("rect")
 					    .data(datosCamara["vieja"]()[0])
 					    .attr("opacity",0)
 						.on("mouseover", mouseover)
@@ -255,21 +256,28 @@ function armaCamaraVacia(camParametros){
 
 function miSeleccion(camaraDS) {		
 	//reset checked y bancas/labels nuevas/renuevan 
+		
 		var datosCamara = datosNuevos;
 		var camParametros	= parametros;
-		svg.selectAll(".bancas")
+		
+		svgCamaras.selectAll(".bancas")
 		   .style("fill-opacity", 1);
 		  
 		d3.select("#bNuevas")
 		  .style("display","none");
 		
+		d3.select("#bNuevas_nro")
+		  .style("display","none");
+		
 		d3.select("#bancasNuevas")
 		  .property("checked",false);
 
-		
+		checkedB = false;
+		chequedQ = false;
+	
 		//pinto los circulos
 		
-		var bancas = svg.selectAll("circle")
+		var bancas = svgCamaras.selectAll("circle")
 						.data(datosCamara[camaraDS]()[0])
 						.attr("class", 
 							function(d) {
@@ -278,7 +286,7 @@ function miSeleccion(camaraDS) {
 
 		//aplico clases a los rectangulos del mousever
 
-		svg.selectAll("rect")
+		svgCamaras.selectAll("rect")
 			.data(datosCamara[camaraDS]()[0])
 			.attr("class",
 				function(d) {
@@ -288,8 +296,8 @@ function miSeleccion(camaraDS) {
 
 //********************* GENERO DIBUJO DE LOS 9ARCOS ***************************//
 
-		d3.select("svg").selectAll("g.borrar").remove();
-		var vis = d3.select("svg")
+		d3.select("#camara svg").selectAll("g.borrar").remove();
+		var vis = d3.select("#camara svg")
 					.data([datosCamara[camaraDS]()[1]])
 					.append("g")
 					.attr("class","borrar")
@@ -352,7 +360,7 @@ function miSeleccion(camaraDS) {
 // funciones del mouseover en la camara
 
 function mouseover(d) {
-	svg.selectAll( "circle." + this.getAttribute('class'))
+	svgCamaras.selectAll( "circle." + this.getAttribute('class'))
 		.style("stroke", "grey")
 		.transition()
 		.style("stroke-opacity", 1)
@@ -393,13 +401,13 @@ function mouseover(d) {
 				.style("top",(yNum-hTool+60) + "px")
 				.attr("class", (xNum < wCam/2 && xNum > wCam/7) || (xNum > wCam/1.2 && xNum < wCam) ? "tooltipCam arrowLeft" : "tooltipCam arrowRight");
 				
-		d3.select("#bNuevas")
-			.text (function() {return "Bancas 2013: " + d.obtuvieron; });
+		d3.select("#bNuevas_nro")
+			.text (function() { return d.obtuvieron; });
 		
 }
 
 function mouseout () {
-	svg.selectAll("circle." + this.getAttribute('class'))
+	svgCamaras.selectAll("circle." + this.getAttribute('class'))
 		.transition()
 		.style("stroke-opacity", 0);
 	
@@ -411,7 +419,7 @@ function mouseout () {
 function manejoQuorum(camParametros){
 	
 	var filasQ =
-		 svg.selectAll(".filasq")
+		 svgCamaras.selectAll(".filasq")
 		 	.data(function() {
 		 		return new Array(camParametros[0]);
 		 	})
@@ -431,7 +439,7 @@ function manejoQuorum(camParametros){
 			.attr("r", 0)
 		 	.attr("pointer-events", "none");
 
-		 svg.selectAll(".quorum")
+		 svgCamaras.selectAll(".quorum")
 		 	.data(new Array(camParametros[2]))
 		 	.exit()
 		 	.remove();
@@ -443,19 +451,25 @@ function manejoQuorum(camParametros){
 
 
 
-	d3.select("#quorum").on("change", 
+	d3.select("#quorum").on("click", 
 		function() {
-			var checked = this.checked,
 				circleOut = function () {
+					document.getElementById("quorum").className = "desactivo";	
+					checkedQ = false;
 					this.attr("stroke-opacity", 0)
 						.attr("r", 25);
 				},
 				circleIn = function () {
-				this.attr("stroke-opacity", 1)
-					.attr("r", function (d,i) {return (Math.pow((i + camParametros[8]),camParametros[9])*camParametros[11]);});
+					document.getElementById("quorum").className = "activo";	
+					checkedQ = true;
+					this.attr("stroke-opacity", 1)
+					.attr("r", function (d,i) {
+						return (Math.pow((i + camParametros[8]),camParametros[9])*camParametros[11]);
+						}
+					);
 				},
 
-			circleRun = (checked) ? [circleOut, circleIn] : [circleIn, circleOut];
+			circleRun = (checkedQ) ? [circleIn, circleOut] : [circleOut, circleIn];
 
 	 	 	filasQ.selectAll(".quorum")
 			.call(circleRun[0])
@@ -468,31 +482,39 @@ function manejoQuorum(camParametros){
 //*********** BOTON BANCAS NUEVAS **************//
 
 
-d3.select("#bancasNuevas").on("change", 
+d3.select("#bancasNuevas").on("click", 
 	function() { 
-		var apagarBancas = 
-			function() {			
-				svg.selectAll(".bancas").transition()
+		apagarBancas = 
+			function() {
+				document.getElementById("bancasNuevas").className = "activo";	
+				checkedB = true;
+				svgCamaras.selectAll(".bancas").transition()
 					  .style("fill-opacity", 
 						function (d) { return (d.renueva) ? 0 : 1;
 						});
 						
 					  d3.select("#bNuevas")
-						.style("display","block");
+						.style("display","inline-block");
+					  d3.select("#bNuevas_nro")
+						.style("display","inline-block");
 			},
 			
 			
 		prenderBancas = 
 			function () {
-				svg.selectAll(".bancas").transition()
+				document.getElementById("bancasNuevas").className = "desactivo";	
+				checkedB = false;
+				svgCamaras.selectAll(".bancas").transition()
 					  .style("fill-opacity", 1);
 					  d3.select("#bNuevas")
 						.style("display","none");
+					  d3.select("#bNuevas_nro")
+						.style("display","none");
 			},
 		
-		bancasRun = (this.checked) ? apagarBancas : prenderBancas;
+		bancasRun = (checkedB) ? prenderBancas : apagarBancas;
 		
-		svg.selectAll(".bancas")
+		svgCamaras.selectAll(".bancas")
 			.call(bancasRun);
 	}
 );
@@ -515,8 +537,6 @@ manejoQuorum(camParametros);
 */
 
 function armoCamara (camParametros, totalCam, camara){
-	
-	
 	document.getElementById("numeroQuorum").innerHTML = camParametros[2];
 	
 	parametros = camParametros;
@@ -531,6 +551,5 @@ function armoCamara (camParametros, totalCam, camara){
 	miSeleccion(camaraDS);
 	manejoQuorum(camParametros);
 }
-
 
 armoCamara (senParametros, totalSen, camaraSen);

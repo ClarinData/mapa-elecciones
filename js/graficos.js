@@ -185,7 +185,8 @@ function dibujaBarras(dataset){
 				if ( descartar(d.id) ) {
 					return "";			
 				} else {
-					return "N. Apellido / ";
+					return d.candidato;
+					//elecciones.diputados.BUE.votacion.pp[0].candidato
 				}
 			});		
 

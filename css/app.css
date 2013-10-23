@@ -90,6 +90,7 @@
 	height: 19px;
 	position: absolute;
 	top: 148px;
+	z-index: 100;
 }
 
 .selectDiputados{
