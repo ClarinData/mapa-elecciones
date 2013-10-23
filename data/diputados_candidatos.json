@@ -1,0 +1,576 @@
+{
+   "tree": "diputados",
+   "BUE": {
+      "votacion": {
+         "pp": {
+            "501": {
+               "candidato": "M. Insaurralde"
+            },
+            "505": {
+               "candidato": "N. Pitrola"
+            },
+            "507": {
+               "candidato": "F. De Narvaez "
+            },
+            "510": {
+               "candidato": "S. Massa"
+            },
+            "513": {
+               "candidato": "G. Venegas"
+            },
+            "514": {
+               "candidato": "M. Stolbizer"
+            }
+         }
+      }
+   },
+   "CAP": {
+      "votacion": {
+         "pp": {
+            "187": {
+               "candidato": "L. Zamora"
+            },
+            "501": {
+               "candidato": "J. Cabandié"
+            },
+            "502": {
+               "candidato": "E. Carrió"
+            },
+            "503": {
+               "candidato": "S. Bergman"
+            },
+            "505": {
+               "candidato": "J. Altamira "
+            },
+            "506": {
+               "candidato": "I. Hagman"
+            }
+         }
+      }
+   },
+   "CAT": {
+      "votacion": {
+         "pp": {
+            "014": {
+               "candidato": "A. López"
+            },
+            "501": {
+               "candidato": "N. Tomassi "
+            },
+            "508": {
+               "candidato": "E. Brizuela del Moral "
+            },
+            "509": {
+               "candidato": "J. Barrionuevo"
+            }
+         }
+      }
+   },
+   "CBA": {
+      "votacion": {
+         "pp": {
+            "003": {
+               "candidato": "O. Aguad"
+            },
+            "047": {
+               "candidato": "R. Cucui"
+            },
+            "191": {
+               "candidato": "O. Ruitort"
+            },
+            "217": {
+               "candidato": "M. Marcone"
+            },
+            "501": {
+               "candidato": "C. Scotto"
+            },
+            "503": {
+               "candidato": "H. Baldassi"
+            },
+            "505": {
+               "candidato": "L. Olivero"
+            },
+            "512": {
+               "candidato": "J. Schiaretti"
+            },
+            "514": {
+               "candidato": "E. Martínez Carignano"
+            }
+         }
+      }
+   },
+   "CHA": {
+      "votacion": {
+         "pp": {
+            "501": {
+               "candidato": "J. Pedrini "
+            },
+            "505": {
+               "candidato": "J. Esquivel"
+            },
+            "519": {
+               "candidato": "M. Tejedor"
+            }
+         }
+      }
+   },
+   "CHU": {
+      "votacion": {
+         "pp": {
+            "003": {
+               "candidato": "E. Conde"
+            },
+            "038": {
+               "candidato": "S. Muñoz"
+            },
+            "047": {
+               "candidato": "C. Reinoso"
+            },
+            "152": {
+               "candidato": "O. Petersen"
+            },
+            "157": {
+               "candidato": "M. Das Neves"
+            },
+            "501": {
+               "candidato": "N. Yahuar"
+            }
+         }
+      }
+   },
+   "COR": {
+      "votacion": {
+         "pp": {
+            "501": {
+               "candidato": "C. Rubín"
+            },
+            "515": {
+               "candidato": "L. Gutnisky"
+            },
+            "516": {
+               "candidato": "N. Artaza"
+            },
+            "517": {
+               "candidato": "G. Valdés"
+            }
+         }
+      }
+   },
+   "ERI": {
+      "votacion": {
+         "pp": {
+            "003": {
+               "candidato": "J. D’Agostino "
+            },
+            "068": {
+               "candidato": "L. Meiners "
+            },
+            "501": {
+               "candidato": "J. Lauritto"
+            },
+            "528": {
+               "candidato": "A. Schvartzman"
+            },
+            "545": {
+               "candidato": "C. Cremer de Busti "
+            }
+         }
+      }
+   },
+   "FOR": {
+      "votacion": {
+         "pp": {
+            "014": {
+               "candidato": "C. Servín"
+            },
+            "501": {
+               "candidato": "J. Díaz Roig "
+            },
+            "521": {
+               "candidato": "R. Buryaile "
+            }
+         }
+      }
+   },
+   "JUJ": {
+      "votacion": {
+         "pp": {
+            "068": {
+               "candidato": "B. Rivero"
+            },
+            "208": {
+               "candidato": "L. Santillán"
+            },
+            "501": {
+               "candidato": "H. Tentor"
+            },
+            "505": {
+               "candidato": "A.  Vilca"
+            },
+            "522": {
+               "candidato": "M. Fiad"
+            },
+            "523": {
+               "candidato": "D. Pubzolu"
+            },
+            "524": {
+               "candidato": "I. Calsina"
+            }
+         }
+      }
+   },
+   "LAP": {
+      "votacion": {
+         "pp": {
+            "002": {
+               "candidato": "G. Fernández Mendía"
+            },
+            "022": {
+               "candidato": "R. Costabel"
+            },
+            "184": {
+               "candidato": "D. Hernández"
+            },
+            "190": {
+               "candidato": "C. Lupardo"
+            },
+            "525": {
+               "candidato": "F. Torroba"
+            },
+            "526": {
+               "candidato": "C. Mac Allister"
+            }
+         }
+      }
+   },
+   "LRJ": {
+      "votacion": {
+         "pp": {
+            "061": {
+               "candidato": "H. Pavón"
+            },
+            "501": {
+               "candidato": "T. Madera "
+            },
+            "504": {
+               "candidato": "C. Santander"
+            },
+            "548": {
+               "candidato": "J. Martínez"
+            },
+            "549": {
+               "candidato": "J. Yoma "
+            }
+         }
+      }
+   },
+   "MIS": {
+      "votacion": {
+         "pp": {
+            "003": {
+               "candidato": "L. Pastori"
+            },
+            "050": {
+               "candidato": "N. Fernández Flores"
+            },
+            "501": {
+               "candidato": "J. Ríos"
+            },
+            "529": {
+               "candidato": "A. Ziegler"
+            },
+            "531": {
+               "candidato": "R. Puerta"
+            }
+         }
+      }
+   },
+   "MZA": {
+      "votacion": {
+         "pp": {
+            "003": {
+               "candidato": "J. Cobos"
+            },
+            "501": {
+               "candidato": "A. Abraham "
+            },
+            "504": {
+               "candidato": "D. Cassia"
+            },
+            "505": {
+               "candidato": "Nicolás Del Caño"
+            },
+            "527": {
+               "candidato": "L. Rosales "
+            },
+            "528": {
+               "candidato": "A. Montbrun"
+            }
+         }
+      }
+   },
+   "NEU": {
+      "votacion": {
+         "pp": {
+            "023": {
+               "candidato": "G. Bourdieu"
+            },
+            "040": {
+               "candidato": "P. Sánchez"
+            },
+            "153": {
+               "candidato": "M. Villar Molina"
+            },
+            "166": {
+               "candidato": "F. Baggio"
+            },
+            "501": {
+               "candidato": "N. Parrilli"
+            },
+            "505": {
+               "candidato": "A. Blanco"
+            },
+            "532": {
+               "candidato": "R. Etcheverry"
+            },
+            "533": {
+               "candidato": "A. Barragán"
+            }
+         }
+      }
+   },
+   "RNO": {
+      "votacion": {
+         "pp": {
+            "003": {
+               "candidato": "A. Zidar "
+            },
+            "014": {
+               "candidato": "A. Quintillán"
+            },
+            "154": {
+               "candidato": "M. Piedrabuena"
+            },
+            "501": {
+               "candidato": "M. Soria"
+            },
+            "534": {
+               "candidato": "M. Alvarez"
+            }
+         }
+      }
+   },
+   "SAL": {
+      "votacion": {
+         "pp": {
+            "002": {
+               "candidato": "E. Isa"
+            },
+            "014": {
+               "candidato": "P. López"
+            },
+            "038": {
+               "candidato": "C. Gómez"
+            },
+            "054": {
+               "candidato": "S. Leavy"
+            },
+            "060": {
+               "candidato": "J. Ibarra"
+            },
+            "155": {
+               "candidato": "R. Gramaglia"
+            },
+            "200": {
+               "candidato": "P. Viel"
+            },
+            "203": {
+               "candidato": "J. Singh "
+            },
+            "216": {
+               "candidato": "F. Posadas"
+            },
+            "535": {
+               "candidato": "G. Durand Cornejo"
+            },
+            "536": {
+               "candidato": "S. Vargas"
+            }
+         }
+      }
+   },
+   "SCR": {
+      "votacion": {
+         "pp": {
+            "002": {
+               "candidato": "N. Beroiza"
+            },
+            "014": {
+               "candidato": "O. Latini"
+            },
+            "038": {
+               "candidato": "E. Poliak"
+            },
+            "501": {
+               "candidato": "M. Gómez Bull"
+            },
+            "538": {
+               "candidato": "E. Costa"
+            }
+         }
+      }
+   },
+   "SFE": {
+      "votacion": {
+         "pp": {
+            "068": {
+               "candidato": "A. Parlante"
+            },
+            "180": {
+               "candidato": "R. Carignano"
+            },
+            "501": {
+               "candidato": "J. Obeid"
+            },
+            "505": {
+               "candidato": "O. Crivaro"
+            },
+            "514": {
+               "candidato": "H. Binner"
+            },
+            "539": {
+               "candidato": "J. Bonacci"
+            },
+            "547": {
+               "candidato": "M. del Sel"
+            }
+         }
+      }
+   },
+   "SGO": {
+      "votacion": {
+         "pp": {
+            "061": {
+               "candidato": "A. Favoretti"
+            },
+            "324": {
+               "candidato": "P. Brue"
+            },
+            "501": {
+               "candidato": "M. Nazar"
+            },
+            "514": {
+               "candidato": "P. Griggio"
+            },
+            "541": {
+               "candidato": "C. Oliva"
+            }
+         }
+      }
+   },
+   "SJU": {
+      "votacion": {
+         "pp": {
+            "003": {
+               "candidato": "H. Domínguez"
+            },
+            "061": {
+               "candidato": "G. Cimino"
+            },
+            "156": {
+               "candidato": "N. Avelín"
+            },
+            "168": {
+               "candidato": "A. Sánchez"
+            },
+            "501": {
+               "candidato": "H. Tomas"
+            },
+            "504": {
+               "candidato": "E. Cáceres "
+            },
+            "537": {
+               "candidato": "A. Agüero"
+            }
+         }
+      }
+   },
+   "SLU": {
+      "votacion": {
+         "pp": {
+            "150": {
+               "candidato": "J. Barbeito"
+            },
+            "501": {
+               "candidato": "N. Piguillém"
+            },
+            "504": {
+               "candidato": "B. Arenas"
+            },
+            "514": {
+               "candidato": "J. Riccardo "
+            }
+         }
+      }
+   },
+   "TDF": {
+      "votacion": {
+         "pp": {
+            "002": {
+               "candidato": "P. García"
+            },
+            "003": {
+               "candidato": "J. Martín"
+            },
+            "069": {
+               "candidato": "J. Torres "
+            },
+            "158": {
+               "candidato": "M. Löffler"
+            },
+            "174": {
+               "candidato": "E. Welsch "
+            },
+            "199": {
+               "candidato": "H. Chaves"
+            },
+            "201": {
+               "candidato": "O. Martinez"
+            },
+            "501": {
+               "candidato": "M. Pérez"
+            },
+            "544": {
+               "candidato": "M. Ferreyra"
+            }
+         }
+      }
+   },
+   "TUC": {
+      "votacion": {
+         "pp": {
+            "064": {
+               "candidato": "A. Colombres"
+            },
+            "181": {
+               "candidato": "R. Bussi"
+            },
+            "186": {
+               "candidato": "B. García Hamilton "
+            },
+            "501": {
+               "candidato": "J. Manzur"
+            },
+            "505": {
+               "candidato": "D. Blanco"
+            },
+            "542": {
+               "candidato": "M. Parajón"
+            },
+            "543": {
+               "candidato": "J. Cano"
+            }
+         }
+      }
+   }
+}

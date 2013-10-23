@@ -74,18 +74,35 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
 
     argentina.dataLoad(files.pop(), function(error, json) {
 
-        if (!error && dataObj) {
+        if (!error && dataObj && json) {
 
-          dataObj[json.id] = {
-            "id": json.id,
-            "nivel_administrativo": 1,
-            "nombre": json.nombre,
-            "votacion": json.votacion
-          };
+          if (json.id) {
+            dataObj[json.id] = {
+              "id": json.id,
+              "nivel_administrativo": 1,
+              "nombre": json.nombre,
+              "votacion": json.votacion
+            };
+          }
 
-          for (var key in json.localidades) {
-            dataObj[key] = json.localidades[key];
-            dataObj[key].nivel_administrativo = 2;
+          if (json.tree && ((json.tree == "senadores") || (json.tree == "diputados"))) {
+            for (var key in json) {
+              if (dataObj[json.tree][key]) {
+                dataObj[json.tree][key].votacion.pp.forEach(function (entry) {
+                  var candidatos = json[key].votacion.pp[entry.id];
+                  if (candidatos && candidatos.candidato) {
+                    entry.candidato = candidatos.candidato;
+                  }
+                });
+              }
+            }
+          }       
+
+          if (json.localidades) {
+            for (var key in json.localidades) {
+              dataObj[key] = json.localidades[key];
+              dataObj[key].nivel_administrativo = 2;
+            }
           }
 
         }
@@ -116,6 +133,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
 
     loadData(dataFiles.diputados, elecciones.diputados);
     loadData(dataFiles.senadores, elecciones.senadores);
+    loadData(dataFiles.candidatos, elecciones);
 
   }));
 
