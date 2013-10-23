@@ -1,0 +1,189 @@
+{
+   "tree": "senadores",
+   "CAP": {
+      "votacion": {
+         "pp": {
+            "187": {
+               "candidato": "S. Sallustio"
+            },
+            "501": {
+               "candidato": "D. Filmus"
+            },
+            "502": {
+               "candidato": "P. Solanas"
+            },
+            "503": {
+               "candidato": "G. Michetti"
+            },
+            "505": {
+               "candidato": "C. Dellecarbonara"
+            },
+            "506": {
+               "candidato": "C. Lozano"
+            }
+         }
+      }
+   },
+   "CHA": {
+      "votacion": {
+         "pp": {
+            "501": {
+               "candidato": "E. Aguilar "
+            },
+            "505": {
+               "candidato": "A. García"
+            },
+            "519": {
+               "candidato": "A. Rozas "
+            }
+         }
+      }
+   },
+   "ERI": {
+      "votacion": {
+         "pp": {
+            "003": {
+               "candidato": "A. Benedetti "
+            },
+            "068": {
+               "candidato": "G. Geist "
+            },
+            "501": {
+               "candidato": "P. Guastavino"
+            },
+            "528": {
+               "candidato": "L. Viale"
+            },
+            "545": {
+               "candidato": "A. De Ángeli "
+            }
+         }
+      }
+   },
+   "NEU": {
+      "votacion": {
+         "pp": {
+            "023": {
+               "candidato": "G. Romero"
+            },
+            "040": {
+               "candidato": "E. Benítez"
+            },
+            "153": {
+               "candidato": "G. Pereyra"
+            },
+            "166": {
+               "candidato": "A. Rosso"
+            },
+            "501": {
+               "candidato": "M. Fuentes"
+            },
+            "505": {
+               "candidato": "P. Jure"
+            },
+            "532": {
+               "candidato": "M. Inaudi"
+            },
+            "533": {
+               "candidato": "P. Otton"
+            }
+         }
+      }
+   },
+   "RNO": {
+      "votacion": {
+         "pp": {
+            "003": {
+               "candidato": "M. Saiz"
+            },
+            "014": {
+               "candidato": "N. Dardik"
+            },
+            "154": {
+               "candidato": "O. Zuñiga"
+            },
+            "501": {
+               "candidato": "M. Pichetto"
+            },
+            "534": {
+               "candidato": "M. Odarda"
+            }
+         }
+      }
+   },
+   "SAL": {
+      "votacion": {
+         "pp": {
+            "014": {
+               "candidato": "C. Foffani"
+            },
+            "155": {
+               "candidato": "A. Zottos"
+            },
+            "203": {
+               "candidato": "A. Olmedo"
+            },
+            "535": {
+               "candidato": "J. Romero"
+            },
+            "536": {
+               "candidato": "B. Biella Calvet"
+            }
+         }
+      }
+   },
+   "SGO": {
+      "votacion": {
+         "pp": {
+            "061": {
+               "candidato": "N. Basualdo"
+            },
+            "324": {
+               "candidato": "A. Calabrese"
+            },
+            "501": {
+               "candidato": "A. Corradi"
+            },
+            "514": {
+               "candidato": "E. Rached"
+            },
+            "541": {
+               "candidato": "D. Brue"
+            }
+         }
+      }
+   },
+   "TDF": {
+      "votacion": {
+         "pp": {
+            "002": {
+               "candidato": "R. Sciutto"
+            },
+            "003": {
+               "candidato": "A. Da Fonseca"
+            },
+            "069": {
+               "candidato": "0"
+            },
+            "158": {
+               "candidato": "J. Garramuño"
+            },
+            "174": {
+               "candidato": "J. Colazo"
+            },
+            "199": {
+               "candidato": "O. López"
+            },
+            "201": {
+               "candidato": "0"
+            },
+            "501": {
+               "candidato": "R. Bertone"
+            },
+            "544": {
+               "candidato": "L. Fadul"
+            }
+         }
+      }
+   }
+}
