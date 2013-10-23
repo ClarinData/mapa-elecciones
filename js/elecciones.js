@@ -21,7 +21,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
     "senadores": {},
     "event": d3.dispatch("updatedata", "loaded", "ready", "viewchange"),
     "file": "data/datafiles.json",
-    "refresh": 1,
+    "refresh": 5,
     "load": function() {
       "use strict";
       argentina.dataLoad(elecciones.file + "?" + param, function(error, json) {

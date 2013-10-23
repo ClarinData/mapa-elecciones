@@ -117,8 +117,211 @@
 			</div>
 
 			<div id="selectorMapa" class="selectDiputados"> </div>
-			<div id="lasCamaras" style="display: none;"> </div>
-		</div>
+			<div id="lasCamaras" style="display: none;">
+				<div style="position: relative">
+					<div id="contenedorCamara">
+							
+							
+							<div id="quorum_bancas">
+								<button id="quorum" class="desactivo"> </button>
+								<label for="opcionUnica">DIPUTADOS NECESARIOS PARA QUORUM ( <span id="numeroQuorum"> </span> )</label>
+							</div>
+					
+								
+							<div id="nuevas_bancas">
+								<button id="bancasNuevas" class="desactivo"> </button>
+								<label id="textoBancas" > </label>
+							</div>
+					
+							<button id="camaraActual" onclick="miSeleccion('vieja')"> </button>
+							<button id="camaraNueva" onclick="miSeleccion('nueva')"> </button>
+							
+							<div id="camara"> </div>
+							
+							<div id="totalCam_leg">
+											
+											<div id="totalSen"> -- </div>
+											<div id= "bancasTotales">BANCAS TOTALES</div>
+											
+											<div id="fondoTotalCam_leg">
+												<span class="textoTotales_leg_Escrutado">ESCRUTADO</span>
+												<span class="textoTotales_leg">| Votos: </span>
+												
+												
+												<span id="votosSen"> - </span>
+												<span class="textoTotales_leg">| Mesas: </span>
+												<span id="mesasSen"> - </span>						
+											</div>
+							</div>
+							
+							
+							<div id="separador"> </div>
+							
+							<div id="tablaDetalle"> 
+								
+								<table class="tabla">
+								
+									<caption> </caption>
+								
+									
+									<tr>
+										<td class="bancasTenian primero">Bancas actuales</td>
+										<td class="bancasTenian_nro primero_nro"> </td>
+									</tr>
+									<tr>
+										<td class="bancasRenovaron"><span>Renuevan</span></td>
+										<td class="bancasRenovaron_nro"><span> </span></td>
+									</tr>
+									<tr>
+										<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+										<td class="bancasObtuvieron_nro"><span> </span></td>
+									</tr>
+									<tr>
+										<td class="bancasDiferencia">Diferencia</td>
+										<td class="bancasDiferencia_nro"><span> </span></td>
+									</tr>		
+								
+								</table>
+								
+							
+								
+								<table class="tabla">
+								
+									<caption> </caption>
+								
+									
+									<tr>
+										<td class="bancasTenian primero">Bancas actuales</td>
+										<td class="bancasTenian_nro primero_nro"> </td>
+									</tr>
+									<tr>
+										<td class="bancasRenovaron"><span>Renuevan</span></td>
+										<td class="bancasRenovaron_nro"><span> </span></td>
+									</tr>
+									<tr>
+										<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+										<td class="bancasObtuvieron_nro"><span> </span></td>
+									</tr>
+									<tr>
+										<td class="bancasDiferencia">Diferencia</td>
+										<td class="bancasDiferencia_nro"><span> </span></td>
+									</tr>	
+								
+								</table>
+								
+								<table class="tabla">
+								
+									<caption> </caption>
+								
+									
+									<tr>
+										<td class="bancasTenian primero">Bancas actuales</td>
+										<td class="bancasTenian_nro primero_nro"> </td>
+									</tr>
+									<tr>
+										<td class="bancasRenovaron"><span>Renuevan</span></td>
+										<td class="bancasRenovaron_nro"><span> </span></td>
+									</tr>
+									<tr>
+										<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+										<td class="bancasObtuvieron_nro"><span> </span></td>
+									</tr>
+									<tr>
+										<td class="bancasDiferencia">Diferencia</td>
+										<td class="bancasDiferencia_nro"><span> </span></td>
+									</tr>		
+								
+								</table>
+								
+								<table class="tabla">
+								
+									<caption> </caption>
+								
+									
+									<tr>
+										<td class="bancasTenian primero">Bancas actuales</td>
+										<td class="bancasTenian_nro primero_nro"> </td>
+									</tr>
+									<tr>
+										<td class="bancasRenovaron"><span>Renuevan</span></td>
+										<td class="bancasRenovaron_nro"><span> </span></td>
+									</tr>
+									<tr>
+										<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+										<td class="bancasObtuvieron_nro"><span> </span></td>
+									</tr>
+									<tr>
+										<td class="bancasDiferencia">Diferencia</td>
+										<td class="bancasDiferencia_nro"><span> </span></td>
+									</tr>		
+								
+								</table>
+								
+								<table class="tabla">
+								
+									<caption> </caption>
+								
+									
+									<tr>
+										<td class="bancasTenian primero">Bancas actuales</td>
+										<td class="bancasTenian_nro primero_nro"> </td>
+									</tr>
+									<tr>
+										<td class="bancasRenovaron"><span>Renuevan</span></td>
+										<td class="bancasRenovaron_nro"><span> </span></td>
+									</tr>
+									<tr>
+										<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+										<td class="bancasObtuvieron_nro"><span> </span></td>
+									</tr>
+									<tr>
+										<td class="bancasDiferencia">Diferencia</td>
+										<td class="bancasDiferencia_nro"><span> </span></td>
+									</tr>		
+								
+								</table>
+								
+								<table class="tabla">
+								
+									<caption> </caption>
+								
+									
+									<tr>
+										<td class="bancasTenian primero">Bancas actuales</td>
+										<td class="bancasTenian_nro primero_nro"> </td>
+									</tr>
+									<tr>
+										<td class="bancasRenovaron"><span>Renuevan</span></td>
+										<td class="bancasRenovaron_nro"><span> </span></td>
+									</tr>
+									<tr>
+										<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+										<td class="bancasObtuvieron_nro"><span> </span></td>
+									</tr>
+									<tr>
+										<td class="bancasDiferencia">Diferencia</td>
+										<td class="bancasDiferencia_nro"><span> </span></td>
+									</tr>		
+								
+								</table>
+							
+							</div>
+						
+							<div class="tooltipCam" id="tooltipCam">
+								<P id="bloque"><STRONG>BLOQUE</STRONG></P>
+								<P id="fp_"> </P>
+								<P id="bNuevas"><span id="bNuevas_txt"> </span><span id="bNuevas_nro"> </span> </P>
+								
+								<P id="nota">TOTAL DE BANCAS</P>
+							</div>
+							
+					</div>
+				</div>				
+			</div>
+
+
+
+ 		</div>
 		
 
 		<!-- Tooltip -->		
@@ -190,7 +393,7 @@
 		<script type="text/javascript" src="js/interface.js?version=1"></script>
 		<script type="text/javascript" src="js/graficos.js?version=1"></script>
 		<script type="text/javascript" src="js/elecciones.js?version=3"></script>
-
+		<script src="js/camaras.js"></script>
 
 	<!-- DAX tag -->
 	<script src="http://b.scorecardresearch.com/c2/6906409/ct.js"> </script>

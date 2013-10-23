@@ -21,7 +21,19 @@ function miles(n) {
 	return r;
 }
 
+/************************************************************************/
+// descarta nombres que no son candidatos.
 
+function descartar(nombre){
+	var descartados = ["blancos","nulos","recurridos"];
+
+    for(var i=0; i<descartados.length; i++) {
+        if (descartados[i] === nombre){
+        	return true;
+        }
+    }
+    return false;
+}
 /************************************************************************/
 // Cambia status de botones OK
 function updateBotones(option) {
@@ -53,9 +65,11 @@ function updateBotones(option) {
 		// dependiendo de document.getElementById("diputadosBtn").disabled
 		// tambien mover de lugar los botones de share
 		// y upgradear el texto de "comparti los resultados..."
-		document.getElementById("lasCamaras").innerHTML = "	Aca viene la cámara seleccionada "; 
-
-
+		if (diputadosBtn.disabled){
+			armoCamara (senParametros, totalSen, camaraSen);
+		}else{
+			armoCamara (dipParametros, totalDip, camaraDip);
+		}
 
 
 		d3.select("#referenciasColores").style("display", "none");

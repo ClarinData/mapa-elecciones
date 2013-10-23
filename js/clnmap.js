@@ -299,7 +299,7 @@ var mapObject = function(map) {
   map.dataLoad = function(file, callback) {
     d3.json(file)
       .on("progress", function() {
-        map.event.progress(d3.event.loaded, file);
+        map.event.progress(d3.event.loaded);
       })
       .get(function(error, json) {
         callback(error, json);
