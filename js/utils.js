@@ -78,14 +78,13 @@ function tweeter_share(url,d) {
         if (d && d.properties && d.properties.administrative_area && d.properties.administrative_area.id != "TDF999") {
           provincia = d.properties.administrative_area[0].name;
           distrito = (d.properties.administrative_area[1]) ? d.properties.administrative_area[1].name : null;
-          text = " en " + ((distrito) && (distrito + " (" + provincia + ")") || provincia);
+          text = " en " + ((distrito) && (distrito + ((d.properties.administrative_area[0].id !== "CAP") ? " provincia de " : " de la ") + provincia) || provincia);
         }
 
         return "https://twitter.com/intent/tweet?" +
-               "hashtags=" + "Elecciones2013" + "&" +
+               "hashtags=" + "Elecciones2013,MapaClarin" + "&" +
                "text=" + encodeURIComponent("Mirá los resultados" + text) + "%0A&" +
-               "&tw_p=tweetbutton&url=" + encodeURIComponent(url) + "&" +
-               "via=clarincom";
+               "&tw_p=tweetbutton&url=" + encodeURIComponent(url);
     });
 }
 
