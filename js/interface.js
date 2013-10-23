@@ -1,5 +1,5 @@
 var botonesHeader = new Array ("diputadosBtn","senadoresBtn");
-var botonesMenu = new Array ("provBtn","partBtn","votoBtn","camaBtn");
+var botonesMenu = new Array ("provBtn","partBtn","votoBtn");
 
 /************************************************************************/
 // modal de creditos OK
@@ -55,31 +55,6 @@ function updateBotones(option) {
 
 	document.getElementById(option).disabled = true;
 	elecciones.event.viewchange(elecciones.dataset);
-
-	if ( document.getElementById("camaBtn").disabled ){
-		d3.select("#lasCamaras").style("display", "inline");
-		d3.select("#lasCamaras").style("display", "inline");
-		
-		// Nico
-		// hacer funcion condicional en d3 para llamar a diputados o senadores 
-		// dependiendo de document.getElementById("diputadosBtn").disabled
-		// tambien mover de lugar los botones de share
-		// y upgradear el texto de "comparti los resultados..."
-		if (diputadosBtn.disabled){
-			armoCamara (senParametros, totalSen, camaraSen);
-		}else{
-			armoCamara (dipParametros, totalDip, camaraDip);
-		}
-
-
-		d3.select("#referenciasColores").style("display", "none");
-		d3.select("#arrowShare").style("display", "none");
-		
-	}else{
-		d3.select("#lasCamaras").style("display", "none"); 
-		d3.select("#referenciasColores").style("display", "inline");
-		d3.select("#arrowShare").style("display", "inline");
-	}
 
 }
 
