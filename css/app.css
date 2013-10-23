@@ -145,7 +145,7 @@
 
 #referenciasColores table {
     font-size: 71.5%;
-	width: 290px;
+	width: 300px;
 	padding: 0px;
 	margin: 0px;
 }
@@ -163,7 +163,7 @@
 
 #referenciasColores .textoCeldaCorto {
     height: 18px;
-    width: 60px;
+    width: 80px;
 }
 
 
@@ -327,7 +327,6 @@
     position: absolute;
     top: 163px;
     width: 819px;
-    display: none;
 }
 
 
