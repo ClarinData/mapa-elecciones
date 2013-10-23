@@ -95,6 +95,7 @@ function facebook_share(myurl,d) {
         var p,
             provincia,
             distrito,
+            imgurl = url.base + '/img/provincias/',
             text = " a nivel nacional";
         if (d && d.properties && d.properties.administrative_area && d.properties.administrative_area.id != "TDF999") {
           provincia = d.properties.administrative_area[0].name;
@@ -103,14 +104,14 @@ function facebook_share(myurl,d) {
           p = {
             title : "Elecciones 2013",
             summary : "Mirá los resultados de las elecciones" + text,
-            images : ['http://dummyimage.com/116x116/000000/fff.png&text=' + d.properties.administrative_area[0].id],
+            images : [imgurl + d.properties.administrative_area[0].id.toUpperCase() + '.jpg'],
             url : myurl
           };
         } else {
           p = {
             title : "Elecciones 2013",
             summary : "Mirá los resultados de las elecciones a nivel nacional",
-            images : ['http://dummyimage.com/116x116/000000/fff.png&text=ARG'],
+            images : [imgurl + 'ARG.jpg'],
             url : url.base
           };
         }
@@ -131,9 +132,10 @@ function facebook_share(myurl,d) {
       var url = this.href,
           width = 550,
           height = 520;
-      this.href = null;
+      this.href = 'javascript:return false;';
       window.open(url,
                   "Comparte en Facebook",
                   "width=" + width + ", height=" + height + ", left=" + (window.innerWidth - width)/2 + ", top=" + (window.innerHeight - height)/2 + ", toolbar=0, location=0, menubar=0");
+      return false;
     });
 }
