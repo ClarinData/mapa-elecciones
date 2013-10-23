@@ -11,29 +11,7 @@ function cerrarCreditos() {
 	d3.select("#modal").style("display", "none");
 }
 
-/************************************************************************/
-// separador de miles OK
-function miles(n) {
-	var r = "";
-	for (var p, i = n.length - 1, p = 0; i >= 0; i--, p++) {
-		r = n.charAt(i) + ((p > 0) && (p % 3 == 0) ? "." : "") + r;
-	}
-	return r;
-}
 
-/************************************************************************/
-// descarta nombres que no son candidatos.
-
-function descartar(nombre){
-	var descartados = ["blancos","nulos","recurridos"];
-
-    for(var i=0; i<descartados.length; i++) {
-        if (descartados[i] === nombre){
-        	return true;
-        }
-    }
-    return false;
-}
 /************************************************************************/
 // Cambia status de botones OK
 function updateBotones(option) {

@@ -5,7 +5,6 @@ document.getElementById("senadoresBtn").addEventListener("click", dibuja, false)
 document.getElementById("provBtn").addEventListener("click", dibuja, false);
 document.getElementById("partBtn").addEventListener("click", dibuja, false);
 document.getElementById("votoBtn").addEventListener("click", dibuja, false);
-document.getElementById("camaBtn").addEventListener("click", dibuja, false);
 
 
 
@@ -35,13 +34,6 @@ function dibuja(){
 			argentina.vista.voto();
 			document.getElementById("referenciasVotos").className  = "descMuestro";
 			break;
-			
-		case "camaBtn":
-			argentina.vista.voto();
-			document.getElementById("referenciasVotos").className  = "descOculto";
-			break;
-
-
 
 		case "diputadosBtn":
 			elecciones.dataset = "diputados";

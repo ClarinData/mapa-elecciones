@@ -181,19 +181,19 @@
 
 #contenedorCamara #tablaDetalle .tabla {
 	display: inline-table;
-	width: 130px;
+	width: 125px;
 	font-family: Arial, Helvetica, sans-serif;
 	text-align:left;
 	border-left: 1px solid #CCCCCC;
 	padding-left:8px;
-	padding-right:8px;
+	padding-right:3px;
 	border-spacing: 0;
 }
 
 #contenedorCamara #tablaDetalle .tabla:first-child {
 	border-left:none;
 	padding-left:0px;
-	width: 123px;
+	width: 125px;
 }
 
 #contenedorCamara #tablaDetalle .tabla caption {
