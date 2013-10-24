@@ -7,6 +7,13 @@ document.getElementById("partBtn").addEventListener("click", dibuja, false);
 document.getElementById("votoBtn").addEventListener("click", dibuja, false);
 
 
+function existeLaFoto(url){
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    return http.status!=404;
+}
+
 
 // maneja los botones, header y footer de barras.
 
@@ -16,7 +23,6 @@ function dibuja(){
 	var datos,
 		v_txt = "Sin datos",
 		m_txt = "Sin datos";
-
 
 	switch (this.id){ // refresco datos del mapa según botón clickeado
 
@@ -47,6 +53,7 @@ function dibuja(){
 			elecciones.event.viewchange();
         	break;
 	}
+	
 	if (elecciones.dataset === "diputados") { // elijo dataset según la vista
 
 		datos = elecciones.diputados;
@@ -57,7 +64,6 @@ function dibuja(){
 
 	}
 	
-
 	if (argentina.selection){ // está en una provincia o localidad
 
 		datos = datos[argentina.selection];
@@ -92,7 +98,6 @@ function dibuja(){
 			v_txt = datos.votacion.votos.per.toLocaleString() + "%";
 	}
 
-
 	dibujaBarras(datos);
 	
 	document.getElementById("mesas").innerHTML = m_txt;
@@ -121,9 +126,6 @@ function dibujaBarras(dataset){
 			contenidoEnter.append("div").classed("nombreBar", true).text(function(d) {
 				return d.nombre;
 			});
-		
-
-		
 		
 			contenidoEnter.append("div").attr("class", function(d) {
 				var tempClass = "";
@@ -170,11 +172,17 @@ function dibujaBarras(dataset){
 					.style("background", function (d)
 						{
 							var foto = "img/caritas/" + elecciones.dataset +"\/"+ dataset.id + "-" + d.id + ".png";
-							return "white url(" + foto + ") no-repeat 95% 100%";
+							if (existeLaFoto(foto)){
+								return "white url(" + foto + ") no-repeat 95% 100%";
+							}else{
+								if ( descartar(d.id) ){
+									return "white";
+								}else{
+									return "white url(img/caritas/silueta.png) no-repeat 95% 100%";
+								}
+							}
 						}
 					);	
-
-
 			
 			contenidoEnter.append("div").classed("nombreDet", true).html(function(d) {
 				if (d.nombre !== undefined) {
@@ -185,22 +193,17 @@ function dibujaBarras(dataset){
 		
 			});
 		
-		
 			contenidoEnter.append("span").classed("candidatoDet", true).text(function(d) {
 				if ( descartar(d.candidato) ) {
 					return "";			
 				} else {
 					return d.candidato + " -";
-					//elecciones.diputados.BUE.votacion.pp[0].candidato
 				}
 			});		
 
-
-
 			contenidoEnter.append("span").classed("cantidadDet", true).text(function(d) {
 				return miles(d.votos.toString()) + " votos";
-			});		
-		
+			});
 		
 			contenidoEnter.append("div").attr("class", function(d) {
 				var tempClass = "";
@@ -239,11 +242,6 @@ function dibujaBarras(dataset){
 				}
 				return "bancasDet " + tempClass;
 			});
-		
-
-			
-		
-		
 		
 			contenido.exit().remove();
 		}
