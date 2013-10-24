@@ -40,11 +40,21 @@
     font-weight: bold;
     height: 16px;
     left: 152px;
-    position: absolute;
+    position: relative;
     top: 56px;
     width: 32px;
 }
 
+.betaCreditos{
+    color: #E06153;
+    font-size: 10px;
+    font-weight: bold;
+    height: 16px;
+    left: -21px;
+    position: relative;
+    top: -21px;
+    width: 32px;
+}
 #diputadosBtn,
 #senadoresBtn {
 	height: 25px;

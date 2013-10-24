@@ -262,7 +262,7 @@ function miSeleccion(camaraDS) {
 	//reset checked y bancas/labels nuevas/renuevan 
 		
 		var datosCamara = datosNuevos;
-		var camParametros	= parametros;
+		var camParametros = parametros;
 		
 		svg.selectAll(".bancas")
 		   .style("fill-opacity", 1);
@@ -296,7 +296,7 @@ function miSeleccion(camaraDS) {
 				}
 			);
 
-//********************* GENERO DIBUJO DE LOS 9ARCOS ***************************//
+//********************* GENERO DIBUJO DE LOS ARCOS ***************************//
 
 		d3.select("svg").selectAll("g.borrar").remove();
 		var vis = d3.select("svg")
@@ -529,15 +529,11 @@ manejoQuorum(camParametros);
 */
 
 function armoCamara (camParametros, totalCam, camara){
-	
-	
 	document.getElementById("numeroQuorum").innerHTML = camParametros[2];
 	parametros = camParametros;
 	camaraSeleccionada = camara;
-	
 	armoDatos (totalCam, camara);
 	datosNuevos = datosCamara;
-	
 	llenaTotales(totalCam);
 	llenaTablas (totalCam,camara);
 	armaCamaraVacia(camParametros);
