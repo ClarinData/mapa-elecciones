@@ -21,37 +21,7 @@
 				<div id="beta">(BETA)</div>
 				<button id="diputadosBtn" onclick="updateBotones(this.id); " disabled> </button>
 				<button id="senadoresBtn" onclick="updateBotones(this.id); "> </button>
-				<div id="referenciasGenerales"> </div>
-				<div id="referenciasVotos" class="descOculto"><div>REFERENCIAS<br />El tamaño de los círculos representa los votos del candidato ganador.</div></div>
-				<div id="referenciasColores">
-					
-					<table>
-						<tr>
-							<td class="colorCelda"><div class="fp_K colorCelda"> </div></td>
-							<td class="textoCeldaLargo">Kirchneristas y aliados</td>
-							
-							<td class="colorCelda"><div class="fp_PRO colorCelda"> </div></td>
-							<td class="textoCeldaCorto">PRO y aliados</td>							
-						</tr>
 
-						<tr>
-							<td class="colorCelda"><div class="fp_PJ colorCelda"> </div></td>
-							<td class="textoCeldaLargo">Peronistas opositores</td>
- 
-							<td class="colorCelda"><div class="fp_IZ colorCelda"> </div></td>
-							<td class="textoCeldaCorto">Izquierda</td>
-						</tr>
-
-						<tr>
-							<td class="colorCelda"><div class="fp_FP colorCelda"> </div></td>
-							<td class="textoCeldaLargo">UCR, Socialistas y aliados</td>
-
-							<td class="colorCelda"><div class="fp_OT colorCelda"> </div></td>
-							<td class="textoCeldaCorto">Otros</td>
-						</tr>
-					</table>
-					
-				</div>
 				<div id="shareView">
 					<div id="logoShare"> </div>
 					<div id="textoShare">Compart&iacute; los resultados de las Cámaras</div>
@@ -62,28 +32,189 @@
 			<div id="contenido">
 
 				<div id="botones" class="slashback">
-				 	<button id="provBtn">  </button>
-				 	<button id="partBtn"> </button>
-					<button id="votoBtn"> </button>
+				 	<button id="provBtn" onclick="self.location='index.html'">  </button>
+				 	<button id="partBtn" onclick="self.location='index.html?view=part'"> </button>
+					<button id="votoBtn" onclick="self.location='index.html?view=voto'"> </button>
 					<button id="camaBtn" disabled> </button>
 				</div>
 
 				<div id="lasCamaras">
-					Aca van las camaras
-				</div>
-
-			</div>
-			
-			<div id="footer">
-				<div class="creditos" id="creditos" onclick="abrirCreditos()"><span>»</span> Especificaciones y créditos</div>
-			<!--<div class="creditos" id="ppagrupados"><span>&#187;</span> Cómo se agruparon los partidos políticos </div>-->
-				<div class="creditos" id="feedback"><a href="mailto:infografia@clarin.com"><img src="img/sobre.png" width="16" height="11" alt="sobre" border="0">&nbsp; Escribinos</a></div>
-			</div>
-
-			<div id="selectorMapa" class="selectDiputados"> </div>
-
- 		</div>
 		
+					<div id="contenedorCamara">
+						<div id="quorum_bancas">
+							<button id="quorum" class="desactivo"> </button>
+							<label for="opcionUnica">DIPUTADOS NECESARIOS PARA QUORUM ( <span id="numeroQuorum"> </span> )</label>
+						</div>
+
+						<div id="nuevas_bancas">
+							<button id="bancasNuevas" class="desactivo"> </button>
+							<label id="textoBancas" > </label>
+						</div>
+					
+						<button id="camaraActual" onclick="miSeleccion('vieja')"> </button>
+						<button id="camaraNueva" onclick="miSeleccion('nueva')"> </button>
+							
+						<div id="camara"> </div>
+					
+						<div id="totalCam_leg">
+											
+							<div id="totalSen"> -- </div>
+							<div id= "bancasTotales">BANCAS TOTALES</div>
+											
+							<div id="fondoTotalCam_leg">
+								<span class="textoTotales_leg_Escrutado">ESCRUTADO</span>
+								<span class="textoTotales_leg">| Votos: </span>
+								<span id="votosSen"> - </span>
+								<span class="textoTotales_leg">| Mesas: </span>
+								<span id="mesasSen"> - </span>						
+							</div>
+						</div>
+						
+						<div id="separador"> </div>
+				
+						<div id="tablaDetalle"> 
+								
+							<table class="tabla">
+								<caption> </caption>
+								<tr>
+									<td class="bancasTenian primero">Bancas actuales</td>
+									<td class="bancasTenian_nro primero_nro"> </td>
+								</tr>
+								<tr>
+									<td class="bancasRenovaron"><span>Renuevan</span></td>
+									<td class="bancasRenovaron_nro"><span> </span></td>
+								</tr>
+								<tr>
+									<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+									<td class="bancasObtuvieron_nro"><span> </span></td>
+								</tr>
+								<tr>
+									<td class="bancasDiferencia">Diferencia</td>
+									<td class="bancasDiferencia_nro"><span> </span></td>
+								</tr>		
+							</table>
+							
+							<table class="tabla">
+								<caption> </caption>
+								<tr>
+									<td class="bancasTenian primero">Bancas actuales</td>
+									<td class="bancasTenian_nro primero_nro"> </td>
+								</tr>
+								<tr>
+									<td class="bancasRenovaron"><span>Renuevan</span></td>
+									<td class="bancasRenovaron_nro"><span> </span></td>
+								</tr>
+								<tr>
+									<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+									<td class="bancasObtuvieron_nro"><span> </span></td>
+								</tr>
+								<tr>
+									<td class="bancasDiferencia">Diferencia</td>
+									<td class="bancasDiferencia_nro"><span> </span></td>
+								</tr>	
+							</table>
+							
+							<table class="tabla">
+								<caption> </caption>
+								<tr>
+									<td class="bancasTenian primero">Bancas actuales</td>
+									<td class="bancasTenian_nro primero_nro"> </td>
+								</tr>
+								<tr>
+									<td class="bancasRenovaron"><span>Renuevan</span></td>
+									<td class="bancasRenovaron_nro"><span> </span></td>
+								</tr>
+								<tr>
+									<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+									<td class="bancasObtuvieron_nro"><span> </span></td>
+								</tr>
+								<tr>
+									<td class="bancasDiferencia">Diferencia</td>
+									<td class="bancasDiferencia_nro"><span> </span></td>
+								</tr>		
+							</table>
+							
+							<table class="tabla">
+								<caption> </caption>
+								<tr>
+									<td class="bancasTenian primero">Bancas actuales</td>
+									<td class="bancasTenian_nro primero_nro"> </td>
+								</tr>
+								<tr>
+									<td class="bancasRenovaron"><span>Renuevan</span></td>
+									<td class="bancasRenovaron_nro"><span> </span></td>
+								</tr>
+								<tr>
+									<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+									<td class="bancasObtuvieron_nro"><span> </span></td>
+								</tr>
+								<tr>
+									<td class="bancasDiferencia">Diferencia</td>
+									<td class="bancasDiferencia_nro"><span> </span></td>
+								</tr>		
+							</table>
+							
+							<table class="tabla">
+								<caption> </caption>
+								<tr>
+									<td class="bancasTenian primero">Bancas actuales</td>
+									<td class="bancasTenian_nro primero_nro"> </td>
+								</tr>
+								<tr>
+									<td class="bancasRenovaron"><span>Renuevan</span></td>
+									<td class="bancasRenovaron_nro"><span> </span></td>
+								</tr>
+								<tr>
+									<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+									<td class="bancasObtuvieron_nro"><span> </span></td>
+								</tr>
+								<tr>
+									<td class="bancasDiferencia">Diferencia</td>
+									<td class="bancasDiferencia_nro"><span> </span></td>
+								</tr>		
+							</table>
+							
+							<table class="tabla">
+								<caption> </caption>
+								<tr>
+									<td class="bancasTenian primero">Bancas actuales</td>
+									<td class="bancasTenian_nro primero_nro"> </td>
+								</tr>
+								<tr>
+									<td class="bancasRenovaron"><span>Renuevan</span></td>
+									<td class="bancasRenovaron_nro"><span> </span></td>
+								</tr>
+								<tr>
+									<td class="bancasObtuvieron"><span>Obtuvieron</span></td>
+									<td class="bancasObtuvieron_nro"><span> </span></td>
+								</tr>
+								<tr>
+									<td class="bancasDiferencia">Diferencia</td>
+									<td class="bancasDiferencia_nro"><span> </span></td>
+								</tr>		
+							</table>
+						</div>
+			
+						<div class="tooltipCam" id="tooltipCam">
+							<P id="bloque"><STRONG>BLOQUE</STRONG></P>
+							<P id="fp_"> </P>
+							<P id="bNuevas"><span id="bNuevas_txt"> </span><span id="bNuevas_nro"> </span> </P>
+							
+							<P id="nota">TOTAL DE BANCAS</P>
+						</div>
+					</div>	
+				</div>
+				
+				<div id="footer">
+					<div class="creditos" id="creditos" onclick="abrirCreditos()"><span>»</span> Especificaciones y créditos</div>
+				<!--<div class="creditos" id="ppagrupados"><span>&#187;</span> Cómo se agruparon los partidos políticos </div>-->
+					<div class="creditos" id="feedback"><a href="mailto:infografia@clarin.com"><img src="img/sobre.png" width="16" height="11" alt="sobre" border="0">&nbsp; Escribinos</a></div>
+				</div>
+			
+				<div id="selectorMapa" class="selectDiputados"> </div>
+	
+	 		</div>
+	 	</div>		
 
 		<!-- Modal de Créditos -->		
 		<div id="modal" style="display: none;">
@@ -120,6 +251,8 @@
 			</div> 
 		</div>
 
+
+		<script src="js/camaras.js"></script>
 		<script type="text/javascript" src="js/interfaceCamaras.js?version=1"></script>
 
 </body>

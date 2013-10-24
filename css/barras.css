@@ -55,10 +55,7 @@
 	padding-left: 5px;
 	padding-top: 13px;
 	overflow: hidden;
-	background: url("../img/caritas/silueta.png"); 
-	background-color: white;
-	background-repeat: no-repeat;
-	background-position: 95% 100%;			
+	background: white url("../img/caritas/silueta.png") no-repeat 95% 100%; 
 }
 
 .nombreDet {

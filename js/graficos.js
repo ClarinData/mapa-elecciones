@@ -122,6 +122,9 @@ function dibujaBarras(dataset){
 				return d.nombre;
 			});
 		
+
+		
+		
 			contenidoEnter.append("div").attr("class", function(d) {
 				var tempClass = "";
 				if (d.fuerza) {
@@ -161,8 +164,18 @@ function dibujaBarras(dataset){
 				return dataset.votacion.pp;
 			});
 		
-			var contenidoEnter = contenido.enter().append("div").classed("contenedorDet", true);
-		
+			var contenidoEnter = contenido.enter()
+					.append("div")
+					.classed("contenedorDet", true)
+					.style("background", function (d)
+						{
+							var foto = "img/caritas/" + elecciones.dataset +"\/"+ dataset.id + "-" + d.id + ".png";
+							return "white url(" + foto + ") no-repeat 95% 100%";
+						}
+					);	
+
+
+			
 			contenidoEnter.append("div").classed("nombreDet", true).html(function(d) {
 				if (d.nombre !== undefined) {
 					return d.nombre;
@@ -174,13 +187,15 @@ function dibujaBarras(dataset){
 		
 		
 			contenidoEnter.append("span").classed("candidatoDet", true).text(function(d) {
-				if ( descartar(d.id) ) {
+				if ( descartar(d.candidato) ) {
 					return "";			
 				} else {
-					return d.candidato;
+					return d.candidato + " -";
 					//elecciones.diputados.BUE.votacion.pp[0].candidato
 				}
 			});		
+
+
 
 			contenidoEnter.append("span").classed("cantidadDet", true).text(function(d) {
 				return miles(d.votos.toString()) + " votos";
@@ -224,6 +239,11 @@ function dibujaBarras(dataset){
 				}
 				return "bancasDet " + tempClass;
 			});
+		
+
+			
+		
+		
 		
 			contenido.exit().remove();
 		}

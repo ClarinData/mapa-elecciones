@@ -24,11 +24,11 @@ function miles(n) {
 /************************************************************************/
 // descarta nombres que no son candidatos.
 
-function descartar(nombre){
-	var descartados = ["blancos","nulos","recurridos"];
+function descartar(nom){
+	var descartados = ["blancos","nulos","recurridos",""];
 
     for(var i=0; i<descartados.length; i++) {
-        if (descartados[i] === nombre){
+       	if (descartados[i] === nom || !nom){
         	return true;
         }
     }
