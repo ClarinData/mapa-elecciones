@@ -5,23 +5,23 @@ var toolTip = d3.select(".tooltipCam")
 				.style("opacity", 0);
 
 //Datos Dummy
-var totalSen = {"fuerzas":[{"fp":"K", "obtuvieron":13, "viejos":22},
+var totalSen = {"fuerzas":[{"fp":"K", "obtuvieron":13, "viejos":25},
 					   	   {"fp":"FP", "obtuvieron":5, "viejos":16},
-					   	   {"fp":"PJ", "obtuvieron":1, "viejos":7},
+					   	   {"fp":"PJ", "obtuvieron":1, "viejos":6},
 					       {"fp":"PRO", "obtuvieron":2, "viejos":0},
 					       {"fp":"IZ", "obtuvieron":0, "viejos":0},
-					       {"fp":"OT", "obtuvieron":3, "viejos":3}],
+					       {"fp":"OT", "obtuvieron":3, "viejos":1}],
 				"status":"true",
 				"porcentajeMesas":95.55,
 				"porcentajeVotos":99.99};
 					
 	
 var totalDip = {"fuerzas":[{"fp":"K", "obtuvieron":46, "viejos":85},
-					   	   {"fp":"FP", "obtuvieron":36, "viejos":24},
-					   	   {"fp":"PJ", "obtuvieron":30, "viejos":8},
-					       {"fp":"PRO", "obtuvieron":9, "viejos":4},
+					   	   {"fp":"FP", "obtuvieron":36, "viejos":26},
+					   	   {"fp":"PJ", "obtuvieron":30, "viejos":9},
+					       {"fp":"PRO", "obtuvieron":9, "viejos":5},
 					       {"fp":"IZ", "obtuvieron":1, "viejos":0},
-					       {"fp":"OT", "obtuvieron":5, "viejos":9}],
+					       {"fp":"OT", "obtuvieron":5, "viejos":5}],
 				"status":"true",
 				"porcentajeMesas":95.55,
 				"porcentajeVotos":99.99};
@@ -31,21 +31,21 @@ var totalDip = {"fuerzas":[{"fp":"K", "obtuvieron":46, "viejos":85},
 
 //Datos fijos: macheo con var=data
 				
-var camaraDip = {"fp_K" :{"nombre":"Kirchneristas y aliados", 	"tenian": 133, "renovaron": 48, "fp":"K"},
-			    "fp_FP" :{"nombre":"UCR, Socialistas y aliados",	"tenian": 65, "renovaron": 41, 	"fp":"FP"},	
-			    "fp_PJ" :{"nombre":"Peronistas opositores",		"tenian": 30, "renovaron": 22, 	"fp":"PJ"}, 
-			    "fp_PRO":{"nombre":"PRO y aliados",				"tenian": 12, "renovaron": 8, 	"fp":"PRO"},
+var camaraDip = {"fp_K" :{"nombre":"Kirchneristas y aliados", 	"tenian": 132, "renovaron": 47, "fp":"K"},
+			    "fp_FP" :{"nombre":"UCR, Socialistas y aliados",	"tenian": 66, "renovaron": 40, 	"fp":"FP"},	
+			    "fp_PJ" :{"nombre":"Peronistas opositores",		"tenian": 34, "renovaron": 25, 	"fp":"PJ"}, 
+			    "fp_PRO":{"nombre":"PRO y aliados",				"tenian": 14, "renovaron": 9, 	"fp":"PRO"},
 			    "fp_IZ" :{"nombre":"Partidos de izquierda",		"tenian": 0, "renovaron": 0, 	"fp":"IZ"},
-			    "fp_OT" :{"nombre":"Otros partidos",				"tenian": 17, "renovaron": 8, 	"fp":"OT"}
+			    "fp_OT" :{"nombre":"Otros partidos",				"tenian": 11, "renovaron": 6, 	"fp":"OT"}
 			    };
 
 			
-var camaraSen = {"fp_K"  :{"nombre":"Kirchneristas y aliados", 	"tenian": 38, "renovaron": 16, 	"fp":"K"},
-			  "fp_FP" :{"nombre":"UCR, Socialistas y aliados",	"tenian": 21, "renovaron": 5, 	"fp":"FP"},	
-			  "fp_PJ" :{"nombre":"Peronistas opositores",		"tenian": 9, "renovaron": 2, 	"fp":"PJ"},
-			  "fp_PRO":{"nombre":"PRO y aliados",				"tenian": 0, "renovaron": 0, 	"fp":"PRO"},
-			  "fp_IZ" :{"nombre":"Partidos de izquierda",		"tenian": 0, "renovaron": 0, 	"fp":"IZ"},
-			  "fp_OT" :{"nombre":"Otros partidos",				"tenian": 4, "renovaron": 1, 	"fp":"OT"}
+var camaraSen = {"fp_K"  :{"nombre":"Kirchneristas y aliados", 	"tenian": 41, "renovaron": 16, 	"fp":"K"},
+			 	 "fp_FP" :{"nombre":"UCR, Socialistas y aliados",	"tenian": 21, "renovaron": 5, 	"fp":"FP"},	
+			 	 "fp_PJ" :{"nombre":"Peronistas opositores",		"tenian": 8, "renovaron": 2, 	"fp":"PJ"},
+			  	 "fp_PRO":{"nombre":"PRO y aliados",				"tenian": 0, "renovaron": 0, 	"fp":"PRO"},
+			  	 "fp_IZ" :{"nombre":"Partidos de izquierda",		"tenian": 0, "renovaron": 0, 	"fp":"IZ"},
+			  	 "fp_OT" :{"nombre":"Otros partidos",				"tenian": 2, "renovaron": 1, 	"fp":"OT"}
 			  };
 
 var senParametros = [	18,				///camParametros[0]		hileras - numero de filas del hemiciclo
