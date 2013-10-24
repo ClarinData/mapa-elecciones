@@ -138,9 +138,9 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
     if (argentina.svg) {
 
 
-      if (argentina.svg.g.admlevel2) {
+      if (argentina.svg.g.admlevel2 && argentina.svg.g.admlevel3) {
 
-        argentina.svg.g.admlevel2.caba = argentina.svg.g.admlevel2.caba || (function (d,zoom) {
+        argentina.svg.g.caba = argentina.svg.g.caba || (function (d,zoom) {
 
           var b = argentina.svg.path.bounds(d),
               translate = [-(b[1][0] + b[0][0]) / 2, -(b[1][1] + b[0][1]) / 2];
@@ -149,8 +149,8 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
                          .attr("points", "29.55,0.0 28.979,8.789 0.0,20.295 28.878,20.543 28.692,42.324 71.378,42.324 71.378,0.0")
                          .attr("id", "boxCAP")
                          .attr("fill", "none")
-                         .attr("stroke", "#CECECE")
-                         .attr("stroke-width", "1px")
+                         .attr("stroke", "#000")
+                         .attr("stroke-width", "0.3pt")
                          .attr("transform", function () {
                                      return "translate(" + [(argentina.width / 3) * 1.95, (argentina.height / 3) * 1.06]+ ")";
                                    });
