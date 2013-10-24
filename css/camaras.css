@@ -5,6 +5,11 @@
 	height:600px;
 }
 
+#contenedorCamara label, 
+#contenedorCamara label span {
+	vertical-align:bottom;
+	
+}
 
 #contenedorCamara #camaraActual,
 #contenedorCamara #camaraNueva{
