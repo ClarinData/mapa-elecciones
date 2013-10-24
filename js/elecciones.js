@@ -122,6 +122,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
 
     refreshView();
     elecciones.event.ready();
+    dibuja();
 
   });
 
@@ -351,6 +352,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
 
     voto: function() {
 
+
       argentina.svg.g.admlevel2.classed("transparent", true);
       argentina.svg.g.admlevel3.classed("transparent", true);
       argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom));
@@ -359,7 +361,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       url.parameters.view = argentina.vista.state;
       tweeter_share(shareURL(url),argentina.datum);
       facebook_share(shareURL(url),argentina.datum);
-
+	  updateBotones("votoBtn"); 
     },
 
     part: function() {
@@ -371,11 +373,12 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       url.parameters.view = argentina.vista.state;
       tweeter_share(shareURL(url),argentina.datum);
       facebook_share(shareURL(url),argentina.datum);
-
+      updateBotones ("partBtn");
     },
 
     prov: function() {
 
+      updateBotones ("provBtn");
       argentina.svg.g.admlevel2.classed("transparent", false);
       argentina.svg.g.admlevel3.classed("transparent disabled", false);
       argentina.svg.g.votes.classed("disabled", true);
@@ -383,7 +386,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       url.parameters.view = argentina.vista.state;
       tweeter_share(shareURL(url),argentina.datum);
       facebook_share(shareURL(url),argentina.datum);
-
+      updateBotones ("partBtn");
     },
 
     state: "prov"
@@ -391,5 +394,5 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
   };
 
   elecciones.load();
-
+  updateBotones ("provBtn");
 })();
