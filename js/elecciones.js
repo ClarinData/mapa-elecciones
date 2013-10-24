@@ -385,7 +385,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       url.parameters.view = argentina.vista.state;
       tweeter_share(shareURL(url),argentina.datum);
       facebook_share(shareURL(url),argentina.datum);
-      updateBotones ("partBtn");
+      updateBotones ("provBtn");
     },
 
     state: "prov"

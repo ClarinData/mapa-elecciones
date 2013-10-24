@@ -542,4 +542,4 @@ function armoCamara (camParametros, totalCam, camara){
 }
 
 
-armoCamara (senParametros, totalSen, camaraSen);
+armoCamara (dipParametros, totalDip, camaraDip);

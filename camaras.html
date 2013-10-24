@@ -19,8 +19,8 @@
 			<div id="cabezal">
 				<div id="titulo">Mapa legislativo</div>
 				<div class="beta">(BETA)</div>
-				<button id="diputadosBtn" onclick="updateBotones(this.id);" disabled> </button>
-				<button id="senadoresBtn" onclick="updateBotones(this.id);"> </button>
+				<button id="diputadosBtn" onclick="updateBotones(this.id); armoCamara (dipParametros, totalDip, camaraDip);" disabled> </button>
+				<button id="senadoresBtn" onclick="updateBotones(this.id); armoCamara (senParametros, totalSen, camaraSen);"> </button>
 
 				<div id="shareView">
 					<div id="logoShare"> </div>
