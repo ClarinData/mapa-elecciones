@@ -19,7 +19,6 @@ function existeLaFoto(url){
 
 
 function dibuja(){
-
 	var datos,
 		v_txt = "Sin datos",
 		m_txt = "Sin datos";
