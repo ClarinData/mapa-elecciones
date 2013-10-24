@@ -56,6 +56,8 @@
 	padding-top: 13px;
 	overflow: hidden;
 	background: white url("../img/caritas/silueta.png") no-repeat 95% 100%; 
+ 	min-height:94px;    
+	
 }
 
 .nombreDet {

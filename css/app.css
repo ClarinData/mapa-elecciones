@@ -386,11 +386,12 @@
 #referenciaBarrasDetalle{
     background: url("../img/spriteDipSen.png") no-repeat scroll 0 -75px #FFFFFF;
     border-top: 1px solid #CECECE;
-    height: 30px;
+    height: 37px;
     left: -10px;
     position: absolute;
-    top: 77px;
+    top: 70px;
     width: 290px;
+ 	min-height:37px;    
 }
 
 #graficoBarras{
