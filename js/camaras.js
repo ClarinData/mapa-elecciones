@@ -382,10 +382,10 @@ function mouseover(d) {
 		
 		hTool = recTool.height;
 		wTool = recTool.width;
-		yNum = rect.top+scrollTop-73;
-		xNum = rect.left+scrollLeft ;
+		yNum = rect.top+scrollTop;
+		xNum = rect.left+scrollLeft;
 		
-					
+	
 
 		//muestro tooltip
 
@@ -399,9 +399,9 @@ function mouseover(d) {
 						
 		//posicionamiento dinamico del tooltip en la pagina (margin safe)	
 											
-		 toolTip.style("left", (xNum < wCam/2 && xNum > wCam/7) || (xNum > wCam/1.2 && xNum < wCam) ? xNum - 110 + "px" : xNum  + "px")
-				.style("top",(yNum-hTool+60) + "px")
-				.attr("class", (xNum < wCam/2 && xNum > wCam/7) || (xNum > wCam/1.2 && xNum < wCam) ? "tooltipCam arrowLeft" : "tooltipCam arrowRight");
+		 toolTip.style("left", (xNum < wCam/1.5 && xNum > wCam/7) || (xNum > wCam-110) ? (xNum-130) - 110 + "px" : (xNum-130)  + "px")
+				.style("top",((yNum-121)-hTool-50) + "px")
+				.attr("class", (xNum < wCam/1.5 && xNum > wCam/7) || (xNum > wCam-110) ? "tooltipCam arrowLeft" : "tooltipCam arrowRight");
 				
 		d3.select("#bNuevas_nro")
 			.text (function() { return d.obtuvieron; });
