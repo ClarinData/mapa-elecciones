@@ -122,8 +122,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
 
     refreshView();
     elecciones.event.ready();
-    dibuja();
-
+	dibuja();
   });
 
   elecciones.event.on("loaded", (function() {

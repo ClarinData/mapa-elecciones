@@ -55,7 +55,6 @@ function updateBotones(option) {
 
 	document.getElementById(option).disabled = true;
 	elecciones.event.viewchange(elecciones.dataset);
-	dibuja();
-
+    dibuja();
 }
 
