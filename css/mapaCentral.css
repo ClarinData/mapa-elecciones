@@ -163,7 +163,7 @@ path.admlevel1 {
 path.admlevel2 {
   /*stroke: #ffffff;*/
   stroke: #e8e7e7;
-  stroke-width: 0.6pt;
+  /*stroke-width: 0.6pt;*/
   cursor: pointer;
 }
 

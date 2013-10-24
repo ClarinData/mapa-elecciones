@@ -132,10 +132,9 @@ function facebook_share(myurl,d) {
       var url = this.href,
           width = 550,
           height = 520;
-      this.href = 'javascript:return false;';
+      this.href = 'javascript:void(0);';
       window.open(url,
                   "Comparte en Facebook",
                   "width=" + width + ", height=" + height + ", left=" + (window.innerWidth - width)/2 + ", top=" + (window.innerHeight - height)/2 + ", toolbar=0, location=0, menubar=0");
-      return false;
     });
 }

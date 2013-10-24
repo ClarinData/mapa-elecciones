@@ -88,12 +88,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
           if (json.tree && ((json.tree == "senadores") || (json.tree == "diputados"))) {
             for (var key in json) {
               if (dataObj[json.tree][key]) {
-                dataObj[json.tree][key].votacion.pp.forEach(function (entry) {
-                  var candidatos = json[key].votacion.pp[entry.id];
-                  if (candidatos && candidatos.candidato) {
-                    entry.candidato = candidatos.candidato;
-                  }
-                });
+                dataObj[json.tree][key].votacion.candidatos = json[key].votacion.pp || null;
               }
             }
           }       
