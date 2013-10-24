@@ -212,7 +212,6 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       .classed("fp_K fp_PJ fp_FP fp_PRO fp_IZ fp_OT fp_SFP", false)
       .attr("class", function(d) {
         var current_attr = (this.getAttributeNode("class")) ? this.getAttributeNode("class").value : "";
-        // var current_attr = ""; 
         var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];
         if (dataE && (dataE.votacion.pp[0].votos > 0)) {
           return "fp_" + dataE.votacion.pp[0].fuerza + " " + current_attr;
