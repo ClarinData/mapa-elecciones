@@ -97,6 +97,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
             for (var key in json.localidades) {
               dataObj[key] = json.localidades[key];
               dataObj[key].nivel_administrativo = 2;
+              dataObj[key].parentId = json.id;
             }
           }
 
@@ -144,10 +145,20 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
           var b = argentina.svg.path.bounds(d),
               translate = [-(b[1][0] + b[0][0]) / 2, -(b[1][1] + b[0][1]) / 2];
 
+          argentina.svg.g.append("polygon")
+                         .attr("points", "29.55,0.0 28.979,8.789 0.0,20.295 28.878,20.543 28.692,42.324 71.378,42.324 71.378,0.0")
+                         .attr("id", "boxCAP")
+                         .attr("fill", "none")
+                         .attr("stroke", "#CECECE")
+                         .attr("stroke-width", "1px")
+                         .attr("transform", function () {
+                                     return "translate(" + [(argentina.width / 3) * 1.95, (argentina.height / 3) * 1.06]+ ")";
+                                   });
+
           argentina.svg.g.admlevel2.append("use")
                                    .attr("xlink:href", "#" + argentina.id + "_CAP")
                                    .attr("transform", function () {
-                                     return "translate(" + [(argentina.width / 3) * 2.17, (argentina.height / 3) * 1.02]+ ") scale("+ zoom + ") translate(" + translate + ")";
+                                     return "translate(" + [(argentina.width / 3) * 2.245, (argentina.height / 3) * 1.165]+ ") scale("+ zoom + ") translate(" + translate + ")";
                                    })
                                    .style("stroke-width", function() {
                                      return 0.5 / zoom + "pt";
@@ -163,7 +174,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
                                                               return "#" + argentina.id + "_" + e.properties.administrative_area.id;
                                                            })
                                                            .attr("transform", function () {
-                                                             return "translate(" + [(argentina.width / 3) * 2.17, (argentina.height / 3) * 1.02]+ ") scale("+ zoom + ") translate(" + translate + ")";
+                                                             return "translate(" + [(argentina.width / 3) * 2.245, (argentina.height / 3) * 1.165]+ ") scale("+ zoom + ") translate(" + translate + ")";
                                                            })
                                                            .style("stroke-width", function() {
                                                              return 0.5 / zoom + "pt";
@@ -173,7 +184,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
         })(
 
          d3.select("#map_arg_CAP").datum(),
-         7
+         11
 
         );
         
