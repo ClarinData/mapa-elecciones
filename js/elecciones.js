@@ -26,7 +26,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       "use strict";
       argentina.dataLoad(elecciones.file + "?" + param, function(error, json) {
         dataFiles = (error) ? {} : json;
-        dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length;
+        dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length + json.candidatos.length;
         elecciones.event.loaded();
       });
     }
@@ -107,16 +107,16 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
 
     );
 
-    if ((dataFiles.diputados.length + dataFiles.senadores.length) < 1) {
+  }
 
-      elecciones.event.ready({
-        "diputados": elecciones.diputados[argentina.selection],
-        "senadores": elecciones.senadores[argentina.selection]
-      });
+  argentina.event.on("loadData", function() {
 
+    dataFiles.count -= 1;
+    if (dataFiles.count < 1) {
+      elecciones.event.ready();
     }
 
-  }
+  });
 
   argentina.event.on("ready", function() {
 
@@ -138,48 +138,61 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
     if (argentina.svg) {
 
 
-      if (argentina.svg.g.admlevel2) {
+      if (argentina.svg.g.admlevel2 && argentina.svg.g.admlevel3) {
 
-        argentina.svg.g.admlevel2.caba = argentina.svg.g.admlevel2.caba || (function (d,zoom) {
+        argentina.svg.g.caba = argentina.svg.g.caba || (function (d,zoom) {
+
+          var caba = argentina.svg.g.append("g")
+                                    .attr("id", "caba");
+
+          caba.admlevel3 = argentina.svg.g.admlevel3.append("g")
+                                                    .attr("id", "caba_admlevel3");
+          caba.admlevel2 = argentina.svg.g.admlevel2.append("g")
+                                                    .attr("id", "caba_admlevel2");
 
           var b = argentina.svg.path.bounds(d),
               translate = [-(b[1][0] + b[0][0]) / 2, -(b[1][1] + b[0][1]) / 2];
 
-          argentina.svg.g.append("polygon")
+          caba.box = caba.append("polygon")
                          .attr("points", "29.55,0.0 28.979,8.789 0.0,20.295 28.878,20.543 28.692,42.324 71.378,42.324 71.378,0.0")
                          .attr("id", "boxCAP")
                          .attr("fill", "none")
-                         .attr("stroke", "#CECECE")
-                         .attr("stroke-width", "1px")
+                         .attr("stroke", "#000")
+                         .attr("stroke-width", "0.3pt")
                          .attr("transform", function () {
-                                     return "translate(" + [(argentina.width / 3) * 1.95, (argentina.height / 3) * 1.06]+ ")";
-                                   });
+                           return "translate(" + [(argentina.width / 3) * 1.95, (argentina.height / 3) * 1.06]+ ")";
+                          });
 
-          argentina.svg.g.admlevel2.append("use")
-                                   .attr("xlink:href", "#" + argentina.id + "_CAP")
-                                   .attr("transform", function () {
-                                     return "translate(" + [(argentina.width / 3) * 2.245, (argentina.height / 3) * 1.165]+ ") scale("+ zoom + ") translate(" + translate + ")";
-                                   })
-                                   .style("stroke-width", function() {
-                                     return 0.5 / zoom + "pt";
-                                   });
-
-          argentina.svg.g.paths.filter(function (e) {
+          caba.admlevel3 = argentina.svg.g.paths.filter(function (e) {
                                  return (e.properties.administrative_area[0].id === "CAP") &&
                                         (e.properties.administrative_area.length > 1);
                                })
                                .each(function (e) {
-                                  argentina.svg.g.admlevel3.append("use")
+                                  caba.admlevel3.append("use")
                                                            .attr("xlink:href", function () {
                                                               return "#" + argentina.id + "_" + e.properties.administrative_area.id;
                                                            })
+                                                           .attr("class", "caba path admlevel2")
                                                            .attr("transform", function () {
                                                              return "translate(" + [(argentina.width / 3) * 2.245, (argentina.height / 3) * 1.165]+ ") scale("+ zoom + ") translate(" + translate + ")";
                                                            })
                                                            .style("stroke-width", function() {
                                                              return 0.5 / zoom + "pt";
                                                            });
-                               });
+                                                   });
+
+          caba.admlevel2 = caba.admlevel2.append("use")
+                                                     .attr("xlink:href", "#" + argentina.id + "_CAP")
+                                                     .attr("class", "caba path admlevel1")
+                                                     .attr("transform", function () {
+                                                       return "translate(" + [(argentina.width / 3) * 2.245, (argentina.height / 3) * 1.165]+ ") scale("+ zoom + ") translate(" + translate + ")";
+                                                     })
+                                                     .style("stroke-width", function() {
+                                                       return 0.5 / zoom + "pt";
+                                                     });
+
+          caba.zoom = zoom;
+          return caba;
 
         })(
 
@@ -187,22 +200,22 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
          11
 
         );
-        
-      }
 
-      var selector = (query.id) ? argentina.svg.g.select("#" + argentina.id + "_" + query.id.toUpperCase()) : null,
+        var selector = (query.id) ? argentina.svg.g.select("#" + argentina.id + "_" + query.id.toUpperCase()) : null,
         datum = (selector) ? selector.datum() : null;
 
-      if (query.view) {
-        argentina.vista[query.view]();
-      }
-      if (datum) {
-        argentina.event.click(datum);
-      }
+        if (query.view) {
+          argentina.vista[query.view]();
+        }
+        if (datum) {
+          argentina.event.click(datum);
+        }
 
-      query = {};
-      tweeter_share(shareURL(url),datum);
-      facebook_share(shareURL(url),datum);
+        query = {};
+        tweeter_share(shareURL(url),datum);
+        facebook_share(shareURL(url),datum);
+        
+      }
 
       d3.timer(function() {
         elecciones.load();
@@ -222,25 +235,18 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
     argentina.svg.g.paths
       .classed("fp_K fp_PJ fp_FP fp_PRO fp_IZ fp_OT fp_SFP", false)
       .attr("class", function(d) {
-        var current_attr = (this.getAttributeNode("class")) ? this.getAttributeNode("class").value : "";
+        var current_attr = this.getAttribute("class");
         var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];
-        if (dataE && (dataE.votacion.pp[0].votos > 0)) {
-          return "fp_" + dataE.votacion.pp[0].fuerza + " " + current_attr;
-        } else {
-          return current_attr;
-        }
+        return (dataE && (dataE.votacion.pp[0].votos > 0)) ? "fp_" + dataE.votacion.pp[0].fuerza + " " + current_attr : current_attr;
       });
 
     argentina.svg.g.circles
       .classed("fp_K fp_PJ fp_FP fp_PRO fp_IZ fp_OT fp_SFP", false)
       .attr("class", function(d) {
-        var current_attr = (this.getAttributeNode("class")) ? this.getAttributeNode("class").value : "";
+        var current_attr = this.getAttribute("class");
+        current_attr = (current_attr) ? current_attr.value : "";
         var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];
-        if (dataE && (dataE.votacion.pp[0].votos > 0)) {
-          return "fp_" + dataE.votacion.pp[0].fuerza + " " + current_attr;
-        } else {
-          return current_attr;
-        }
+        return (dataE && (dataE.votacion.pp[0].votos > 0)) ? "fp_" + dataE.votacion.pp[0].fuerza + " " + current_attr : current_attr;
       })
       .attr("r", function(r) {
         return dataRadius(elecciones[elecciones.dataset][r.properties.administrative_area.id]);
@@ -264,6 +270,8 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
       if ((!d) || (d.properties.administrative_area.length < 2)) {
 
         var centered = d || null;
+
+        argentina.svg.g.caba.box.classed("disabled", centered);
 
         argentina.backbutton.visible(d);
 
@@ -310,6 +318,15 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
     })(
       ((!d) || (d.properties.administrative_area.id.length < 4)) ? d : argentina.svg.g.select("#" + argentina.id + "_" + d.properties.administrative_area.id.substr(0, 3)).datum()
     );
+
+    argentina.svg.g.caba.admlevel2
+                        .attr("stroke-width", function() {
+                         return 0.5 / argentina.svg.g.caba.zoom + "pt";
+                        });
+    argentina.svg.g.caba.admlevel3
+                        .attr("stroke-width", function() {
+                         return 0.5 / argentina.svg.g.caba.zoom + "pt";
+                        });
 
     argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom && (argentina.vista.selected == "voto")));
 

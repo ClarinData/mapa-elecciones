@@ -29,7 +29,9 @@ var mapObject = function(map) {
     "zoom",
     "progress",
     "ready",
-    "error");
+    "error",
+    "progressData",
+    "loadData");
 
   map.projection = d3.geo.transverseMercator()
     .center([2.5, -38.5])
@@ -131,6 +133,7 @@ var mapObject = function(map) {
     );
 
     d3.json(file)
+      .on("load", function() { console.log("success!"); })
       .on("progress", function() {
         map.event.progress(d3.event.loaded, file);
       })
@@ -145,8 +148,8 @@ var mapObject = function(map) {
               return dataObj.append("path");
             })(
               obj.selectAll("path use")
-                 .data(topojson.feature(json, json.objects[sel]).features)
-                 .enter()
+              .data(topojson.feature(json, json.objects[sel]).features)
+              .enter()
             );
             return obj;
           }
@@ -161,41 +164,47 @@ var mapObject = function(map) {
               }
               return id;
             })
-            .attr("class", function(d) {
-              return ("admlevel" + d.properties.administrative_area.length);
-            })
-            .on("click", function(d) {
+              .attr("class", function(d) {
+                return ("admlevel" + d.properties.administrative_area.length);
+              })
+              .on("click", function(d) {
 
-              d = d || this.correspondingElement.__data__;
-
-              obj.sort(function(a) {
-                a = a || this.correspondingElement.__data__;
-                return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
-              });
-
-              map.event.click(d);
-            })
-            .attr("d", map.svg.path)
-            .call(
-              d3.behavior
-              .zoom().on("zoom", function(d) {
-                
                 d = d || this.correspondingElement.__data__;
 
-                map.event.zoom(d, d3.event.translate, d3.event.scale);
+                console.log(this.correspondingElement.__data__);
+
+                obj.sort(function(a) {
+                  a = a || this.correspondingElement.__data__;
+                  return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
+                });
+
+                map.event.click(d);
               })
+              .attr("d", map.svg.path)
+              .call(
+                d3.behavior
+                .zoom().on("zoom", function(d) {
+
+                  d = d || this.correspondingElement.__data__;
+
+                  map.event.zoom(d, d3.event.translate, d3.event.scale);
+                })
             );
 
             if (!navigator.isTouch) {
               obj.on("mouseover", function(d) {
 
+                console.log(this);
+
+                this.correspondingElement = this.correspondingElement || d3.select("#" + this.getAttribute("xlink:href")).call(function () {return this;});
+
                 d = d || this.correspondingElement.__data__;
 
                 obj.sort(function(a) {
                   a = a || this.correspondingElement.__data__;
-                  return a.properties.administrative_area.id === d.properties.administrative_area.id ? 1: -1;
+                  return a.properties.administrative_area.id === d.properties.administrative_area.id ? 1 : -1;
                 });
-                
+
                 map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
                 map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].description);
                 var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];
@@ -217,15 +226,15 @@ var mapObject = function(map) {
                   .style("top", d3.event.pageY + 5 + "px")
                   .style("display", "block");
               })
-              .on("mousemove", function() {
-                var left = d3.event.pageX + 10;
-                var top = ((d3.event.pageY - 10 + map.tooltip.height()) > 730) ? d3.event.pageY + 30 - map.tooltip.height() : d3.event.pageY - 10;
-                return map.tooltip.style("top", top + "px")
-                  .style("left", left + "px");
-              })
-              .on("mouseout", function() {
-                return map.tooltip.style("display", "none");
-              });
+                .on("mousemove", function() {
+                  var left = d3.event.pageX + 10;
+                  var top = ((d3.event.pageY - 10 + map.tooltip.height()) > 730) ? d3.event.pageY + 30 - map.tooltip.height() : d3.event.pageY - 10;
+                  return map.tooltip.style("top", top + "px")
+                    .style("left", left + "px");
+                })
+                .on("mouseout", function() {
+                  return map.tooltip.style("display", "none");
+                });
             }
             return obj;
           }
@@ -294,8 +303,11 @@ var mapObject = function(map) {
 
   map.dataLoad = function(file, callback) {
     d3.json(file)
-      .on("progress", function() {
-        map.event.progress(d3.event.loaded);
+      .on("progress.data", function() {
+        map.event.progressData(d3.event.loaded);
+      })
+      .on("load.data", function() {
+       map.event.loadData(file);
       })
       .get(function(error, json) {
         callback(error, json);

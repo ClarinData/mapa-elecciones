@@ -161,9 +161,7 @@ path.admlevel1 {
 }
 
 path.admlevel2 {
-  /*stroke: #ffffff;*/
   stroke: #e8e7e7;
-  /*stroke-width: 0.6pt;*/
   cursor: pointer;
 }
 
@@ -173,7 +171,17 @@ path.admlevel1:hover {
 
 path.admlevel2:hover {
   stroke: black;
-  /*opacity: .6;*/
+}
+
+use.admlevel1 {
+  cursor: url(img/zoomin.cur), pointer;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+}
+
+use.admlevel2 {
+  stroke: #e8e7e7;
+  cursor: pointer;
 }
 
 circle {
