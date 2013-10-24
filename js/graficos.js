@@ -171,7 +171,14 @@ function dibujaBarras(dataset){
 					.classed("contenedorDet", true)
 					.style("background", function (d)
 						{
-							var foto = "img/caritas/" + elecciones.dataset +"\/"+ dataset.id + "-" + d.id + ".png";
+							var provincia = "";
+							if (dataset.nivel_administrativo === 1){
+								provincia = dataset.id;
+							}else{
+								provincia = dataset.parentId;
+							}
+							
+							var foto = "img/caritas/" + elecciones.dataset +"\/"+ provincia + "-" + d.id + ".png";
 							if (existeLaFoto(foto)){
 								return "white url(" + foto + ") no-repeat 95% 100%";
 							}else{
@@ -194,10 +201,18 @@ function dibujaBarras(dataset){
 			});
 		
 			contenidoEnter.append("span").classed("candidatoDet", true).text(function(d) {
-				if ( descartar(d.candidato) ) {
-					return "";			
-				} else {
-					return d.candidato + " -";
+				if ( d.nombre === undefined || descartar(d.id) ){
+					return "";
+				}else{
+					if (dataset.nivel_administrativo === 1){
+						if (elecciones[elecciones.dataset][dataset.id].votacion.candidatos[d.id] !== undefined){
+							return elecciones[elecciones.dataset][dataset.id].votacion.candidatos[d.id].candidato + " - ";
+						};
+					}else{
+						if (elecciones[elecciones.dataset][dataset.parentId].votacion.candidatos[d.id] !== undefined){
+							return elecciones[elecciones.dataset][dataset.parentId].votacion.candidatos[d.id].candidato + " - ";
+						};
+					}					
 				}
 			});		
 
