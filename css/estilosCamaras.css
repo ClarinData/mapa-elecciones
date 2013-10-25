@@ -1,7 +1,6 @@
 /* Para producción se pegan aqui los estilos de todos los css */
 
 @import url('app.css');
-@import url('barras.css');
 @import url('coloresFP.css');
 @import url('globales.css');
 @import url('modalCreditos.css');

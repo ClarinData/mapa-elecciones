@@ -259,24 +259,32 @@ function armaCamaraVacia(camParametros){
 
 
 function miSeleccion(camaraDS) {		
+	
+	if (camaraDS === "nueva"){
+		document.getElementById("camaraActual").disabled = false;
+		document.getElementById("camaraNueva").disabled = true;
+	}else{
+		document.getElementById("camaraActual").disabled = true;
+		document.getElementById("camaraNueva").disabled = false;
+	}
 	//reset checked y bancas/labels nuevas/renuevan 
 		
-		var datosCamara = datosNuevos;
-		var camParametros = parametros;
-		
-		svg.selectAll(".bancas")
-		   .style("fill-opacity", 1);
-		  
-		d3.select("#bNuevas")
-		  .style("display","none");
-		
-		d3.select("#bNuevas_nro")
-		  .style("display","none");
-		
-		d3.select("#bancasNuevas")
-		  .property("checked",false);
+	var datosCamara = datosNuevos;
+	var camParametros = parametros;
+	
+	svg.selectAll(".bancas")
+	   .style("fill-opacity", 1);
+	  
+	d3.select("#bNuevas")
+	  .style("display","none");
+	
+	d3.select("#bNuevas_nro")
+	  .style("display","none");
+	
+	d3.select("#bancasNuevas")
+	  .property("checked",false);
 
-// reset los tildes
+	// reset los tildes
 	document.getElementById("quorum").className = "desactivo";			
 	document.getElementById("bancasNuevas").className = "desactivo";				
 	d3.selectAll(".quorum")
