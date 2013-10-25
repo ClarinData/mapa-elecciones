@@ -276,6 +276,12 @@ function miSeleccion(camaraDS) {
 		d3.select("#bancasNuevas")
 		  .property("checked",false);
 
+// reset los tildes
+	document.getElementById("quorum").className = "desactivo";			
+	document.getElementById("bancasNuevas").className = "desactivo";				
+	d3.selectAll(".quorum")
+		.attr("stroke-opacity", 0)
+		.attr("r", 25);
 		
 		//pinto los circulos
 		
@@ -453,14 +459,16 @@ function manejoQuorum(camParametros){
 
 
 
-	d3.select("#quorum").on("change", 
+	d3.select("#quorum").on("click", 
 		function() {
-			var checked = this.checked,
+			var checked = document.getElementById("quorum").className == "desactivo",
 				circleOut = function () {
+					document.getElementById("quorum").className = "desactivo";
 					this.attr("stroke-opacity", 0)
 						.attr("r", 25);
 				},
 				circleIn = function () {
+				document.getElementById("quorum").className = "activo";
 				this.attr("stroke-opacity", 1)
 					.attr("r", function (d,i) {return (Math.pow((i + camParametros[8]),camParametros[9])*camParametros[11]);});
 				},
@@ -478,10 +486,11 @@ function manejoQuorum(camParametros){
 //*********** BOTON BANCAS NUEVAS **************//
 
 
-d3.select("#bancasNuevas").on("change", 
+d3.select("#bancasNuevas").on("click", 
 	function() { 
 		var apagarBancas = 
-			function() {			
+			function() {
+				document.getElementById("bancasNuevas").className = "activo";			
 				svg.selectAll(".bancas").transition()
 					  .style("fill-opacity", 
 						function (d) { return (d.renueva) ? 0 : 1;
@@ -496,6 +505,7 @@ d3.select("#bancasNuevas").on("change",
 			
 		prenderBancas = 
 			function () {
+				document.getElementById("bancasNuevas").className = "desactivo";			
 				svg.selectAll(".bancas").transition()
 					  .style("fill-opacity", 1);
 					  d3.select("#bNuevas")
@@ -504,7 +514,7 @@ d3.select("#bancasNuevas").on("change",
 						.style("display","none");
 			},
 		
-		bancasRun = (this.checked) ? apagarBancas : prenderBancas;
+		bancasRun = (document.getElementById("bancasNuevas").className == "activo") ? prenderBancas : apagarBancas;
 		
 		svg.selectAll(".bancas")
 			.call(bancasRun);
@@ -539,6 +549,10 @@ function armoCamara (camParametros, totalCam, camara){
 	armaCamaraVacia(camParametros);
 	miSeleccion(camaraDS);
 	manejoQuorum(camParametros);
+
+	document.getElementById("quorum").className = "desactivo";			
+	document.getElementById("bancasNuevas").className = "desactivo";			
+
 }
 
 

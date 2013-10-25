@@ -24,15 +24,16 @@ function updateBotones(option) {
 		botonesHeader.forEach( function (btn){ document.getElementById(btn).disabled = false; } );
 		if (option == "diputadosBtn"){
 			document.getElementById("selectorMapa").className = "selectDiputados";	
+			armoCamara (dipParametros, totalDip, camaraDip);
 			//elecciones.dataset = "diputados";
 		}else{
 			document.getElementById("selectorMapa").className = "selectSenadores";
+			armoCamara (senParametros, totalSen, camaraSen);
 			//elecciones.dataset = "senadores";
 		}
 	}
 
 	document.getElementById(option).disabled = true;
-	elecciones.event.viewchange(elecciones.dataset);
 
 }
 
