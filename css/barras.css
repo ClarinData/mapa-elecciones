@@ -103,10 +103,11 @@
 }
 
 .bancasDet{
-	font: 14px Arial, Helvetica, sans-serif;
+	font: 12px Arial, Helvetica, sans-serif;
 	font-weight:bold;	
     bottom: 15px;
     height: 20px;
+    line-height: 20px;
     left: 181px;
     position: absolute;
     width: 20px;

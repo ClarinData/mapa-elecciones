@@ -154,7 +154,7 @@ function dibujaBarras(dataset){
 
 		}else{ // barras detalle provincia o departamento
 
-			var maximo = 120;
+			var maximo = 110;
 			
 			d3.select("#graficoBarras").selectAll("div").remove();
 			d3.select("#referenciaBarras").style("background-position", "0 -115px");
@@ -243,7 +243,12 @@ function dibujaBarras(dataset){
 					if ( descartar(d.id) ) {
 						return "";			
 					}
-					return "-";
+					if (d.bancas === 0){
+						return "-";
+					}else{
+						return d.bancas;
+					}
+
 				}).attr("class", function(d) {
 				var tempClass = "";
 				if (d.fuerza !== undefined) {
