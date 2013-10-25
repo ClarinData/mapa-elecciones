@@ -74,7 +74,7 @@
 }
 
 #camaraNueva:hover{
-	background: url("../img/spritesAntesDespues.png") no-repeat 0 -47px;
+	background: url("../img/spritesAntesDespues.png") no-repeat 0 -48px;
 }
 
 #camaraNueva:disabled{
@@ -408,8 +408,8 @@
 }
 
 #contenedorCamara #quorum_bancas {
- 	top:31px;
-    left:10px;
+ 	top:18px;
+    left:31px;
  	position: absolute;
  	width: 500px;
  	font-family: Arial,Helvetica,sans-serif;
@@ -419,8 +419,8 @@
  }
  
 #contenedorCamara #nuevas_bancas {
- 	top:51px;
-    left:10px;
+ 	top:41px;
+    left:31px;
  	position: absolute;
  	width: 500px;
  	font-family: Arial,Helvetica,sans-serif;
@@ -435,6 +435,7 @@
 	width: 15px;
 	height: 15px;
 	border: 0px;
+	cursor:pointer;
 }
 
 .desactivo{
@@ -442,4 +443,6 @@
 	width: 15px;
 	height: 15px;
 	border: 0px;
+	cursor:pointer;
+
 }
