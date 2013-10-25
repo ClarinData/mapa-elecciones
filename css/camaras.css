@@ -299,8 +299,8 @@
 
 #contenedorCamara #totalCam_leg {
 	position: absolute;
-	top: 372px;
-	left: 321px;
+	top: 365px;
+	left: 313px;
 	width: 215px;
 	height: 40px;
 }
@@ -377,7 +377,7 @@
 }
 
 #contenedorCamara #quorum_bancas {
- 	top:10px;
+ 	top:31px;
     left:10px;
  	position: absolute;
  	width: 500px;
@@ -388,7 +388,7 @@
  }
  
 #contenedorCamara #nuevas_bancas {
- 	top:40px;
+ 	top:51px;
     left:10px;
  	position: absolute;
  	width: 500px;
