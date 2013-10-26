@@ -406,6 +406,8 @@ if (query.view == "cama") {
 
   };
 
-  elecciones.load();
+  elecciones.load(); << << << < HEAD
   updateBotones("provBtn");
-})();
+})(); === === =
+  updateBotones("provBtn");
+})(); >>> >>> > refs / remotes / origin / master

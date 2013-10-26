@@ -133,7 +133,9 @@ var mapObject = function(map) {
     );
 
     d3.json(file)
-      .on("load", function() { console.log("success!"); })
+      .on("load", function() {
+        console.log("success!");
+      })
       .on("progress", function() {
         map.event.progress(d3.event.loaded, file);
       })
@@ -143,7 +145,7 @@ var mapObject = function(map) {
         }
         map.svg.g = (function(g) {
 
-          map.createPaths = function (obj, sel) {
+          map.createPaths = function(obj, sel) {
             obj.path = (function(dataObj) {
               return dataObj.append("path");
             })(
@@ -154,7 +156,7 @@ var mapObject = function(map) {
             return obj;
           }
 
-          map.pathsAttr = function (obj,postId) {
+          map.pathsAttr = function(obj, postId) {
             postId = postId || "";
             obj.attr("id", function(d) {
               var id = map.id + "_";
@@ -197,7 +199,9 @@ var mapObject = function(map) {
 
                 console.log(this);
 
-                this.correspondingElement = this.correspondingElement || d3.select("#" + this.getAttribute("xlink:href")).call(function () {return this;});
+                this.correspondingElement = this.correspondingElement || d3.select("#" + this.getAttribute("xlink:href")).call(function() {
+                  return this;
+                });
 
                 d = d || this.correspondingElement.__data__;
 
@@ -308,7 +312,7 @@ var mapObject = function(map) {
         map.event.progressData(d3.event.loaded);
       })
       .on("load.data", function() {
-       map.event.loadData(file);
+        map.event.loadData(file);
       })
       .get(function(error, json) {
         callback(error, json);
