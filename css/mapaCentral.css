@@ -184,6 +184,10 @@ use.admlevel2 {
   cursor: pointer;
 }
 
+#caba_votes>circle {
+  stroke-width: 0.02pt;
+}
+
 circle {
   fill-opacity: 1;
   stroke-width: 0.25pt;
