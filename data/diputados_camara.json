@@ -1,1 +1,34 @@
-{"fuerzas":[{"fp":"FP","obtuvieron":44,"viejos":24},{"fp":"PJ","obtuvieron":23,"viejos":8},{"fp":"IZ","obtuvieron":20,"viejos":0},{"fp":"K","obtuvieron":17,"viejos":85},{"fp":"PRO","obtuvieron":12,"viejos":4},{"fp":"OT","obtuvieron":11,"viejos":9}],"porcentajeMesas":"82.52","porcentajeVotos":"53.68"}
+{
+	"fuerzas": [
+		{
+			"fp": "K",
+			"obtuvieron": 17,
+			"viejos": 85
+			
+		}, {
+			"fp": "FP",
+			"obtuvieron": 44,
+			"viejos": 24
+			
+		}, {
+			"fp": "PJ",
+			"obtuvieron": 23,
+			"viejos": 8
+		}, {
+			"fp": "IZ",
+			"obtuvieron": 20,
+			"viejos": 0
+
+		}, {
+			"fp": "PRO",
+			"obtuvieron": 12,
+			"viejos": 4
+		}, {
+			"fp": "OT",
+			"obtuvieron": 11,
+			"viejos": 9
+		}
+	],
+	"porcentajeMesas": "82.52",
+	"porcentajeVotos": "53.68"
+}
