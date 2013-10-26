@@ -8,10 +8,15 @@ document.getElementById("votoBtn").addEventListener("click", dibuja, false);
 
 
 function existeLaFoto(url){
+
     var http = new XMLHttpRequest();
+
     http.open('HEAD', url, false);
+
     http.send();
+
     return http.status!=404;
+
 }
 
 
@@ -179,7 +184,7 @@ function dibujaBarras(dataset){
 								provincia = dataset.parentId;
 							}
 							
-							var foto = "img/caritas/" + elecciones.dataset +"\/"+ provincia + "-" + d.id + ".png";
+							var foto = "img/caritas/" + elecciones.dataset +"/"+ provincia + "-" + d.id + ".png";
 							if (existeLaFoto(foto)){
 								return "white url(" + foto + ") no-repeat 95% 100%";
 							}else{
