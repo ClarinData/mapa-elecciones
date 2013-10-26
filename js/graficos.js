@@ -15,8 +15,6 @@ function existeLaFoto(url, noVoto){
 	    var http = new XMLHttpRequest();
 	    http.open('HEAD', url, false);
 	    http.send();
-	    console.log(http.status + 3);
-
 
 	    if (http.status != 404){
 	    	return true;
