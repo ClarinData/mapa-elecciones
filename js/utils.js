@@ -67,7 +67,8 @@ function shareURL(url) {
   }
   return {
     "share": myUrl,
-    "base": url.base
+    "base": url.base,
+    "imgbase": url.imgbase
   };
 }
 
@@ -95,10 +96,11 @@ function facebook_share(myurl, d) {
   "use strict";
   d3.select("#shareFacebook")
     .attr("href", function() {
+      console.log(myurl);
       var p,
         provincia,
         distrito,
-        imgurl = myurl.base + 'img/provincias/',
+        imgurl = myurl.imgbase + 'img/provincias/',
         text = " a nivel nacional";
       if (d && d.properties && d.properties.administrative_area && d.properties.administrative_area.id != "TDF999") {
         provincia = d.properties.administrative_area[0].name;
