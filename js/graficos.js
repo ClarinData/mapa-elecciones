@@ -7,15 +7,16 @@ document.getElementById("partBtn").addEventListener("click", dibuja, false);
 document.getElementById("votoBtn").addEventListener("click", dibuja, false);
 
 
-function existeLaFoto(url){
-
-    var http = new XMLHttpRequest();
-
-    http.open('HEAD', url, false);
-
-    http.send();
-
-    return http.status!=404;
+function existeLaFoto(url, noVoto){
+		
+	if ( descartar(noVoto) ) {
+		return false;
+	}else{
+	    var http = new XMLHttpRequest();
+	    http.open('HEAD', url, false);
+	    http.send();
+	    return http.status!=404;
+	}
 
 }
 
@@ -185,7 +186,7 @@ function dibujaBarras(dataset){
 							}
 							
 							var foto = "img/caritas/" + elecciones.dataset +"/"+ provincia + "-" + d.id + ".png";
-							if (existeLaFoto(foto)){
+							if (existeLaFoto(foto , d.id)){
 								return "white url(" + foto + ") no-repeat 95% 100%";
 							}else{
 								if ( descartar(d.id) ){
