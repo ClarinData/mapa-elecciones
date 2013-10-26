@@ -134,7 +134,6 @@ var mapObject = function(map) {
 
     d3.json(file)
       .on("load", function() {
-        console.log("success!");
       })
       .on("progress", function() {
         map.event.progress(d3.event.loaded, file);
@@ -174,8 +173,6 @@ var mapObject = function(map) {
 
                 d = d || this.correspondingElement.__data__;
 
-                console.log(this.correspondingElement.__data__);
-
                 obj.sort(function(a) {
                   a = a || this.correspondingElement.__data__;
                   return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
@@ -196,8 +193,6 @@ var mapObject = function(map) {
 
             if (!navigator.isTouch) {
               obj.on("mouseover", function(d) {
-
-                console.log(this);
 
                 this.correspondingElement = this.correspondingElement || d3.select("#" + this.getAttribute("xlink:href")).call(function() {
                   return this;
