@@ -1,1 +1,1218 @@
-{"localidades":{"CAP001":{"nombre":"Comuna 1","id":"001","votacion":{"mesas":{"per":99.63},"votos":{"per":99.62},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":39086,"per":"31.55","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":36668,"per":"29.60","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":25826,"per":"20.85","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":5069,"per":"4.09","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":3673,"per":"2.96","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":2818,"per":"2.27","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":2393,"per":"1.93","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1608,"per":"1.30","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1486,"per":"1.20","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1249,"per":"1.01","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":883,"per":"0.71","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":532,"per":"0.43","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":396,"per":"0.32","bancas":0},{"id":"blancos","votos":2201,"per":"1.78"},{"id":"nulos","votos":1894,"per":"1.50"},{"id":"recurridos","votos":78,"per":"0.06"}]}},"CAP002":{"nombre":"Comuna 2","id":"002","votacion":{"mesas":{"per":99.54},"votos":{"per":99.54},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":45145,"per":"42.90","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":36096,"per":"34.30","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":11440,"per":"10.87","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":2960,"per":"2.81","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":2247,"per":"2.14","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":1553,"per":"1.48","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":1536,"per":"1.46","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":753,"per":"0.72","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":670,"per":"0.64","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":596,"per":"0.57","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":472,"per":"0.45","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":280,"per":"0.27","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":164,"per":"0.16","bancas":0},{"id":"blancos","votos":1312,"per":"1.25"},{"id":"nulos","votos":1214,"per":"1.14"},{"id":"recurridos","votos":31,"per":"0.03"}]}},"CAP003":{"nombre":"Comuna 3","id":"003","votacion":{"mesas":{"per":99.79},"votos":{"per":99.8},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":38315,"per":"32.68","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":29880,"per":"25.49","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":25186,"per":"21.48","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":5715,"per":"4.87","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":4134,"per":"3.53","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":2823,"per":"2.41","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":2792,"per":"2.38","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1586,"per":"1.35","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1485,"per":"1.27","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1378,"per":"1.18","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":815,"per":"0.70","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":477,"per":"0.41","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":436,"per":"0.37","bancas":0},{"id":"blancos","votos":2211,"per":"1.89"},{"id":"nulos","votos":1836,"per":"1.54"},{"id":"recurridos","votos":135,"per":"0.11"}]}},"CAP004":{"nombre":"Comuna 4","id":"004","votacion":{"mesas":{"per":99.22},"votos":{"per":99.22},"pp":[{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":37710,"per":"28.77","bancas":0},{"id":"502","nombre":"UNEN","fuerza":"FP","votos":34489,"per":"26.32","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":32401,"per":"24.72","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":6101,"per":"4.66","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":3784,"per":"2.89","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":3747,"per":"2.86","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":2519,"per":"1.92","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1996,"per":"1.52","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1790,"per":"1.37","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1574,"per":"1.20","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":1149,"per":"0.88","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":586,"per":"0.45","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":491,"per":"0.37","bancas":0},{"id":"blancos","votos":2718,"per":"2.07"},{"id":"nulos","votos":2084,"per":"1.56"},{"id":"recurridos","votos":116,"per":"0.09"}]}},"CAP005":{"nombre":"Comuna 5","id":"005","votacion":{"mesas":{"per":100},"votos":{"per":100},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":41933,"per":"35.45","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":27951,"per":"23.63","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":24511,"per":"20.72","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":5583,"per":"4.72","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":4619,"per":"3.90","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":3475,"per":"2.94","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":2487,"per":"2.10","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1587,"per":"1.34","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1294,"per":"1.09","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1215,"per":"1.03","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":930,"per":"0.79","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":431,"per":"0.36","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":289,"per":"0.24","bancas":0},{"id":"blancos","votos":1980,"per":"1.67"},{"id":"nulos","votos":1624,"per":"1.35"},{"id":"recurridos","votos":85,"per":"0.07"}]}},"CAP006":{"nombre":"Comuna 6","id":"006","votacion":{"mesas":{"per":100},"votos":{"per":100},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":49785,"per":"40.54","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":30182,"per":"24.58","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":20851,"per":"16.98","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":5168,"per":"4.21","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":4959,"per":"4.04","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":3607,"per":"2.94","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":1822,"per":"1.48","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1483,"per":"1.21","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1040,"per":"0.85","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":898,"per":"0.73","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":643,"per":"0.52","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":289,"per":"0.24","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":239,"per":"0.19","bancas":0},{"id":"blancos","votos":1844,"per":"1.50"},{"id":"nulos","votos":1724,"per":"1.38"},{"id":"recurridos","votos":90,"per":"0.07"}]}},"CAP007":{"nombre":"Comuna 7","id":"007","votacion":{"mesas":{"per":99.8},"votos":{"per":99.8},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":45619,"per":"35.10","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":32238,"per":"24.81","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":26977,"per":"20.76","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":5683,"per":"4.37","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":4609,"per":"3.55","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":3233,"per":"2.49","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":2740,"per":"2.11","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1787,"per":"1.38","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1490,"per":"1.15","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1340,"per":"1.03","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":1003,"per":"0.77","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":468,"per":"0.36","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":411,"per":"0.32","bancas":0},{"id":"blancos","votos":2357,"per":"1.81"},{"id":"nulos","votos":1966,"per":"1.49"},{"id":"recurridos","votos":157,"per":"0.12"}]}},"CAP008":{"nombre":"Comuna 8","id":"008","votacion":{"mesas":{"per":99.23},"votos":{"per":99.23},"pp":[{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":29024,"per":"28.52","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":28654,"per":"28.15","bancas":0},{"id":"502","nombre":"UNEN","fuerza":"FP","votos":23199,"per":"22.79","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":4179,"per":"4.11","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":3763,"per":"3.70","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":2472,"per":"2.43","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1770,"per":"1.74","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":1434,"per":"1.41","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1372,"per":"1.35","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":1244,"per":"1.22","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1191,"per":"1.17","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":853,"per":"0.84","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":414,"per":"0.41","bancas":0},{"id":"blancos","votos":2216,"per":"2.18"},{"id":"nulos","votos":1628,"per":"1.57"},{"id":"recurridos","votos":155,"per":"0.15"}]}},"CAP009":{"nombre":"Comuna 9","id":"009","votacion":{"mesas":{"per":99.53},"votos":{"per":99.53},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":35016,"per":"30.79","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":30904,"per":"27.18","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":25380,"per":"22.32","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":4896,"per":"4.31","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":3535,"per":"3.11","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":3310,"per":"2.91","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":2235,"per":"1.97","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1722,"per":"1.51","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1545,"per":"1.36","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1224,"per":"1.08","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":833,"per":"0.73","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":457,"per":"0.40","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":449,"per":"0.39","bancas":0},{"id":"blancos","votos":2208,"per":"1.94"},{"id":"nulos","votos":1675,"per":"1.45"},{"id":"recurridos","votos":132,"per":"0.11"}]}},"CAP010":{"nombre":"Comuna 10","id":"010","votacion":{"mesas":{"per":99.77},"votos":{"per":99.77},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":40790,"per":"35.51","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":29253,"per":"25.47","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":22278,"per":"19.40","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":5075,"per":"4.42","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":4467,"per":"3.89","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":2546,"per":"2.22","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":2498,"per":"2.17","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1722,"per":"1.50","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1306,"per":"1.14","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1130,"per":"0.98","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":858,"per":"0.75","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":425,"per":"0.37","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":348,"per":"0.30","bancas":0},{"id":"blancos","votos":2161,"per":"1.88"},{"id":"nulos","votos":1779,"per":"1.52"},{"id":"recurridos","votos":110,"per":"0.09"}]}},"CAP011":{"nombre":"Comuna 11","id":"011","votacion":{"mesas":{"per":99.59},"votos":{"per":99.59},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":50318,"per":"38.32","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":34195,"per":"26.04","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":23481,"per":"17.88","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":5518,"per":"4.20","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":5121,"per":"3.90","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":2657,"per":"2.02","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":2484,"per":"1.89","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1567,"per":"1.19","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1250,"per":"0.95","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1218,"per":"0.93","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":685,"per":"0.52","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":341,"per":"0.26","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":331,"per":"0.25","bancas":0},{"id":"blancos","votos":2143,"per":"1.63"},{"id":"nulos","votos":1989,"per":"1.49"},{"id":"recurridos","votos":123,"per":"0.09"}]}},"CAP012":{"nombre":"Comuna 12","id":"012","votacion":{"mesas":{"per":99.81},"votos":{"per":99.81},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":52338,"per":"36.79","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":40374,"per":"28.38","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":25189,"per":"17.71","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":6149,"per":"4.32","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":4924,"per":"3.46","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":2880,"per":"2.02","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":2584,"per":"1.82","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1627,"per":"1.14","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1279,"per":"0.90","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1228,"per":"0.86","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":778,"per":"0.55","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":385,"per":"0.27","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":352,"per":"0.25","bancas":0},{"id":"blancos","votos":2156,"per":"1.52"},{"id":"nulos","votos":1960,"per":"1.36"},{"id":"recurridos","votos":124,"per":"0.09"}]}},"CAP013":{"nombre":"Comuna 13","id":"013","votacion":{"mesas":{"per":99.2},"votos":{"per":99.2},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":68364,"per":"42.59","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":50471,"per":"31.44","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":19971,"per":"12.44","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":5391,"per":"3.36","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":4470,"per":"2.78","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":3009,"per":"1.87","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":2065,"per":"1.29","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1308,"per":"0.81","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1073,"per":"0.67","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1019,"per":"0.63","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":672,"per":"0.42","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":322,"per":"0.20","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":266,"per":"0.17","bancas":0},{"id":"blancos","votos":2120,"per":"1.32"},{"id":"nulos","votos":1981,"per":"1.22"},{"id":"recurridos","votos":122,"per":"0.08"}]}},"CAP014":{"nombre":"Comuna 14","id":"014","votacion":{"mesas":{"per":99.67},"votos":{"per":99.67},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":64201,"per":"41.96","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":46837,"per":"30.61","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":20822,"per":"13.61","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":5263,"per":"3.44","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":3962,"per":"2.59","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":3020,"per":"1.97","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":2161,"per":"1.41","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1210,"per":"0.79","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1065,"per":"0.70","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1049,"per":"0.69","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":747,"per":"0.49","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":340,"per":"0.22","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":227,"per":"0.15","bancas":0},{"id":"blancos","votos":2106,"per":"1.38"},{"id":"nulos","votos":1854,"per":"1.20"},{"id":"recurridos","votos":90,"per":"0.06"}]}},"CAP015":{"nombre":"Comuna 15","id":"015","votacion":{"mesas":{"per":99.58},"votos":{"per":99.58},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":43893,"per":"35.35","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":29162,"per":"23.49","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":25582,"per":"20.60","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":6205,"per":"5.00","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":5467,"per":"4.40","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":3625,"per":"2.92","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":2488,"per":"2.00","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":1751,"per":"1.41","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":1403,"per":"1.13","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":1195,"per":"0.96","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":759,"per":"0.61","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":338,"per":"0.27","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":301,"per":"0.24","bancas":0},{"id":"blancos","votos":1987,"per":"1.60"},{"id":"nulos","votos":1915,"per":"1.52"},{"id":"recurridos","votos":147,"per":"0.12"}]}}},"nombre":"Ciudad Aut\u00f3noma Bs.As.","id":"CAP","votacion":{"mesas":{"per":99.62},"votos":{"per":99.62},"pp":[{"id":"502","nombre":"UNEN","fuerza":"FP","votos":672491,"per":"35.58","bancas":0},{"id":"503","nombre":"UNION PRO","fuerza":"PRO","votos":520575,"per":"27.54","bancas":0},{"id":"501","nombre":"FRENTE PARA LA VICTORIA","fuerza":"K","votos":358919,"per":"18.99","bancas":0},{"id":"505","nombre":"FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES","fuerza":"IZ","votos":78955,"per":"4.18","bancas":0},{"id":"187","nombre":"AUTODETERMINACION Y LIBERTAD","fuerza":"IZ","votos":62443,"per":"3.30","bancas":0},{"id":"506","nombre":"CAMINO POPULAR","fuerza":"OT","votos":40961,"per":"2.17","bancas":0},{"id":"504","nombre":"COMPROMISO FEDERAL","fuerza":"PJ","votos":39343,"per":"2.08","bancas":0},{"id":"068","nombre":"NUEVA IZQUIERDA","fuerza":"IZ","votos":22668,"per":"1.20","bancas":0},{"id":"262","nombre":"EL MOVIMIENTO","fuerza":"OT","votos":19842,"per":"1.05","bancas":0},{"id":"234","nombre":"MOVIMIENTO AL SOCIALISMO","fuerza":"IZ","votos":18019,"per":"0.95","bancas":0},{"id":"325","nombre":"MOVIMIENTO UNIDAD DEL TRABAJO Y LA PRODUCCION","fuerza":"PJ","votos":12471,"per":"0.66","bancas":0},{"id":"324","nombre":"PARTIDO FE","fuerza":"PJ","votos":6524,"per":"0.35","bancas":0},{"id":"008","nombre":"PARTIDO FEDERAL","fuerza":"OT","votos":5114,"per":"0.27","bancas":0},{"id":"blancos","votos":31720,"per":"1.68"},{"id":"nulos","votos":27123,"per":"1.41"},{"id":"recurridos","votos":1695,"per":"0.09"}]}}
+{
+	"localidades": {
+		"CAP001": {
+			"nombre": "Comuna 1",
+			"id": "001",
+			"votacion": {
+				"mesas": {
+					"per": 82.65
+				},
+				"votos": {
+					"per": 82.65
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 27778,
+						"per": "33.69",
+						"bancas": 34
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 12806,
+						"per": "15.53",
+						"bancas": 23
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 10944,
+						"per": "13.27",
+						"bancas": 3
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 9875,
+						"per": "11.98",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 9157,
+						"per": "11.10",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 6432,
+						"per": "7.80",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 5467,
+						"per": "6.63",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 5929,
+						"per": "5.96"
+					}, {
+						"id": "nulos",
+						"votos": 4111,
+						"per": "4.13"
+					}, {
+						"id": "recurridos",
+						"votos": 6988,
+						"per": "7.03"
+					}
+				]
+			}
+		},
+		"CAP002": {
+			"nombre": "Comuna 2",
+			"id": "002",
+			"votacion": {
+				"mesas": {
+					"per": 82.64
+				},
+				"votos": {
+					"per": 82.64
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 21764,
+						"per": "32.55",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 10500,
+						"per": "15.70",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 9167,
+						"per": "13.71",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 8387,
+						"per": "12.54",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 7806,
+						"per": "11.67",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 4798,
+						"per": "7.18",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 4446,
+						"per": "6.65",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 4605,
+						"per": "5.74"
+					}, {
+						"id": "nulos",
+						"votos": 3214,
+						"per": "4.00"
+					}, {
+						"id": "recurridos",
+						"votos": 5569,
+						"per": "6.94"
+					}
+				]
+			}
+		},
+		"CAP003": {
+			"nombre": "Comuna 3",
+			"id": "003",
+			"votacion": {
+				"mesas": {
+					"per": 82.61
+				},
+				"votos": {
+					"per": 82.61
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 24729,
+						"per": "32.80",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 11735,
+						"per": "15.57",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 10278,
+						"per": "13.63",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 9312,
+						"per": "12.35",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 8668,
+						"per": "11.50",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 5435,
+						"per": "7.21",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 5229,
+						"per": "6.94",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 4898,
+						"per": "5.45"
+					}, {
+						"id": "nulos",
+						"votos": 3420,
+						"per": "3.81"
+					}, {
+						"id": "recurridos",
+						"votos": 6116,
+						"per": "6.81"
+					}
+				]
+			}
+		},
+		"CAP004": {
+			"nombre": "Comuna 4",
+			"id": "004",
+			"votacion": {
+				"mesas": {
+					"per": 82.3
+				},
+				"votos": {
+					"per": 82.28
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 26414,
+						"per": "33.31",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 12299,
+						"per": "15.51",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 10844,
+						"per": "13.68",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 8965,
+						"per": "11.31",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 8863,
+						"per": "11.18",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 6244,
+						"per": "7.88",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 5656,
+						"per": "7.13",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 5365,
+						"per": "5.65"
+					}, {
+						"id": "nulos",
+						"votos": 3737,
+						"per": "3.94"
+					}, {
+						"id": "recurridos",
+						"votos": 6555,
+						"per": "6.90"
+					}
+				]
+			}
+		},
+		"CAP005": {
+			"nombre": "Comuna 5",
+			"id": "005",
+			"votacion": {
+				"mesas": {
+					"per": 82.6
+				},
+				"votos": {
+					"per": 82.6
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 24169,
+						"per": "34.18",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 10505,
+						"per": "14.86",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 9612,
+						"per": "13.59",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 8427,
+						"per": "11.92",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 8286,
+						"per": "11.72",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 5338,
+						"per": "7.55",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 4366,
+						"per": "6.18",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 4721,
+						"per": "5.58"
+					}, {
+						"id": "nulos",
+						"votos": 3296,
+						"per": "3.90"
+					}, {
+						"id": "recurridos",
+						"votos": 5816,
+						"per": "6.88"
+					}
+				]
+			}
+		},
+		"CAP006": {
+			"nombre": "Comuna 6",
+			"id": "006",
+			"votacion": {
+				"mesas": {
+					"per": 82.46
+				},
+				"votos": {
+					"per": 82.46
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 22252,
+						"per": "31.49",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 11532,
+						"per": "16.32",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 9946,
+						"per": "14.07",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 8286,
+						"per": "11.72",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 8137,
+						"per": "11.51",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 5480,
+						"per": "7.75",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 5050,
+						"per": "7.14",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 4960,
+						"per": "5.84"
+					}, {
+						"id": "nulos",
+						"votos": 3443,
+						"per": "4.05"
+					}, {
+						"id": "recurridos",
+						"votos": 5896,
+						"per": "6.94"
+					}
+				]
+			}
+		},
+		"CAP007": {
+			"nombre": "Comuna 7",
+			"id": "007",
+			"votacion": {
+				"mesas": {
+					"per": 82.49
+				},
+				"votos": {
+					"per": 82.49
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 25871,
+						"per": "33.34",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 12163,
+						"per": "15.68",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 10295,
+						"per": "13.27",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 8996,
+						"per": "11.60",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 8598,
+						"per": "11.08",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 6159,
+						"per": "7.94",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 5501,
+						"per": "7.09",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 5032,
+						"per": "5.44"
+					}, {
+						"id": "nulos",
+						"votos": 3516,
+						"per": "3.80"
+					}, {
+						"id": "recurridos",
+						"votos": 6287,
+						"per": "6.81"
+					}
+				]
+			}
+		},
+		"CAP008": {
+			"nombre": "Comuna 8",
+			"id": "008",
+			"votacion": {
+				"mesas": {
+					"per": 82.56
+				},
+				"votos": {
+					"per": 82.57
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 21112,
+						"per": "34.50",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 9048,
+						"per": "14.79",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 8371,
+						"per": "13.68",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 7756,
+						"per": "12.68",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 6541,
+						"per": "10.69",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 4647,
+						"per": "7.60",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 3707,
+						"per": "6.06",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 3977,
+						"per": "5.46"
+					}, {
+						"id": "nulos",
+						"votos": 2767,
+						"per": "3.80"
+					}, {
+						"id": "recurridos",
+						"votos": 4940,
+						"per": "6.77"
+					}
+				]
+			}
+		},
+		"CAP009": {
+			"nombre": "Comuna 9",
+			"id": "009",
+			"votacion": {
+				"mesas": {
+					"per": 82.63
+				},
+				"votos": {
+					"per": 82.63
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 22285,
+						"per": "33.36",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 10352,
+						"per": "15.50",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 9134,
+						"per": "13.68",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 8413,
+						"per": "12.60",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 7390,
+						"per": "11.07",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 4894,
+						"per": "7.33",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 4313,
+						"per": "6.46",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 4054,
+						"per": "5.14"
+					}, {
+						"id": "nulos",
+						"votos": 2819,
+						"per": "3.57"
+					}, {
+						"id": "recurridos",
+						"votos": 5269,
+						"per": "6.67"
+					}
+				]
+			}
+		},
+		"CAP010": {
+			"nombre": "Comuna 10",
+			"id": "010",
+			"votacion": {
+				"mesas": {
+					"per": 82.48
+				},
+				"votos": {
+					"per": 82.48
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 20952,
+						"per": "31.51",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 10953,
+						"per": "16.47",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 9162,
+						"per": "13.78",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 8340,
+						"per": "12.54",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 7908,
+						"per": "11.89",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 4812,
+						"per": "7.24",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 4371,
+						"per": "6.57",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 4468,
+						"per": "5.62"
+					}, {
+						"id": "nulos",
+						"votos": 3103,
+						"per": "3.90"
+					}, {
+						"id": "recurridos",
+						"votos": 5473,
+						"per": "6.88"
+					}
+				]
+			}
+		},
+		"CAP011": {
+			"nombre": "Comuna 11",
+			"id": "011",
+			"votacion": {
+				"mesas": {
+					"per": 82.48
+				},
+				"votos": {
+					"per": 82.48
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 24154,
+						"per": "31.63",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 12503,
+						"per": "16.37",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 10495,
+						"per": "13.74",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 9606,
+						"per": "12.58",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 8754,
+						"per": "11.46",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 5624,
+						"per": "7.36",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 5243,
+						"per": "6.86",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 5157,
+						"per": "5.64"
+					}, {
+						"id": "nulos",
+						"votos": 3600,
+						"per": "3.94"
+					}, {
+						"id": "recurridos",
+						"votos": 6285,
+						"per": "6.87"
+					}
+				]
+			}
+		},
+		"CAP012": {
+			"nombre": "Comuna 12",
+			"id": "012",
+			"votacion": {
+				"mesas": {
+					"per": 82.48
+				},
+				"votos": {
+					"per": 82.48
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 26107,
+						"per": "31.85",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 13422,
+						"per": "16.38",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 11080,
+						"per": "13.52",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 9411,
+						"per": "11.48",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 9216,
+						"per": "11.24",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 6451,
+						"per": "7.87",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 6277,
+						"per": "7.66",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 5285,
+						"per": "5.42"
+					}, {
+						"id": "nulos",
+						"votos": 3694,
+						"per": "3.79"
+					}, {
+						"id": "recurridos",
+						"votos": 6606,
+						"per": "6.77"
+					}
+				]
+			}
+		},
+		"CAP013": {
+			"nombre": "Comuna 13",
+			"id": "013",
+			"votacion": {
+				"mesas": {
+					"per": 82.59
+				},
+				"votos": {
+					"per": 82.59
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 32846,
+						"per": "33.62",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 14764,
+						"per": "15.11",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 13358,
+						"per": "13.67",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 11704,
+						"per": "11.98",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 11032,
+						"per": "11.29",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 7598,
+						"per": "7.78",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 6396,
+						"per": "6.55",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 6258,
+						"per": "5.39"
+					}, {
+						"id": "nulos",
+						"votos": 4355,
+						"per": "3.75"
+					}, {
+						"id": "recurridos",
+						"votos": 7876,
+						"per": "6.77"
+					}
+				]
+			}
+		},
+		"CAP014": {
+			"nombre": "Comuna 14",
+			"id": "014",
+			"votacion": {
+				"mesas": {
+					"per": 82.51
+				},
+				"votos": {
+					"per": 82.51
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 31870,
+						"per": "33.64",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 14330,
+						"per": "15.13",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 13202,
+						"per": "13.94",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 11182,
+						"per": "11.80",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 10666,
+						"per": "11.26",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 7336,
+						"per": "7.74",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 6151,
+						"per": "6.49",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 6246,
+						"per": "5.53"
+					}, {
+						"id": "nulos",
+						"votos": 4340,
+						"per": "3.84"
+					}, {
+						"id": "recurridos",
+						"votos": 7711,
+						"per": "6.82"
+					}
+				]
+			}
+		},
+		"CAP015": {
+			"nombre": "Comuna 15",
+			"id": "015",
+			"votacion": {
+				"mesas": {
+					"per": 82.43
+				},
+				"votos": {
+					"per": 82.43
+				},
+				"pp": [
+					{
+						"id": "506",
+						"nombre": "CAMINO POPULAR",
+						"fuerza": "OT",
+						"votos": 24677,
+						"per": "32.95",
+						"bancas": 0
+					}, {
+						"id": "502",
+						"nombre": "UNEN",
+						"fuerza": "FP",
+						"votos": 11634,
+						"per": "15.53",
+						"bancas": 0
+					}, {
+						"id": "503",
+						"nombre": "UNION PRO",
+						"fuerza": "PRO",
+						"votos": 10230,
+						"per": "13.66",
+						"bancas": 0
+					}, {
+						"id": "187",
+						"nombre": "AUTODETERMINACION Y LIBERTAD",
+						"fuerza": "IZ",
+						"votos": 9206,
+						"per": "12.29",
+						"bancas": 0
+					}, {
+						"id": "501",
+						"nombre": "FRENTE PARA LA VICTORIA",
+						"fuerza": "K",
+						"votos": 8446,
+						"per": "11.28",
+						"bancas": 0
+					}, {
+						"id": "505",
+						"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+						"fuerza": "IZ",
+						"votos": 5539,
+						"per": "7.39",
+						"bancas": 0
+					}, {
+						"id": "504",
+						"nombre": "COMPROMISO FEDERAL",
+						"fuerza": "PJ",
+						"votos": 5171,
+						"per": "6.90",
+						"bancas": 0
+					}, {
+						"id": "blancos",
+						"votos": 4668,
+						"per": "5.26"
+					}, {
+						"id": "nulos",
+						"votos": 3262,
+						"per": "3.67"
+					}, {
+						"id": "recurridos",
+						"votos": 5981,
+						"per": "6.73"
+					}
+				]
+			}
+		}
+	},
+	"nombre": "Ciudad Aut\u00f3noma Bs.As.",
+	"id": "CAP",
+	"votacion": {
+		"mesas": {
+			"per": 82.53
+		},
+		"votos": {
+			"per": 82.52
+		},
+		"pp": [
+			{
+				"id": "506",
+				"nombre": "CAMINO POPULAR",
+				"fuerza": "OT",
+				"votos": 376980,
+				"per": "32.98",
+				"bancas": 5
+			}, {
+				"id": "502",
+				"nombre": "UNEN",
+				"fuerza": "FP",
+				"votos": 178546,
+				"per": "15.62",
+				"bancas": 2
+			}, {
+				"id": "503",
+				"nombre": "UNION PRO",
+				"fuerza": "PRO",
+				"votos": 156118,
+				"per": "13.66",
+				"bancas": 2
+			}, {
+				"id": "187",
+				"nombre": "AUTODETERMINACION Y LIBERTAD",
+				"fuerza": "IZ",
+				"votos": 137671,
+				"per": "12.04",
+				"bancas": 1
+			}, {
+				"id": "501",
+				"nombre": "FRENTE PARA LA VICTORIA",
+				"fuerza": "K",
+				"votos": 129663,
+				"per": "11.34",
+				"bancas": 1
+			}, {
+				"id": "505",
+				"nombre": "FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES",
+				"fuerza": "IZ",
+				"votos": 85361,
+				"per": "7.47",
+				"bancas": 1
+			}, {
+				"id": "504",
+				"nombre": "COMPROMISO FEDERAL",
+				"fuerza": "PJ",
+				"votos": 78770,
+				"per": "6.89",
+				"bancas": 1
+			}, {
+				"id": "blancos",
+				"votos": 75623,
+				"per": "5.54"
+			}, {
+				"id": "nulos",
+				"votos": 52677,
+				"per": "3.86"
+			}, {
+				"id": "recurridos",
+				"votos": 93368,
+				"per": "6.84"
+			}
+		]
+	}
+}
