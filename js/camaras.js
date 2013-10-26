@@ -1,36 +1,20 @@
+var totalSen,totalDip;
+
+d3.json("data/senadores_camara.json", function (datos){
+	totalSen = datos;
+});
+
+d3.json("data/diputados_camara.json", function (datos){
+	totalDip = datos;
+	armoCamara (dipParametros, totalDip, camaraDip);	
+});
+
 var wCam = 819, hCam = 463, pi = Math.PI, camaraDS="nueva";
 var camaraSeleccionada;
 var datosNuevos,parametros ; 
 var toolTip = d3.select(".tooltipCam")
 				.style("opacity", 0);
 
-//Datos Dummy
-var totalSen = {"fuerzas":[{"fp":"K", "obtuvieron":13, "viejos":25},
-					   	   {"fp":"FP", "obtuvieron":5, "viejos":16},
-					   	   {"fp":"PJ", "obtuvieron":1, "viejos":6},
-					       {"fp":"PRO", "obtuvieron":2, "viejos":0},
-					       {"fp":"IZ", "obtuvieron":0, "viejos":0},
-					       {"fp":"OT", "obtuvieron":3, "viejos":1}],
-				"status":"true",
-				"porcentajeMesas":95.55,
-				"porcentajeVotos":99.99};
-					
-	
-var totalDip = {"fuerzas":[{"fp":"K", "obtuvieron":46, "viejos":85},
-					   	   {"fp":"FP", "obtuvieron":36, "viejos":26},
-					   	   {"fp":"PJ", "obtuvieron":30, "viejos":9},
-					       {"fp":"PRO", "obtuvieron":9, "viejos":5},
-					       {"fp":"IZ", "obtuvieron":1, "viejos":0},
-					       {"fp":"OT", "obtuvieron":5, "viejos":5}],
-				"status":"true",
-				"porcentajeMesas":95.55,
-				"porcentajeVotos":99.99};
-
-
-
-
-//Datos fijos: macheo con var=data
-				
 var camaraDip = {"fp_K" :{"nombre":"Kirchneristas y aliados", 	"tenian": 132, "renovaron": 47, "fp":"K"},
 			    "fp_FP" :{"nombre":"UCR, Socialistas y aliados",	"tenian": 66, "renovaron": 40, 	"fp":"FP"},	
 			    "fp_PJ" :{"nombre":"Peronistas opositores",		"tenian": 34, "renovaron": 25, 	"fp":"PJ"}, 
@@ -39,7 +23,6 @@ var camaraDip = {"fp_K" :{"nombre":"Kirchneristas y aliados", 	"tenian": 132, "r
 			    "fp_OT" :{"nombre":"Otros partidos",				"tenian": 11, "renovaron": 6, 	"fp":"OT"}
 			    };
 
-			
 var camaraSen = {"fp_K"  :{"nombre":"Kirchneristas y aliados", 	"tenian": 41, "renovaron": 16, 	"fp":"K"},
 			 	 "fp_FP" :{"nombre":"UCR, Socialistas y aliados",	"tenian": 21, "renovaron": 5, 	"fp":"FP"},	
 			 	 "fp_PJ" :{"nombre":"Peronistas opositores",		"tenian": 8, "renovaron": 2, 	"fp":"PJ"},
@@ -94,20 +77,14 @@ var dipParametros = [	33,				///camParametros[0]		hileras
 						337   			///camParametros[20]	ir
 						 ];
 
-
-// Dibujo div donde van a dibujarse las camaras
 var svg = d3.select("body")
 			.select("#camara")
 			.append("svg")
 			.attr("width", wCam)
 			.attr("height", hCam);
 
-
 var datosCamara;		  
 	 
-
-
-//Parseo de datos para las diferentes necesidades
 function armoDatos (totalCam, camara){
 	 datosCamara = {
 		nueva : function () {
@@ -147,29 +124,16 @@ function armoDatos (totalCam, camara){
 			
 }
 
-
-
 function llenaTotales(totalCam){		
 
-	//Cargo total de bancas
 	d3.select("#totalSen").text (datosCamara["nueva"]()[0].length);
-	
-	//Cargo votos y mesas escrutrados.
 	d3.select("#fondoTotalCam_leg #votosSen").text (totalCam.porcentajeVotos + "%");
 	d3.select("#fondoTotalCam_leg #mesasSen").text (totalCam.porcentajeMesas + "%");
 }
 		
-
-
-						
-//*************CARGO LOS DATOS EN LAS TABLAS***********************//
-				
-				
 function llenaTablas (totalCam,camara){
 	
 	var seleccionTablas = d3.selectAll(".tabla").data(totalCam.fuerzas);
-	
-	//******** Cargo numeros **********//
 	
 	seleccionTablas.select("caption").text(function(d) {
 		return camara["fp_" + d.fp].nombre;
@@ -192,8 +156,6 @@ function llenaTablas (totalCam,camara){
 		return (dif > 0) ? ("+" + dif) : dif;
 	});
 	
-	//******** Cargo colores **********//
-	
 	seleccionTablas.each(function(d) {
 		var thisClass = "fp_" + d.fp;
 		d3.select(this).selectAll("tr:first-child td, tr:last-child td").classed("fp_K fp_PJ fp_FP fp_IZ fp_PRO fp_OT", false)// expandir lista
@@ -201,11 +163,6 @@ function llenaTablas (totalCam,camara){
 	});
 
 }
-
-
-
-//*************GENERO DIBUJO DE LA CAMARA***********************//
-
 
 function armaCamaraVacia(camParametros){
 	
@@ -220,7 +177,6 @@ function armaCamaraVacia(camParametros){
 			}
 		);
 
-		//creo rectangulos para el mouseover sobre los circulos
 		filas.selectAll("rect")
 				.data( new Array(camParametros[1]))
 				.enter().append("rect")
@@ -229,7 +185,6 @@ function armaCamaraVacia(camParametros){
 				.attr("width", camParametros[14])
 				.attr("height",camParametros[15]);
 
-		//creo los circulos que forman la camara
 	   filas.selectAll("circle")
 			.data( new Array(camParametros[1]))
 			.enter().append("circle")
@@ -237,10 +192,6 @@ function armaCamaraVacia(camParametros){
 			.attr("cx", function (d,i) {return (i+ camParametros[6]) * camParametros[7];})
 			.attr("r", function (d,i) {return (Math.pow((i + camParametros[8]),camParametros[9])*camParametros[10]);}) ///aumento paulatino
 			.attr("pointer-events", "none");
-
-
-
-		//Bindeo los datos y borro los circulos que sobran (si es que sobran!)
 
 		var bind = svg.selectAll("circle")
 					    .data(datosCamara["vieja"]()[0])
@@ -254,9 +205,7 @@ function armaCamaraVacia(camParametros){
 						.on("mouseout", mouseout)
 						.exit()
 						.remove();
-
 }
-
 
 function miSeleccion(camaraDS) {		
 	
@@ -267,7 +216,6 @@ function miSeleccion(camaraDS) {
 		document.getElementById("camaraActual").disabled = true;
 		document.getElementById("camaraNueva").disabled = false;
 	}
-	//reset checked y bancas/labels nuevas/renuevan 
 		
 	var datosCamara = datosNuevos;
 	var camParametros = parametros;
@@ -284,14 +232,11 @@ function miSeleccion(camaraDS) {
 	d3.select("#bancasNuevas")
 	  .property("checked",false);
 
-	// reset los tildes
 	document.getElementById("quorum").className = "desactivo";			
 	document.getElementById("bancasNuevas").className = "desactivo";				
 	d3.selectAll(".quorum")
 		.attr("stroke-opacity", 0)
 		.attr("r", 25);
-		
-		//pinto los circulos
 		
 		var bancas = svg.selectAll("circle")
 						.data(datosCamara[camaraDS]()[0])
@@ -299,8 +244,6 @@ function miSeleccion(camaraDS) {
 							function(d) {
 								return (d.fp) ? "fp_" + d.fp + " bancas": null;
 							});
-
-		//aplico clases a los rectangulos del mousever
 
 		svg.selectAll("rect")
 			.data(datosCamara[camaraDS]()[0])
@@ -310,8 +253,6 @@ function miSeleccion(camaraDS) {
 				}
 			);
 
-//********************* GENERO DIBUJO DE LOS ARCOS ***************************//
-
 		d3.select("svg").selectAll("g.borrar").remove();
 		var vis = d3.select("svg")
 					.data([datosCamara[camaraDS]()[1]])
@@ -319,7 +260,6 @@ function miSeleccion(camaraDS) {
 					.attr("class","borrar")
 					.attr("transform", "translate(" + ((wCam/2)+camParametros[16]) + "," + (hCam-camParametros[17]) + ")");
 
-			
 		var arc = d3.svg.arc()
 					.outerRadius(camParametros[19])
 					.innerRadius(camParametros[20]);
@@ -341,22 +281,16 @@ function miSeleccion(camaraDS) {
 					.startAngle(-90 * (pi/180))
 					.endAngle(90 * (pi/180));
 
-		//genero arcos para los colores
-		
 		var arcs = vis.selectAll("g.porciones")
 						.data(pie)
 						.enter()
 						.append("g")
 						.attr("class", "porciones");
 						
-		
-		
 		arcs.append("path")
 			.attr("class", function(d,i) { return "fp_" + d.data.fp; })
 			.attr("d", arc);
 		
-		//genero arco para los numeros - ie -				
-				
 		arcs.append("path")
 			.attr("id" , function(d,i) { return "path" + i; })
 			.attr("opacity", 0)
@@ -373,8 +307,6 @@ function miSeleccion(camaraDS) {
 									
 }	
 
-// funciones del mouseover en la camara
-
 function mouseover(d) {
 	svg.selectAll( "circle." + this.getAttribute('class'))
 		.style("stroke", "grey")
@@ -382,9 +314,6 @@ function mouseover(d) {
 		.style("stroke-opacity", 1)
 		.style("stroke-width", 1);
 						
-
-		// obtengo x y de los labels de los arcos
-
 		var myDiv = document.getElementById(this.getAttribute('class'));
 		var rect = myDiv.getBoundingClientRect();
 		var yNum,xNum,hTool,wTool;
@@ -399,10 +328,6 @@ function mouseover(d) {
 		yNum = rect.top+scrollTop;
 		xNum = rect.left+scrollLeft;
 		
-	
-
-		//muestro tooltip
-
 		toolTip.transition()
 			.style("opacity", 1)
 			.select("#bloque")
@@ -411,8 +336,6 @@ function mouseover(d) {
 		d3.select("#fp_")
 			.text(camaraSeleccionada[this.getAttribute('class')].nombre);
 						
-		//posicionamiento dinamico del tooltip en la pagina (margin safe)	
-											
 		 toolTip.style("left", (xNum < wCam/1.5 && xNum > wCam/7) || (xNum > wCam-110) ? (xNum-130) - 110 + "px" : (xNum-130)  + "px")
 				.style("top",((yNum-121)-hTool-50) + "px")
 				.attr("class", (xNum < wCam/1.5 && xNum > wCam/7) || (xNum > wCam-110) ? "tooltipCam arrowLeft" : "tooltipCam arrowRight");
@@ -460,13 +383,6 @@ function manejoQuorum(camParametros){
 		 	.exit()
 		 	.remove();
 
-
-
-//*********** BOTON QUORUM **************// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-
-
 	d3.select("#quorum").on("click", 
 		function() {
 			var checked = document.getElementById("quorum").className == "desactivo",
@@ -490,10 +406,6 @@ function manejoQuorum(camParametros){
 	 });
 }
 
-
-//*********** BOTON BANCAS NUEVAS **************//
-
-
 d3.select("#bancasNuevas").on("click", 
 	function() { 
 		var apagarBancas = 
@@ -509,8 +421,6 @@ d3.select("#bancasNuevas").on("click",
 					  d3.select("#bNuevas_nro")
 						.style("display","inline-block");
 			},
-			
-			
 		prenderBancas = 
 			function () {
 				document.getElementById("bancasNuevas").className = "desactivo";			
@@ -529,23 +439,6 @@ d3.select("#bancasNuevas").on("click",
 	}
 );
 
-
-
-
-// Equivalencias 
-//camParametros [dipParametros:senParametros]
-// totalCam [totalDip:totalSen]
-// camara [camaraDip:camaraSen]
-
-/*
-armoDatos (totalCam, camara);
-llenaTotales(totalCam);
-llenaTablas (totalCam,camara);
-armaCamaraVacia(camParametros);
-miSeleccion(camaraDS,datosCamara,camParametros);
-manejoQuorum(camParametros);
-*/
-
 function armoCamara (camParametros, totalCam, camara){
 	document.getElementById("numeroQuorum").innerHTML = camParametros[2];
 	parametros = camParametros;
@@ -562,6 +455,3 @@ function armoCamara (camParametros, totalCam, camara){
 	document.getElementById("bancasNuevas").className = "desactivo";			
 
 }
-
-
-armoCamara (dipParametros, totalDip, camaraDip);

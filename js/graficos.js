@@ -93,8 +93,10 @@ function dibuja(){
 		document.getElementById("referenciaBarrasDetalle").className = "descOculto";		
 		
 		datos = datos.TOTALES;
+		if (datos){
 			m_txt = datos.votacion.mesas.per.toLocaleString() + "%";
 			v_txt = datos.votacion.votos.per.toLocaleString() + "%";
+		}
 	}
 
 	dibujaBarras(datos);
