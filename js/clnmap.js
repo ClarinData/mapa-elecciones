@@ -154,7 +154,8 @@ var mapObject = function(map) {
             return obj;
           }
 
-          function pathsAttr(obj) {
+          map.pathsAttr = function (obj,postId) {
+            postId = postId || "";
             obj.attr("id", function(d) {
               var id = map.id + "_";
               d.properties.administrative_area.id = "";
@@ -162,7 +163,7 @@ var mapObject = function(map) {
                 id += d.properties.administrative_area[i].id;
                 d.properties.administrative_area.id += d.properties.administrative_area[i].id;
               }
-              return id;
+              return id + postId;
             })
               .attr("class", function(d) {
                 return ("admlevel" + d.properties.administrative_area.length);
