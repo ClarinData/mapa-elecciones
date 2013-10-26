@@ -15,7 +15,9 @@ function existeLaFoto(url, noVoto){
 	    var http = new XMLHttpRequest();
 	    http.open('HEAD', url, false);
 	    http.send();
-	    return http.status!=404;
+	    console.log(http.status + 3);
+	    
+	    return http.status != 404;
 	}
 
 }
