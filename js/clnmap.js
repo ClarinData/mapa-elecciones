@@ -143,7 +143,7 @@ var mapObject = function(map) {
         }
         map.svg.g = (function(g) {
 
-          function createPaths(obj, sel) {
+          map.createPaths = function (obj, sel) {
             obj.path = (function(dataObj) {
               return dataObj.append("path");
             })(
@@ -267,23 +267,23 @@ var mapObject = function(map) {
             .attr("class", "disabled")
           );
 
-          g.admlevel3 = createPaths(
+          g.admlevel3 = map.createPaths(
             g.append("g")
             .attr("id", map.id + "_admlevel3")
             .attr("class", "states"),
             "admlevel3");
 
-          g.admlevel3.pathAttr = pathsAttr(
+          g.admlevel3.pathAttr = map.pathsAttr(
             g.admlevel3.path
           );
 
-          g.admlevel2 = createPaths(
+          g.admlevel2 = map.createPaths(
             g.append("g")
             .attr("id", map.id + "_admlevel2")
             .attr("class", "states"),
             "admlevel2");
 
-          g.admlevel2.pathAttr = pathsAttr(
+          g.admlevel2.pathAttr = map.pathsAttr(
             g.admlevel2.path
           );
 

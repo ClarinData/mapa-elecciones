@@ -65,10 +65,10 @@ function shareURL(url) {
       });
     myUrl += "?" + param.join("&");
   }
-  return myUrl;
+  return {"share": myUrl, "base": url.base};
 }
 
-function tweeter_share(url,d) {
+function tweeter_share(myurl,d) {
   "use strict";
   d3.select("#shareTwitter")
     .attr("href", function () {
@@ -84,7 +84,7 @@ function tweeter_share(url,d) {
         return "https://twitter.com/intent/tweet?" +
                "hashtags=" + "Elecciones2013,MapaClarin" + "&" +
                "text=" + encodeURIComponent("Mirá los resultados" + text) + "%0A&" +
-               "&tw_p=tweetbutton&url=" + encodeURIComponent(url);
+               "&tw_p=tweetbutton&url=" + encodeURIComponent(myurl.share);
     });
 }
 
@@ -95,7 +95,7 @@ function facebook_share(myurl,d) {
         var p,
             provincia,
             distrito,
-            imgurl = url.base + '/img/provincias/',
+            imgurl = myurl.base + 'img/provincias/',
             text = " a nivel nacional";
         if (d && d.properties && d.properties.administrative_area && d.properties.administrative_area.id != "TDF999") {
           provincia = d.properties.administrative_area[0].name;
@@ -105,14 +105,14 @@ function facebook_share(myurl,d) {
             title : "Elecciones 2013",
             summary : "Mirá los resultados de las elecciones" + text,
             images : [imgurl + d.properties.administrative_area[0].id.toUpperCase() + '.jpg'],
-            url : myurl
+            url : myurl.share
           };
         } else {
           p = {
             title : "Elecciones 2013",
             summary : "Mirá los resultados de las elecciones a nivel nacional",
             images : [imgurl + 'ARG.jpg'],
-            url : url.base
+            url : myurl.share
           };
         }
 
