@@ -452,6 +452,67 @@ function armoCamara (camParametros, totalCam, camara){
 	manejoQuorum(camParametros);
 
 	document.getElementById("quorum").className = "desactivo";			
-	document.getElementById("bancasNuevas").className = "desactivo";			
+	document.getElementById("bancasNuevas").className = "desactivo";
+
+
+facebook_share("http://www.clarin.com/elecciones-2013-resultados/?view=cama");
+tweeter_share("http://www.clarin.com/elecciones-2013-resultados/?view=cama");
+
+function tweeter_share(myurl, d) {
+  "use strict";
+  d3.select("#shareTwitter")
+    .attr("href", function() {
+	 	var p = {
+					hashtags: "Elecciones2013,MapaClarin",
+					summary: "Mirá los resultados de las Cámaras",
+					url: myurl
+		        };
+
+      return "https://twitter.com/intent/tweet?" +
+        "hashtags=" + encodeURIComponent(p.hashtags) + "&" +
+        "text=" + encodeURIComponent(p.summary) + "%0A&" +
+        "&tw_p=tweetbutton&url=" + encodeURIComponent(p.url);
+    });
+}
+
+function facebook_share(myurl) {
+  "use strict";
+  d3.select("#shareFacebook")
+    .attr("href", function() {
+
+	 	var p = {
+					title: "Elecciones 2013",
+					summary: "Mirá los resultados de las Cámaras",
+					url: myurl
+		        };
+
+      return 'http://www.facebook.com/sharer.php?' +
+        's=100' + "&" +
+        'p[title]=' + encodeURIComponent(p.title) + "&" +
+        'p[summary]=' + encodeURIComponent(p.summary) + "&" +
+        'p[url]=' + encodeURIComponent(p.url);
+
+    })
+    .on("mouseover", function() {
+      facebook_share.url = this.href || facebook_share.url;
+      this.href = this.href || facebook_share.url;
+    })
+    .datum(function () {
+      return this.href;
+    })
+    .on("click", function() {
+      var url = this.href,
+        width = 550,
+        height = 520;
+      this.href = 'javascript:void(0);';
+      window.open(url,
+        "Comparte en Facebook",
+        "width=" + width + ", height=" + height + ", left=" + (window.innerWidth - width) / 2 + ", top=" + (window.innerHeight - height) / 2 + ", toolbar=0, location=0, menubar=0");
+      this.href = oldurl;
+    })
+    .on("mouseout",function (d) {
+      this.href = d;
+    });;
+}			
 
 }

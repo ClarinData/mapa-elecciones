@@ -21,7 +21,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
     "diputados": {},
     "senadores": {},
     "event": d3.dispatch("updatedata", "loaded", "ready", "viewchange"),
-    "file": "data/datafiles.json",
+    "file": "data/datafiles.json?version=1",
     "refresh": 5,
     "load": function() {
       "use strict";
@@ -34,7 +34,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
   };
 
 if (query.view == "cama") {
-  window.location.href = "camaras.html";
+  window.location.href = "camaras.html?version=1";
 }
 
 (function() {
@@ -276,7 +276,7 @@ if (query.view == "cama") {
 
     } else {
 
-      var mapfile = (detectPlatform.Desktop()) ? "argentina.json" : "argentina.json";
+      var mapfile = (detectPlatform.Desktop()) ? "argentina.json?version=1" : "argentina.json?version=1";
       argentina.load(mapfile);
 
     }

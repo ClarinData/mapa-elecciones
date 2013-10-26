@@ -96,7 +96,6 @@ function facebook_share(myurl, d) {
   "use strict";
   d3.select("#shareFacebook")
     .attr("href", function() {
-      console.log(myurl);
       var p,
         provincia,
         distrito,
@@ -133,6 +132,9 @@ function facebook_share(myurl, d) {
       facebook_share.url = this.href || facebook_share.url;
       this.href = this.href || facebook_share.url;
     })
+    .datum(function () {
+      return this.href;
+    })
     .on("click", function() {
       var url = this.href,
         width = 550,
@@ -141,35 +143,38 @@ function facebook_share(myurl, d) {
       window.open(url,
         "Comparte en Facebook",
         "width=" + width + ", height=" + height + ", left=" + (window.innerWidth - width) / 2 + ", top=" + (window.innerHeight - height) / 2 + ", toolbar=0, location=0, menubar=0");
+    })
+    .on("mouseout",function (d) {
+      this.href = d;
     });
 }
 
 var detectPlatform = {
-    "Android": function() {
-        return navigator.userAgent.match(/Android/i);
-    },
-    "BlackBerry": function() {
-        return navigator.userAgent.match(/BlackBerry/i);
-    },
-    "iOS": function() {
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-    },
-    "Opera": function() {
-        return navigator.userAgent.match(/Opera Mini/i);
-    },
-    "Windows": function() {
-        return navigator.userAgent.match(/IEMobile/i);
-    },
-    "Mobile": function() {
-        return (detectPlatform.Android() || detectPlatform.BlackBerry() || detectPlatform.iOS() || detectPlatform.Opera() || detectPlatform.Windows());
-    },
-    "iPhone": function() {
-        return navigator.userAgent.match(/iPhone|iPod/i);
-    },
-    "iPad": function() {
-        return navigator.userAgent.match(/iPad/i);
-    },
-    "Desktop": function() {
-        return !(detectPlatform.Mobile());
-    } 
+  "Android": function() {
+    return navigator.userAgent.match(/Android/i);
+  },
+  "BlackBerry": function() {
+    return navigator.userAgent.match(/BlackBerry/i);
+  },
+  "iOS": function() {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+  "Opera": function() {
+    return navigator.userAgent.match(/Opera Mini/i);
+  },
+  "Windows": function() {
+    return navigator.userAgent.match(/IEMobile/i);
+  },
+  "Mobile": function() {
+    return (detectPlatform.Android() || detectPlatform.BlackBerry() || detectPlatform.iOS() || detectPlatform.Opera() || detectPlatform.Windows());
+  },
+  "iPhone": function() {
+    return navigator.userAgent.match(/iPhone|iPod/i);
+  },
+  "iPad": function() {
+    return navigator.userAgent.match(/iPad/i);
+  },
+  "Desktop": function() {
+    return !(detectPlatform.Mobile());
+  }
 };
