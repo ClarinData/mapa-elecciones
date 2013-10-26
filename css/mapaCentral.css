@@ -188,6 +188,18 @@ use.admlevel2 {
   stroke-width: 0.02pt;
 }
 
+#caba_admlevel2>path {
+  stroke-width: 0.02pt;
+}
+
+#caba_admlevel1>path {
+  stroke-width: 0.02pt;
+}
+
+/*#caba_admlevel3>path {
+  stroke-width: 0.02pt;
+}
+*/
 circle {
   fill-opacity: 1;
   stroke-width: 0.25pt;
