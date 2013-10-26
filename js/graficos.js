@@ -16,8 +16,14 @@ function existeLaFoto(url, noVoto){
 	    http.open('HEAD', url, false);
 	    http.send();
 	    console.log(http.status + 3);
-	    
-	    return http.status != 404;
+
+
+	    if (http.status != 404){
+	    	return true;
+	    }else{
+	    	return false;
+	    }
+	    	
 	}
 
 }
@@ -214,13 +220,18 @@ function dibujaBarras(dataset){
 					return "";
 				}else{
 					if (dataset.nivel_administrativo === 1){
-						if (elecciones[elecciones.dataset][dataset.id].votacion.candidatos[d.id] !== undefined){
-							return elecciones[elecciones.dataset][dataset.id].votacion.candidatos[d.id].candidato + " - ";
-						};
+						if (d.id !== undefined){
+							if (elecciones[elecciones.dataset][dataset.id].votacion.candidatos[d.id] !== undefined){
+								return elecciones[elecciones.dataset][dataset.id].votacion.candidatos[d.id].candidato + " - ";
+							};
+						}
 					}else{
-						if (elecciones[elecciones.dataset][dataset.parentId].votacion.candidatos[d.id] !== undefined){
-							return elecciones[elecciones.dataset][dataset.parentId].votacion.candidatos[d.id].candidato + " - ";
-						};
+						if (d.id !== undefined){
+
+							if (elecciones[elecciones.dataset][dataset.parentId].votacion.candidatos[d.id] !== undefined){
+								return elecciones[elecciones.dataset][dataset.parentId].votacion.candidatos[d.id].candidato + " - ";
+							};
+						}
 					}					
 				}
 			});		
