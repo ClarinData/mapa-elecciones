@@ -432,7 +432,6 @@ if (query.view == "cama") {
       tweeter_share(shareURL(url), argentina.datum);
       facebook_share(shareURL(url), argentina.datum);
       updateBotones("votoBtn");
-      console.log(argentina.svg.g.votes);
     },
 
     part: function() {
