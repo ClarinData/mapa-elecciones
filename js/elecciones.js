@@ -26,7 +26,7 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
     "refresh": 5,
     "load": function() {
       "use strict";
-      argentina.dataLoad(elecciones.file + "?" + param, function(error, json) {
+      argentina.dataLoad(elecciones.file + "&" + param, function(error, json) {
         if (!error) {
           dataFiles = (error) ? {} : json;
           dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length + json.candidatos.length;
