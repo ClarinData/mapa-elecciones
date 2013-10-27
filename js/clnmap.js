@@ -140,153 +140,154 @@ var mapObject = function(map) {
       .get(function(error, json) {
         if (error) {
           map.event.error(error, json);
-        }
-        map.svg.g = (function(g) {
+        } else {
+          map.svg.g = (function(g) {
+            map.createPaths = function(obj, sel) {
+              obj.path = (function(dataObj) {
+                return dataObj.append("path");
+              })(
+                obj.selectAll("path use")
+                .data(topojson.feature(json, json.objects[sel]).features)
+                .enter()
+              );
+              return obj;
+            };
 
-          map.createPaths = function(obj, sel) {
-            obj.path = (function(dataObj) {
-              return dataObj.append("path");
-            })(
-              obj.selectAll("path use")
-              .data(topojson.feature(json, json.objects[sel]).features)
-              .enter()
-            );
-            return obj;
-          }
-
-          map.pathsAttr = function(obj, postId) {
-            postId = postId || "";
-            obj.attr("id", function(d) {
-              var id = map.id + "_";
-              d.properties.administrative_area.id = "";
-              for (var i = 0; i < d.properties.administrative_area.length; i++) {
-                id += d.properties.administrative_area[i].id;
-                d.properties.administrative_area.id += d.properties.administrative_area[i].id;
-              }
-              return id + postId;
-            })
-              .attr("class", function(d) {
-                return ("admlevel" + d.properties.administrative_area.length);
-              })
-              .on("click", function(d) {
-
-                obj.sort(function(a) {
-                  a = a || this.correspondingElement.__data__;
-                  return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
-                });
-
-                map.event.click(d);
-              })
-              .attr("d", map.svg.path)
-              .call(
-                d3.behavior
-                .zoom().on("zoom", function(d) {
-
-                  d = d || this.correspondingElement.__data__;
-
-                  map.event.zoom(d, d3.event.translate, d3.event.scale);
-                })
-            );
-
-            if (!navigator.isTouch) {
-              obj.on("mouseover", function(d) {
-
-                obj.sort(function(a) {
-                  return a.properties.administrative_area.id === d.properties.administrative_area.id ? 1 : -1;
-                });
-
-                map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
-                map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].description);
-                var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];
-                if (dataE && (dataE.votacion.pp[0].votos > 0)) {
-                  for (var x = 0; x < 3; x++) {
-                    map.tooltip.table.row.color[x].property("className", "fp_" + dataE.votacion.pp[x].fuerza);
-                    map.tooltip.table.row.name[x].property("innerHTML", dataE.votacion.pp[x].nombre.toLowerCase());
-                    map.tooltip.table.row.percent[x].property("innerHTML", parseFloat(dataE.votacion.pp[x].per).toLocaleString() + "%");
-                  }
-                  map.tooltip.table.classed("disabled", false);
-                } else {
-                  map.tooltip.table.classed("disabled", true);
-                  map.tooltip.footer.property("innerHTML", (d.properties.administrative_area.id === "TDF999") ?
-                    "<div>Territorio en disputa con el Reino Unido.</div><div>Sin datos para visualizar.</div>" :
-                    "Sin datos para visualizar."
-                  );
-                }
-                return map.tooltip.style("left", d3.event.pageX + 5 + "px")
-                  .style("top", d3.event.pageY + 5 + "px")
-                  .style("display", "block");
-              })
-                .on("mousemove", function() {
-                  var left = d3.event.pageX + 10;
-                  var top = ((d3.event.pageY - 10 + map.tooltip.height()) > 730) ? d3.event.pageY + 30 - map.tooltip.height() : d3.event.pageY - 10;
-                  return map.tooltip.style("top", top + "px")
-                    .style("left", left + "px");
-                })
-                .on("mouseout", function() {
-                  return map.tooltip.style("display", "none");
-                });
-            }
-            return obj;
-          }
-
-          g.votes = (function(votes) {
-            votes.selectAll("circle")
-              .attr("class", "disabled")
-              .data(topojson.feature(json, json.objects.admlevel3).features)
-              .enter()
-              .append("circle")
-              .attr("id", function(d) {
-                var id = map.id + "_votes_";
+            map.pathsAttr = function(obj, postId) {
+              postId = postId || "";
+              obj.attr("id", function(d) {
+                var id = map.id + "_";
+                d.properties.administrative_area.id = "";
                 for (var i = 0; i < d.properties.administrative_area.length; i++) {
                   id += d.properties.administrative_area[i].id;
+                  d.properties.administrative_area.id += d.properties.administrative_area[i].id;
                 }
-                return id;
+                return id + postId;
               })
-              .attr("r", 0)
-              .attr("stroke-width", "0")
-              .attr("cx", function(d) {
-                return map.svg.path.centroid(d)[0];
-              })
-              .attr("cy", function(d) {
-                return map.svg.path.centroid(d)[1];
-              });
-            return votes;
+                .attr("class", function(d) {
+                  return ("admlevel" + d.properties.administrative_area.length);
+                })
+                .on("click", function(d) {
+
+                  obj.sort(function(a) {
+                    a = a || this.correspondingElement.__data__;
+                    return (a.properties.administrative_area.id === d.properties.administrative_area.id) ? 1 : -1;
+                  });
+
+                  map.event.click(d);
+                })
+                .attr("d", map.svg.path)
+                .call(
+                  d3.behavior
+                  .zoom().on("zoom", function(d) {
+
+                    d = d || this.correspondingElement.__data__;
+
+                    map.event.zoom(d, d3.event.translate, d3.event.scale);
+                  })
+              );
+
+              if (!navigator.isTouch) {
+                obj.on("mouseover", function(d) {
+
+                  obj.sort(function(a) {
+                    return a.properties.administrative_area.id === d.properties.administrative_area.id ? 1 : -1;
+                  });
+
+                  map.tooltip.title.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].name);
+                  map.tooltip.info.text(d.properties.administrative_area[d.properties.administrative_area.length - 1].description);
+                  var dataE = elecciones[elecciones.dataset][d.properties.administrative_area.id];
+                  if (dataE && (dataE.votacion.pp[0].votos > 0)) {
+                    for (var x = 0; x < 3; x++) {
+                      map.tooltip.table.row.color[x].property("className", "fp_" + dataE.votacion.pp[x].fuerza);
+                      map.tooltip.table.row.name[x].property("innerHTML", dataE.votacion.pp[x].nombre.toLowerCase());
+                      map.tooltip.table.row.percent[x].property("innerHTML", parseFloat(dataE.votacion.pp[x].per).toLocaleString() + "%");
+                    }
+                    map.tooltip.table.classed("disabled", false);
+                  } else {
+                    map.tooltip.table.classed("disabled", true);
+                    map.tooltip.footer.property("innerHTML", (d.properties.administrative_area.id === "TDF999") ?
+                      "<div>Territorio en disputa con el Reino Unido.</div><div>Sin datos para visualizar.</div>" :
+                      "Sin datos para visualizar."
+                    );
+                  }
+                  return map.tooltip.style("left", d3.event.pageX + 5 + "px")
+                    .style("top", d3.event.pageY + 5 + "px")
+                    .style("display", "block");
+                })
+                  .on("mousemove", function() {
+                    var left = d3.event.pageX + 10;
+                    var top = ((d3.event.pageY - 10 + map.tooltip.height()) > 730) ? d3.event.pageY + 30 - map.tooltip.height() : d3.event.pageY - 10;
+                    return map.tooltip.style("top", top + "px")
+                      .style("left", left + "px");
+                  })
+                  .on("mouseout", function() {
+                    return map.tooltip.style("display", "none");
+                  });
+              }
+              return obj;
+            };
+
+            g.votes = (function(votes) {
+              votes.selectAll("circle")
+                .attr("class", "disabled")
+                .data(topojson.feature(json, json.objects.admlevel3).features)
+                .enter()
+                .append("circle")
+                .attr("id", function(d) {
+                  var id = map.id + "_votes_";
+                  for (var i = 0; i < d.properties.administrative_area.length; i++) {
+                    id += d.properties.administrative_area[i].id;
+                  }
+                  return id;
+                })
+                .attr("r", 0)
+                .attr("stroke-width", "0")
+                .attr("cx", function(d) {
+                  return map.svg.path.centroid(d)[0];
+                })
+                .attr("cy", function(d) {
+                  return map.svg.path.centroid(d)[1];
+                });
+              return votes;
+            })(
+              g.append("g").attr("id", map.id + "_votes")
+              .attr("class", "disabled")
+            );
+
+            g.admlevel3 = map.createPaths(
+              g.append("g")
+              .attr("id", map.id + "_admlevel3")
+              .attr("class", "states"),
+              "admlevel3");
+
+            g.admlevel3.pathAttr = map.pathsAttr(
+              g.admlevel3.path
+            );
+
+            g.admlevel2 = map.createPaths(
+              g.append("g")
+              .attr("id", map.id + "_admlevel2")
+              .attr("class", "states"),
+              "admlevel2");
+
+            g.admlevel2.pathAttr = map.pathsAttr(
+              g.admlevel2.path
+            );
+
+            g.circles = g.selectAll("circle");
+
+            g.paths = g.selectAll("path");
+
+            return g;
+
           })(
-            g.append("g").attr("id", map.id + "_votes")
-            .attr("class", "disabled")
+            map.svg.g
           );
 
-          g.admlevel3 = map.createPaths(
-            g.append("g")
-            .attr("id", map.id + "_admlevel3")
-            .attr("class", "states"),
-            "admlevel3");
+          map.event.ready(file, json);
 
-          g.admlevel3.pathAttr = map.pathsAttr(
-            g.admlevel3.path
-          );
-
-          g.admlevel2 = map.createPaths(
-            g.append("g")
-            .attr("id", map.id + "_admlevel2")
-            .attr("class", "states"),
-            "admlevel2");
-
-          g.admlevel2.pathAttr = map.pathsAttr(
-            g.admlevel2.path
-          );
-
-          g.circles = g.selectAll("circle");
-
-          g.paths = g.selectAll("path");
-
-          return g;
-
-        })(
-          map.svg.g
-        );
-
-        map.event.ready(file, json);
+        }
 
       });
   };

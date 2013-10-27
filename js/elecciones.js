@@ -1,5 +1,5 @@
 /* jshint undef: true, unused: true, strict: true, devel: false,  maxcomplexity: 4, maxparams: 3, maxdepth: 2, maxstatements: 15 */
-/* global mapObject, d3, window, getQueryParams, tweeter_share, facebook_share, shareURL, dibuja */
+/* global mapObject, d3, window, getQueryParams, tweeter_share, facebook_share, shareURL, dibuja, detectPlatform, updateBotones */
 /* exported argentina */
 
 var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
@@ -26,9 +26,11 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
     "load": function() {
       "use strict";
       argentina.dataLoad(elecciones.file + "?" + param, function(error, json) {
-        dataFiles = (error) ? {} : json;
-        dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length + json.candidatos.length;
-        elecciones.event.loaded();
+        if (!error) {
+          dataFiles = (error) ? {} : json;
+          dataFiles.count = (error) ? 0 : json.diputados.length + json.senadores.length + json.candidatos.length;
+          elecciones.event.loaded();
+        }
       });
     }
   };
@@ -90,24 +92,23 @@ if (query.view == "cama") {
             };
           }
 
-          if (json.tree && ((json.tree == "senadores") || (json.tree == "diputados"))) {
-            (function() {
-              for (var key in json) {
-                if (dataObj[json.tree][key]) {
-                  dataObj[json.tree][key].votacion.candidatos = json[key].votacion.pp || null;
-                }
-              }
-            })();
-          }
-
-          if (json.localidades) {
-            (function() {
-              for (var key in json.localidades) {
+          if (json.localidades && json.id) {
+            for (var key in json.localidades) {
+              if (json.localidades.hasOwnProperty(key)) {
                 dataObj[key] = json.localidades[key];
                 dataObj[key].nivel_administrativo = 2;
                 dataObj[key].parentId = json.id;
               }
-            })();
+            }
+          }
+
+          if (json.tree) {
+            for (var key in json) {
+              if (json.hasOwnProperty(key) && dataObj[json.tree][key]) {
+                var location = dataObj[json.tree][key];
+                location.votacion.candidatos = json[key].votacion.pp || null;
+              }
+            }
           }
 
         }
@@ -199,7 +200,7 @@ if (query.view == "cama") {
                 return argentina.svg.path.centroid(d)[1];
               })
               .attr("transform", function() {
-              return "translate(" + [(argentina.width / 3) * 2.245, (argentina.height / 3) * 1.165] + ") scale(" + zoom + ") translate(" + translate + ")";
+                return "translate(" + [(argentina.width / 3) * 2.245, (argentina.height / 3) * 1.165] + ") scale(" + zoom + ") translate(" + translate + ")";
               })
               .attr("stroke-width", function() {
                 return 0.5 / zoom + "pt";
@@ -368,7 +369,7 @@ if (query.view == "cama") {
             var id = this.getAttribute("id");
             return id.substring(id.length - 3, id.length) !== "cpy";
           })
-            .style("stroke-width", function(r) {
+            .style("stroke-width", function() {
               return (argentina.zoom) ? 0.5 / argentina.zoom + "pt" : null;
             })
             .attr("r", function(r) {
