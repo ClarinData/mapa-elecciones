@@ -182,27 +182,7 @@ function dibujaBarras(dataset){
 			var contenidoEnter = contenido.enter()
 					.append("div")
 					.classed("contenedorDet", true)
-					.style("background", function (d)
-						{
-							var provincia = "";
-							if (dataset.nivel_administrativo === 1){
-								provincia = dataset.id;
-							}else{
-								provincia = dataset.parentId;
-							}
-							
-							var foto = "img/caritas/" + elecciones.dataset +"/"+ provincia + "-" + d.id + ".png";
-							if (existeLaFoto(foto , d.id)){
-								return "white url(" + foto + ") no-repeat 95% 100%";
-							}else{
-								if ( descartar(d.id) ){
-									return "white";
-								}else{
-									return "white url(img/caritas/silueta.png) no-repeat 95% 100%";
-								}
-							}
-						}
-					);	
+					.style("background", "white");
 			
 			contenidoEnter.append("div").classed("nombreDet", true).html(function(d) {
 				if (d.nombre !== undefined) {
