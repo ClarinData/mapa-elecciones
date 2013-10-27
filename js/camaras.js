@@ -16,11 +16,11 @@ var toolTip = d3.select(".tooltipCam")
 				.style("opacity", 0);
 
 var camaraDip = {"fp_K" :{"nombre":"Kirchneristas y aliados", 	"tenian": 132, "renovaron": 47, "fp":"K"},
-			    "fp_FP" :{"nombre":"UCR, Socialistas y aliados",	"tenian": 66, "renovaron": 40, 	"fp":"FP"},	
-			    "fp_PJ" :{"nombre":"Peronistas opositores",		"tenian": 34, "renovaron": 25, 	"fp":"PJ"}, 
+			    "fp_FP" :{"nombre":"UCR, Socialistas y aliados",	"tenian": 65, "renovaron": 40, 	"fp":"FP"},	
+			    "fp_PJ" :{"nombre":"Peronistas opositores",		"tenian": 33, "renovaron": 24, 	"fp":"PJ"}, 
 			    "fp_PRO":{"nombre":"PRO y aliados",				"tenian": 14, "renovaron": 9, 	"fp":"PRO"},
 			    "fp_IZ" :{"nombre":"Partidos de izquierda",		"tenian": 0, "renovaron": 0, 	"fp":"IZ"},
-			    "fp_OT" :{"nombre":"Otros partidos",				"tenian": 11, "renovaron": 6, 	"fp":"OT"}
+			    "fp_OT" :{"nombre":"Otros partidos",				"tenian": 13, "renovaron": 7, 	"fp":"OT"}
 			    };
 
 var camaraSen = {"fp_K"  :{"nombre":"Kirchneristas y aliados", 	"tenian": 41, "renovaron": 16, 	"fp":"K"},
