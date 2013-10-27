@@ -525,3 +525,17 @@
 }
 
 
+#camDis img{
+    position: relative;
+	top: 40%;
+}
+#camDis {
+	display: none;
+    background-color: #FFFFFF;
+    height: 600px;
+    left: 130px;
+    position: absolute;
+    top: 163px;
+    width: 820px;
+    z-index: 1;
+}
