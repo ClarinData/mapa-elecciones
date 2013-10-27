@@ -1,5 +1,5 @@
 var botonesHeader = new Array ("diputadosBtn","senadoresBtn");
-var botonesMenu = new Array ("provBtn","partBtn","votoBtn");
+var botonesMenu = new Array ("provBtn","partBtn","votoBtn","camaBtn");
 
 /************************************************************************/
 // modal de creditos OK
@@ -52,9 +52,29 @@ function updateBotones(option) {
 			//elecciones.dataset = "senadores";
 		}
 	}
-
+	document.getElementById("camDis").style.display = "none";
 	document.getElementById(option).disabled = true;
 	elecciones.event.viewchange(elecciones.dataset);
     dibuja();
+
+
+	if (option === "camaBtn"){
+			d3.json("data/diputados_camara_status.json", function (datos){
+			displayCamaras(datos);
+		});
+	}
 }
 
+function displayCamaras (a){
+	console.log (a.status);
+		if ( a.status == "true"){
+			document.getElementById("camDis").style.display = "none";
+			console.log("muestro camaras");
+			self.location='camaras.html';
+		} else {
+			console.log ("muestro cartel");
+			document.getElementById("camDis").style.display = "inline";
+		}		
+	
+	
+}
