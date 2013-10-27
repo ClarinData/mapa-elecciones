@@ -6,7 +6,8 @@ var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
   query = getQueryParams(),
   url = {
     "base": "http://www.clarin.com/elecciones-2013-resultados/",
-    "imgbase": window.location.href,
+    //"imgbase": window.location.href.split("?")[0],
+    "imgbase": "http://contenidos2.clarin.com/sincro/diario/mapa-e2013v2rc/?time=1376297302".split("?")[0],
     "parameters": {}
   },
   argentina = new mapObject({
