@@ -2,7 +2,7 @@
 /* global mapObject, d3, window, getQueryParams, tweeter_share, facebook_share, shareURL, dibuja, detectPlatform, updateBotones */
 /* exported argentina */
 
-var param = window.location.href.split('?', 1) || "rnd=" + Math.random(),
+var param = window.location.href.split('?')[1] || "rnd=" + Math.random(),
   query = getQueryParams(),
   url = {
     "base": "http://www.clarin.com/elecciones-2013-resultados/",
