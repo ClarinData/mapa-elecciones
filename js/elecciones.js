@@ -270,11 +270,11 @@ if (query.view == "cama") {
 
       }
 
-      d3.timer(function() {
-        elecciones.load();
-        refreshView();
-        return true;
-      }, elecciones.refresh * 60000);
+      // d3.timer(function() {
+      //   elecciones.load();
+      //   refreshView();
+      //   return true;
+      // }, elecciones.refresh * 60000);
 
     } else {
 
