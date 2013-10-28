@@ -6,29 +6,7 @@ document.getElementById("provBtn").addEventListener("click", dibuja, false);
 document.getElementById("partBtn").addEventListener("click", dibuja, false);
 document.getElementById("votoBtn").addEventListener("click", dibuja, false);
 
-
-function existeLaFoto(url, noVoto){
-		
-	if ( descartar(noVoto) ) {
-		return false;
-	}else{
-	    var http = new XMLHttpRequest();
-	    http.open('HEAD', url, false);
-	    http.send();
-
-	    if (http.status != 404){
-	    	return true;
-	    }else{
-	    	return false;
-	    }
-	    	
-	}
-
-}
-
-
 // maneja los botones, header y footer de barras.
-
 
 function dibuja(){
 	var datos,
