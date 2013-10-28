@@ -59,7 +59,8 @@ function updateBotones(option) {
 
 
 	if (option === "camaBtn"){
-			d3.json("data/diputados_camara_status.json", function (datos){
+			var urlStatusCamara = "data/diputados_camara_status.json?time=" + Math.random();
+			d3.json(urlStatusCamara, function (datos){
 			displayCamaras(datos);
 		});
 	}
