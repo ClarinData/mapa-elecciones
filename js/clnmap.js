@@ -204,6 +204,8 @@ var mapObject = function(map) {
                       map.tooltip.table.row.percent[x].property("innerHTML", parseFloat(dataE.votacion.pp[x].per).toLocaleString() + "%");
                     }
                     map.tooltip.table.classed("disabled", false);
+                    map.tooltip.footer.property("innerHTML", "Click en el mapa para ampliar la informacion de la derecha.");
+                    
                   } else {
                     map.tooltip.table.classed("disabled", true);
                     map.tooltip.footer.property("innerHTML", (d.properties.administrative_area.id === "TDF999") ?
