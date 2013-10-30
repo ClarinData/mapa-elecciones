@@ -1,10 +1,11 @@
 var totalSen,totalDip;
 
-d3.json("data/senadores_camara.json", function (datos){
+
+d3.json("data/senadores_camara.json?ran=" + Math.random(), function (datos){
 	totalSen = datos;
 });
 
-d3.json("data/diputados_camara.json", function (datos){
+d3.json("data/diputados_camara.json?ran=" + Math.random(), function (datos){
 	totalDip = datos;
 	armoCamara (dipParametros, totalDip, camaraDip);	
 });
