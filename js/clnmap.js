@@ -55,8 +55,9 @@ var mapObject = function(map) {
     tooltip.title = d3.select("#tooltip_title");
     tooltip.info = (function(info) {
       info.text = function(text) {
+        console.log(this);
         text = text || null;
-        info.property("innerText", text);
+        this[0][0].textContent = text;
         info.classed("active", text);
       };
       return info;
