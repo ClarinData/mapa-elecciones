@@ -159,8 +159,23 @@ function dibujaBarras(dataset){
 		
 			var contenidoEnter = contenido.enter()
 					.append("div")
-					.classed("contenedorDet", true)
-					.style("background", "white");
+					.attr("class", function(d)
+					{ 
+						var provincia = "";
+						if (dataset.nivel_administrativo === 1){
+						provincia = dataset.id;
+						}else{
+							provincia = dataset.parentId;
+						}
+						
+						if ( descartar(d.id)){
+							return "contenedorDet";							
+						}else{
+							var clase = "contenedorDet " + elecciones.dataset +" " + provincia + "-" + d.id;
+							return clase;
+						}
+					});
+
 			
 			contenidoEnter.append("div").classed("nombreDet", true).html(function(d) {
 				if (d.nombre !== undefined) {

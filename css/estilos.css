@@ -1,6 +1,7 @@
 /* Para producción se pegan aqui los estilos de todos los css */
 
 @import url('app.css');
+@import url('candidatos.css');
 @import url('barras.css');
 @import url('coloresFP.css');
 @import url('globales.css');

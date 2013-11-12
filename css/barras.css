@@ -53,17 +53,17 @@
 	width: 270px;
 	border-top: 1px solid #CECECE;
 	padding-left: 5px;
-	padding-top: 13px;
+	padding-top: 9px;
 	overflow: hidden;
 	background-color: white; 
  	min-height: 80px;    
-	
+	background-position: bottom right;
 }
 
 .nombreDet {
 	font: 11px Arial, Helvetica, sans-serif;
 	font-weight:bold;
-	width: 180px;	
+	width: 185px;	
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
@@ -93,13 +93,13 @@
     top: -16px;	
 }
 
-.lineaDet{
+.lineaDet {
     border-left: 1px solid #CECECE;
     height: 100%;
-    right: 12px;
     position: absolute;
+    right: 55px;
     top: 0;
-    width: 15px;
+    width: 20px;
 }
 
 .bancasDet{
@@ -108,7 +108,7 @@
     font: bold 12px/20px Arial,Helvetica,sans-serif;
     height: 20px;
     position: absolute;
-    right: 17px;
+    right: 65px;
     text-align: center;
     width: 20px;	
 	-webkit-border-radius: 100px;
