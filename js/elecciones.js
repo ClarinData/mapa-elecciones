@@ -352,8 +352,8 @@ if (query.view == "cama") {
 
         (function(g) {
 
-          // g.transition().duration(650)
-          g.attr("transform", "translate(" + argentina.width / 2 + "," + argentina.height / 2 + ")" +
+          g.transition().duration(650)
+          .attr("transform", "translate(" + argentina.width / 2 + "," + argentina.height / 2 + ")" +
             "scale(" + (argentina.zoom || 1) + ")" +
             "translate(" + translate + ")"
           );

@@ -126,19 +126,27 @@ function dibujaBarras(dataset){
 					tempClass = "fp_SFP";
 				}
 				return "barraBar " + tempClass;
-			}).style("width", function(d) {
+			})
+			.transition().duration(1000)
+			.style("width", function(d) {
 				return Math.ceil(dominio(d.votos)) + "px";
 			});
 
-			contenidoEnter.append("div").classed("porcentajeBar", true).style("left", function(d) {
+			contenidoEnter.append("div").classed("porcentajeBar", true)
+			.transition().duration(1000)
+			.style("left", function(d) {
 				return Math.ceil(dominio(d.votos) + 5) + "px";
-			}).text(function(d) {
+			})
+			.text(function(d) {
 				return d.per.toLocaleString() + "%";
 			});
 
-			contenidoEnter.append("div").classed("cantidadBar", true).style("left", function(d) {
+			contenidoEnter.append("div").classed("cantidadBar", true)
+			.transition().duration(1000)
+			.style("left", function(d) {
 				return Math.ceil(dominio(d.votos) + 5) + "px";
-			}).text(function(d) {
+			})
+			.text(function(d) {
 				return "(" + miles(d.votos.toString()) + ")";
 			});
 			
@@ -219,11 +227,15 @@ function dibujaBarras(dataset){
 					tempClass = "fp_SFP";
 				}
 				return "barraDet " + tempClass;
-			}).style("width", function(d) {
+			})
+			.transition().duration(1000)
+			.style("width", function(d) {
 				return Math.ceil(dominio(d.votos)) + "px";
 			});
 		
-			contenidoEnter.append("div").classed("porcentajeDet", true).style("left", function(d) {
+			contenidoEnter.append("div").classed("porcentajeDet", true)
+			.transition().duration(1000)
+			.style("left", function(d) {
 					return Math.ceil(dominio(d.votos) + 5) + "px";
 				}).text(function(d) {
 					return d.per.toLocaleString() + "%";
