@@ -3,6 +3,7 @@
 /* exported argentina */
 
 var param = window.location.href.split('?')[1] || "rnd=" + Math.random(),
+  timer,
   query = getQueryParams(),
   url = {
     "base": "http://www.clarin.com/elecciones-2013-resultados/",
@@ -350,12 +351,18 @@ if (query.view == "cama") {
 
         argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom) && argentina.vista.state === "votos");
 
+        console.time("pointerEvents");
+
         (function(g) {
 
-          // g.transition().duration(650)
-          g.attr("transform", "translate(" + argentina.width / 2 + "," + argentina.height / 2 + ")" +
-            "scale(" + (argentina.zoom || 1) + ")" +
-            "translate(" + translate + ")"
+          clearTimeout(timer);
+          g.classed("disable-hover", true);
+
+          g.transition()
+            .duration(650)
+            .attr("transform", "translate(" + argentina.width / 2 + "," + argentina.height / 2 + ")" +
+              "scale(" + (argentina.zoom || 1) + ")" +
+              "translate(" + translate + ")"
           );
 
           g.paths
@@ -366,16 +373,21 @@ if (query.view == "cama") {
               return (d === centered);
             });
 
-          g.circles.filter(function() {
-            var id = this.getAttribute("id");
-            return id.substring(id.length - 3, id.length) !== "cpy";
-          })
+          g.circles
+            .filter(function() {
+              var id = this.getAttribute("id");
+              return id.substring(id.length - 3, id.length) !== "cpy";
+            })
             .style("stroke-width", function() {
               return (argentina.zoom) ? 0.5 / argentina.zoom + "pt" : null;
             })
             .attr("r", function(r) {
               return dataRadius(elecciones[elecciones.dataset][r.properties.administrative_area.id]);
             });
+
+            timer = setTimeout(function(){
+              g.classed("disable-hover", false);
+            },650);
 
         })(
 
@@ -415,6 +427,8 @@ if (query.view == "cama") {
       "data": elecciones[elecciones.dataset][argentina.selection]
     });
     dibuja();
+
+    console.timeEnd("pointerEvents");
 
 
   });
