@@ -55,7 +55,6 @@ var mapObject = function(map) {
     tooltip.title = d3.select("#tooltip_title");
     tooltip.info = (function(info) {
       info.text = function(text) {
-        console.log(this);
         text = text || null;
         this[0][0].textContent = text;
         info.classed("active", text);
@@ -99,6 +98,8 @@ var mapObject = function(map) {
       svg.path = d3.geo.path()
         .projection(map.projection);
       svg.g = svg.append("g");
+      svg.g.classed("disable-hover", true);
+      svg.g.classed("disable", true);
       return svg;
     })(
       d3.select("#" + map.id)
@@ -289,6 +290,9 @@ var mapObject = function(map) {
           );
 
           map.event.ready(file, json);
+          map.svg.g.classed("disable-hover", false);
+          map.svg.g.classed("disable", false);
+
 
         }
 
