@@ -351,8 +351,6 @@ if (query.view == "cama") {
 
         argentina.svg.g.admlevel3.classed("disabled", (!argentina.zoom) && argentina.vista.state === "votos");
 
-        console.time("pointerEvents");
-
         (function(g) {
 
           clearTimeout(timer);
@@ -427,8 +425,6 @@ if (query.view == "cama") {
       "data": elecciones[elecciones.dataset][argentina.selection]
     });
     dibuja();
-
-    console.timeEnd("pointerEvents");
 
 
   });

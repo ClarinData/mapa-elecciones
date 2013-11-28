@@ -126,19 +126,27 @@ function dibujaBarras(dataset){
 					tempClass = "fp_SFP";
 				}
 				return "barraBar " + tempClass;
-			}).style("width", function(d) {
+			})
+			.transition().duration(1000)
+			.style("width", function(d) {
 				return Math.ceil(dominio(d.votos)) + "px";
 			});
 
-			contenidoEnter.append("div").classed("porcentajeBar", true).style("left", function(d) {
+			contenidoEnter.append("div").classed("porcentajeBar", true)
+			.transition().duration(1000)
+			.style("left", function(d) {
 				return Math.ceil(dominio(d.votos) + 5) + "px";
-			}).text(function(d) {
+			})
+			.text(function(d) {
 				return d.per.toLocaleString() + "%";
 			});
 
-			contenidoEnter.append("div").classed("cantidadBar", true).style("left", function(d) {
+			contenidoEnter.append("div").classed("cantidadBar", true)
+			.transition().duration(1000)
+			.style("left", function(d) {
 				return Math.ceil(dominio(d.votos) + 5) + "px";
-			}).text(function(d) {
+			})
+			.text(function(d) {
 				return "(" + miles(d.votos.toString()) + ")";
 			});
 			
@@ -159,8 +167,23 @@ function dibujaBarras(dataset){
 		
 			var contenidoEnter = contenido.enter()
 					.append("div")
-					.classed("contenedorDet", true)
-					.style("background", "white");
+					.attr("class", function(d)
+					{ 
+						var provincia = "";
+						if (dataset.nivel_administrativo === 1){
+						provincia = dataset.id;
+						}else{
+							provincia = dataset.parentId;
+						}
+						
+						if ( descartar(d.id)){
+							return "contenedorDet";							
+						}else{
+							var clase = "contenedorDet " + elecciones.dataset +" " + provincia + "-" + d.id;
+							return clase;
+						}
+					});
+
 			
 			contenidoEnter.append("div").classed("nombreDet", true).html(function(d) {
 				if (d.nombre !== undefined) {
@@ -204,11 +227,15 @@ function dibujaBarras(dataset){
 					tempClass = "fp_SFP";
 				}
 				return "barraDet " + tempClass;
-			}).style("width", function(d) {
+			})
+			.transition().duration(1000)
+			.style("width", function(d) {
 				return Math.ceil(dominio(d.votos)) + "px";
 			});
 		
-			contenidoEnter.append("div").classed("porcentajeDet", true).style("left", function(d) {
+			contenidoEnter.append("div").classed("porcentajeDet", true)
+			.transition().duration(1000)
+			.style("left", function(d) {
 					return Math.ceil(dominio(d.votos) + 5) + "px";
 				}).text(function(d) {
 					return d.per.toLocaleString() + "%";
