@@ -3,6 +3,15 @@
 /*  Global Styles                                                                 */
 /**********************************************************************************/
 
+.disabled {
+  display: none;
+}
+
+.disable-hover,
+.disable-hover * {
+  pointer-events: none !important;
+}
+
 .slashback {
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAPnz5//z4gsBhIwNDRkhAvCBECKwILIAmBBdAGQIADgRxNyeHcRsgAAAABJRU5ErkJggg==) repeat;	
 }
@@ -591,10 +600,6 @@
 
 .transparent {
   fill-opacity: 0;
-}
-
-.disabled {
-  display: none;
 }
 
 .states .active {
