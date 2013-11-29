@@ -3,7 +3,6 @@
 /* exported argentina */
 
 var param = window.location.href.split('?')[1] || "rnd=" + Math.random(),
-  timer,
   query = getQueryParams(),
   url = {
     "base": "http://www.clarin.com/elecciones-2013-resultados/",
@@ -353,11 +352,10 @@ if (query.view == "cama") {
 
         (function(g) {
 
-          clearTimeout(timer);
           g.classed("disable-hover", true);
 
           g.transition()
-            .duration(650)
+            .duration(850)
             .attr("transform", "translate(" + argentina.width / 2 + "," + argentina.height / 2 + ")" +
               "scale(" + (argentina.zoom || 1) + ")" +
               "translate(" + translate + ")"
@@ -383,9 +381,9 @@ if (query.view == "cama") {
               return dataRadius(elecciones[elecciones.dataset][r.properties.administrative_area.id]);
             });
 
-            timer = setTimeout(function(){
-              g.classed("disable-hover", false);
-            },650);
+          d3.timer(function() {
+            g.classed("disable-hover", false);
+          }, 1000);
 
         })(
 
